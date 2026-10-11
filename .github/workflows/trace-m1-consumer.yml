@@ -1,0 +1,30 @@
+name: trace-m1-consumer
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pinned-inputs-and-consumer-controls:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+        with:
+          version: "0.12.24"
+      - name: Fetch immutable inputs and run the original consumer
+        run: bash interop/trace-m1/scripts/qualify.sh
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: always()
+        with:
+          name: trace-m1-native-results
+          path: |
+            interop/trace-m1/results/qualification/
+            interop/trace-m1/results/replay-r1/public-report.json
