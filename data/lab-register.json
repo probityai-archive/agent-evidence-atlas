@@ -8061,6 +8061,229 @@
           "sha256": "ebbae4a8725f6a2557372877bb877211b32ec17436f26784275479393da72786"
         }
       ]
+    },
+    {
+      "id": "aps-corrected20-2026-10-10",
+      "atlasRevision": "3cb950429c35a66ea57e4ea04360d11ca39fbb4f",
+      "sourceRevision": "407ca2d5ad10c846860ad1b6faafc971ae9690e5",
+      "readerRevision": "sha256:1d9b8fc840a974796b2098d367e37599cbce4d7455186bbeeeb7f3879c873bda",
+      "contract": "https://github.com/agent-passport-system/agent-passport-system/blob/407ca2d5ad10c846860ad1b6faafc971ae9690e5/fixtures/agent-passport-v2/README.md",
+      "report": "../experiments/aps-corrected20-2026-10-10/report.json",
+      "provenance": "../experiments/aps-corrected20-2026-10-10/provenance.json",
+      "reviewState": "author-retained-measured-record",
+      "evidenceClaim": "independently-written-and-operated-reader-on-producer-authored-finite-synthetic-corpus",
+      "roles": {
+        "producer": "APS/AEOESS",
+        "readerAuthor": "Probity",
+        "runner": "Probity, normal canonical one-CPU job",
+        "atlasOperator": "Probity",
+        "retentionHolder": "Probity",
+        "independentOperation": "Probity operated the reader separately from APS/AEOESS fixture authors; not independent of Probity",
+        "independentEffectCustody": "not-established",
+        "outsideRecurringUse": "not-established"
+      },
+      "answerExposure": "The corrected public fixture, all upstream expected outcomes and README annotations were available before the reader and run.",
+      "comparisonOrder": "The independently written reader emitted raw checks, its outcomes and comparisons in one report; not answer-blind or separately graded.",
+      "limits": [
+        "Finite printable-ASCII corpus reader; not general JCS conformance.",
+        "Signature verification uses cryptography/OpenSSL; no independent cryptographic-backend claim.",
+        "Diagnostic agreement does not force the five normatively undetermined SDK outcomes.",
+        "Resolver answers are supplied synthetic data, without historical validity windows or authenticated lookup.",
+        "No APS package qualification, principal binding, live DID lookup, host adoption, federation enrollment or commercial agreement.",
+        "Twenty public synthetic cases, not a representative deployment population.",
+        "Three declared full-outcome differences remain visible; PASS means the bounded diagnostic comparison, not uniform verdict agreement.",
+        "The five upstream draft annotations are separate from the two indeterminate source outcomes.",
+        "No new package release, maintainer acceptance of this reader, host adoption, federation enrollment or commercial agreement.",
+        "Both selected SDK invocations stopped at IPC creation; their corpus/ambiguity checks remain not exercised.",
+        "Original dependency audit remains adverse; the finite reader result is a separate evidence layer."
+      ],
+      "claimResults": [
+        {
+          "claim": "corrected-corpus-source-SHA256",
+          "result": "pass",
+          "recordedField": "/fixtureSHA256",
+          "expectedValue": "9fce76dbf13de9749a2ef52c8dedecce08e4874da0203b39a7d941eb479b5ac5"
+        },
+        {
+          "claim": "finite-diagnostic-comparison",
+          "result": "pass",
+          "recordedField": "/mismatches",
+          "expectedValue": []
+        },
+        {
+          "claim": "upstream-SDK-observation-population",
+          "result": "pass",
+          "recordedField": "/sourceObservations",
+          "expectedValue": {
+            "valid": 4,
+            "invalid": 14,
+            "indeterminate": 2
+          }
+        },
+        {
+          "claim": "separate-reader-outcome-population",
+          "result": "pass",
+          "recordedField": "/readerOutcomes",
+          "expectedValue": {
+            "valid": 4,
+            "invalid": 11,
+            "indeterminate": 3,
+            "unsupported": 2
+          }
+        },
+        {
+          "claim": "five-separate-upstream-draft-annotations",
+          "result": "pass",
+          "recordedField": "/separateSDKAnnotations",
+          "expectedValue": [
+            "did-web-resolver-not-found",
+            "expired",
+            "not-yet-valid",
+            "record-type-changed",
+            "version-changed"
+          ]
+        },
+        {
+          "claim": "reader-does-not-import-APS-SDK",
+          "result": "pass",
+          "recordedField": "/readerImportsAPSSDK",
+          "expectedValue": false
+        },
+        {
+          "claim": "selected-SDK-corpus-characterization",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "historical-ambiguous-key-SDK-characterization",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "authenticated-historical-key-authority",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "principal-binding",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "general-JCS-conformance",
+          "result": "out-of-scope"
+        },
+        {
+          "claim": "independent-cryptographic-backend",
+          "result": "out-of-scope"
+        },
+        {
+          "claim": "outside-recurring-host-adoption",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "independent-effect-custody",
+          "result": "not-exercised"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/README.md",
+          "sha256": "3267d8d1113852f0074d32a4a11f72376c82ece7766ad52e87a8b2b99816457c"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/job-runtime-provenance.json",
+          "sha256": "c1c557a9307794e776224521ae4b0769d9b8bf51567e432b7a8a73469dabf07b"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/native-resource-profile.json",
+          "sha256": "812af5af7e78bd85412e2a99b0f0c9306b4805b899487fe3b2c2bc5445d7b7c1"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/node-runtime.json",
+          "sha256": "4bdd8a588d78a43e0a7168650d9d92515d3cb1b163dd54af924028b1e32c7321"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/npm-audit.json",
+          "sha256": "d8753f1c88af71a51bbe0a299122cc9598110f4cd7e0dd122cc4977190e05991"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/npm-runtime.json",
+          "sha256": "8204dc949a57d8d035354a9d3d935977033a36beb52998b7ae6f1d8d099302c5"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/original-native-result.json",
+          "sha256": "731f42c819ef24f4691f5abfaae6baef17e8a71433edd076d7d8bb756647ef3d"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/producer/LICENSE",
+          "sha256": "c6276a9c8c67588338d8439b0c7d27b3451335fc652e02a2be990e81c51ef40a"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/producer/README.md",
+          "sha256": "e9fda90aebaade446408f8f287f2d2d8f8b188753b5346e67db8e9b834adab09"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/producer/agent-passport-vectors-v2.json",
+          "sha256": "9fce76dbf13de9749a2ef52c8dedecce08e4874da0203b39a7d941eb479b5ac5"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/provenance.json",
+          "sha256": "fae84df0376e94fec2ddc8e96a9b7fb219a5fc09e874bb1b13faf948e4becbcc"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/python-runtime-advisories.json",
+          "sha256": "d8efaa78b047795cbcdd2d0d574247de26c5154df4421a9e428f7b9446f8d2a7"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/python-runtime.json",
+          "sha256": "8f9ee2e2bbf770912874b686a30f5f50215fbcf5fb68d527b5908aa3af8ebaaa"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/read_corpus.py",
+          "sha256": "1d9b8fc840a974796b2098d367e37599cbce4d7455186bbeeeb7f3879c873bda"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/reader-requirements.txt",
+          "sha256": "2e1656c458cd8838941bd224f9ae1c2f29beb7f320740d260629e66bcae2eeab"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/reader.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/reader.stdout",
+          "sha256": "b8829566bad7cb629fa2c4fcfa7744db6d5f7c6213398ebafe6e3d8e68c00d09"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/report.json",
+          "sha256": "1598f87559130cb0e7a2e4ca59e5d6a2a584b402149bc28baad30dd9eaa01df1"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/sdk-348.stderr",
+          "sha256": "d570f1365339472ad7ed7fc173661a8ef492a21d0aff9c81dc371b5356d1b4ce"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/sdk-c31.stderr",
+          "sha256": "50188c2caf8bdd4f44d09c5cb960b607aaf29041bd575294d51f80ecc1a927aa"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/sdk-source-after.json",
+          "sha256": "5181e8a70b6bba5d744b6691de8bb1c05e34077a9c2e1fbb982de656fe7327c4"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/sdk-source-before.json",
+          "sha256": "e27ea476542d802fd32df0391efcc0f18d683c09084aebaaec6935121bae1e3d"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/selected-source.zip",
+          "sha256": "eb2abcb435590456e4228476d499cc48e4e9a4184c8f6e767355d1ea6076cc13"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/source-after.json",
+          "sha256": "72373a3f9f7d941acd52043e04f5a9d61c46e9bcb90e088428caa84472493a2b"
+        },
+        {
+          "path": "../experiments/aps-corrected20-2026-10-10/source-manifest.json",
+          "sha256": "79fac1ad6164c1f356ff5fb91fdec701bc598c3260f44e65dab0d79378fe89a5"
+        }
+      ]
     }
   ]
 }

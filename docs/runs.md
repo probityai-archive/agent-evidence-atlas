@@ -1732,6 +1732,76 @@ comparisonOrder: Historical harness outcomes and comparison grades emitted toget
 
 </div>
 
+<div>
+
+<a id="record-aps-corrected20-2026-10-10"></a>
+
+## aps-corrected20-2026-10-10
+
+Claim scope: independently-written-and-operated-reader-on-producer-authored-finite-synthetic-corpus
+
+Review state: author-retained-measured-record
+
+Open [Report](experiments/aps-corrected20-2026-10-10/report.json), [Provenance](experiments/aps-corrected20-2026-10-10/provenance.json) and [Contract](https://github.com/agent-passport-system/agent-passport-system/blob/407ca2d5ad10c846860ad1b6faafc971ae9690e5/fixtures/agent-passport-v2/README.md).
+
+<a id="per-claim-results-26"></a>
+
+### Per-claim results
+
+| Claim                                         | Recorded result |
+|-----------------------------------------------|-----------------|
+| corrected-corpus-source-SHA256                | pass            |
+| finite-diagnostic-comparison                  | pass            |
+| upstream-SDK-observation-population           | pass            |
+| separate-reader-outcome-population            | pass            |
+| five-separate-upstream-draft-annotations      | pass            |
+| reader-does-not-import-APS-SDK                | pass            |
+| selected-SDK-corpus-characterization          | not-exercised   |
+| historical-ambiguous-key-SDK-characterization | not-exercised   |
+| authenticated-historical-key-authority        | not-exercised   |
+| principal-binding                             | not-exercised   |
+| general-JCS-conformance                       | out-of-scope    |
+| independent-cryptographic-backend             | out-of-scope    |
+| outside-recurring-host-adoption               | not-exercised   |
+| independent-effect-custody                    | not-exercised   |
+
+<a id="roles-26"></a>
+
+### Roles
+
+| Role | Declaration |
+|----|----|
+| producer | APS/AEOESS |
+| readerAuthor | Probity |
+| runner | Probity, normal canonical one-CPU job |
+| atlasOperator | Probity |
+| retentionHolder | Probity |
+| independentOperation | Probity operated the reader separately from APS/AEOESS fixture authors; not independent of Probity |
+| independentEffectCustody | not-established |
+| outsideRecurringUse | not-established |
+
+<a id="limits-26"></a>
+
+### Limits
+
+- Finite printable-ASCII corpus reader; not general JCS conformance.
+- Signature verification uses cryptography/OpenSSL; no independent cryptographic-backend claim.
+- Diagnostic agreement does not force the five normatively undetermined SDK outcomes.
+- Resolver answers are supplied synthetic data, without historical validity windows or authenticated lookup.
+- No APS package qualification, principal binding, live DID lookup, host adoption, federation enrollment or commercial agreement.
+- Twenty public synthetic cases, not a representative deployment population.
+- Three declared full-outcome differences remain visible; PASS means the bounded diagnostic comparison, not uniform verdict agreement.
+- The five upstream draft annotations are separate from the two indeterminate source outcomes.
+- No new package release, maintainer acceptance of this reader, host adoption, federation enrollment or commercial agreement.
+- Both selected SDK invocations stopped at IPC creation; their corpus/ambiguity checks remain not exercised.
+- Original dependency audit remains adverse; the finite reader result is a separate evidence layer.
+
+answerExposure: The corrected public fixture, all upstream expected outcomes and README annotations were available before the reader and run.
+
+comparisonOrder: The independently written reader emitted raw checks, its outcomes and comparisons in one report; not answer-blind or separately graded.
+
+</div>
+
 </div>
 
 [HTML view](runs.html) | [Agent guide](llms.txt)
