@@ -23,6 +23,7 @@ The Open Evidence Lab helps teams test a specific question like this. A useful r
 | How do I check approval, retries, and a missing acknowledgement? | [Read the refund example](https://github.com/probityai/agent-evidence-observer/blob/main/docs/APS-REFUND-RETRIES.md). |
 | Did a database write match its approval, even if the state changed later? | [Try the SQL example](approved-sql.md) and bring a native audit pair. |
 | Did the agent change the call after approval, or did the resource change later? | [Compare the request/effect cases](request-effect-join.md) and bring a reader or retained run. |
+| Does an approved target, completion report or later observation establish the same thing? | [Try the authority and effect controls](authority-effect-cases.md) and compare the separate conclusions. |
 | How do I replay an existing result? | [Open the retained replay procedure](#start-with-a-run-that-exists) in the technical notes below. |
 
 <a id="bring-one-question"></a>
@@ -58,7 +59,7 @@ Keep the original report separate from later comparisons or corrections. [Report
 Open the protocol, replay commands, and detailed evidence limits
 </summary>
 
-Protocol draft 0.1.9. Register updated 6 October 2026. The register retains native framework, admission, receipt and bounded actual-weight comparisons. Host adoption and independently operated custody have separate evidence.
+Protocol draft 0.1.9. Register updated 11 October 2026. The register retains native framework, admission, receipt and bounded actual-weight comparisons. Host adoption and independently operated custody have separate evidence.
 
 Maintainers can use this protocol to submit a verifier run, a host-project CI integration, or an observer/witness experiment. Each record names its contract, retained inputs, implementation and operators, and reports what passed, failed or remained untested. Probity maintains this register. A listed result makes no membership, endorsement or adoption commitment on behalf of another project.
 
@@ -79,6 +80,18 @@ The [published robot controls companion](provael-task-controls.md) reads Provael
 The [worked report example](evidence-test-meaning.md) explains why all conformance tests can pass while a report retains negative conclusions. The historical record covers synthetic artifacts. Its hypothetical refund story explains the customer problem; it adds no customer or live action result.
 
 [Inspect the retained record](runs.md#record-w3c-report-replay-2026-10-06) or [check the original-output accounting](experiments/w3c-report-replay-2026-10-06/README.md). The maintained consumer checks file bindings and complete per-case accounting. It does not execute the captured reader copies. The record keeps the original report separate from two later diagnostic controls and retains unexercised action, independent-operation and outside-host claims.
+
+<a id="corrected-agent-passport-corpus-independent-reader"></a>
+
+## Corrected Agent Passport corpus: independent reader
+
+Probity wrote and operated a separate Python reader for APS/AEOESS's 20 frozen synthetic Agent Passport cases, using the corrected source at `407ca2d5ad10c846860ad1b6faafc971ae9690e5`. The [unchanged native report](experiments/aps-corrected20-2026-10-10/report.json) and [source and runtime record](experiments/aps-corrected20-2026-10-10/README.md) retain the inputs and comparisons.
+
+The source records four valid, fourteen invalid and two indeterminate SDK observations. The reader returns four valid, eleven invalid, three indeterminate and two unsupported outcomes. Its diagnostic and exposed-preimage checks agree. Three declared full-outcome differences remain visible; the report's `PASS` does not make the verdicts identical.
+
+Five upstream draft annotations remain separate from those outcome counts: `did-web-resolver-not-found`, `expired`, `not-yet-valid`, `record-type-changed` and `version-changed`. The reader uses supplied resolver answers and evaluation times. It does not establish historical key authority, principal binding or live identity acceptance. Ed25519 checks use cryptography/OpenSSL; the reader does not import the APS SDK or claim an independent cryptographic backend.
+
+The original overall run remains adverse. Both selected SDK invocations stopped at IPC creation before corpus evaluation, and their original locked dependency audit retains three high entries and two advisories. The useful reader result stays separate from those failures, whole-SDK qualification, federation enrollment and host adoption. All earlier register objects and evidence bytes are unchanged.
 
 <a id="outside-receipt-verifier-and-primitive-identifier-checks"></a>
 

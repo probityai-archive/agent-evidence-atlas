@@ -219,3 +219,12 @@ version = "0.1"
 date = "2026-10-09"
 status = "proposed"
 note = "Selected producer contract and separate pre-dispatch, post-commit and target-coverage cases"
+
+[[artifact]]
+name = "Synthetic authority, report and observation controls"
+page = "authority-effect-cases.html"
+source = "src/authority-effect-cases.md"
+version = "0.1.0"
+date = "2026-10-09"
+status = "synthetic controls"
+note = "Authored supplied-record comparisons, source attribution and an installed-package gate; live effects, independent observation and outside operation remain separate"

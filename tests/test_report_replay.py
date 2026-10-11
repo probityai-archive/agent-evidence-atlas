@@ -74,7 +74,9 @@ def test_preceding_register_objects_exact():
     import subprocess
     original = json.loads(subprocess.run(["git", "show", "0f5d25ab4cb00337f332eb109ac0dbc8b5651e00:data/lab-register.json"], cwd=ROOT, capture_output=True, check=True).stdout)
     current = json.loads((ROOT / "data/lab-register.json").read_text())
-    assert current["records"][:-1] == original["records"]
+    assert len(original["records"]) == 25
+    assert current["records"][:25] == original["records"]
+    assert current["records"][25]["id"] == IDENTITY
     before = subprocess.run(["git", "show", "0f5d25ab4cb00337f332eb109ac0dbc8b5651e00:data/lab-register.json"], cwd=ROOT, capture_output=True, check=True).stdout
     ending = b"\n  ]\n}\n"
     assert before.endswith(ending)
