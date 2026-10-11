@@ -1,8 +1,8 @@
 # Independent M1 consumer
 
-The original Probity reader checks signed result bytes against an explicitly selected report and its optional execution context. It preserves the native outcome and reason. It imports no REMORA runtime or reference verifier. The producer source pinned by commit is [REMORA PR 822](https://github.com/darklordVirtual/REMORA-research/pull/822); INPUT-MANIFEST.json records the exact source and each file’s digest.
+The original Probity reader checks signed result bytes against an explicitly selected report and its optional execution context. It preserves the native outcome and reason. It imports no REMORA runtime or reference verifier. The producer source pinned by commit is [REMORA PR 822](https://github.com/darklordVirtual/REMORA-research/pull/822); INPUT-MANIFEST.json records the exact source and each file's digest.
 
-Run from the reader’s directory:
+Run from the reader's directory:
 
 ```sh
 uv sync --locked --group dev
