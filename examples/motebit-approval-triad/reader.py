@@ -126,7 +126,10 @@ def evaluate(case: Path) -> dict[str, Any]:
 def check_source(root: Path) -> None:
     """Check the complete retained population and bytes before evaluating it."""
     source = read_object(root / "SOURCE.json")
-    expected = {item["path"] for item in source["files"]}
+    paths = [item["path"] for item in source["files"]]
+    expected = set(paths)
+    if len(paths) != len(expected):
+        raise ValueError("duplicate retained source declaration")
     actual = {p.relative_to(root).as_posix() for p in (root / "retained").rglob("*")
               if p.is_file()}
     if actual != expected:
@@ -152,6 +155,8 @@ def compare(root: Path, expected: dict[str, Any]) -> dict[str, Any]:
         differences.append({"field": "claims", "reader": claim_order,
                             "producer": expected.get("claims")})
     declared = expected.get("cases", {})
+    if not isinstance(declared, dict):
+        raise ValueError("expected cases object")
     if set(declared) != set(CASES):
         differences.append({"field": "case_population", "reader": list(CASES),
                             "producer": sorted(declared)})
@@ -159,6 +164,8 @@ def compare(root: Path, expected: dict[str, Any]) -> dict[str, Any]:
         case = root / "retained" / "cases" / name
         actual = evaluate(case)
         wanted = declared.get(name, {})
+        if not isinstance(wanted, dict):
+            raise ValueError(f"expected case object: {name}")
         checked = {**actual, "dir": f"cases/{name}", "files": {
             path.name: hashlib.sha256(path.read_bytes()).hexdigest()
             for path in case.glob("*.json")}}

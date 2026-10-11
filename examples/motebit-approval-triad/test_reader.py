@@ -142,12 +142,16 @@ def test_boolean_timestamp_is_not_integer_time():
         reader.relations(approval, invocation, receipt)
 
 
-@pytest.mark.parametrize("mode", ["extra", "changed", "missing", "symlink"])
+@pytest.mark.parametrize("mode", ["extra", "changed", "missing", "symlink", "duplicate"])
 def test_source_refusals(tmp_path, mode):
     shutil.copytree(ROOT / "retained", tmp_path / "retained")
     shutil.copyfile(ROOT / "SOURCE.json", tmp_path / "SOURCE.json")
     path = tmp_path / "retained/cases/control/approval.json"
-    if mode == "extra":
+    if mode == "duplicate":
+        source = reader.read_object(tmp_path / "SOURCE.json")
+        source["files"].append(copy.deepcopy(source["files"][0]))
+        (tmp_path / "SOURCE.json").write_text(json.dumps(source))
+    elif mode == "extra":
         (tmp_path / "retained/extra.json").write_text("{}")
     elif mode == "changed":
         path.write_bytes(path.read_bytes() + b"\n")
@@ -182,3 +186,15 @@ def test_cli_distinguishes_agreement_disagreement_and_setup(tmp_path, capsys):
     assert json.loads(capsys.readouterr().out)["differences"]
     assert reader.main(["--root", str(tmp_path)]) == 2
     assert "setup_error" in json.loads(capsys.readouterr().out)
+
+
+@pytest.mark.parametrize("cases", [[], None, {"control": "bad"}, {"control": None}])
+def test_cli_refuses_malformed_oracle_containers(tmp_path, capsys, cases):
+    expected = reader.read_object(ROOT / "retained/expected.json")
+    expected["cases"] = cases
+    path = tmp_path / "expected.json"
+    path.write_text(json.dumps(expected))
+    assert reader.main(["--expected", str(path)]) == 2
+    result = json.loads(capsys.readouterr().out)
+    assert "setup_error" in result
+    assert "differences" not in result
