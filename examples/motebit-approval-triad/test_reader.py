@@ -5,6 +5,7 @@ import copy
 import importlib.util
 import json
 import shutil
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -30,6 +31,27 @@ def test_exact_native_outputs():
     assert len(result["rows"]) == 7
     assert result["rows"][0]["unjoined"]["deny-receipt.json"]["signature_receipt"] == "pass"
     assert all(row["claims"]["binding"] == "not_evaluated" for row in result["rows"])
+
+
+@pytest.mark.parametrize("protected", [False, True])
+def test_git_checkout_preserves_producer_bytes(tmp_path, protected):
+    source, exported = tmp_path / "source", tmp_path / "exported"
+    source.mkdir()
+    exported.mkdir()
+    shutil.copytree(ROOT / "retained", source / "retained")
+    shutil.copyfile(ROOT / "SOURCE.json", source / "SOURCE.json")
+    if protected:
+        shutil.copyfile(ROOT / ".gitattributes", source / ".gitattributes")
+    subprocess.run(["git", "init", "-q", str(source)], check=True)
+    subprocess.run(["git", "-C", str(source), "-c", "core.autocrlf=false", "add", "."], check=True)
+    subprocess.run(["git", "-C", str(source), "-c", "core.autocrlf=true",
+                    "checkout-index", "--all", "--prefix=" + exported.as_posix() + "/"], check=True)
+    if protected:
+        expected = reader.read_object(exported / "retained" / "expected.json")
+        assert reader.compare(exported, expected)["differences"] == []
+    else:
+        with pytest.raises(ValueError, match="retained source bytes differ"):
+            reader.check_source(exported)
 
 
 def test_all_producer_oracle_mutation_categories():
