@@ -538,6 +538,8 @@ COPIES = [
     ("examples/approved-sql/tests/test_check.py", "examples/approved-sql/tests/test_check.py", "approved-sql"),
     ("examples/approved-sql/uv.lock", "examples/approved-sql/uv.lock", "approved-sql"),
     ("examples/request-effect-join/CASE-TABLE.md", "examples/request-effect-join/CASE-TABLE.md", "request-effect-join"),
+    ("interop/trace-m1/retained/public-report.json", "interop/trace-m1/retained/public-report.json", "trace-m1-consumer"),
+    ("interop/trace-m1/retained/QUALIFICATION.json", "interop/trace-m1/retained/QUALIFICATION.json", "trace-m1-consumer"),
 ]
 
 INCLUDE = re.compile(r"^<!-- include: (\S+) -->$", re.MULTILINE)

@@ -2711,7 +2711,7 @@
       "answerExposure": "Author-written tasks/controls and expected outcomes exposed; not blind.",
       "comparisonOrder": "Native output and comparison emitted and published together; public Atlas retention before indexing does not establish a blind or raw-result-first comparison.",
       "limits": [
-        "Actual framework-free installed0.0.2\u21920.0.3 upgrade and selectedhostpolicy run, not a new inference experiment.",
+        "Actual framework-free installed0.0.2→0.0.3 upgrade and selectedhostpolicy run, not a new inference experiment.",
         "Verified scoped-report publication separate from held policy1/6 correctness, no dispatch or recovery authority.",
         "Full original2268member provider artifact retained including previous upgrade, wheels, immutable fixture packets and rawgate streams; no omissions.",
         "Same operator selects installation/reader/policy/expected outcomes; no registry release, outside recurring use or independent custody.",
@@ -8282,6 +8282,205 @@
         {
           "path": "../experiments/aps-corrected20-2026-10-10/source-manifest.json",
           "sha256": "79fac1ad6164c1f356ff5fb91fdec701bc598c3260f44e65dab0d79378fe89a5"
+        }
+      ]
+    },
+    {
+      "id": "trace-m1-consumer-2026-10-11",
+      "experiment": "../trace-m1-consumer.html",
+      "contract": "https://github.com/darklordVirtual/REMORA-research/pull/822",
+      "evidenceClaim": "signature-report-binding-and-native-claim-ceiling-on-public-synthetic-inputs",
+      "report": "../interop/trace-m1/retained/public-report.json",
+      "provenance": "../interop/trace-m1/retained/QUALIFICATION.json",
+      "reviewState": "retained-independent-consumer-result",
+      "roles": {
+        "readerAuthorship": "Probity; second implementation maintained outside REMORA",
+        "fixtureOperator": "Probity",
+        "evidenceVantage": "artifact",
+        "producerIndependence": "external implementation and operator; no REMORA runtime or reference-verifier imports",
+        "independentWitness": "not-established"
+      },
+      "answerExposure": "Author read producer source and expected cases before implementation; not an answer-blind study",
+      "comparisonOrder": "Synthetic known-answer replay; retained native output compared to published fixture expectations",
+      "limits": [
+        "Bounded ASCII JSON, explicit report digest, P1Y retention and frozen synthetic inputs",
+        "Native reason codes are preserved; independent refusal codes are not equated",
+        "Signature and binding checks do not establish truth, workload identity, authority or effects",
+        "Unsigned external-evidence mapping is not a TRACE Trust Record or conformance level",
+        "No REMORA or AgenTrust host adoption, deployment or commercial agreement is established"
+      ],
+      "claimResults": [
+        {
+          "claim": "frozen-case-population",
+          "result": "pass",
+          "recordedField": "/cases",
+          "expectedValue": 12
+        },
+        {
+          "claim": "declared-comparison-agreement",
+          "result": "pass",
+          "recordedField": "/agreements",
+          "expectedValue": 12
+        },
+        {
+          "claim": "native-contradiction-preserved",
+          "result": "pass",
+          "recordedField": "/rows/1/observed/native_result/status",
+          "expectedValue": "CONTRADICTED"
+        },
+        {
+          "claim": "absent-selected-report-refused",
+          "result": "pass",
+          "recordedField": "/rows/11/observed/decision",
+          "expectedValue": "REFUSED"
+        },
+        {
+          "claim": "trace-trust-record-ceiling-preserved",
+          "result": "pass",
+          "recordedField": "/rows/0/observed/claim_ceiling/trace_trust_record",
+          "expectedValue": false
+        },
+        {
+          "claim": "native-result-truth",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "outside-host-adoption",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "trace-conformance",
+          "result": "out-of-scope"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "../interop/trace-m1/retained/QUALIFICATION.json",
+          "sha256": "fbc672e3d71e43893a31f475ddd644002a5fef3f617ee371a2aa97c4439a0df3"
+        },
+        {
+          "path": "../interop/trace-m1/retained/public-report.json",
+          "sha256": "bd3f39ba3fb2ee3277389758640915068dc97662e6a1139e7908f9a1ad7d457a"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/controls.exit",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/controls.stderr",
+          "sha256": "baae5c5cfe21515dc81ee6ada181d4111b88a7f1c4cedf070bdfb9d25e287eeb"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/controls.stdout",
+          "sha256": "b4c28013d47253fbc76d1975a9a164133d4decdf50761c131b47b139413fa74d"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/coverage-json.exit",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/coverage-json.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/coverage-json.stdout",
+          "sha256": "f65f791937f6c29a4e65eb022629cc14d372c4e8cf72f5097f85e7d3954a0c2b"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/coverage-report.exit",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/coverage-report.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/coverage-report.stdout",
+          "sha256": "c918bb5efa800ab6389aa17ca25ceb220a1b73434d685cf5e79b5c3b7b42ce7d"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/coverage.json",
+          "sha256": "091a28eca1d02acd506b52b611e55913ed65646a79fb22928d57f320ed3fec3a"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/export.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/export.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/fetch.exit",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/fetch.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/fetch.stdout",
+          "sha256": "59881a8a4f882c942f845240fd7086021d6b0fe219e403c9d7d2a9fc99fd5b7d"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/format.exit",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/format.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/format.stdout",
+          "sha256": "2ce9758b9f8abd876ec3e76c589e099e8b05377b1e7ea2331e81ee80f07bdff8"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/lint.exit",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/lint.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/lint.stdout",
+          "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/per-file-coverage.exit",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/per-file-coverage.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/per-file-coverage.stdout",
+          "sha256": "b264f9d3c7c79a5a843944796b1d416915e2119ba688c905902e1c9a9dcf1106"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/replay.exit",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/replay.stderr",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/replay.stdout",
+          "sha256": "1cdb7b336dc333576293625798d74c0a05a7885a2c63210ba5a2157ef20eb424"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/sync.exit",
+          "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/sync.stderr",
+          "sha256": "cb1ec13a2b8ec50d80fcab305307cb5c00d65e0182bdb1bcfcecd5728819171f"
+        },
+        {
+          "path": "../interop/trace-m1/retained/qualification/sync.stdout",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         }
       ]
     }

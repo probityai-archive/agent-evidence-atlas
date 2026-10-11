@@ -258,3 +258,7 @@ P-78 = "none"
 
 # Fixed source pins and original current-head consumer output.
 "P-96" = "none"
+
+# Fixed independent synthetic-consumer source and original native result.
+"P-98" = "none"
+"P-99" = "none"

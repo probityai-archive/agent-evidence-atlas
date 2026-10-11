@@ -29,6 +29,7 @@ account of its limits. A failed check or missing observation can be useful too.
 | Did a database write match its approval, even if the state changed later? | [Try the SQL example](approved-sql.html) and bring a native audit pair. |
 | Did the agent change the call after approval, or did the resource change later? | [Compare the request/effect cases](request-effect-join.html) and bring a reader or retained run. |
 | Does an approved target, completion report or later observation establish the same thing? | [Try the authority and effect controls](authority-effect-cases.html) and compare the separate conclusions. |
+| Does a signed native result identify the selected report without enlarging its claim? | [Replay the independent M1 consumer](trace-m1-consumer.html) and inspect its retained decisions. |
 | How do I replay an existing result? | [Open the retained replay procedure](#start-with-a-run-that-exists) in the technical notes below. |
 
 ## Bring one question

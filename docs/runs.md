@@ -1802,6 +1802,63 @@ comparisonOrder: The independently written reader emitted raw checks, its outcom
 
 </div>
 
+<div>
+
+<a id="record-trace-m1-consumer-2026-10-11"></a>
+
+## trace-m1-consumer-2026-10-11
+
+Claim scope: signature-report-binding-and-native-claim-ceiling-on-public-synthetic-inputs
+
+Review state: retained-independent-consumer-result
+
+Open [Report](interop/trace-m1/retained/public-report.json), [Provenance](interop/trace-m1/retained/QUALIFICATION.json) and [Contract](https://github.com/darklordVirtual/REMORA-research/pull/822).
+
+[Recorded procedure](trace-m1-consumer.md)
+
+<a id="per-claim-results-27"></a>
+
+### Per-claim results
+
+| Claim                                | Recorded result |
+|--------------------------------------|-----------------|
+| frozen-case-population               | pass            |
+| declared-comparison-agreement        | pass            |
+| native-contradiction-preserved       | pass            |
+| absent-selected-report-refused       | pass            |
+| trace-trust-record-ceiling-preserved | pass            |
+| native-result-truth                  | not-exercised   |
+| outside-host-adoption                | not-exercised   |
+| trace-conformance                    | out-of-scope    |
+
+<a id="roles-27"></a>
+
+### Roles
+
+| Role | Declaration |
+|----|----|
+| readerAuthorship | Probity; second implementation maintained outside REMORA |
+| fixtureOperator | Probity |
+| evidenceVantage | artifact |
+| producerIndependence | external implementation and operator; no REMORA runtime or reference-verifier imports |
+| independentWitness | not-established |
+
+<a id="limits-27"></a>
+
+### Limits
+
+- Bounded ASCII JSON, explicit report digest, P1Y retention and frozen synthetic inputs
+- Native reason codes are preserved; independent refusal codes are not equated
+- Signature and binding checks do not establish truth, workload identity, authority or effects
+- Unsigned external-evidence mapping is not a TRACE Trust Record or conformance level
+- No REMORA or AgenTrust host adoption, deployment or commercial agreement is established
+
+answerExposure: Author read producer source and expected cases before implementation; not an answer-blind study
+
+comparisonOrder: Synthetic known-answer replay; retained native output compared to published fixture expectations
+
+</div>
+
 </div>
 
 [HTML view](runs.html) | [Agent guide](llms.txt)

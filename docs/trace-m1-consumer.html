@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Sankalp Gilda" />
+  <meta name="description" content="Replay a signed native result, keep its selected report and preserve the producer&#x27;s claim limits." />
+  <title>Check a signed result and its selected report - Probity AI</title>
+  <link rel="canonical" href="https://probityai.github.io/agent-evidence-atlas/trace-m1-consumer.html" />
+  <link rel="alternate" type="text/markdown" href="https://probityai.github.io/agent-evidence-atlas/trace-m1-consumer.md" />
+  <link rel="describedby" href="https://probityai.github.io/agent-evidence-atlas/llms.txt" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <nav aria-label="Site">
+    <a class="home" href="index.html">Probity AI</a>
+    <span class="links">
+      <a href="start.html">Choose a project</a>
+      <a href="lab.html">Open Evidence Lab</a>
+      <a href="runs.html">Find a run</a>
+      <a href="pilot.html">Pilot status</a>
+      <a href="atlas.html">Atlas</a>
+      <a href="experiments.html">Experiments</a>
+      <a href="claims.html">Claims</a>
+      <a href="versions.html">Versions</a>
+    </span>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+<header class="page">
+<h1>Check a signed result and its selected report</h1>
+<p class="subtitle">Independent consumer of REMORA’s public M1 fixtures.</p>
+</header>
+<p>A signed result can identify a report without proving that the reported action happened. This reader checks that distinction against <a href="https://github.com/darklordVirtual/REMORA-research/pull/822">REMORA’s published mapping fixtures</a>.</p>
+<p>Probity wrote and operated the reader separately from REMORA. It imports no REMORA runtime or reference verifier. Its author had read the producer protocol and expected cases; this is a comparison against known answers.</p>
+<p>The retained run agrees with all 12 expected decisions: three results bind to their selected reports and nine inputs are refused. A bound <code>CONTRADICTED</code> result keeps its native outcome and reason. The reader preserves report identity, commitment, sequence and explicit selection. Its refusal codes remain separate from REMORA’s codes.</p>
+<p><a href="interop/trace-m1/retained/public-report.json">Inspect the retained result</a> or <a href="interop/trace-m1/retained/QUALIFICATION.json">read the qualification record</a>. The qualification passed 118 controls and the coverage gate for every production module. The controls include changed report selection, Boolean sequences, unsupported fields, invalid signing points and unsupported claim upgrades.</p>
+<p>To run the <a href="https://github.com/probityai/agent-evidence-atlas/tree/main/interop/trace-m1">original reader and controls</a>, use a fresh checkout:</p>
+<div class="code-scroll" tabindex="0" role="region" aria-label="Code example">
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> interop/trace-m1</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/qualify.sh</span></code></pre></div>
+</div>
+<p>The fetcher checks the frozen source and each input’s digest. Third-party fixtures stay local under their upstream license. The public report omits producer expected mappings and declared context bodies.</p>
+<p>This checks a bounded synthetic population. A verified signature does not establish workload identity, authority, effects or the truth of the native result. An unsigned external-evidence mapping does not become a TRACE Trust Record or conformance level. The supported ASCII JSON profile is narrower than general JCS.</p>
+<p><a href="runs.html">Find other retained runs</a> or <a href="lab.html">bring an evidence question to the Lab</a>.</p>
+</main>
+<footer class="site">
+  <p>Every number on this site has a source, a read time and a re-derive command in the <a href="claims.html">claim ledger</a>. Build 0.6-draft, 2026-10-01.</p>
+</footer>
+</body>
+</html>
