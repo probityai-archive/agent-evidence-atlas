@@ -1,0 +1,28 @@
+{
+  "status": "non-normative-offline-demonstration",
+  "source": {
+    "repository": "cosai-oasis/ws4-secure-design-agentic-systems",
+    "commit": "747260155a1e4aed80ad1b77745a0bd80cb14160",
+    "path": "whitepapers/agent-containment.md",
+    "sections": [
+      "3",
+      "7",
+      "7.1"
+    ],
+    "discussion": "https://github.com/cosai-oasis/ws4-secure-design-agentic-systems/issues/172#issuecomment-6105350384"
+  },
+  "authorship": "Independently authored fixture, prepared with OpenAI Codex; no third-party implementation copied. Accepted under the existing Atlas Apache-2.0 contribution policy. No repository license change.",
+  "scope": "All 13 evidence table rows mapped to fixture-only keys. Check required per-record field presence, two runtime-attestation states, pending preservation and direct field replay against one synthetic local exact-grant contract. Other row semantics, actual cryptography, real provenance, coverage, authorization and adoption are not established.",
+  "authority_control": "Public fixture grant has no real credential or endpoint. Checks direct string-value replay, not secrecy, guessing or recovery from a known digest.",
+  "run": "cd lab-cases/cosai172 && python3 -m unittest -v test_reader",
+  "python_minimum": "3.10",
+  "files": {
+    "reader.py": "2275bd753f8d4a64ccd50387fca0df7808fb46ff9c86093e5586b7bd22793567",
+    "cases.json": "a5a286ba7ba4884dee628add66c39d310ce0da671b34ded47319e69dd58e5614",
+    "test_reader.py": "0c962074bb38f84bf0fe0d3f3cfbf2760e4af6a5618fa46e5c899b0f8fad2fb8"
+  },
+  "native_identifiers": [
+    "actor_id",
+    "subject_id"
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "against": {
+    "repository": "cosai-oasis/ws4-secure-design-agentic-systems",
+    "commit": "747260155a1e4aed80ad1b77745a0bd80cb14160",
+    "path": "whitepapers/agent-containment.md",
+    "sections": [
+      "3",
+      "7",
+      "7.1"
+    ]
+  },
+  "status": "non-normative-offline-demonstration",
+  "fixture_grant": "fixture-local-grant-001",
+  "cases": [
+    {
+      "id": "determined-unavailability",
+      "record": {
+        "principal_and_delegation_chain": "fixture:explicit-demo-value:principal_and_delegation_chain",
+        "actor_id": "fixture:explicit-demo-value:actor_id",
+        "subject_id": "fixture:explicit-demo-value:subject_id",
+        "policy_version": "fixture:explicit-demo-value:policy_version",
+        "assurance_boundary_statement": "fixture:explicit-demo-value:assurance_boundary_statement",
+        "tool_catalog_version": "fixture:explicit-demo-value:tool_catalog_version",
+        "action_identifier": "fixture:action-001",
+        "request_digest": "fixture:explicit-demo-value:request_digest",
+        "enforcement_decision_and_reason": {
+          "decision": "fixture-recorded-only",
+          "reason": "offline example; grants no authority",
+          "reference": "sha256:4bb77a627fccfc6a4dc64b27c5fa0b5bd9e29b219a09524d171269aa62d4c1ef"
+        },
+        "runtime_identity_or_attestation_reference": {
+          "state": "absent",
+          "value": "not-available",
+          "reason": "fixture observer established this deployment has no attestation surface"
+        },
+        "outcome": {
+          "state": "pending",
+          "reason": "no outcome entry by the end of the fixture reporting window"
+        },
+        "integrity_protected_sequence": {
+          "reference": "fixture:checkpoint-001",
+          "scope": "fixture:action-001",
+          "note": "stipulated, not cryptographically established"
+        },
+        "accounting_decision": "fixture:explicit-demo-value:accounting_decision"
+      },
+      "observation": {
+        "action_identifier": "fixture:action-001",
+        "availability": "unavailable"
+      },
+      "expected": {
+        "result": "record_read",
+        "runtime_observation": "absent"
+      }
+    },
+    {
+      "id": "missing-visibility",
+      "record": {
+        "principal_and_delegation_chain": "fixture:explicit-demo-value:principal_and_delegation_chain",
+        "actor_id": "fixture:explicit-demo-value:actor_id",
+        "subject_id": "fixture:explicit-demo-value:subject_id",
+        "policy_version": "fixture:explicit-demo-value:policy_version",
+        "assurance_boundary_statement": "fixture:explicit-demo-value:assurance_boundary_statement",
+        "tool_catalog_version": "fixture:explicit-demo-value:tool_catalog_version",
+        "action_identifier": "fixture:action-001",
+        "request_digest": "fixture:explicit-demo-value:request_digest",
+        "enforcement_decision_and_reason": {
+          "decision": "fixture-recorded-only",
+          "reason": "offline example; grants no authority",
+          "reference": "sha256:4bb77a627fccfc6a4dc64b27c5fa0b5bd9e29b219a09524d171269aa62d4c1ef"
+        },
+        "runtime_identity_or_attestation_reference": {
+          "state": "not_established",
+          "value": "fixture:unknown",
+          "reason": "fixture observation surface was unavailable"
+        },
+        "outcome": {
+          "state": "pending",
+          "reason": "no outcome entry by the end of the fixture reporting window"
+        },
+        "integrity_protected_sequence": {
+          "reference": "fixture:checkpoint-001",
+          "scope": "fixture:action-001",
+          "note": "stipulated, not cryptographically established"
+        },
+        "accounting_decision": "fixture:explicit-demo-value:accounting_decision"
+      },
+      "observation": {
+        "action_identifier": "fixture:action-001",
+        "availability": "not_established"
+      },
+      "expected": {
+        "result": "record_read",
+        "runtime_observation": "not_established"
+      }
+    },
+    {
+      "id": "asserted-absence-without-visibility",
+      "record": {
+        "principal_and_delegation_chain": "fixture:explicit-demo-value:principal_and_delegation_chain",
+        "actor_id": "fixture:explicit-demo-value:actor_id",
+        "subject_id": "fixture:explicit-demo-value:subject_id",
+        "policy_version": "fixture:explicit-demo-value:policy_version",
+        "assurance_boundary_statement": "fixture:explicit-demo-value:assurance_boundary_statement",
+        "tool_catalog_version": "fixture:explicit-demo-value:tool_catalog_version",
+        "action_identifier": "fixture:action-001",
+        "request_digest": "fixture:explicit-demo-value:request_digest",
+        "enforcement_decision_and_reason": {
+          "decision": "fixture-recorded-only",
+          "reason": "offline example; grants no authority",
+          "reference": "sha256:4bb77a627fccfc6a4dc64b27c5fa0b5bd9e29b219a09524d171269aa62d4c1ef"
+        },
+        "runtime_identity_or_attestation_reference": {
+          "state": "absent",
+          "value": "not-available",
+          "reason": "fixture observer established this deployment has no attestation surface"
+        },
+        "outcome": {
+          "state": "pending",
+          "reason": "no outcome entry by the end of the fixture reporting window"
+        },
+        "integrity_protected_sequence": {
+          "reference": "fixture:checkpoint-001",
+          "scope": "fixture:action-001",
+          "note": "stipulated, not cryptographically established"
+        },
+        "accounting_decision": "fixture:explicit-demo-value:accounting_decision"
+      },
+      "observation": {
+        "action_identifier": "fixture:action-001",
+        "availability": "not_established"
+      },
+      "expected": {
+        "result": "refused",
+        "reason": "unsupported_runtime_observation"
+      }
+    },
+    {
+      "id": "complete-but-replayable",
+      "record": {
+        "principal_and_delegation_chain": "fixture:explicit-demo-value:principal_and_delegation_chain",
+        "actor_id": "fixture:explicit-demo-value:actor_id",
+        "subject_id": "fixture:explicit-demo-value:subject_id",
+        "policy_version": "fixture:explicit-demo-value:policy_version",
+        "assurance_boundary_statement": "fixture:explicit-demo-value:assurance_boundary_statement",
+        "tool_catalog_version": "fixture:explicit-demo-value:tool_catalog_version",
+        "action_identifier": "fixture:action-001",
+        "request_digest": "fixture:explicit-demo-value:request_digest",
+        "enforcement_decision_and_reason": {
+          "decision": "fixture-recorded-only",
+          "reason": "offline example; grants no authority",
+          "reference": "fixture-local-grant-001"
+        },
+        "runtime_identity_or_attestation_reference": {
+          "state": "absent",
+          "value": "not-available",
+          "reason": "fixture observer established this deployment has no attestation surface"
+        },
+        "outcome": {
+          "state": "pending",
+          "reason": "no outcome entry by the end of the fixture reporting window"
+        },
+        "integrity_protected_sequence": {
+          "reference": "fixture:checkpoint-001",
+          "scope": "fixture:action-001",
+          "note": "stipulated, not cryptographically established"
+        },
+        "accounting_decision": "fixture:explicit-demo-value:accounting_decision"
+      },
+      "observation": {
+        "action_identifier": "fixture:action-001",
+        "availability": "unavailable"
+      },
+      "expected": {
+        "result": "refused",
+        "reason": "replayable_fixture_authority"
+      }
+    }
+  ]
+}
