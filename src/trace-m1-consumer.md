@@ -19,7 +19,7 @@ cd interop/trace-m1
 bash scripts/qualify.sh
 ```
 
-The fetcher checks the frozen source and each input's digest. Third-party fixtures stay local under their upstream license. The public report omits producer expected mappings and declared context bodies.
+The fetcher checks each input's digest against a manifest that names the producer commit. Third-party fixtures stay local under their upstream license. The public report omits producer expected mappings and declared context bodies.
 
 This checks a bounded synthetic population. A verified signature does not establish workload identity, authority, effects or the truth of the native result. An unsigned external-evidence mapping does not become a TRACE Trust Record or conformance level. The supported ASCII JSON profile is narrower than general JCS.
 
