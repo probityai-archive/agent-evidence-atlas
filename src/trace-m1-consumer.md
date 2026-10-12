@@ -8,9 +8,9 @@ A signed result can identify a report without proving that the reported action h
 
 Probity wrote and operated the reader separately from REMORA. It imports no REMORA runtime or reference verifier. Its author had read the producer protocol and expected cases; this is a comparison against known answers.
 
-The retained run agrees with all 12 expected decisions: three results bind to their selected reports and nine inputs are refused. A bound `CONTRADICTED` result keeps its native outcome and reason. The reader preserves report identity, commitment, sequence and explicit selection. Its refusal codes remain separate from REMORA's codes.
+The [retained run](interop/trace-m1/retained/public-report.json) agrees with all 12 expected decisions: three results bind to their selected reports and nine inputs are refused. For a bound `CONTRADICTED` result, the reader keeps its native outcome and reason along with report identity, commitment, sequence and explicit selection. Its refusal codes remain separate from REMORA's codes.
 
-[Inspect the retained result](interop/trace-m1/retained/public-report.json) or [read the qualification record](interop/trace-m1/retained/QUALIFICATION.json). The qualification passed 118 controls and the coverage gate for every production module. The controls include changed report selection, Boolean sequences, unsupported fields, invalid signing points and unsupported claim upgrades.
+The [qualification record](interop/trace-m1/retained/QUALIFICATION.json) reports 118 passed controls and the coverage gate for every production module. Those controls include changed report selection, Boolean sequences, unsupported fields, invalid signing points and unsupported claim upgrades.
 
 To run the [original reader and controls](https://github.com/probityai/agent-evidence-atlas/tree/main/interop/trace-m1), use a fresh checkout:
 
