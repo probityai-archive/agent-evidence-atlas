@@ -1,26 +1,27 @@
 ---
 title: "Check a signed result and its selected report"
-subtitle: "Independent consumer of REMORA's public M1 fixtures."
-description: "Replay a signed native result, keep its selected report and preserve the producer's claim limits."
+subtitle: "Probity reader for REMORA's public signed-result fixtures."
+description: "Check a producer's signed result against its selected report."
 ---
 
-A signed result can identify a report without proving that the reported action happened. This reader checks that distinction against [REMORA's published mapping fixtures](https://github.com/darklordVirtual/REMORA-research/pull/822).
+[Probity](https://github.com/probityai) wrote this Python program to check [REMORA's public synthetic fixtures](https://github.com/darklordVirtual/REMORA-research/commit/a4a948cae7044a474fdb55099daea866130c466f). Each case supplies a signed result, a report about an execution attempt and optional declared execution details. The program checks the signature and verifies that the result selects the supplied report by identity and digest.
 
-Probity wrote and operated the reader separately from REMORA. It imports no REMORA runtime or reference verifier. Its author had read the producer protocol and expected cases; this is a comparison against known answers.
+Probity wrote and ran its own implementation without importing REMORA's runtime or reference verifier. The author had already read REMORA's protocol and expected cases, so this comparison uses known answers.
 
-The [retained run](interop/trace-m1/retained/public-report.json) agrees with all 12 expected decisions: three results bind to their selected reports and nine inputs are refused. For a bound `CONTRADICTED` result, the reader keeps its native outcome and reason along with report identity, commitment, sequence and explicit selection. Its refusal codes remain separate from REMORA's codes.
+The [retained result](interop/trace-m1/retained/public-report.json) agrees with all 12 expected decisions: three cases bind to their selected reports and nine are refused. When a result binds, the reader keeps the producer's outcome and reason, including `CONTRADICTED`, along with report identity, its digest commitment, the execution-attempt sequence and explicit selection. Probity's refusal codes describe its own checks and are not translations of REMORA's codes.
 
-The [qualification record](interop/trace-m1/retained/QUALIFICATION.json) reports 118 passed controls and the coverage gate for every production module. Those controls include changed report selection, Boolean sequences, unsupported fields, invalid signing points and unsupported claim upgrades.
+The [qualification record](interop/trace-m1/retained/QUALIFICATION.json) reports 118 passed tests and a passed coverage gate for every production module. The tests change the selected report, use a Boolean as an integer sequence, add unsupported fields, supply invalid elliptic-curve signing points and attempt claims beyond the declared evidence.
 
-To run the [original reader and controls](https://github.com/probityai/agent-evidence-atlas/tree/main/interop/trace-m1), use a fresh checkout:
+With [uv installed](https://docs.astral.sh/uv/getting-started/installation/), run the [reader and tests](https://github.com/probityai/agent-evidence-atlas/tree/main/interop/trace-m1) from a fresh checkout:
 
 ```sh
-cd interop/trace-m1
+git clone https://github.com/probityai/agent-evidence-atlas.git
+cd agent-evidence-atlas/interop/trace-m1
 bash scripts/qualify.sh
 ```
 
-The fetcher checks each input's digest against a manifest that names the producer commit. Third-party fixtures stay local under their upstream license. The public report omits producer expected mappings and declared context bodies.
+The command downloads fixtures using [a manifest of the producer commit and file digests](interop/trace-m1/INPUT-MANIFEST.json), runs the tests and prints case and agreement counts. Existing result paths are refused before logs are written. Third-party fixtures stay local under their upstream license. The public report includes observed decisions; the locally generated full report also retains producer expectations and execution details.
 
-This checks a bounded synthetic population. A verified signature does not establish workload identity, authority, effects or the truth of the native result. An unsigned external-evidence mapping does not become a TRACE Trust Record or conformance level. The supported ASCII JSON profile is narrower than general JCS.
+Signature verification checks byte integrity. It does not establish workload identity, authority, effects or the truth of the producer's result. The [supported ASCII JSON profile](https://github.com/probityai/agent-evidence-atlas/blob/main/interop/trace-m1/src/json_profile.py) covers a subset of the [JSON Canonicalization Scheme](https://www.rfc-editor.org/rfc/rfc8785.html), and an unsigned mapping of external evidence remains outside [TRACE Trust Record](https://github.com/agentrust-io/trace-spec/blob/4c7d6eccc468c87f2d00e02118b29164a4a5479b/schema/trace-claim.json) and conformance claims.
 
-[Find other retained runs](runs.html) or [bring an evidence question to the Lab](lab.html).
+[Find other retained runs](runs.html) or [bring an evidence question to the Open Evidence Lab](lab.html).

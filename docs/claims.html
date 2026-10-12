@@ -2459,10 +2459,10 @@
 <tr data-read="2026-10-11">
 <td>P-99</td>
 <td>The final consumer preparation passed 118 controls and per-file coverage for all seven production modules. Controls include invalid signing points, Boolean sequences, extra fields, changed report selection and unsupported claim upgrades. The public report omits upstream expected mappings and declared context bodies, while retaining the full local report digest.</td>
-<td><code>interop/trace-m1/retained/QUALIFICATION.json</code>; adjacent original qualification streams and coverage.json; <code>src/</code> and <code>tests/</code> in the same unit</td>
+<td><code>interop/trace-m1/retained/QUALIFICATION.json</code>; adjacent original qualification streams and coverage.json; <code>src/</code>, <code>tests/</code> and <code>scripts/qualify.sh</code> in the same unit</td>
 <td>2026-10-11 21:36 UTC <span class="cadence">(does not expire)</span></td>
 <td>Run the locked qualification command; inspect every native gate exit, full control output, per-file coverage and public/full report digest join; compare each source hash with the retained preparation</td>
-<td>Controls test the original consumer against supplied and constructed records. A malformed pinned-key counterexample motivated the point checks; it is not an exploit of the fixed upstream fixtures or a deployment claim. The ASCII JSON profile is narrower than general JCS. Third-party inputs are fetched with pinned digests and are not redistributed in this source unit.</td>
+<td>Controls test the original consumer against supplied and constructed records. A malformed pinned-key counterexample motivated the point checks; it is not an exploit of the fixed upstream fixtures or a deployment claim. The linked JSON profile restricts strings to ASCII, integers to its safe range, array sizes and canonical base64; the request/mapping readers restrict retention to P1Y. Signature verification uses Ed25519 and the supported string serializer is narrower than general JCS. Third-party inputs are fetched with pinned digests and are not redistributed in this source unit. The qualification shell reserves its output directory and refuses prior result paths before writing logs; the separate hermetic custody check is not a fixture qualification.</td>
 </tr>
 </tbody>
 </table>

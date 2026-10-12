@@ -2,7 +2,16 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 export PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
-mkdir -p results/qualification
+if [[ -L results || -e results/replay-r1 || -L results/replay-r1 || \
+    -e results/native-artifacts.tar.gz || -L results/native-artifacts.tar.gz ]]; then
+    printf '%s\n' 'Existing result paths must be preserved. Use a fresh checkout.' >&2
+    exit 2
+fi
+mkdir -p results
+if ! mkdir results/qualification; then
+    printf '%s\n' 'The qualification directory already exists or cannot be reserved.' >&2
+    exit 2
+fi
 
 run_gate() {
     local trace_gate="$1"
