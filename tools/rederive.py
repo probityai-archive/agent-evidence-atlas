@@ -70,18 +70,28 @@ def latest_tag(repo: str) -> str:
     return tags[0]["name"] if tags else "no tags"
 
 
-def vector_total(tag: str) -> str:
-    """Sum the members of every corpus manifest in agent-evidence-vectors at a tag."""
-    corpora = [
-        "vectors", "vectors-aci", "vectors-acs-core", "vectors-ai-agent-action",
-        "vectors-ai-generation", "vectors-anchor-stream", "vectors-artifact-binding",
-        "vectors-mcp-record-contract", "vectors-mcp-response-phase", "vectors-observed-effect",
-        "vectors-receipt-signature", "vectors-scitt-cose", "vectors-w3c-report",
-    ]
+def vector_total() -> str:
+    """Count the members of every atlas corpus pinned at the counted vectors release.
+
+    Reads data/atlas.toml for the corpora whose `pin` is `meta.corpus_release`, then
+    each one's manifest at its pinned commit; a case-role corpus has no manifest and
+    is counted by the case directories it holds. tools/corpus_census.py recounts the
+    splits as well, from local clones.
+    """
+    import tomllib
+    data = tomllib.loads((ROOT / "data" / "atlas.toml").read_text(encoding="utf-8"))
+    release = data["meta"]["corpus_release"]
+    corpora = [c for c in data["corpus"] if c["pin"] == release]
     total = 0
     for c in corpora:
-        url = f"https://raw.githubusercontent.com/probityai/agent-evidence-vectors/{tag}/{c}/MANIFEST.json"
-        m = get_json(url)
+        repo = c.get("repo", "probityai/agent-evidence-vectors")
+        path = c.get("path", c["dir"])
+        if c["count"] == "case-role":
+            listing = get_json(f"https://api.github.com/repos/{repo}/contents/{path}/cases?ref={c['commit']}")
+            total += sum(1 for item in listing if item["type"] == "dir")
+            continue
+        manifest = c.get("manifest", f"{path}/MANIFEST.json")
+        m = get_json(f"https://raw.githubusercontent.com/{repo}/{c['commit']}/{manifest}")
         total += len(m.get("vectors", m.get("members", [])))
     return f"{total} in {len(corpora)}"
 
@@ -115,8 +125,8 @@ def atlas_star_rows() -> list:
 
 ROWS = atlas_star_rows() + [
     ("A-38a", "v0.3.0", lambda: latest_tag("probityai/agent-evidence-vocabulary")),
-    ("A-38b", "0.16.0", lambda: pypi_version("agent-evidence-vectors")),
-    ("A-38c", "817 in 13", lambda: vector_total("v0.13.0")),
+    ("A-38b", "0.18.1", lambda: pypi_version("agent-evidence-vectors")),
+    ("A-38c", "1197 in 24", vector_total),
     ("A-38d", "no tags", lambda: latest_tag("probityai/agent-evidence-admission")),
     ("A-38e", "0.1.1", lambda: crate_version("jcs-admit")),
     ("A-38f", "0.1.1", lambda: crate_version("dsse")),

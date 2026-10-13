@@ -45,6 +45,12 @@ def entry_status(e: dict) -> str:
     return "; ".join(parts)
 
 
+def corpus_link(c: dict) -> str:
+    """The corpus directory at its pinned commit, so the row names the exact bytes counted."""
+    repo = c.get("repo", "probityai/agent-evidence-vectors")
+    return f"[`{c['dir']}`](https://github.com/{repo}/tree/{c['commit']}/{c.get('path', c['dir'])})"
+
+
 def render(d: dict) -> str:
     layers, entries, mechs = d["layer"], d["entry"], d["mechanism"]
     names = {l["id"]: f"{i}. {l['name']}" for i, l in enumerate(layers, 1)}
@@ -78,9 +84,12 @@ def render(d: dict) -> str:
          for a in d["artifact"]])
 
     corpora = d["corpus"]
+    release = d["meta"]["corpus_release"]
+    in_release = [c for c in corpora if c["pin"] == release]
     corpus_table = table(
-        ["corpus", "members", "split", "what it tests"],
-        [[f"`{c['dir']}`", str(c["members"]), c["split"], c["tests"]] for c in corpora])
+        ["corpus", "pinned at", "members", "split", "what it tests"],
+        [[corpus_link(c), f"{c['pin']} (`{c['commit'][:7]}`)", str(c["members"]), c["split"], c["tests"]]
+         for c in corpora])
 
     contribution_table = table(
         ["where", "what", "state, read 2026-09-27"],
@@ -97,8 +106,12 @@ def render(d: dict) -> str:
         "n_layers": str(len(layers)),
         "n_entries": str(len(entries)),
         "n_mechanisms": str(len(mechs)),
-        "n_vectors": f"{sum(c['members'] for c in corpora):,}",
-        "n_corpora": str(len(corpora)),
+        "corpus_release": release,
+        "corpus_commit": d["meta"]["corpus_commit"][:7],
+        "corpus_read": d["meta"]["corpus_read"],
+        "n_vectors": f"{sum(c['members'] for c in in_release):,}",
+        "n_corpora": str(len(in_release)),
+        "n_other_corpora": str(len(corpora) - len(in_release)),
         "layer_table": layer_table,
         "mechanism_table": mechanism_table,
         "layer_sections": "\n\n".join(sections),

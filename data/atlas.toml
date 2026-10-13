@@ -13,10 +13,15 @@
 # that has a `repo`.
 
 [meta]
-version = "0.4-preview"
+version = "0.5-preview"
 read_window = "2026-09-27 00:40 to 01:00 UTC"
 # Set by tools/refresh_stars.py when it rewrites every `stars` value below.
 stars_read = "2026-10-01 07:04:40 UTC"
+# The agent-evidence-vectors release the corpus table counts, and its tag commit.
+corpus_release = "v0.18.1"
+corpus_commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+# When tools/corpus_census.py last counted every corpus below at its pinned commit.
+corpus_read = "2026-10-13 22:15 UTC"
 
 # ---------------------------------------------------------------- layers
 [[layer]]
@@ -519,10 +524,10 @@ does_not = "It defines words. It neither verifies nor observes anything"
 name = "agent-evidence-vectors"
 url = "https://github.com/probityai/agent-evidence-vectors"
 layers = "5 into 6"
-release = "v0.16.0"
-read = "2026-10-01 07:04:40 UTC"
+release = "v0.18.1"
+read = "2026-10-13 22:15 UTC"
 label = "published"
-does = "A conformance corpus, reference verifier, GitHub Action and PyPI package. The historical v0.13.0 baseline below contains 817 vectors in 13 corpora; that count is not a v0.16.0 census"
+does = "A conformance corpus, reference verifier, GitHub Action and PyPI package. The corpus table below counts release v0.18.1"
 does_not = "It does not observe execution. A clean run shows a verifier printed the right answers, not that it computed them"
 [[artifact]]
 name = "agent-evidence-admission"
@@ -552,72 +557,224 @@ label = "published"
 does = "A standalone Rust implementation of the DSSE envelope that refuses six permissive behaviors"
 does_not = "\"Implements the envelope and nothing else\"; key management is out of scope"
 
-# ---------------------------------------------------------------- corpora (agent-evidence-vectors v0.13.0)
+# ---------------------------------------------------------------- corpora
+# One node per conformance corpus. `repo` defaults to probityai/agent-evidence-vectors;
+# `commit` pins the bytes, `pin` says what that commit is, `path` is the corpus
+# directory (default `dir`) and `count` names the manifest field the members and the
+# split are counted from. tools/corpus_census.py re-counts every entry from its clone.
 [[corpus]]
 dir = "vectors"
-members = 275
-split = "61 accept, 212 reject, 2 indeterminate"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
+members = 285
+split = "63 accept, 220 reject, 2 indeterminate"
 tests = "The Adversarial Execution Evidence predicate, version 0.7 (the reference verifier's own corpus)"
 [[corpus]]
 dir = "vectors-w3c-report"
-members = 232
-split = "116 accept, 116 reject"
-tests = "Version 0.1 of the per-check report format of the W3C agent-conformance community group"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
+members = 269
+split = "173 accept, 96 reject"
+tests = "Version 0.1 of the per-check report format of the W3C agent-conformance community group, every row of its rejection table and every rule outside it; the same manifest also carries members for the Run object of draft-arsentev-agent-run-metrics-00 and the discovery snapshot of draft-arsentev-llm-context-discovery-00, two individual Internet-Drafts"
 [[corpus]]
 dir = "vectors-ai-agent-action"
-members = 61
-split = "41 accept, 20 reject"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
+members = 75
+split = "42 accept, 33 reject"
 tests = "An AI Agent Action predicate proposed for the in-toto attestation framework by another author"
 [[corpus]]
+dir = "vectors-agent-audit-record"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
+members = 68
+split = "17 accept, 49 reject, 2 indeterminate"
+tests = "The audit record of my individual Internet-Draft draft-gilda-wimse-agent-audit-record-02: a policy decision beside the effect observed after it. Beyond the Appendix B rows, 13 members test sentences of Sections 5.4 (unavailable inputs of a not-evaluated decision) and 5.5 (oversight acts) that no Appendix B row reaches"
+[[corpus]]
 dir = "vectors-observed-effect"
-members = 52
-split = "9 accept, 42 reject, 1 indeterminate"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
+members = 59
+split = "12 accept, 46 reject, 1 indeterminate"
 tests = "The Observed Effect predicate (a draft): a change observed from a vantage the observed party does not control"
 [[corpus]]
+dir = "vectors-a2a-jcs-v01"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "counts"
+members = 57
+split = "47 accept, 10 reject"
+tests = "A byte-for-byte copy of the A2A project's own Agent Card canonicalization vectors (a2a-tck), pinned by digest: RFC 8785 canonicalization and the signatures exclusion of the A2A specification, section 8.4.1. The vectors are the A2A project's; this repository only runs them"
+[[corpus]]
 dir = "vectors-acs-core"
-members = 34
-split = "11 accept, 22 reject, 1 indeterminate"
-tests = "The mandatory profile of a published agent control standard"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
+members = 48
+split = "17 accept, 29 reject, 2 indeterminate"
+tests = "The mandatory profile of the OWASP Agent Control Standard, a published standard. Five members test section 4.1: when no Guardian answers the handshake, the unguarded start must be recorded in the deployment's own audit log; each of three rejecting members differs from an accepting one in one field"
+[[corpus]]
+dir = "vectors-agent-decision"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
+members = 41
+split = "16 accept, 25 reject"
+tests = "The tool-call argument hash of an agent-decision predicate proposed to the in-toto attestation framework by another author: SHA-256 over the RFC 8785 bytes of the arguments, number spellings at the exponent boundaries, and an argument state that keeps a redacted call distinct from an unrecorded one"
 [[corpus]]
 dir = "vectors-ai-generation"
-members = 34
-split = "9 accept, 12 reject, 13 proposed"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
+members = 38
+split = "18 accept, 20 reject"
 tests = "A third-party in-toto predicate recording how an artifact was produced by an AI pipeline"
 [[corpus]]
+dir = "vectors-agent-change-admission"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "decision"
+members = 35
+split = "6 supported, 10 contradicted, 17 not established, 2 no verdict"
+tests = "Signed decisions on whether a change to an agent's harness (prompt, procedure, tool-call guard or tool allowlist) was admitted, under the agent-change-admission predicate of my vocabulary: the signature, the pinned key and every gate and report digest the decision names"
+[[corpus]]
 dir = "vectors-anchor-stream"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
 members = 32
 split = "12 accept, 20 reject"
 tests = "A third-party append-only anchor stream and its digest sidecar"
 [[corpus]]
 dir = "vectors-scitt-cose"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
 members = 27
 split = "6 accept, 17 reject, 4 indeterminate"
 tests = "Carriage of an evidence statement as an IETF SCITT transparent statement (RFC 9943, RFC 9942)"
 [[corpus]]
 dir = "vectors-aci"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
 members = 26
 split = "1 accept, 21 reject, 4 indeterminate"
 tests = "A third-party draft specification, one check per normative sentence"
 [[corpus]]
+dir = "vectors-receipt-signature"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
+members = 25
+split = "12 accept, 8 reject, 3 indeterminate, 2 gap"
+tests = "Verifiers of signed decision receipts in the shape of an individual IETF draft; the two gap members are questions the draft does not answer, such as a key revoked before the receipt was issued"
+[[corpus]]
+dir = "vectors-mcp-owasp"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
+members = 24
+split = "12 accept, 12 reject"
+tests = "Twelve draft MCP verification requirements, proposed in two OWASP project issues and not adopted, each mapped to the OWASP Top 10 for MCP: one accepting and one rejecting acceptance-test observation per requirement, one field apart"
+[[corpus]]
 dir = "vectors-mcp-record-contract"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
 members = 15
 split = "7 accept, 8 reject"
 tests = "The run record behind a claim that two MCP implementations agree"
 [[corpus]]
-dir = "vectors-receipt-signature"
+dir = "vectors-anchored-chain"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "decision"
+members = 14
+split = "3 verified, 11 rejected"
+tests = "Completeness of a stored chain of signed agent memory records against an anchor signed by a key the store does not hold, under the storage edits of an individual Internet-Draft (draft-khandelwal-bmwg-agent-memory-integrity-01): deletion, reordering, replay and rollback that leave every record signature valid are caught only by the chain links and the anchor"
+[[corpus]]
+dir = "vectors-grade-floor"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "decision"
 members = 13
-split = "6 accept, 4 reject, 3 indeterminate"
-tests = "Verifiers of signed decision receipts in the shape of an individual IETF draft"
+split = "5 accepted, 8 rejected"
+tests = "The E0 to E4 evidence ladder proposed in an issue of the AAIF observability working group, with the grade derived by the consumer from what the record shows; a grade or integrity flag the producer declares never raises it"
+[[corpus]]
+dir = "vectors-self-reported-record"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
+members = 11
+split = "5 accept, 6 reject"
+tests = "A contract for an agent runtime's record of its own turns, memory reads and ledgers, which keeps the producer's own assertions apart from what a key outside the runtime signed"
 [[corpus]]
 dir = "vectors-artifact-binding"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "counts"
 members = 8
 split = "2 verified, 4 failed, 2 not established"
 tests = "Binding an evaluation result to the artifacts and grading inputs it names"
 [[corpus]]
 dir = "vectors-mcp-response-phase"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "kind"
 members = 8
 split = "5 accept, 3 reject"
 tests = "Whether an MCP gateway runs its response-phase policy on an operation's completion"
+[[corpus]]
+dir = "aae-verdict-binding-v1"
+path = "interop/aae-verdict-binding-v1"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "case-role"
+members = 7
+split = "3 cases, 4 controls"
+tests = "Binding a policy decision to its effect: AAE verdict records of an individual Internet-Draft (draft-kroehl-agentic-trust-aae-02), recomputed from the draft text, each bound by digest to an Observed Effect record. Authorization, binding, execution and completeness are reported separately; execution is at most claimed by the bound record and completeness is never established. The run also reproduces all 26 enforce vectors of the draft author's v1.4.0 set"
+[[corpus]]
+dir = "vectors-dependency-selection"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "counts"
+members = 6
+split = "1 verified, 3 failed, 2 not established"
+tests = "A signed record of one AI-assisted dependency change (lockfiles before and after, the instructions in force, provenance and vulnerability-scan output, the approval), judged under the artifact-binding contract with a profile the consumer holds"
+[[corpus]]
+dir = "vectors-source-coverage"
+commit = "33d545104ff2f8c124cff465c96c013eeb809156"
+pin = "v0.18.1"
+count = "decision"
+members = 6
+split = "1 supported, 2 contradicted, 3 not established"
+tests = "Whether a report covers the passages selected from a captured source, with both artifacts bound by digest: a truncated report under a valid hash and a missing middle passage are contradicted, and a capture from the wrong window or one never supplied is not established"
+[[corpus]]
+dir = "nist-ai-300-1"
+path = "interop/nist-ai-300-1"
+commit = "2212fe0fb413003b1b329e4c4b034c45746f571d"
+pin = "main after v0.18.1"
+count = "conformance"
+members = 235
+split = "164 valid, 71 invalid"
+tests = "A JSON form of the two documentation templates and two default profiles of NIST AI 300-1, an initial public draft, with a JSON Schema per table and a test document for every rule and every branch of every condition; members are verdicts under the required-field schemas"
+[[corpus]]
+dir = "refund-handoff-conformance-2026-10-12"
+repo = "probityai/agent-evidence-observer"
+path = "interop/refund-handoff-conformance-2026-10-12"
+manifest = "interop/refund-handoff-conformance-2026-10-12/fixtures/vector-manifest.json"
+commit = "38e75b16a967fb01048ef93ed4e12290c8f3a540"
+pin = "agent-evidence-observer, merge of PR 102"
+count = "observer-outcome"
+members = 80
+split = "11 established, 36 contradicted, 11 not established, 22 refused"
+tests = "A refund-handoff conformance profile: one offline verifier's reading of verified refund evidence through admission, restart recovery, authenticated handoff, execution, effect and reconciliation, with replay, expiry, signer roles and revocation, cutoff isolation and response loss. Refused members are evidence the verifier must refuse outright"
 
 # ---------------------------------------------------------------- contributions
 [[contribution]]
