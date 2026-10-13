@@ -49,6 +49,7 @@ SITE_NAME = "Probity AI"
 NAV = [
     ("start", "Choose a project"),
     ("lab", "Open Evidence Lab"),
+    ("status", "Claim status"),
     ("runs", "Find a run"),
     ("pilot", "Pilot status"),
     ("atlas", "Atlas"),
@@ -738,6 +739,12 @@ def build(out: Path) -> None:
             raise SystemExit(1)
     if (SRC / "atlas.md").exists():
         gen = subprocess.run([sys.executable, str(ROOT / "tools" / "gen_atlas.py"), "--check"],
+                             capture_output=True, text=True, check=False)
+        if gen.returncode != 0:
+            sys.stderr.write(gen.stdout + gen.stderr)
+            raise SystemExit(1)
+    if (SRC / "status.md").exists():
+        gen = subprocess.run([sys.executable, str(ROOT / "tools" / "gen_status.py"), "--check"],
                              capture_output=True, text=True, check=False)
         if gen.returncode != 0:
             sys.stderr.write(gen.stdout + gen.stderr)

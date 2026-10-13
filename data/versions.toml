@@ -75,6 +75,15 @@ status = "draft"
 note = "Links the retained-run browser; existing retained records, artifacts and protocol remain unchanged"
 
 [[artifact]]
+name = "Claim status"
+page = "status.html"
+source = "src/status.md"
+version = "0.1"
+date = "2026-10-13"
+status = "draft"
+note = "Generated from the Lab register and the open-cell data: verdict and operation-class totals, every record, and the open cells"
+
+[[artifact]]
 name = "Task-grouped rates worked example"
 page = "task-grouped-rates.html"
 source = "examples/task-grouped-rates/input.json"

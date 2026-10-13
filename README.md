@@ -26,6 +26,7 @@ The checker validates artifact hashes and measured fields before emitting the re
 | [Choose a project](https://probityai.github.io/agent-evidence-atlas/start.html) | A tool for your task and its pinned quickstart |
 | [Assurance atlas](https://probityai.github.io/agent-evidence-atlas/atlas.html) | Mechanisms, projects and evidence boundaries |
 | [Open Evidence Lab](https://probityai.github.io/agent-evidence-atlas/lab.html) | Retained runs, submissions and corrections |
+| [Claim status](https://probityai.github.io/agent-evidence-atlas/status.html) | What stands, on what evidence, and the open cells |
 | [Automation](https://probityai.github.io/agent-evidence-atlas/automation.html) | Catalog lookups and run records |
 | [Claim ledger](CLAIMS.md) | Sources and re-derive commands |
 | <a name="what-is-here"></a><a name="release-rule"></a><a name="re-derive-and-build"></a>[Repository guide](https://probityai.github.io/agent-evidence-atlas/repository.html) | Files, checks and release rules |

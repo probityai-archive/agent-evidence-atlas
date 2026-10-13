@@ -267,3 +267,7 @@ P-78 = "none"
 # Fixed independent synthetic-consumer source and original native result.
 "P-98" = "none"
 "P-99" = "none"
+
+# Claim status page: the site's own register and open-cell data.
+"P-101" = "none"
+"P-102" = "none"

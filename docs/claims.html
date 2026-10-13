@@ -19,6 +19,7 @@
     <span class="links">
       <a href="start.html">Choose a project</a>
       <a href="lab.html">Open Evidence Lab</a>
+      <a href="status.html">Claim status</a>
       <a href="runs.html">Find a run</a>
       <a href="pilot.html">Pilot status</a>
       <a href="atlas.html">Atlas</a>
@@ -2503,6 +2504,47 @@
 <td>2026-10-13 21:00 UTC <span class="cadence">(does not expire)</span></td>
 <td>Clone the verifier at 2cc79c9 and run <code>python3 verify.py vectors.json</code>; apply the deny and later-timestamp mutants from the finding and rerun</td>
 <td>Probity reran a producer-authored verifier on producer-authored vectors; not an independent reader, not observed dispatch, and no ordering claim between decision and attempt.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="claim-status">Claim status</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="id / claim as printed / source / read (UTC) / re-derive / limit">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>id</th>
+<th>claim as printed</th>
+<th>source</th>
+<th>read (UTC)</th>
+<th>re-derive</th>
+<th>limit</th>
+</tr>
+</thead>
+<tbody>
+<tr data-read="2026-10-13">
+<td>P-101</td>
+<td>The claim status page counts 28 records and 473 claim results: 231 ESTABLISHED, 146 CONTRADICTED and 96 NOT_ESTABLISHED (91 not exercised, 5 out of scope). By operation class, 26 records and 458 results are Probity-operated, 2 records and 15 results author-operated, and none independently operated</td>
+<td><a href="lab/register.json">Lab register</a>, read by <code>tools/gen_status.py</code> with the verdict and operation-class rules printed on the <a href="status.html">claim status page</a></td>
+<td>2026-10-13 22:17 UTC <span class="cadence">(does not expire)</span></td>
+<td><code>python3 tools/gen_status.py --check</code>; count <code>claimResults[].result</code> per record and apply the page’s operation-class rule to each record’s <code>roles</code></td>
+<td>Counts of retained per-claim results at each record’s own evidence class; not adoption, not independent operation, and not a grade of any project</td>
+</tr>
+<tr data-read="2026-10-13">
+<td>P-102</td>
+<td>29 open cells, two of them listed to start first; each keeps the export’s words and source URL, and an excerpt found on that source page</td>
+<td><code>data/open-cells.toml</code>, written by <code>tools/export_open_cells.py --verify</code>, which fetched 21 source pages and found all 29 excerpts; 12 further cells of the 41-cell export were left out because their source pages did not show the limit</td>
+<td>2026-10-13 22:17 UTC <span class="cadence">(does not expire)</span></td>
+<td>Run <code>python3 tools/export_open_cells.py CELLS.json PROPERTIES.json MECHANISMS.json --verify</code> on the atlas cell export; compare with <code>data/open-cells.toml</code></td>
+<td>The limits are the Atlas’s wording; “states the scope” cells rest on the source’s statement of function, not on its own disclaimer. An open cell says nothing about who will close it</td>
 </tr>
 </tbody>
 </table>
