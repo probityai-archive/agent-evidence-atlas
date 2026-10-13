@@ -91,8 +91,21 @@ def alternative(url: str) -> str | None:
 
 # Hosts that refuse every automated read (bot walls). These links were checked by a
 # saved capture of the page or of its wire copy; the capture and its date are in the
-# claim ledger. They are reported as MANUAL, never as ok.
-MANUAL_HOSTS = {"www.reuters.com", "openai.com", "www.apnews.com"}
+# claim ledger. They are reported as MANUAL, never as ok. Every entry must still be
+# linked from the site and named by a ledger row: tests/test_link_manual_hosts.py
+# refuses an entry that fails either, so the list cannot hide a link nobody recorded.
+#
+# www.reddit.com answers 200 to the same request from a residential address and 403 to
+# every GitHub-hosted runner, so the refusal is by network, not by page; ledger rows
+# N-08, N-10 and N-11 record the browser read and its date. leginfo.legislature.ca.gov
+# serves a Cloudflare challenge (403, cf-mitigated: challenge) to every plain client
+# since October 2026; row A-33 records the capture of the bill status page. openai.com
+# is row N-12.
+MANUAL_HOSTS = {
+    "openai.com",
+    "www.reddit.com",
+    "leginfo.legislature.ca.gov",
+}
 
 
 def fetch(url: str) -> tuple[str, str]:
