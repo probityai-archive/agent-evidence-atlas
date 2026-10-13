@@ -68,3 +68,27 @@ on CPython 3.13.15; all nine checks passed with these outcomes:
 | MISSING-OBSERVATION | `LATER_STATE_UNKNOWN` |
 
 Another reader can run the same nine vectors and add its outcomes beside these.
+
+### Rerun after the cold mutation run
+
+`babyblueviper1` reran the nine vectors cold with an independent RFC 8785 serializer and found, by mutation,
+that the verifier at `f900615` accepted a covering decision whose `outcome` is `deny` as authorization of the
+rewritten call. `giskard09` fixed it at
+[`407f593`](https://github.com/giskard09/execution-join-ref-remora-bridge/commit/407f593b29d81322fc1c4e9c5796ff38913c2b19),
+added a defensive profile check at
+[`810bcef`](https://github.com/giskard09/execution-join-ref-remora-bridge/commit/810bcef398917b5dc9f4ab1a2790d1c468c66ea8)
+and recorded the ordering limit at
+[`2cc79c9`](https://github.com/giskard09/execution-join-ref-remora-bridge/tree/2cc79c9).
+We reran `python3 verify.py vectors.json` at `2cc79c9` on CPython 3.13.15; all eleven checks passed. The two new
+vectors:
+
+| Vector | Outcome |
+| --- | --- |
+| COVERING-DENY | `EFFECTIVE_CALL_REBINDING_FAILED` (a covering decision that denies authorizes nothing) |
+| COVERING-UNSUPPORTED-PROFILE | `UNSUPPORTED_CANONICAL_PROFILE` |
+
+The other nine outcomes are unchanged from the table above. Replaying the deny mutant against `2cc79c9`
+now refuses APPROVED-REWRITE. Moving the covering decision's `ts_ms` a day later still returns
+`AUTHORIZED_EFFECTIVE_CALL`: the attempt timestamps in this corpus are declared conventions, so whether the
+covering decision preceded the attempt stays indeterminate. A case that retains a separately bound dispatch
+observation is the open contribution for that ordering question.
