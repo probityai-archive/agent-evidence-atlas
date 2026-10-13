@@ -24,10 +24,10 @@ note = "Recut of the first draft: opens on one agent action; five footnote error
 name = "Atlas"
 page = "atlas.html"
 source = "data/atlas.toml"
-version = "0.4-preview"
-date = "2026-10-01"
+version = "0.5-preview"
+date = "2026-10-13"
 status = "draft"
-note = "Refreshes 25 star counts and current package releases from native CI; historical corpus and experiment pins are retained"
+note = "Shows every corpus of agent-evidence-vectors v0.18.1, each linked at its pinned commit and recounted from its own manifest, plus the NIST AI 300-1 test set and the observer refund-handoff profile at their merge commits"
 
 [[artifact]]
 name = "Verifier demonstration"

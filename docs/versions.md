@@ -10,11 +10,11 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 |----|----|----|----|----|----|
 | [Home page](index.md) | 1.10 | 2026-10-06 | draft | `c5cd251cedd55e2f` `src/index.md` | Links the retained-run browser for human and agent navigation; preserves all retained record results |
 | Essay | 0.2 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
-| [Atlas](atlas.md) | 0.4-preview | 2026-10-01 | draft | `17d3994c4a51f4a7` `data/atlas.toml` | Refreshes 25 star counts and current package releases from native CI; historical corpus and experiment pins are retained |
+| [Atlas](atlas.md) | 0.5-preview | 2026-10-13 | draft | `580cdbddc1af9d90` `data/atlas.toml` | Shows every corpus of agent-evidence-vectors v0.18.1, each linked at its pinned commit and recounted from its own manifest, plus the NIST AI 300-1 test set and the observer refund-handoff profile at their merge commits |
 | Verifier demonstration | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
 | [Experiments](experiments.md) | 0.3 | 2026-10-01 | draft | `692c4fabcf4b2a52` `src/experiments.md` | Adds original observer CI admission bytes, immutable source pins, executable replay and refusal controls; independent operation remains unestablished |
 | Series plan | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
-| [Claim ledger](claims.md) | 0.8.21 | 2026-10-06 | draft | `2ae3980da01360a1` `CLAIMS.md` | Adds the retained-run presentation contract and its checks; preserves original dated results and research scopes |
+| [Claim ledger](claims.md) | 0.8.21 | 2026-10-06 | draft | `5526929bbd064dd4` `CLAIMS.md` | Adds the retained-run presentation contract and its checks; preserves original dated results and research scopes |
 | [Probity Open Evidence Lab](lab.md) | 0.1.11 | 2026-10-06 | draft | `c1fc9700bcf8794a` `src/lab.md` | Links the retained-run browser; existing retained records, artifacts and protocol remain unchanged |
 | [Task-grouped rates worked example](task-grouped-rates.md) | 0.1 | 2026-10-03 | draft | `92940ce8ee827ad0` `examples/task-grouped-rates/input.json` | Authored labels, paired task resampling, explicit weighting targets and unresolved outcomes |
 | [Published robot controls companion](provael-task-controls.md) | 0.1 | 2026-10-03 | draft | `20b90c1ae59c399d` `examples/provael-task-controls/source-record.json` | Original publisher simulator labels, matched controls, corrected interpretation and exact paired task weights |
