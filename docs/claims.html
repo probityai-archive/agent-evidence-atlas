@@ -2464,6 +2464,14 @@
 <td>Run the locked qualification command; inspect every native gate exit, full control output, per-file coverage and public/full report digest join; compare each source hash with the retained preparation</td>
 <td>Controls test the original consumer against supplied and constructed records. A malformed pinned-key counterexample motivated the point checks; it is not an exploit of the fixed upstream fixtures or a deployment claim. The linked JSON profile restricts strings to ASCII, integers to its safe range, array sizes and canonical base64; the request/mapping readers restrict retention to P1Y. Signature verification uses Ed25519 and the supported string serializer is narrower than general JCS. Third-party inputs are fetched with pinned digests and are not redistributed in this source unit. The qualification shell reserves its output directory and refuses prior result paths before writing logs; the separate hermetic custody check is not a fixture qualification.</td>
 </tr>
+<tr data-read="2026-10-13">
+<td>P-100</td>
+<td>giskard09’s execution-join verifier at 2cc79c9 passes all eleven vectors; the deny mutant babyblueviper1 found at f900615 is refused, and a covering decision moved a day later is still accepted because attempt timestamps are declared conventions</td>
+<td><code>examples/request-effect-join/CASE-TABLE.md</code>; <a href="https://github.com/giskard09/execution-join-ref-remora-bridge/tree/2cc79c9">verifier at 2cc79c9</a>; <a href="https://github.com/probityai/agent-evidence-atlas/issues/53#issuecomment-6098208337">mutation finding</a></td>
+<td>2026-10-13 21:00 UTC <span class="cadence">(does not expire)</span></td>
+<td>Clone the verifier at 2cc79c9 and run <code>python3 verify.py vectors.json</code>; apply the deny and later-timestamp mutants from the finding and rerun</td>
+<td>Probity reran a producer-authored verifier on producer-authored vectors; not an independent reader, not observed dispatch, and no ordering claim between decision and attempt.</td>
+</tr>
 </tbody>
 </table>
 </div>
