@@ -679,6 +679,27 @@ def plain(cell: str) -> str:
     return re.sub(r"<[^>]+>", "", cell).strip()
 
 
+CURRENT_RELEASE = re.compile(r"\b(current|latest)\s+releases?\b", re.IGNORECASE)
+LEDGER_ROW = re.compile(r"^\| ([A-Z]-[0-9A-Za-z]+) \| ([^|]*)\|", re.MULTILINE)
+MAX_RELEASE_CADENCE = 7
+
+
+def release_cadence_violations(claims: str, cadence: dict[str, object]) -> list[str]:
+    """Rows whose claim names a current or latest release but whose cadence lets it outlive one.
+
+    A current release is a state: the row is wrong the day a newer release ships, so it
+    needs the weekly cadence of other states, never a monthly one or "none"."""
+    bad = []
+    for cid, claim in LEDGER_ROW.findall(claims):
+        if not CURRENT_RELEASE.search(claim):
+            continue
+        c = cadence.get(cid)
+        if not isinstance(c, int) or c > MAX_RELEASE_CADENCE:
+            bad.append(f"{cid} names a current or latest release but has cadence {c!r}; "
+                       f"it needs {MAX_RELEASE_CADENCE} days or less")
+    return bad
+
+
 def stamp_cadence(html: str) -> str:
     """Stamp every claim row that has a read time with its read date and cadence.
 
@@ -756,6 +777,11 @@ def build(out: Path) -> None:
     out.mkdir(parents=True)
     for page in pages:
         render(page, out / f"{page.stem}.html", built)
+    cadence = tomllib.loads((ROOT / "data" / "claim_cadence.toml").read_text(encoding="utf-8"))["cadence"]
+    violations = release_cadence_violations((ROOT / "CLAIMS.md").read_text(encoding="utf-8"), cadence)
+    if violations:
+        sys.stderr.write("claim rows that can outlive the release they name:\n  " + "\n  ".join(violations) + "\n")
+        raise SystemExit(1)
     render(ROOT / "CLAIMS.md", out / "claims.html", built)
     claims = out / "claims.html"
     claims.write_text(stamp_cadence(claims.read_text(encoding="utf-8")), encoding="utf-8")

@@ -13,15 +13,19 @@
 # that has a `repo`.
 
 [meta]
-version = "0.5-preview"
+version = "0.6-preview"
 read_window = "2026-09-27 00:40 to 01:00 UTC"
 # Set by tools/refresh_stars.py when it rewrites every `stars` value below.
-stars_read = "2026-10-01 07:04:40 UTC"
+stars_read = "2026-10-14 23:00 UTC"
 # The agent-evidence-vectors release the corpus table counts, and its tag commit.
 corpus_release = "v0.18.1"
 corpus_commit = "33d545104ff2f8c124cff465c96c013eeb809156"
 # When tools/corpus_census.py last counted every corpus below at its pinned commit.
 corpus_read = "2026-10-13 22:15 UTC"
+# When the state of each contribution below was last read from its pull request or Datatracker page,
+# and when the public listings were last read.
+contributions_read = "2026-10-14 22:55 UTC"
+listings_read = "2026-09-27"
 
 # ---------------------------------------------------------------- layers
 [[layer]]
@@ -125,21 +129,21 @@ layer = "L1"
 name = "MCP authorization"
 url = "https://modelcontextprotocol.io/specification/latest/basic/authorization"
 repo = "modelcontextprotocol/modelcontextprotocol"
-stars = 9355
+stars = 9454
 status = "Specification version 2026-07-28, which states that authorization is optional for MCP implementations. MCP is an Agentic AI Foundation project"
 [[entry]]
 layer = "L1"
 name = "Keycloak"
 url = "https://github.com/keycloak/keycloak"
 repo = "keycloak/keycloak"
-stars = 37078
+stars = 37349
 status = "Open-source identity and access management"
 [[entry]]
 layer = "L1"
 name = "Ory Hydra"
 url = "https://github.com/ory/hydra"
 repo = "ory/hydra"
-stars = 17581
+stars = 17611
 status = "OpenID Connect and OAuth 2.1 provider"
 
 # layer 2
@@ -148,84 +152,84 @@ layer = "L2"
 name = "Open Policy Agent"
 url = "https://github.com/open-policy-agent/opa"
 repo = "open-policy-agent/opa"
-stars = 12297
+stars = 12366
 status = "CNCF Graduated (2021); Gatekeeper is its Kubernetes admission controller"
 [[entry]]
 layer = "L2"
 name = "Kyverno"
 url = "https://github.com/kyverno/kyverno"
 repo = "kyverno/kyverno"
-stars = 8206
+stars = 8251
 status = "CNCF Graduated (2026-03-16)"
 [[entry]]
 layer = "L2"
 name = "agentgateway"
 url = "https://github.com/agentgateway/agentgateway"
 repo = "agentgateway/agentgateway"
-stars = 5111
+stars = 5346
 status = "Agentic proxy for AI agents and MCP servers; a Linux Foundation project, per its README"
 [[entry]]
 layer = "L3"
 name = "Firecracker"
 url = "https://firecracker-microvm.github.io/"
 repo = "firecracker-microvm/firecracker"
-stars = 37082
+stars = 37381
 status = "Secure and fast microVMs for serverless computing"
 [[entry]]
 layer = "L3"
 name = "Wasmer"
 url = "https://github.com/wasmerio/wasmer"
 repo = "wasmerio/wasmer"
-stars = 21110
+stars = 21155
 status = "WebAssembly runtime; describes itself as sandboxes for apps and AI agents"
 [[entry]]
 layer = "L3"
 name = "gVisor"
 url = "https://gvisor.dev/"
 repo = "google/gvisor"
-stars = 19471
+stars = 19678
 status = "Application kernel for containers"
 [[entry]]
 layer = "L3"
 name = "Wasmtime"
 url = "https://github.com/bytecodealliance/wasmtime"
 repo = "bytecodealliance/wasmtime"
-stars = 18674
+stars = 18725
 status = "A Bytecode Alliance project"
 [[entry]]
 layer = "L3"
 name = "E2B"
 url = "https://github.com/e2b-dev/E2B"
 repo = "e2b-dev/E2B"
-stars = 14066
+stars = 14354
 status = "Secure environments with real-world tools for agents"
 [[entry]]
 layer = "L3"
 name = "Bubblewrap"
 url = "https://github.com/containers/bubblewrap"
 repo = "containers/bubblewrap"
-stars = 8884
+stars = 9052
 status = "Unprivileged OS-level sandbox"
 [[entry]]
 layer = "L3"
 name = "Kata Containers"
 url = "https://katacontainers.io/"
 repo = "kata-containers/kata-containers"
-stars = 8848
+stars = 8941
 status = "An OpenInfra Foundation project"
 [[entry]]
 layer = "L3"
 name = "microsandbox"
 url = "https://github.com/microsandbox/microsandbox"
 repo = "microsandbox/microsandbox"
-stars = 8491
+stars = 8682
 status = "Branchable microVMs for any workload"
 [[entry]]
 layer = "L3"
 name = "Anthropic sandbox-runtime"
 url = "https://github.com/anthropic-experimental/sandbox-runtime"
 repo = "anthropic-experimental/sandbox-runtime"
-stars = 5406
+stars = 5543
 status = "Filesystem and network restrictions on arbitrary processes at the OS level, without a container"
 [[entry]]
 layer = "L4"
@@ -237,35 +241,35 @@ layer = "L4"
 name = "Langfuse"
 url = "https://github.com/langfuse/langfuse"
 repo = "langfuse/langfuse"
-stars = 35253
+stars = 35829
 status = "Agent evaluation and observability platform"
 [[entry]]
 layer = "L4"
 name = "MLflow tracing"
 url = "https://github.com/mlflow/mlflow"
 repo = "mlflow/mlflow"
-stars = 28205
+stars = 28385
 status = "Tracing is one part of MLflow"
 [[entry]]
 layer = "L4"
 name = "Arize Phoenix"
 url = "https://github.com/Arize-ai/phoenix"
 repo = "Arize-ai/phoenix"
-stars = 11668
+stars = 11839
 status = "AI observability and evaluation"
 [[entry]]
 layer = "L4"
 name = "OpenTelemetry Collector"
 url = "https://github.com/open-telemetry/opentelemetry-collector"
 repo = "open-telemetry/opentelemetry-collector"
-stars = 7623
+stars = 7658
 status = "Receives, processes and exports telemetry"
 [[entry]]
 layer = "L4"
 name = "OpenLLMetry"
 url = "https://github.com/traceloop/openllmetry"
 repo = "traceloop/openllmetry"
-stars = 7463
+stars = 7496
 status = "OpenTelemetry instrumentation for LLM applications"
 
 # layer 5
@@ -279,7 +283,7 @@ layer = "L5"
 name = "Sigstore cosign"
 url = "https://www.sigstore.dev/"
 repo = "sigstore/cosign"
-stars = 6340
+stars = 6368
 status = "Code signing and transparency for containers and binaries; an OpenSSF project"
 [[entry]]
 layer = "L5"
@@ -308,28 +312,28 @@ layer = "L6"
 name = "promptfoo"
 url = "https://github.com/promptfoo/promptfoo"
 repo = "promptfoo/promptfoo"
-stars = 25605
+stars = 26000
 status = "Tests and red-teams prompts, agents and retrieval pipelines"
 [[entry]]
 layer = "L6"
 name = "EleutherAI lm-evaluation-harness"
 url = "https://github.com/EleutherAI/lm-evaluation-harness"
 repo = "EleutherAI/lm-evaluation-harness"
-stars = 14105
+stars = 14221
 status = "Few-shot evaluation framework for language models"
 [[entry]]
 layer = "L6"
 name = "NVIDIA garak"
 url = "https://github.com/NVIDIA/garak"
 repo = "NVIDIA/garak"
-stars = 9395
+stars = 9576
 status = "LLM vulnerability scanner"
 [[entry]]
 layer = "L6"
 name = "Inspect"
 url = "https://inspect.aisi.org.uk/"
 repo = "UKGovernmentBEIS/inspect_ai"
-stars = 2904
+stars = 3005
 status = "Developed by the UK AI Security Institute (a government body) with Meridian Labs"
 [[entry]]
 layer = "L6"
@@ -515,8 +519,10 @@ cannot = "Actions outside the declared coverage, or the observer's own honesty"
 name = "agent-evidence-vocabulary"
 url = "https://github.com/probityai/agent-evidence-vocabulary"
 layers = "5, feeding 7"
-release = "v0.3.0"
-read = "2026-10-01 07:04:40 UTC"
+release = "v0.4.0"
+version = "v0.4.0"
+version_from = "tag:probityai/agent-evidence-vocabulary"
+read = "2026-10-14 22:51 UTC"
 label = "draft"
 does = "A closed, versioned vocabulary for what an evidence claim means: observer vantage, directness, witness scope (self, peer, external), coverage denominator, and what the record does not assert"
 does_not = "It defines words. It neither verifies nor observes anything"
@@ -525,6 +531,8 @@ name = "agent-evidence-vectors"
 url = "https://github.com/probityai/agent-evidence-vectors"
 layers = "5 into 6"
 release = "v0.18.1"
+version = "0.18.1"
+version_from = "pypi:agent-evidence-vectors"
 read = "2026-10-13 22:15 UTC"
 label = "published"
 does = "A conformance corpus, reference verifier, GitHub Action and PyPI package. The corpus table below counts release v0.18.1"
@@ -533,17 +541,21 @@ does_not = "It does not observe execution. A clean run shows a verifier printed 
 name = "agent-evidence-admission"
 url = "https://github.com/probityai/agent-evidence-admission"
 layers = "2, consuming 5"
-release = "no release yet"
-read = "2026-10-01 07:04:40 UTC"
+release = "py-v0.1.0, the Python package 0.1.0 on PyPI"
+version = "py-v0.1.0"
+version_from = "tag:probityai/agent-evidence-admission"
+read = "2026-10-14 22:51 UTC"
 label = "draft"
 does = "Admission rules in four policy engines (OPA, two Kyverno dialects, and Sigstore's policy-controller) that admit or refuse a workload on its execution evidence"
-does_not = "\"These rails evaluate an already-verified statement. They do not verify one.\""
+does_not = "\"The rails evaluate a statement whose envelope signature your engine's key authority has already verified; they don't verify signatures themselves.\""
 [[artifact]]
 name = "jcs-admit"
 url = "https://crates.io/crates/jcs-admit"
 layers = "5, bytes"
 release = "0.1.1 on crates.io"
-read = "2026-10-01 07:04:40 UTC"
+version = "0.1.1"
+version_from = "crate:jcs-admit"
+read = "2026-10-14 22:51 UTC"
 label = "published"
 does = "Refuses JSON with more than one reading (duplicate members, excess nesting, invalid strings) before RFC 8785 canonicalization"
 does_not = "It hands number formatting to another crate"
@@ -551,11 +563,13 @@ does_not = "It hands number formatting to another crate"
 name = "dsse"
 url = "https://crates.io/crates/dsse"
 layers = "5, envelope"
-release = "0.1.1 on crates.io"
-read = "2026-10-01 07:04:40 UTC"
+release = "0.1.2 on crates.io"
+version = "0.1.2"
+version_from = "crate:dsse"
+read = "2026-10-14 22:51 UTC"
 label = "published"
 does = "A standalone Rust implementation of the DSSE envelope that refuses six permissive behaviors"
-does_not = "\"Implements the envelope and nothing else\"; key management is out of scope"
+does_not = "The envelope alone, with \"no in-toto dependency and no Sigstore dependency\"; the caller supplies the keys"
 
 # ---------------------------------------------------------------- corpora
 # One node per conformance corpus. `repo` defaults to probityai/agent-evidence-vectors;
@@ -777,12 +791,6 @@ split = "11 established, 36 contradicted, 11 not established, 22 refused"
 tests = "A refund-handoff conformance profile: one offline verifier's reading of verified refund evidence through admission, restart recovery, authenticated handoff, execution, effect and reconciliation, with replay, expiry, signer roles and revocation, cutoff isolation and response loss. Refused members are evidence the verifier must refuse outright"
 
 # ---------------------------------------------------------------- contributions
-[[contribution]]
-where = "OWASP/CheatSheetSeries#2332"
-url = "https://github.com/OWASP/CheatSheetSeries/pull/2332"
-what = "A cheat sheet on verifying third-party agent execution evidence"
-label = "open"
-state = "open, unmerged; changes requested"
 [[contribution]]
 where = "a2aproject/A2A#2246"
 url = "https://github.com/a2aproject/A2A/pull/2246"

@@ -123,15 +123,41 @@ def atlas_star_rows() -> list:
     return rows
 
 
-ROWS = atlas_star_rows() + [
-    ("A-38a", "v0.3.0", lambda: latest_tag("probityai/agent-evidence-vocabulary")),
-    ("A-38b", "0.18.1", lambda: pypi_version("agent-evidence-vectors")),
+VERSION_READERS = {"tag": latest_tag, "pypi": pypi_version, "crate": crate_version}
+PULL = re.compile(r"^https://github\.com/([^/]+/[^/]+)/pull/([0-9]+)$")
+
+
+def artifact_release_rows() -> list:
+    """One row per artifact release, with the recorded value taken from data/atlas.toml.
+
+    The page shows each artifact's `release`, which must contain its `version`
+    (tools/gen_atlas.py refuses otherwise), so the page and this check read one value.
+    """
+    import tomllib
+    data = tomllib.loads((ROOT / "data" / "atlas.toml").read_text(encoding="utf-8"))
+    rows = []
+    for a in data["artifact"]:
+        kind, _, target = a["version_from"].partition(":")
+        reader = VERSION_READERS[kind]
+        rows.append((f"A-38 {a['name']}", a["version"], lambda r=reader, x=target: r(x)))
+    return rows
+
+
+def contribution_state_rows() -> list:
+    """One row per contribution that is a GitHub pull request, recorded as its label."""
+    import tomllib
+    data = tomllib.loads((ROOT / "data" / "atlas.toml").read_text(encoding="utf-8"))
+    rows = []
+    for c in data["contribution"]:
+        m = PULL.match(c["url"])
+        if m:
+            rows.append((f"A-39 {c['where']}", c["label"],
+                         lambda r=m.group(1), n=int(m.group(2)): pr_state(r, n)))
+    return rows
+
+
+ROWS = atlas_star_rows() + artifact_release_rows() + contribution_state_rows() + [
     ("A-38c", "1197 in 24", vector_total),
-    ("A-38d", "no tags", lambda: latest_tag("probityai/agent-evidence-admission")),
-    ("A-38e", "0.1.1", lambda: crate_version("jcs-admit")),
-    ("A-38f", "0.1.1", lambda: crate_version("dsse")),
-    ("A-39d", "open", lambda: pr_state("OWASP/CheatSheetSeries", 2332)),
-    ("A-39f", "open", lambda: pr_state("a2aproject/A2A", 2246)),
     ("I-01", "v6 2026-08-14", lambda: zenodo_version(21935891)),
     ("D-02", "cc938c6038536dcb0d63269dd96cd64bed2d8d575fe212b72593c7f2ca92399b",
      lambda: file_sha256("demo/verifier/inputs/vcc938c6038536dcb.json")),

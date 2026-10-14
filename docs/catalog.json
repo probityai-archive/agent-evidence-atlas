@@ -133,7 +133,7 @@
         "repo-observer"
       ],
       "status": "prototype",
-      "summary": "Reads selected retained Inspect execution profiles offline, preserving errors and unstarted attempts. Inspect accepted the catalog entry; its live listing was awaiting publication on October 5, 2026.",
+      "summary": "Reads selected retained Inspect execution profiles offline, preserving errors and unstarted attempts. Inspect accepted the catalog entry, and the live Inspect extensions catalog lists it as of October 14, 2026.",
       "task": "Read selected retained Inspect execution profiles"
     },
     {

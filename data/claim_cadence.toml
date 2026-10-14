@@ -5,10 +5,14 @@
 # cadence. A row with a read time and no entry here fails the build, so a new row cannot
 # go unclassified.
 #
-# The rule, as the ledger states it: star counts, pull-request and issue states and link
-# checks change weekly (7 days); standards and project statuses, descriptions and labels
-# monthly (30 days); published versions, dated events, content pinned to a tag and the
-# site's own data do not expire ("none").
+# The rule, as the ledger states it: star counts, pull-request and issue states, a
+# project's current release and link checks change weekly (7 days); standards and project
+# statuses, descriptions and labels monthly (30 days); a version pinned by number, dated
+# events, content pinned to a tag and the site's own data do not expire ("none").
+#
+# "Current release" and "latest release" are states, not pinned versions: a newer release
+# makes the row wrong the day it ships. tools/build.py refuses a row whose claim names a
+# current or latest release unless its cadence is 7 days or less.
 
 [cadence]
 # 7 days
@@ -20,6 +24,7 @@
 "A-stars" = 7
 "A-39" = 7
 "A-40" = 7
+"A-38" = 7
 "P-05" = 7
 "L-01" = 7
 "L-02" = 7
@@ -42,12 +47,10 @@
 "A-34" = 30
 "A-36" = 30
 "A-37" = 30
-"A-38" = 30
 "A-38q" = 30
 "A-41" = 30
 "A-44" = 30
 "A-45" = 30
-"I-04" = 30
 "L-03" = 30
 "D-04" = 30
 # never expire
@@ -59,7 +62,6 @@
 "A-33" = "none"
 "A-35" = "none"
 "A-42" = "none"
-"A-43" = "none"
 "A-46" = "none"
 "I-01" = "none"
 "I-02" = "none"

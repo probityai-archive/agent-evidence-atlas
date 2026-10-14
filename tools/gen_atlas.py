@@ -51,7 +51,26 @@ def corpus_link(c: dict) -> str:
     return f"[`{c['dir']}`](https://github.com/{repo}/tree/{c['commit']}/{c.get('path', c['dir'])})"
 
 
+VERSION_SOURCES = ("tag:", "pypi:", "crate:")
+
+
+def check_artifact_versions(artifacts: list[dict]) -> None:
+    """Refuse an artifact whose shown release does not carry the version tools/rederive.py reads.
+
+    `version` is the exact value the re-derive reader returns for `version_from`, so the
+    page, the weekly re-derive and the claim ledger read one value instead of three copies.
+    """
+    for a in artifacts:
+        if "version" not in a or "version_from" not in a:
+            raise SystemExit(f"artifact {a['name']} has no version or version_from")
+        if not a["version_from"].startswith(VERSION_SOURCES):
+            raise SystemExit(f"artifact {a['name']}: version_from must start with one of {VERSION_SOURCES}")
+        if a["version"] not in a["release"]:
+            raise SystemExit(f"artifact {a['name']}: release {a['release']!r} does not show version {a['version']!r}")
+
+
 def render(d: dict) -> str:
+    check_artifact_versions(d["artifact"])
     layers, entries, mechs = d["layer"], d["entry"], d["mechanism"]
     names = {l["id"]: f"{i}. {l['name']}" for i, l in enumerate(layers, 1)}
 
@@ -92,11 +111,11 @@ def render(d: dict) -> str:
          for c in corpora])
 
     contribution_table = table(
-        ["where", "what", "state, read 2026-09-27"],
+        ["where", "what", f"state, read {d['meta']['contributions_read']}"],
         [[f"[{c['where']}]({c['url']})", c["what"], f"{label(c['label'])} {c['state']}"] for c in d["contribution"]])
 
     listing_table = table(
-        ["listing", "what", "state, read 2026-09-27"],
+        ["listing", "what", f"state, read {d['meta']['listings_read']}"],
         [[f"[{x['where']}]({x['url']})", x["what"], label(x["label"])] for x in d["listing"]])
 
     values = {
