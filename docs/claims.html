@@ -38,7 +38,7 @@
 <h2 id="how-to-use-this-ledger">How to use this ledger</h2>
 <ul>
 <li><strong>Re-derive the automatable rows</strong> with <code>python3 tools/rederive.py</code> from the repository root. It needs no credentials, prints the recorded and the current value for each row, and prints <code>UNREAD</code> with a reason when a source cannot be read; an unread row is never reported as unchanged. <code>--strict</code> exits 1 on any change.</li>
-<li><strong>Read times</strong> are UTC, and each read cell states its row’s cadence: star counts, pull-request states and link checks 7 days, standards and project statuses 30 days, while published versions and dated events do not expire. <code>data/claim_cadence.toml</code> holds the cadence of every row. When a row’s read date plus its cadence has passed, this page marks the row stale as it loads. <span id="stale-count">With scripts off, compare each read date with its cadence.</span></li>
+<li><strong>Read times</strong> are UTC, and each read cell states its row’s cadence: star counts, pull-request states, a project’s current release and link checks 7 days, standards and project statuses 30 days, while a version pinned by number and dated events do not expire. <code>data/claim_cadence.toml</code> holds the cadence of every row. When a row’s read date plus its cadence has passed, this page marks the row stale as it loads. <span id="stale-count">With scripts off, compare each read date with its cadence.</span></li>
 <li><strong>Captures.</strong> Every web page cited was saved when it was read. The capture log records URL, HTTP status, UTC time and SHA-256 for each one.</li>
 </ul>
 <p>Each row’s identifier starts with the letter of the page it covers: <code>A</code> for the atlas, <code>I</code> for the home page, <code>E</code> for the experiments, <code>P</code> for the lab protocol, <code>C</code> for the project catalog, <code>N</code> for the agent incident record, and <code>L</code> for the site’s links. Rows that cite a local unpublished source say so; they are not independently reproducible until those exact source bytes are published.</p>
@@ -98,33 +98,33 @@
 </tr>
 <tr data-read="2026-09-27" data-cadence-days="7">
 <td>A-06</td>
-<td>Open Policy Agent: CNCF Graduated (2021); 12,297 stars</td>
+<td>Open Policy Agent: CNCF Graduated (2021); 12,366 stars</td>
 <td>cncf.io; GitHub API</td>
-<td>Status 2026-09-27 00:47; stars 2026-10-01 07:04:40 <span class="cadence">(7-day cadence)</span></td>
+<td>Status 2026-09-27 00:47; stars 2026-10-14 23:00 <span class="cadence">(7-day cadence)</span></td>
 <td><code>rederive.py</code> A-stars</td>
 <td>Maturity level and attention, not adoption or quality</td>
 </tr>
 <tr data-read="2026-09-27" data-cadence-days="7">
 <td>A-07</td>
-<td>Kyverno: CNCF Graduated (2026-03-16); 8,206 stars</td>
+<td>Kyverno: CNCF Graduated (2026-03-16); 8,251 stars</td>
 <td>cncf.io; GitHub API</td>
-<td>Status 2026-09-27 00:47; stars 2026-10-01 07:04:40 <span class="cadence">(7-day cadence)</span></td>
+<td>Status 2026-09-27 00:47; stars 2026-10-14 23:00 <span class="cadence">(7-day cadence)</span></td>
 <td><code>rederive.py</code> A-stars</td>
 <td>Maturity level and attention, not adoption or quality</td>
 </tr>
 <tr data-read="2026-09-27" data-cadence-days="7">
 <td>A-09</td>
-<td>agentgateway: a Linux Foundation project, per its README; 5,111 stars</td>
+<td>agentgateway: a Linux Foundation project, per its README; 5,346 stars</td>
 <td>the project’s README; GitHub API</td>
-<td>Status 2026-09-27 00:56; stars 2026-10-01 07:04:40 <span class="cadence">(7-day cadence)</span></td>
+<td>Status 2026-09-27 00:56; stars 2026-10-14 23:00 <span class="cadence">(7-day cadence)</span></td>
 <td><code>rederive.py</code> A-stars</td>
 <td>Foundation status is the project’s own statement; the CNCF project URL returned 404</td>
 </tr>
-<tr data-read="2026-10-01" data-cadence-days="7">
+<tr data-read="2026-10-14" data-cadence-days="7">
 <td>A-stars</td>
 <td>Every GitHub star count on the atlas (25 entries that name a repository)</td>
 <td>GitHub API <code>repos/&lt;owner&gt;/&lt;repo&gt;</code>; <a href="readouts/rederive-2026-10-01.txt">native CI readout</a></td>
-<td>2026-10-01 07:04:40, recorded as <code>stars_read</code> in <code>data/atlas.toml</code> <span class="cadence">(7-day cadence)</span></td>
+<td>2026-10-14 23:00, recorded as <code>stars_read</code> in <code>data/atlas.toml</code> <span class="cadence">(7-day cadence)</span></td>
 <td><code>python3 tools/rederive.py</code> reads every entry with a <code>repo</code> in <code>data/atlas.toml</code>; <code>python3 tools/refresh_stars.py</code> rewrites them all with one read time</td>
 <td>Stars measure attention, not quality or use</td>
 </tr>
@@ -296,21 +296,21 @@
 <td>open each link on the atlas</td>
 <td>Existence and placement, not use by others</td>
 </tr>
-<tr data-read="2026-10-01" data-cadence-days="30">
+<tr data-read="2026-10-13" data-cadence-days="7">
 <td>A-38</td>
-<td>Current releases: vocabulary v0.3.0; vectors v0.18.1; admission no tags; jcs-admit and dsse 0.1.1. Release v0.18.1 of agent-evidence-vectors (commit <code>33d5451</code>): 1,197 members in 24 corpora</td>
-<td>GitHub tags; PyPI; crates.io; <a href="readouts/rederive-2026-10-01.txt">native CI readout</a> for the 2026-10-01 reads; the 24 corpora at tag <code>v0.18.1</code> (commit <code>33d545104ff2f8c124cff465c96c013eeb809156</code>)</td>
-<td>Vocabulary, admission and crate releases 2026-10-01 07:04:40; vectors release (PyPI 0.18.1, uploaded 2026-10-13 05:48:35) and member total 2026-10-13 22:15 <span class="cadence">(30-day cadence)</span></td>
-<td><code>rederive.py</code> A-38a to A-38f; A-38c reads every manifest named in <code>data/atlas.toml</code> at its pinned commit</td>
-<td>A member total is a count of inputs with declared expectations, not a score of any implementation; corpora count different things (vectors, cases, test documents)</td>
+<td>Current releases: vocabulary v0.4.0; vectors v0.18.1; admission py-v0.1.0, the Python package 0.1.0 on PyPI; jcs-admit 0.1.1; dsse 0.1.2. Release v0.18.1 of agent-evidence-vectors (commit <code>33d5451</code>): 1,197 members in 24 corpora</td>
+<td>GitHub tags; PyPI; crates.io; each artifact’s <code>version</code> and <code>version_from</code> in <code>data/atlas.toml</code>; the 24 corpora at tag <code>v0.18.1</code> (commit <code>33d545104ff2f8c124cff465c96c013eeb809156</code>)</td>
+<td>Releases 2026-10-14 22:51; vectors member total 2026-10-13 22:15 <span class="cadence">(7-day cadence)</span></td>
+<td><code>python3 tools/rederive.py</code> reads one A-38 row per artifact from its <code>version_from</code> and compares it with <code>version</code>; A-38c reads every manifest named in <code>data/atlas.toml</code> at its pinned commit</td>
+<td>A current release changes whenever a project publishes, so the row expires weekly; a member total is a count of inputs with declared expectations, not a score of any implementation</td>
 </tr>
-<tr data-read="2026-09-27" data-cadence-days="30">
+<tr data-read="2026-10-14" data-cadence-days="30">
 <td>A-38q</td>
-<td>Quotations “These rails evaluate an already-verified statement. They do not verify one.” and “Implements the envelope and nothing else”</td>
-<td>the agent-evidence-admission and dsse READMEs, main branch (commits 1ded5b8 and 83e0477)</td>
-<td>2026-09-27 00:44 <span class="cadence">(30-day cadence)</span></td>
-<td>read each README</td>
-<td>Quoted from each README at the read time; a README can change</td>
+<td>Quotations “The rails evaluate a statement whose envelope signature your engine’s key authority has already verified; they don’t verify signatures themselves.” and “no in-toto dependency and no Sigstore dependency”</td>
+<td>the <a href="https://github.com/probityai/agent-evidence-admission/blob/f00f04b888a5694de03304f0481addb2a75b98a8/README.md">agent-evidence-admission README</a> at <code>f00f04b</code> and the <a href="https://github.com/probityai/dsse/blob/8549e5e54080b5f8c864f8b3eba8f57af8bd9c51/README.md">dsse README</a> at <code>8549e5e</code>, each the main branch head when read</td>
+<td>2026-10-14 22:53 <span class="cadence">(30-day cadence)</span></td>
+<td>read each README at its pinned commit, then at the main branch head</td>
+<td>Quoted from each README at the read time; a README can change, so the row expires monthly</td>
 </tr>
 <tr data-read="2026-10-13">
 <td>A-60</td>
@@ -344,12 +344,12 @@
 <td><code>git -C &lt;vectors clone&gt; show v0.18.1:&lt;manifest&gt;</code> and count the named field; <code>git -C &lt;vectors clone&gt; ls-tree --name-only v0.18.1 interop/aae-verdict-binding-v1/fixtures/aae-v1.4.0/</code></td>
 <td>Counts of members, not results; the AAE vectors are the draft author’s, reproduced and not written here</td>
 </tr>
-<tr data-read="2026-09-27" data-cadence-days="7">
+<tr data-read="2026-10-14" data-cadence-days="7">
 <td>A-39</td>
-<td>Three contributions and their states: two pull requests open and unmerged, and one individual Internet-Draft, as listed on the atlas</td>
-<td>GitHub API for each pull request; IETF Datatracker for the draft</td>
-<td>2026-09-27 00:41 to 00:42 <span class="cadence">(7-day cadence)</span></td>
-<td><code>rederive.py</code> A-39d and A-39f; Datatracker page for the draft</td>
+<td>Two contributions and their states: one pull request open and unmerged with review required, and one individual Internet-Draft, as listed on the atlas</td>
+<td>GitHub API for the pull request; IETF Datatracker for the draft (group <code>none</code>, Individual Submissions; state active)</td>
+<td>2026-10-14 22:55 <span class="cadence">(7-day cadence)</span></td>
+<td><code>rederive.py</code> reads one A-39 row per contribution that is a GitHub pull request; Datatracker page for the draft</td>
 <td>“Open” says nothing about the likelihood of merge</td>
 </tr>
 <tr data-read="2026-09-27" data-cadence-days="30">
@@ -368,14 +368,6 @@
 <td>read <code>data/atlas.toml</code></td>
 <td>A reading of a typical deployment, stated as such on the page; a given deployment can differ</td>
 </tr>
-<tr data-read="2026-09-27">
-<td>A-43</td>
-<td>Corpus member counts and splits (275; 232; 61; 52; 34; 34; 32; 27; 26; 15; 13; 8; 8)</td>
-<td>each corpus’s <code>MANIFEST.json</code> at tag v0.13.0</td>
-<td>2026-09-27 01:16 <span class="cadence">(does not expire)</span></td>
-<td><code>rederive.py</code> A-38c for the total; <code>git show v0.13.0:&lt;corpus&gt;/MANIFEST.json</code> for each</td>
-<td>Counts at the tag, not on the main branch</td>
-</tr>
 <tr data-read="2026-10-01">
 <td>A-46</td>
 <td>Signature and canonicalization rows link APS/PriorSeal limits, six AGT byte cases, and the pinned observer consumer admission/replay</td>
@@ -392,11 +384,11 @@
 <td>open both</td>
 <td>A listing is not an endorsement</td>
 </tr>
-<tr data-read="2026-09-27" data-cadence-days="7">
+<tr data-read="2026-10-14" data-cadence-days="7">
 <td>A-40</td>
-<td>None is merged or adopted as of the read</td>
+<td>Neither had been merged or adopted when its state was read</td>
 <td>the same reads</td>
-<td>2026-09-27 00:42 <span class="cadence">(7-day cadence)</span></td>
+<td>2026-10-14 22:55 <span class="cadence">(7-day cadence)</span></td>
 <td>the same</td>
 <td>Merge state only; a merge would not be adoption</td>
 </tr>
@@ -448,14 +440,6 @@
 <td>2026-09-27 17:09 <span class="cadence">(does not expire)</span></td>
 <td>the same command</td>
 <td>Counts of named entries, not of the field</td>
-</tr>
-<tr data-read="2026-09-27" data-cadence-days="30">
-<td>I-04</td>
-<td>Current releases: vocabulary v0.3.0; vectors v0.16.0; admission no tags; jcs-admit and dsse 0.1.1. Draft/published labels retain their original reading</td>
-<td>Releases as A-38; labels in <code>data/atlas.toml</code></td>
-<td>Releases 2026-10-01 07:04:40; labels 2026-09-27 11:49 <span class="cadence">(30-day cadence)</span></td>
-<td><code>rederive.py</code> A-38</td>
-<td>A label is this site’s reading, not a maturity rating; release refresh does not re-audit the label</td>
 </tr>
 <tr data-read="2026-10-01">
 <td>I-05</td>
@@ -1755,13 +1739,13 @@
 <td><code>python3 tools/discoverability/catalog.py validate data/catalog.json</code>; read the pinned guide’s supported profile and selected-input rules</td>
 <td>Offline selected-byte consistency, not execution of Inspect, arbitrary-log support, independent capture or custody. The prototype label follows the owning Observer status source.</td>
 </tr>
-<tr data-read="2026-10-05" data-cadence-days="7">
+<tr data-read="2026-10-14" data-cadence-days="7">
 <td>C-14</td>
-<td>Inspect accepted the reader catalog entry on 2026-10-03; its live listing was awaiting publication at 2026-10-05 01:04 UTC</td>
-<td><a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/5665">Merged PR</a>; <a href="https://github.com/UKGovernmentBEIS/inspect_ai/blob/c9f2d1cadb5e46cd8b89d217c7a2a1f816bce057/docs/extensions/extensions.json">accepted entry</a>; <a href="https://github.com/UKGovernmentBEIS/inspect_ai/blob/1d224f344b21517e22fa9aa4e0fefdf273c01641/extensions/extensions.json">published branch catalog</a>; <a href="https://inspect.aisi.org.uk/extensions/extensions.json">live catalog</a></td>
-<td>2026-10-05 01:04 <span class="cadence">(7-day cadence)</span></td>
-<td>Read PR merged_at and the accepted entry; compare the live catalog bytes with the pinned published catalog; inspect <code>data/catalog-sources.json</code></td>
-<td>The live response equals the older pre-merge published catalog. Repository documentation acceptance establishes no maintained Probity dependency, required native host gate, independent operator or outside workload.</td>
+<td>Inspect accepted the reader catalog entry on 2026-10-03, and the live Inspect extensions catalog lists it at 2026-10-14 22:54 UTC</td>
+<td><a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/5665">Merged PR</a>; <a href="https://github.com/UKGovernmentBEIS/inspect_ai/blob/c9f2d1cadb5e46cd8b89d217c7a2a1f816bce057/docs/extensions/extensions.json">accepted entry</a>; <a href="https://github.com/UKGovernmentBEIS/inspect_ai/blob/18f381fa4818c1ccb38ff1d9d605009b2d536493/extensions/extensions.json">published branch catalog</a>; <a href="https://inspect.aisi.org.uk/extensions/extensions.json">live catalog</a></td>
+<td>2026-10-14 22:54 <span class="cadence">(7-day cadence)</span></td>
+<td>Read PR merged_at and the accepted entry; compare the live catalog bytes with the pinned published catalog (SHA-256 <code>65afe577ae294621858ee4c88551123503571b42d948f81d0eaf0c1d181eee45</code> for both at the read); find the entry whose <code>url</code> is the pinned consumer guide; inspect <code>data/catalog-sources.json</code></td>
+<td>A listing in a catalog the host maintains. It establishes no maintained dependency, required native host gate, independent operator or outside workload.</td>
 </tr>
 <tr data-read="2026-10-05">
 <td>C-15</td>

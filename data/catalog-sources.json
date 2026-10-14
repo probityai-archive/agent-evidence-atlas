@@ -184,6 +184,14 @@
     "read_at": "2026-10-05T01:04:00.747825+00:00"
   },
   {
+    "repository": "UKGovernmentBEIS/inspect_ai",
+    "path": "extensions/extensions.json",
+    "commit": "18f381fa4818c1ccb38ff1d9d605009b2d536493",
+    "blob_sha": "d3d834407e08564b0fc5d6ead1c1b01bec6ff53d",
+    "url": "https://github.com/UKGovernmentBEIS/inspect_ai/blob/18f381fa4818c1ccb38ff1d9d605009b2d536493/extensions/extensions.json",
+    "read_at": "2026-10-14T22:54:32+00:00"
+  },
+  {
     "repository": "probityai/jcs-admit",
     "path": "README.md",
     "commit": "3e189b20711a57ce91eab40509324dd1d5d54cac",

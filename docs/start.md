@@ -67,7 +67,7 @@ Released. [Quickstart and source](https://github.com/probityai/dsse/blob/35e4180
 
 Profile ID: `inspect-native-reader`. Component ID: `observer`.
 
-Reads selected retained Inspect execution profiles offline, preserving errors and unstarted attempts. Inspect accepted the catalog entry; its live listing was awaiting publication on October 5, 2026.
+Reads selected retained Inspect execution profiles offline, preserving errors and unstarted attempts. Inspect accepted the catalog entry, and the live Inspect extensions catalog lists it as of October 14, 2026.
 
 Prototype. [Quickstart and source](https://github.com/probityai/agent-evidence-observer/blob/71ac0b2126473316655184235000647a6dd0f5cf/docs/NATIVE-CONSUMER-CI.md)
 

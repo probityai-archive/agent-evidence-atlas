@@ -6,10 +6,10 @@
 name = "Home page"
 page = "index.html"
 source = "src/index.md"
-version = "1.11"
+version = "1.12"
 date = "2026-10-14"
 status = "draft"
-note = "Links the essay that ends with the retained replay"
+note = "The Inspect reader listing now reads as live in the extensions catalog"
 
 [[artifact]]
 name = "Essay"
@@ -24,10 +24,10 @@ note = "Recut of the first draft: opens on one agent action; five footnote error
 name = "Atlas"
 page = "atlas.html"
 source = "data/atlas.toml"
-version = "0.5-preview"
-date = "2026-10-13"
+version = "0.6-preview"
+date = "2026-10-14"
 status = "draft"
-note = "Shows every corpus of agent-evidence-vectors v0.18.1, each linked at its pinned commit and recounted from its own manifest, plus the NIST AI 300-1 test set and the observer refund-handoff profile at their merge commits"
+note = "Current releases read again (vocabulary v0.4.0, admission py-v0.1.0, dsse 0.1.2); admission and dsse limits quoted from their current READMEs; 25 star counts refreshed; the closed OWASP pull request removed from the contributions"
 
 [[artifact]]
 name = "Verifier demonstration"
@@ -60,10 +60,10 @@ note = "Twelve planned installments"
 name = "Claim ledger"
 page = "claims.html"
 source = "CLAIMS.md"
-version = "0.8.22"
+version = "0.8.23"
 date = "2026-10-14"
 status = "draft"
-note = "Records the essay link and its publication date"
+note = "A current release now expires weekly and the build refuses one that can outlive its release; release, contribution, quotation, star and Inspect rows read 2026-10-14; superseded I-04 and A-43 removed"
 
 [[artifact]]
 name = "Probity Open Evidence Lab"
@@ -132,10 +132,10 @@ note = "Preserves all native attempts, abstention failures and separate scoped-e
 name = "Project catalog"
 page = "start.html"
 source = "data/catalog.json"
-version = "0.7"
-date = "2026-10-05"
+version = "0.8"
+date = "2026-10-14"
 status = "draft"
-note = "Keeps stable catalog identities and refreshes the reviewed Vectors route to published 0.17.4; historical source and release records keep their original pins"
+note = "The Inspect reader summary reads the live extensions catalog listing"
 
 [[artifact]]
 name = "Automation guide"

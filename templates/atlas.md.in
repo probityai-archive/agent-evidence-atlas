@@ -48,7 +48,7 @@ Release {{corpus_release}} of agent-evidence-vectors (commit `{{corpus_commit}}`
 
 ## Standards work in review, and public listings
 
-These are my contributions to other bodies' work, listed where the repository meets the naming rule above: a pull request to each of two projects and an Internet-Draft. No body had merged or adopted any of them when I read their states. Each carries the state I read.
+These are my contributions to other bodies' work, listed where the repository meets the naming rule above: a pull request and an Internet-Draft. Neither had been merged or adopted when I read its state. Each carries the state I read.
 
 {{contribution_table}}
 
