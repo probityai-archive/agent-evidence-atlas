@@ -204,6 +204,8 @@
 "W-03" = 7
 "W-04" = 7
 "W-05" = 7
+# The essay link and its publication date are a dated event.
+"W-07" = "none"
 
 "C-21" = "none"
 
