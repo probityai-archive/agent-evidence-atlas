@@ -43,7 +43,7 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 | Verifier demonstration | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
 | [Experiments](experiments.md) | 0.4 | 2026-10-15 | draft | `9e216ec17d2fead0` `src/experiments.md` | Adds checkout composition and historical event references; retained experiments and Lab run bytes stay unchanged |
 | Series plan | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
-| [Claim ledger](claims.md) | 0.8.27 | 2026-10-15 | draft | `d388d83697ac4b36` `CLAIMS.md` | Records actual distributions and live counter scope, pinned Action routes and documentation revisions |
+| [Claim ledger](claims.md) | 0.8.28 | 2026-10-15 | draft | `2aa9098641faa848` `CLAIMS.md` | Records actual distributions, the existing Verify package, live counter scope and pinned Action routes |
 | [Probity Open Evidence Lab](lab.md) | 0.1.11 | 2026-10-06 | draft | `c1fc9700bcf8794a` `src/lab.md` | Links the retained-run browser; existing retained records, artifacts and protocol remain unchanged |
 | [Claim status](status.md) | 0.1 | 2026-10-13 | draft | `c88f8056051d6d8a` `src/status.md` | Generated from the Lab register and the open-cell data: verdict and operation-class totals, every record, and the open cells |
 | [Task-grouped rates worked example](task-grouped-rates.md) | 0.1 | 2026-10-03 | draft | `92940ce8ee827ad0` `examples/task-grouped-rates/input.json` | Authored labels, paired task resampling, explicit weighting targets and unresolved outcomes |
@@ -51,7 +51,7 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 | [APS and PriorSeal pilot status](pilot.md) | 0.1.1 | 2026-10-01 | proposed | `e3026b2b60ceca12` `src/pilot.md` | Probity-owned proposal, merged technical replay, owner slots and acceptance gates; no formal pilot agreement |
 | [Authored policy vocabulary finding](vocabulary-findings.md) | 0.1 | 2026-10-03 | draft | `20af3bbeb2180633` `src/vocabulary-findings.md` | Fixed action vocabulary raises the finite authored score; all default quality rows hold |
 | [Authored tool-argument finding](tool-argument-findings.md) | 0.1 | 2026-10-03 | draft | `958f2a8c3268901a` `src/tool-argument-findings.md` | Preserves all native attempts, abstention failures and separate scoped-evidence publication/quality holds |
-| [Project catalog](start.md) | 0.10 | 2026-10-15 | draft | `8601fa9af330efba` `data/catalog.json` | Adds package install and download actions, live registry metrics and named workflow reports from bound release metadata |
+| [Project catalog](start.md) | 0.10.1 | 2026-10-15 | draft | `98e6b6997f2129a8` `data/catalog.json` | Corrects Verify package availability while retaining reviewed recipes and bound distribution controls |
 | [Automation guide](automation.md) | 0.1 | 2026-10-03 | draft | `375c2d92a75e7d34` `src/automation.md` | Catalog lookups, checked run records and result submissions |
 | [Catalog maintenance guide](catalog.md) | 0.6 | 2026-10-15 | draft | `efbd76ffab748895` `src/catalog.md` | Documents package ownership, release namespaces, install anchors and live badge scope |
 | [Retained evidence decision walkthrough](replay-an-evidence-decision.md) | 0.4 | 2026-10-15 | draft | `42fe897cf7c5df85` `src/replay-an-evidence-decision.md` | The essay link carries its retitled name |

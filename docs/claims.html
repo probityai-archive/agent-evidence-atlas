@@ -1883,6 +1883,14 @@
 <td>Build and check the generated pages; compare existing catalog IDs, source reviews and retained evidence with the parent commit</td>
 <td>Documentation and task navigation. Published package bytes, executed source identities, historical results and the exported catalog schema stay unchanged.</td>
 </tr>
+<tr data-read="2026-10-15" data-cadence-days="7">
+<td>C-32</td>
+<td>PyPI publishes probity-verify 0.1.0. Its wheel has SHA-256 <code>18e0f99fb21701cd2d5eb312d99700d7cf800e8cdf9dc8e5d3608bc315cf1453</code>; its source distribution has SHA-256 <code>1c54e5b6bff07c5df1cf5b129000d49d1fbe549e324fc08bf84772df35749b5b</code>. The complete wheel-module path and Git-blob map matches public source <code>2ecdbafc0c6cc0f26461ffe913fe342e7de090a6</code>. Catalog 0.10.1 and claim ledger 0.8.28 record its availability.</td>
+<td><a href="https://pypi.org/project/probity-verify/0.1.0/">Registry release</a>; <a href="https://pypi.org/pypi/probity-verify/json">registry metadata</a>; <a href="https://files.pythonhosted.org/packages/a0/67/ab81b8b47723385c5d464fb582db56dd18aa7164ea45a2f69a21e5c4811c/probity_verify-0.1.0-py3-none-any.whl">wheel</a>; <a href="https://files.pythonhosted.org/packages/7f/af/a4744e15f2af100f8b349257399898d2c1326ae6fa36273a73813c69f75a/probity_verify-0.1.0.tar.gz">source distribution</a>; <a href="https://github.com/probityai/probity-verify/tree/2ecdbafc0c6cc0f26461ffe913fe342e7de090a6">reviewed source</a>; <code>data/catalog.json</code>; <code>data/versions.toml</code></td>
+<td>2026-10-15 <span class="cadence">(7-day cadence)</span></td>
+<td>Compare downloaded artifact hashes with registry metadata; compare the complete wheel-module map with the public source tree; validate catalog identity and generated pages</td>
+<td>Module equality does not establish the original builder, whole-source archive equality or a source attestation. The observed provenance endpoint returned 404 and no GitHub release tag is claimed. The wheel omits sample resources; the reviewed guide keeps its source installation recipe. This availability correction adds no install execution or new verifier result.</td>
+</tr>
 </tbody>
 </table>
 </div>

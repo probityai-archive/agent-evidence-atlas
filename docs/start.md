@@ -307,7 +307,7 @@ Component ID: `verify`.
 
 Checks supplied evidence bytes through claim-specific offline adapters. Its README links to source-pinned installation and checked task recipes.
 
-Unreleased. [Reviewed guide and source](https://github.com/probityai/probity-verify/blob/2ecdbafc0c6cc0f26461ffe913fe342e7de090a6/README.md)
+Released. [Reviewed guide and source](https://github.com/probityai/probity-verify/blob/2ecdbafc0c6cc0f26461ffe913fe342e7de090a6/README.md)
 
 <a id="vocabulary"></a>
 

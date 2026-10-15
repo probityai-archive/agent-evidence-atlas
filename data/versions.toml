@@ -60,10 +60,10 @@ note = "Twelve planned installments"
 name = "Claim ledger"
 page = "claims.html"
 source = "CLAIMS.md"
-version = "0.8.27"
+version = "0.8.28"
 date = "2026-10-15"
 status = "draft"
-note = "Records actual distributions and live counter scope, pinned Action routes and documentation revisions"
+note = "Records actual distributions, the existing Verify package, live counter scope and pinned Action routes"
 
 [[artifact]]
 name = "Probity Open Evidence Lab"
@@ -132,10 +132,10 @@ note = "Preserves all native attempts, abstention failures and separate scoped-e
 name = "Project catalog"
 page = "start.html"
 source = "data/catalog.json"
-version = "0.10"
+version = "0.10.1"
 date = "2026-10-15"
 status = "draft"
-note = "Adds package install and download actions, live registry metrics and named workflow reports from bound release metadata"
+note = "Corrects Verify package availability while retaining reviewed recipes and bound distribution controls"
 
 [[artifact]]
 name = "Automation guide"

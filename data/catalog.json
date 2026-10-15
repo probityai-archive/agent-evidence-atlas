@@ -68,13 +68,15 @@
       "display_name": "Probity Verify",
       "summary": "Checks supplied evidence bytes through claim-specific offline adapters. Its README links to source-pinned installation and checked task recipes.",
       "task": "Install a pinned verifier and check an evidence claim",
-      "status": "unreleased",
+      "status": "released",
       "publication": "public",
       "reviewed": true,
       "repositories": [
         "repo-verify"
       ],
-      "packages": [],
+      "packages": [
+        "probity-verify"
+      ],
       "docs_url": "https://github.com/probityai/probity-verify/blob/2ecdbafc0c6cc0f26461ffe913fe342e7de090a6/README.md",
       "relationships": []
     },
@@ -339,7 +341,7 @@
       "display_name": "Probity Verify",
       "summary": "Checks supplied evidence bytes through claim-specific offline adapters. Its README links to source-pinned installation and checked task recipes.",
       "task": "Install a pinned verifier and check an evidence claim",
-      "status": "unreleased",
+      "status": "released",
       "publication": "public",
       "reviewed": true,
       "full_name": "probityai/probity-verify",
