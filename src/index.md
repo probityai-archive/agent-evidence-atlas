@@ -13,7 +13,7 @@ Probity builds evidence tools for agent harnesses, reviewers and platform teams.
 | Task | Start with |
 | --- | --- |
 | Define an evidence claim | [Vocabulary](start.html#vocabulary) |
-| Test a verifier | [Vectors](start.html#vectors) |
+| Test a verifier | [Vectors](start.html#vectors) · [Recorded Action controls](automation.html#check-a-verifier-in-ci) |
 | Record file actions or check delegation runs | [Observer](start.html#observer) |
 | Check a supplied claim | [Verify](start.html#verify) |
 | Apply workload admission policy | [Admission](start.html#admission) |

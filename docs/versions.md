@@ -37,13 +37,13 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 
 | artifact | version | date | status | source SHA-256 (first 16) | note |
 |----|----|----|----|----|----|
-| [Home page](index.md) | 1.13 | 2026-10-15 | draft | `43db68137bee6879` `src/index.md` | The essay link carries its retitled name, Independent AI evaluators need evidence they can verify |
+| [Home page](index.md) | 1.14 | 2026-10-15 | draft | `633a9d5de491691b` `src/index.md` | Links the verifier task to exact-source Action controls and their retained hosted result |
 | Essay | 0.2 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
 | [Atlas](atlas.md) | 0.6-preview | 2026-10-14 | draft | `19d9ad2d6464bc5a` `data/atlas.toml` | Current releases read again (vocabulary v0.4.0, admission py-v0.1.0, dsse 0.1.2); admission and dsse limits quoted from their current READMEs; 25 star counts refreshed; the closed OWASP pull request removed from the contributions |
 | Verifier demonstration | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
 | [Experiments](experiments.md) | 0.4 | 2026-10-15 | draft | `9e216ec17d2fead0` `src/experiments.md` | Adds checkout composition and historical event references; retained experiments and Lab run bytes stay unchanged |
 | Series plan | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
-| [Claim ledger](claims.md) | 0.8.28 | 2026-10-15 | draft | `2aa9098641faa848` `CLAIMS.md` | Records actual distributions, the existing Verify package, live counter scope and pinned Action routes |
+| [Claim ledger](claims.md) | 0.8.29 | 2026-10-15 | draft | `13413040715b4aa0` `CLAIMS.md` | Binds the historical Vectors Action controls and exact-head hosted job |
 | [Probity Open Evidence Lab](lab.md) | 0.1.11 | 2026-10-06 | draft | `c1fc9700bcf8794a` `src/lab.md` | Links the retained-run browser; existing retained records, artifacts and protocol remain unchanged |
 | [Claim status](status.md) | 0.1 | 2026-10-13 | draft | `c88f8056051d6d8a` `src/status.md` | Generated from the Lab register and the open-cell data: verdict and operation-class totals, every record, and the open cells |
 | [Task-grouped rates worked example](task-grouped-rates.md) | 0.1 | 2026-10-03 | draft | `92940ce8ee827ad0` `examples/task-grouped-rates/input.json` | Authored labels, paired task resampling, explicit weighting targets and unresolved outcomes |
@@ -52,7 +52,7 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 | [Authored policy vocabulary finding](vocabulary-findings.md) | 0.1 | 2026-10-03 | draft | `20af3bbeb2180633` `src/vocabulary-findings.md` | Fixed action vocabulary raises the finite authored score; all default quality rows hold |
 | [Authored tool-argument finding](tool-argument-findings.md) | 0.1 | 2026-10-03 | draft | `958f2a8c3268901a` `src/tool-argument-findings.md` | Preserves all native attempts, abstention failures and separate scoped-evidence publication/quality holds |
 | [Project catalog](start.md) | 0.10.1 | 2026-10-15 | draft | `98e6b6997f2129a8` `data/catalog.json` | Corrects Verify package availability while retaining reviewed recipes and bound distribution controls |
-| [Automation guide](automation.md) | 0.1 | 2026-10-03 | draft | `375c2d92a75e7d34` `src/automation.md` | Catalog lookups, checked run records and result submissions |
+| [Automation guide](automation.md) | 0.2 | 2026-10-15 | draft | `2c1b4dbf0e3789d5` `src/automation.md` | Explains the existing Vectors Action failure controls with exact source and hosted job |
 | [Catalog maintenance guide](catalog.md) | 0.6 | 2026-10-15 | draft | `efbd76ffab748895` `src/catalog.md` | Documents package ownership, release namespaces, install anchors and live badge scope |
 | [Retained evidence decision walkthrough](replay-an-evidence-decision.md) | 0.4 | 2026-10-15 | draft | `42fe897cf7c5df85` `src/replay-an-evidence-decision.md` | The essay link carries its retitled name |
 | [Retained-run browser](runs.md) | 0.1 | 2026-10-06 | draft | `6a2ac67797c7adf9` `src/runs.md` | Search, exact claim-result filters and complete static navigation over the existing Lab register; no aggregate run grade |

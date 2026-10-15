@@ -288,3 +288,6 @@ P-78 = "none"
 "C-30" = 7
 "C-31" = "none"
 "C-32" = 7
+
+# Historical exact-head Action execution and source controls.
+"C-33" = "none"

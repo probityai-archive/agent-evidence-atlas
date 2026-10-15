@@ -17,6 +17,29 @@ Use the [fixed discovery prompts and receipt checker](discovery-evaluation.md)
 to retain a reader or agent session and review its answers against pinned public
 sources. Keep actual discovery attempts separate from author-operated packet checks.
 
+## Check a verifier in CI
+
+Use the [pinned Vectors Action guide](https://github.com/probityai/agent-evidence-vectors/blob/9e596fbff7bb29809d38319aebb56f2141923eb2/docs/guides/runner.md#run-the-suite-in-ci)
+from the [verifier task](start.html#vectors). Its example selects release
+`v0.18.0`; keep the release and source required by the result you reproduce.
+
+The [recorded `action` job](https://github.com/probityai/agent-evidence-vectors/actions/runs/38480809538/job/115582642213)
+succeeded on October 13, 2026 at source
+`9e596fbff7bb29809d38319aebb56f2141923eb2`. The
+[workflow at that source](https://github.com/probityai/agent-evidence-vectors/blob/9e596fbff7bb29809d38319aebb56f2141923eb2/.github/workflows/ci.yml#L1139)
+builds the verifier and calls the actual Action. It requires a nonempty corpus,
+complete execution and the declared conformance result. The same job requires
+failure when the verifier is unavailable, the canonicalizer emits the wrong
+number bytes, or the selected corpus directory is changed. It also checks the
+custom-directory digest against its source lock.
+
+The workflow declares `contents: read`. Its checkout dependency is the
+historical floating `actions/checkout@v4`; the recorded checkout head fixes the
+Action, verifier and corpus source. This author-operated control result does
+not establish an outside run or agreement on Windows. A successful control job
+can contain a required refusal. Read the [test-result explanation](evidence-test-meaning.html)
+and [claim ledger](claims.html) for the result's scope.
+
 ## Run a local replay
 
 To produce a new local APS/PriorSeal capture, use the [replay tools guide](replay-tools.html).

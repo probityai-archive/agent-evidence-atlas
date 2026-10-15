@@ -6,10 +6,10 @@
 name = "Home page"
 page = "index.html"
 source = "src/index.md"
-version = "1.13"
+version = "1.14"
 date = "2026-10-15"
 status = "draft"
-note = "The essay link carries its retitled name, Independent AI evaluators need evidence they can verify"
+note = "Links the verifier task to exact-source Action controls and their retained hosted result"
 
 [[artifact]]
 name = "Essay"
@@ -60,10 +60,10 @@ note = "Twelve planned installments"
 name = "Claim ledger"
 page = "claims.html"
 source = "CLAIMS.md"
-version = "0.8.28"
+version = "0.8.29"
 date = "2026-10-15"
 status = "draft"
-note = "Records actual distributions, the existing Verify package, live counter scope and pinned Action routes"
+note = "Binds the historical Vectors Action controls and exact-head hosted job"
 
 [[artifact]]
 name = "Probity Open Evidence Lab"
@@ -141,10 +141,10 @@ note = "Corrects Verify package availability while retaining reviewed recipes an
 name = "Automation guide"
 page = "automation.html"
 source = "src/automation.md"
-version = "0.1"
-date = "2026-10-03"
+version = "0.2"
+date = "2026-10-15"
 status = "draft"
-note = "Catalog lookups, checked run records and result submissions"
+note = "Explains the existing Vectors Action failure controls with exact source and hosted job"
 
 [[artifact]]
 name = "Catalog maintenance guide"
