@@ -3,8 +3,10 @@
 Issues and pull requests are welcome. The most useful contributions are a
 reproducible evidence run for the Open Evidence Lab and a correction to a
 recorded claim. Each has an issue form: **Evidence run** and **Evidence
-correction**. Fill in the source revision, the exact command and the result, so
-anyone can rerun it.
+correction**. State the question before scoring, then name the specific claim
+and contract. Fill in the source revision, the exact command and the result,
+so anyone can rerun it. Retain the report and provenance in the artifact
+manifest, and name the authors, operators and custodians separately.
 
 ## Before you open a pull request
 

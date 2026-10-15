@@ -196,9 +196,18 @@ def _same_json_value(actual: Any, expected: Any) -> bool:
 
 
 def _check_record(record: dict[str, Any], root: Path) -> None:
-    """Check report inclusion and uniquely named claim bindings for one record."""
+    """Check retained metadata, declared roles and unique claim bindings."""
     references = check_artifacts(record, root)
     require(record.get("report") in references, "record report is not a retained artifact")
+    provenance = record.get("provenance")
+    require(isinstance(provenance, str) and provenance in references,
+            "record provenance is not a retained artifact")
+    roles = record.get("roles")
+    require(isinstance(roles, dict) and bool(roles)
+            and all(isinstance(name, str) and bool(name.strip())
+                    and isinstance(value, str) and bool(value.strip())
+                    for name, value in roles.items()),
+            "record roles are invalid")
     report = json.loads(artifact_path(root, record["report"]).read_text(encoding="utf-8"))
     claims = record.get("claimResults")
     require(isinstance(claims, list) and bool(claims), "record has no claim results")

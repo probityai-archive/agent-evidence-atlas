@@ -58,6 +58,38 @@ class TestValidateRegister:
             CHECK.validate_register(register, root)
 
     class TestFailingCases:
+        @pytest.mark.parametrize("provenance", [None, "", "../unretained.json", []])
+        def test_provenance_must_name_a_retained_artifact(
+                self, retained_register: tuple[dict[str, Any], Path],
+                provenance: Any, caplog: pytest.LogCaptureFixture) -> None:
+            register, root = retained_register
+            register["records"][0]["provenance"] = provenance
+            expect_refusal(register, root, "record provenance is not a retained artifact", caplog)
+
+        def test_missing_provenance_is_refused(
+                self, retained_register: tuple[dict[str, Any], Path],
+                caplog: pytest.LogCaptureFixture) -> None:
+            register, root = retained_register
+            del register["records"][0]["provenance"]
+            expect_refusal(register, root, "record provenance is not a retained artifact", caplog)
+
+        @pytest.mark.parametrize("roles", [None, {}, [], {"runner": ""},
+                                           {"": "author"}, {"runner": None},
+                                           {"runner": "  "}, {"  ": "author"}])
+        def test_roles_must_have_nonempty_names_and_declarations(
+                self, retained_register: tuple[dict[str, Any], Path],
+                roles: Any, caplog: pytest.LogCaptureFixture) -> None:
+            register, root = retained_register
+            register["records"][0]["roles"] = roles
+            expect_refusal(register, root, "record roles are invalid", caplog)
+
+        def test_missing_roles_is_refused(
+                self, retained_register: tuple[dict[str, Any], Path],
+                caplog: pytest.LogCaptureFixture) -> None:
+            register, root = retained_register
+            del register["records"][0]["roles"]
+            expect_refusal(register, root, "record roles are invalid", caplog)
+
         @pytest.mark.parametrize("mutation", ["change", "remove"])
         def test_artifact_mutation_refused(self, retained_register: tuple[dict[str, Any], Path],
                                          mutation: str, caplog: pytest.LogCaptureFixture) -> None:

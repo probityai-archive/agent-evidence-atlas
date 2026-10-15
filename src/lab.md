@@ -474,6 +474,12 @@ Use claim-level results: `pass`, `fail`, `unknown`, `not-exercised` or `out-of-s
 5. **Freeze results before comparison.** Commit or publish the complete raw report and manifest, then publish the expected-answer comparison in a separate revision. Supply both immutable links and their order. If answers were already known, say so; freezing a report does not undo that exposure. A report signature binds the report bytes and signer, without upgrading the observations' custody.
 6. **Submit the packet.** Use the run form and link the retained files. A maintainer review records the supported claims, ceilings and unresolved gaps. A register addition is proposed by pull request with its reviewed evidence links; the intake issue remains the public discussion and decision trail.
 
+The register checker requires both the report and provenance in each record's
+hashed artifact manifest. Roles need nonempty names and declarations. This
+checks the submitted metadata; it does not establish separate operational
+control. The append helper returns bytes without writing files. Validate the
+candidate register before saving those bytes.
+
 For a live capture, classify each gap as unsupported behavior, instrumentation gap, interpretation/guidance gap, missing convention, or unavailable evidence. Keep the raw capture and mapping with the gap. A proposed fix needs a later run showing what changed.
 
 ## Controls a reviewed result must survive

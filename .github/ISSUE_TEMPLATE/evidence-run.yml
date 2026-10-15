@@ -7,6 +7,13 @@ body:
       value: |
         Follow the [Probity Open Evidence Lab protocol](https://probityai.github.io/agent-evidence-atlas/lab.html).
         Results remain scoped to their contract, evidence and operator roles. Submission is not certification or membership.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question to answer
+      description: State the question before scoring. Explain which observed result would support or contradict the specific claim.
+    validations:
+      required: true
   - type: input
     id: claim
     attributes:

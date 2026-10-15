@@ -41,10 +41,17 @@ class TestLabCLI(unittest.TestCase):
         target = CHECK.artifact_path(self.root, reference)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(raw)
+        provenance = f"../fixtures/{identity}-provenance.json"
+        provenance_bytes = json.dumps({"source": "authored test fixture", "identity": identity}).encode()
+        CHECK.artifact_path(self.root, provenance).write_bytes(provenance_bytes)
         return {
             "id": identity,
             "report": reference,
-            "artifacts": [{"path": reference, "sha256": hashlib.sha256(raw).hexdigest()}],
+            "provenance": provenance,
+            "artifacts": [
+                {"path": reference, "sha256": hashlib.sha256(raw).hexdigest()},
+                {"path": provenance, "sha256": hashlib.sha256(provenance_bytes).hexdigest()},
+            ],
             "claimResults": [
                 {"claim": "retained-observations", "result": "pass", "recordedField": "/observations", "expectedValue": 2},
                 {"claim": "strict-task-quality", "result": "fail", "recordedField": "/qualityAccepted", "expectedValue": False},
