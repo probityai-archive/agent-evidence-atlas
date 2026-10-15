@@ -8,13 +8,13 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 
 | artifact | version | date | status | source SHA-256 (first 16) | note |
 |----|----|----|----|----|----|
-| [Home page](index.md) | 1.12 | 2026-10-14 | draft | `778f44c39569ff3b` `src/index.md` | The Inspect reader listing now reads as live in the extensions catalog |
+| [Home page](index.md) | 1.13 | 2026-10-15 | draft | `43db68137bee6879` `src/index.md` | The essay link carries its retitled name, Independent AI evaluators need evidence they can verify |
 | Essay | 0.2 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
 | [Atlas](atlas.md) | 0.6-preview | 2026-10-14 | draft | `19d9ad2d6464bc5a` `data/atlas.toml` | Current releases read again (vocabulary v0.4.0, admission py-v0.1.0, dsse 0.1.2); admission and dsse limits quoted from their current READMEs; 25 star counts refreshed; the closed OWASP pull request removed from the contributions |
 | Verifier demonstration | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
 | [Experiments](experiments.md) | 0.3 | 2026-10-01 | draft | `692c4fabcf4b2a52` `src/experiments.md` | Adds original observer CI admission bytes, immutable source pins, executable replay and refusal controls; independent operation remains unestablished |
 | Series plan | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
-| [Claim ledger](claims.md) | 0.8.23 | 2026-10-14 | draft | `d8234ac06c1e9f5b` `CLAIMS.md` | A current release now expires weekly and the build refuses one that can outlive its release; release, contribution, quotation, star and Inspect rows read 2026-10-14; superseded I-04 and A-43 removed |
+| [Claim ledger](claims.md) | 0.8.24 | 2026-10-15 | draft | `e44a9b3efcee356e` `CLAIMS.md` | W-07 names the essay by its new title and reads its publication date, cited page and link into this site again on 2026-10-15 |
 | [Probity Open Evidence Lab](lab.md) | 0.1.11 | 2026-10-06 | draft | `c1fc9700bcf8794a` `src/lab.md` | Links the retained-run browser; existing retained records, artifacts and protocol remain unchanged |
 | [Claim status](status.md) | 0.1 | 2026-10-13 | draft | `c88f8056051d6d8a` `src/status.md` | Generated from the Lab register and the open-cell data: verdict and operation-class totals, every record, and the open cells |
 | [Task-grouped rates worked example](task-grouped-rates.md) | 0.1 | 2026-10-03 | draft | `92940ce8ee827ad0` `examples/task-grouped-rates/input.json` | Authored labels, paired task resampling, explicit weighting targets and unresolved outcomes |
@@ -25,7 +25,7 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 | [Project catalog](start.md) | 0.8 | 2026-10-14 | draft | `d34b8a831ab2b532` `data/catalog.json` | The Inspect reader summary reads the live extensions catalog listing |
 | [Automation guide](automation.md) | 0.1 | 2026-10-03 | draft | `375c2d92a75e7d34` `src/automation.md` | Catalog lookups, checked run records and result submissions |
 | [Catalog maintenance guide](catalog.md) | 0.4 | 2026-10-05 | draft | `4b8ca5cd9be3c662` `src/catalog.md` | Separates integration reader status from upstream listing acceptance and live publication |
-| [Retained evidence decision walkthrough](replay-an-evidence-decision.md) | 0.3 | 2026-10-14 | draft | `eba68959fc7a41c2` `src/replay-an-evidence-decision.md` | Links the essay that uses this replay as its last example |
+| [Retained evidence decision walkthrough](replay-an-evidence-decision.md) | 0.4 | 2026-10-15 | draft | `42fe897cf7c5df85` `src/replay-an-evidence-decision.md` | The essay link carries its retitled name |
 | [Retained-run browser](runs.md) | 0.1 | 2026-10-06 | draft | `6a2ac67797c7adf9` `src/runs.md` | Search, exact claim-result filters and complete static navigation over the existing Lab register; no aggregate run grade |
 | [Published source routes](start.md) | 0.1 | 2026-10-06 | draft | `099471ebba75f0b5` `data/catalog-sources.json` | Retains earlier source rows and adds verified current README pins plus published APS refund-retry and MintID reader routes; no new component or package release |
 | [Caller-declared APS and PriorSeal replay guide](replay-tools.md) | 0.1 | 2026-10-06 | draft | `8a4458c31bfb7496` `src/replay-tools.md` | Links one complete v2 procedure, explicit caller declarations, hashes of files read at invocation and actual process outputs; historical results stay unchanged |

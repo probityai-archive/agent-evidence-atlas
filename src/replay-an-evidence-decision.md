@@ -114,7 +114,7 @@ for the complete method, original CI provenance and limits. Its existing
 [claim-ledger rows](claims.html#experiments)
 remain the evidence for those results.
 
-The essay [*Independent evaluators need something to verify*](https://thepragmaticquant.com/independent-evaluators-need-something-to-verify/)
+The essay [*Independent AI evaluators need evidence they can verify*](https://thepragmaticquant.com/independent-evaluators-need-something-to-verify/)
 (October 14, 2026) uses this replay as its last example. It argues that a
 buyer should name in advance the records an agent action will be judged by,
 and that a missing record should never read as success.

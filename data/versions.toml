@@ -6,10 +6,10 @@
 name = "Home page"
 page = "index.html"
 source = "src/index.md"
-version = "1.12"
-date = "2026-10-14"
+version = "1.13"
+date = "2026-10-15"
 status = "draft"
-note = "The Inspect reader listing now reads as live in the extensions catalog"
+note = "The essay link carries its retitled name, Independent AI evaluators need evidence they can verify"
 
 [[artifact]]
 name = "Essay"
@@ -60,10 +60,10 @@ note = "Twelve planned installments"
 name = "Claim ledger"
 page = "claims.html"
 source = "CLAIMS.md"
-version = "0.8.23"
-date = "2026-10-14"
+version = "0.8.24"
+date = "2026-10-15"
 status = "draft"
-note = "A current release now expires weekly and the build refuses one that can outlive its release; release, contribution, quotation, star and Inspect rows read 2026-10-14; superseded I-04 and A-43 removed"
+note = "W-07 names the essay by its new title and reads its publication date, cited page and link into this site again on 2026-10-15"
 
 [[artifact]]
 name = "Probity Open Evidence Lab"
@@ -159,10 +159,10 @@ note = "Separates integration reader status from upstream listing acceptance and
 name = "Retained evidence decision walkthrough"
 page = "replay-an-evidence-decision.html"
 source = "src/replay-an-evidence-decision.md"
-version = "0.3"
-date = "2026-10-14"
+version = "0.4"
+date = "2026-10-15"
 status = "draft"
-note = "Links the essay that uses this replay as its last example"
+note = "The essay link carries its retitled name"
 
 [[artifact]]
 name = "Retained-run browser"
