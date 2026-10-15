@@ -288,6 +288,8 @@ These are separate claims. A submission may establish more than one, with separa
 
 Use claim-level results: `pass`, `fail`, `unknown`, `not-exercised` or `out-of-scope`. State the rule producing each result. Unsupported checks and unavailable observations remain visible. A signature verdict, service correlation, policy admission and observed effect must have separate fields even when their outcomes agree.
 
+Use `unknown` when an observation cannot settle the claim. Use `not-exercised` when the check was not exercised, and `out-of-scope` when the claim falls outside the declared scope. Preserve the source report's words and explain the result.
+
 <a id="submit-a-reproducible-evidence-packet"></a>
 
 ## Submit a reproducible evidence packet

@@ -294,3 +294,6 @@ P-78 = "none"
 
 # Metadata gate and unchanged retained register are source-bound.
 "C-34" = "none"
+
+# Existing unknown outcome retained through affected consumers.
+"P-103" = "none"

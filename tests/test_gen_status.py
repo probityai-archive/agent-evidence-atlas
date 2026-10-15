@@ -1,4 +1,6 @@
 """Pin the claim status page's verdict mapping, operation-class rule and freshness check."""
+import copy
+import hashlib
 import importlib.util
 import json
 import tomllib
@@ -31,12 +33,13 @@ def open_cells():
 
 @pytest.mark.parametrize("result, verdict", [
     ("pass", "ESTABLISHED"), ("fail", "CONTRADICTED"),
+    ("unknown", "UNKNOWN"),
     ("not-exercised", "NOT_ESTABLISHED"), ("out-of-scope", "NOT_ESTABLISHED")])
 def test_verdict_mapping(result, verdict):
     assert gen.verdict(result) == verdict
 
 
-def test_unknown_result_is_refused():
+def test_unsupported_result_is_refused():
     with pytest.raises(ValueError):
         gen.verdict("passed")
 
@@ -68,8 +71,47 @@ def test_totals_count_each_result_under_its_record_class():
     assert "| CONTRADICTED (`fail`) | 1 | 0 | 0 | **1** |" in page
     assert "| NOT_ESTABLISHED, out of scope (`out-of-scope`) | 1 | 0 | 0 | **1** |" in page
     assert "| records | 1 | 1 | 0 | **2** |" in page
-    assert "| 1 | 1 | 2 (1 out of scope) | Probity-operated |" in page
+    assert "| 1 | 1 | 2 (1 out of scope) | 0 | Probity-operated |" in page
     assert "no record here was independently operated" in page
+
+
+def test_unknown_observation_counts_separately_from_unexercised_checks():
+    register = {"records": [
+        record("unresolved", ["unknown", "not-exercised", "out-of-scope"],
+               {"runner": "a producer's own CI"})]}
+    page = gen.render(register, open_cells())
+    assert "| unknown, observation unresolved (`unknown`) | 0 | 1 | 0 | **1** |" in page
+    assert "| NOT_ESTABLISHED, not exercised (`not-exercised`) | 0 | 1 | 0 | **1** |" in page
+    assert "| 0 | 0 | 2 (1 out of scope) | 1 | author-operated |" in page
+    assert "| claim results | 0 | 3 | 0 | **3** |" in page
+
+
+def test_real_outside_packet_can_support_a_local_unknown_intake_candidate():
+    """Exercise a derived review candidate, not a new outside submission or run."""
+    from tools.check_lab import artifact_path, validate_register
+    from tools.run_browser import markdown
+
+    register_path = ROOT / "data/lab-register.json"
+    original = register_path.read_bytes()
+    retained = next(row for row in json.loads(original)["records"]
+                    if row["id"] == "aeoess-receipt-signature-2026-10-05")
+    artifacts = {row["path"]: hashlib.sha256(artifact_path(ROOT, row["path"]).read_bytes()).hexdigest()
+                 for row in retained["artifacts"]}
+    candidate = copy.deepcopy(retained)
+    candidate["id"] += "-unknown-intake-control"
+    candidate["claimResults"].append({"claim": "separate-operational-control-review", "result": "unknown"})
+    candidate["limits"].append("Local contract-test review candidate; no new outside submission, execution or custody claim")
+    register = {"protocolVersion": "0.1", "records": [candidate]}
+    validate_register(register, ROOT)
+    browser_page = markdown(register)
+    assert '| separate-operational-control-review | unknown |' in browser_page
+    assert '<option value="unknown">unknown</option>' in browser_page
+    page = gen.render(register, open_cells())
+    assert "| unknown, observation unresolved (`unknown`) | 0 | 1 | 0 | **1** |" in page
+    assert "| records | 0 | 1 | 0 | **1** |" in page
+    assert register_path.read_bytes() == original
+    assert all(hashlib.sha256(artifact_path(ROOT, path).read_bytes()).hexdigest() == digest
+               for path, digest in artifacts.items())
 
 
 def test_start_cells_lead_and_are_not_repeated():

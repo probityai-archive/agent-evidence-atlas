@@ -2642,6 +2642,14 @@
 <td>Run <code>python3 tools/export_open_cells.py CELLS.json PROPERTIES.json MECHANISMS.json --verify</code> on the atlas cell export; compare with <code>data/open-cells.toml</code></td>
 <td>The limits are the Atlas’s wording; “states the scope” cells rest on the source’s statement of function, not on its own disclaimer. An open cell says nothing about who will close it</td>
 </tr>
+<tr data-read="2026-10-15">
+<td>P-103</td>
+<td>The existing <code>unknown</code> Lab result survives register validation, retained-run navigation and status aggregation as a separate observation-unresolved category. It is not counted as pass, fail, not-exercised or out-of-scope. All 28 prior record objects and original artifact bytes remain unchanged.</td>
+<td><a href="lab.html#submit-a-reproducible-evidence-packet">Published protocol</a>; <a href="https://github.com/probityai/agent-evidence-atlas/blob/main/tools/gen_status.py">status consumer</a>; <a href="https://github.com/probityai/agent-evidence-atlas/blob/main/tests/test_gen_status.py">real-packet intake control</a>; <a href="experiments/aeoess-receipt-signature-2026-10-05/provenance.json">original outside packet</a>; <a href="status.html#how-this-page-is-derived">status derivation</a></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Generate status, then run affected status/register/CLI/browser tests; require a locally derived real-packet candidate with raw unknown to survive every reader; compare the historical register and source artifact digests</td>
+<td>This closes a status-consumer defect in an already accepted token. The derived candidate is a contract test, not a new outside submission or run. Unknown describes unresolved observation, while not-exercised retains its separate meaning.</td>
+</tr>
 </tbody>
 </table>
 </div>

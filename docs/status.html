@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Sankalp Gilda" />
-  <meta name="description" content="Every retained Lab claim result as ESTABLISHED, CONTRADICTED or NOT_ESTABLISHED, with its evidence class, operator and files, and the open mechanism-by-property cells." />
+  <meta name="description" content="Every retained Lab claim result as ESTABLISHED, CONTRADICTED, NOT_ESTABLISHED or unknown, with its evidence class, operator and files, and the open mechanism-by-property cells." />
   <title>Claim status - Probity AI</title>
   <link rel="canonical" href="https://probityai.github.io/agent-evidence-atlas/status.html" />
   <link rel="alternate" type="text/markdown" href="https://probityai.github.io/agent-evidence-atlas/status.md" />
@@ -71,6 +71,13 @@
 <td><strong>146</strong></td>
 </tr>
 <tr>
+<td>unknown, observation unresolved (<code>unknown</code>)</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
 <td>NOT_ESTABLISHED, not exercised (<code>not-exercised</code>)</td>
 <td>84</td>
 <td>7</td>
@@ -109,19 +116,20 @@
 </ol>
 <p>To take a cell, <a href="https://github.com/probityai/agent-evidence-atlas/issues/new?template=evidence-run.yml">open an Evidence run issue</a> naming it. Listing a cell makes no claim about who closes it; a run that does is recorded in the Lab like any other.</p>
 <h2 id="every-record">Every record</h2>
-<p>E, C and N count a record’s ESTABLISHED, CONTRADICTED and NOT_ESTABLISHED claim results. The evidence class and review state are the record’s own fields.</p>
-<div class="table-scroll" tabindex="0" role="region" aria-label="record / tested / evidence class / E / C / N / operation / review state / files">
+<p>E, C and N count a record’s ESTABLISHED, CONTRADICTED and NOT_ESTABLISHED claim results. U counts <code>unknown</code>: an observation remains unresolved. The evidence class and review state are the record’s own fields.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="record / tested / evidence class / E / C / N / U / operation / review state / files">
 <table style="width:100%;">
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
 </colgroup>
 <thead>
 <tr>
@@ -131,6 +139,7 @@
 <th>E</th>
 <th>C</th>
 <th>N</th>
+<th>U</th>
 <th>operation</th>
 <th>review state</th>
 <th>files</th>
@@ -144,6 +153,7 @@
 <td>4</td>
 <td>0</td>
 <td>3</td>
+<td>0</td>
 <td>author-operated</td>
 <td><code>retained-measured-record</code></td>
 <td><a href="experiments/observer-admission/recorded.json">report</a>, <a href="experiments/observer-admission/provenance.json">provenance</a></td>
@@ -155,6 +165,7 @@
 <td>3</td>
 <td>0</td>
 <td>2</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>submitted-awaiting-producer-response</code></td>
 <td><a href="experiments/jep-core07-2026-10-02/report.json">report</a>, <a href="experiments/jep-core07-2026-10-02/provenance.json">provenance</a></td>
@@ -166,6 +177,7 @@
 <td>5</td>
 <td>0</td>
 <td>3</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>producer-review-open</code></td>
 <td><a href="experiments/remora-e7-2026-10-02/report.json">report</a>, <a href="experiments/remora-e7-2026-10-02/provenance.json">provenance</a></td>
@@ -177,6 +189,7 @@
 <td>6</td>
 <td>0</td>
 <td>2</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/langgraph-durable-2026-10-02/report.json">report</a>, <a href="experiments/langgraph-durable-2026-10-02/provenance.json">provenance</a></td>
@@ -188,6 +201,7 @@
 <td>4</td>
 <td>0</td>
 <td>2</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/pydantic-failure-2026-10-02/report.json">report</a>, <a href="experiments/pydantic-failure-2026-10-02/provenance.json">provenance</a></td>
@@ -199,6 +213,7 @@
 <td>3</td>
 <td>8</td>
 <td>2</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/model-operational-2026-10-02/report.json">report</a>, <a href="experiments/model-operational-2026-10-02/provenance.json">provenance</a></td>
@@ -210,6 +225,7 @@
 <td>10</td>
 <td>0</td>
 <td>2</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/authority-recovery-2026-10-02/report.json">report</a>, <a href="experiments/authority-recovery-2026-10-02/provenance.json">provenance</a></td>
@@ -221,6 +237,7 @@
 <td>13</td>
 <td>0</td>
 <td>2</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/target-process-recovery-2026-10-02/report.json">report</a>, <a href="experiments/target-process-recovery-2026-10-02/provenance.json">provenance</a></td>
@@ -232,6 +249,7 @@
 <td>3</td>
 <td>16</td>
 <td>2</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/model-paired-cpu-2026-10-02/report.json">report</a>, <a href="experiments/model-paired-cpu-2026-10-02/provenance.json">provenance</a></td>
@@ -243,6 +261,7 @@
 <td>10</td>
 <td>0</td>
 <td>2</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/openai-agents-ticket-2026-10-02/report.json">report</a>, <a href="experiments/openai-agents-ticket-2026-10-02/provenance.json">provenance</a></td>
@@ -254,6 +273,7 @@
 <td>11</td>
 <td>1</td>
 <td>4</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/execsurface-state-2026-10-02/report.json">report</a>, <a href="experiments/execsurface-state-2026-10-02/provenance.json">provenance</a></td>
@@ -265,6 +285,7 @@
 <td>5</td>
 <td>30</td>
 <td>3</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/model-format-cpu-2026-10-02/report.json">report</a>, <a href="experiments/model-format-cpu-2026-10-02/provenance.json">provenance</a></td>
@@ -276,6 +297,7 @@
 <td>18</td>
 <td>10</td>
 <td>2</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/google-adk-ticket-2026-10-02/report.json">report</a>, <a href="experiments/google-adk-ticket-2026-10-02/provenance.json">provenance</a></td>
@@ -287,6 +309,7 @@
 <td>23</td>
 <td>0</td>
 <td>2</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/installed-format-policy-2026-10-02/report.json">report</a>, <a href="experiments/installed-format-policy-2026-10-02/provenance.json">provenance</a></td>
@@ -298,6 +321,7 @@
 <td>5</td>
 <td>22</td>
 <td>3 (1 out of scope)</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/model-boundary-cpu-2026-10-02/report.json">report</a>, <a href="experiments/model-boundary-cpu-2026-10-02/provenance.json">provenance</a></td>
@@ -309,6 +333,7 @@
 <td>5</td>
 <td>0</td>
 <td>6</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-operated-upstream-review-pending</code></td>
 <td><a href="experiments/atomic-delegation-2026-10-02/report.json">report</a>, <a href="experiments/atomic-delegation-2026-10-02/provenance.json">provenance</a></td>
@@ -320,6 +345,7 @@
 <td>5</td>
 <td>39</td>
 <td>5</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/installed-boundary-policy-2026-10-02/report.json">report</a>, <a href="experiments/installed-boundary-policy-2026-10-02/provenance.json">provenance</a></td>
@@ -331,6 +357,7 @@
 <td>12</td>
 <td>11</td>
 <td>6</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/model-vocabulary-cpu-2026-10-03/report.json">report</a>, <a href="experiments/model-vocabulary-cpu-2026-10-03/provenance.json">provenance</a></td>
@@ -342,6 +369,7 @@
 <td>9</td>
 <td>9</td>
 <td>6</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/model-tool-arguments-cpu-2026-10-03/native-report.json">report</a>, <a href="experiments/model-tool-arguments-cpu-2026-10-03/provenance.json">provenance</a></td>
@@ -353,6 +381,7 @@
 <td>7</td>
 <td>0</td>
 <td>3</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/aps-jcs-2026-10-04/report.json">report</a>, <a href="experiments/aps-jcs-2026-10-04/provenance.json">provenance</a></td>
@@ -364,6 +393,7 @@
 <td>10</td>
 <td>0</td>
 <td>3</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/google-adk-responses-2026-10-04/report.json">report</a>, <a href="experiments/google-adk-responses-2026-10-04/provenance.json">provenance</a></td>
@@ -375,6 +405,7 @@
 <td>18</td>
 <td>0</td>
 <td>3</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/go-jcs-2026-10-04/report.json">report</a>, <a href="experiments/go-jcs-2026-10-04/provenance.json">provenance</a></td>
@@ -386,6 +417,7 @@
 <td>12</td>
 <td>0</td>
 <td>5</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/ag2-push-authority-2026-10-04/report.json">report</a>, <a href="experiments/ag2-push-authority-2026-10-04/provenance.json">provenance</a></td>
@@ -397,6 +429,7 @@
 <td>10</td>
 <td>0</td>
 <td>4 (1 out of scope)</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>producer-review-pending-submission</code></td>
 <td><a href="experiments/remora-boundary-2026-10-04/report.json">report</a>, <a href="experiments/remora-boundary-2026-10-04/provenance.json">provenance</a></td>
@@ -408,6 +441,7 @@
 <td>4</td>
 <td>0</td>
 <td>4</td>
+<td>0</td>
 <td>author-operated</td>
 <td><code>upstream-merged-retained-run</code></td>
 <td><a href="experiments/aeoess-receipt-signature-2026-10-05/report.json">report</a>, <a href="experiments/aeoess-receipt-signature-2026-10-05/provenance.json">provenance</a></td>
@@ -419,6 +453,7 @@
 <td>5</td>
 <td>0</td>
 <td>4</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/w3c-report-replay-2026-10-06/report.json">report</a>, <a href="experiments/w3c-report-replay-2026-10-06/provenance.json">provenance</a></td>
@@ -430,6 +465,7 @@
 <td>6</td>
 <td>0</td>
 <td>8 (2 out of scope)</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>author-retained-measured-record</code></td>
 <td><a href="experiments/aps-corrected20-2026-10-10/report.json">report</a>, <a href="experiments/aps-corrected20-2026-10-10/provenance.json">provenance</a></td>
@@ -441,6 +477,7 @@
 <td>5</td>
 <td>0</td>
 <td>3 (1 out of scope)</td>
+<td>0</td>
 <td>Probity-operated</td>
 <td><code>retained-independent-consumer-result</code></td>
 <td><a href="interop/trace-m1/retained/public-report.json">report</a>, <a href="interop/trace-m1/retained/QUALIFICATION.json">provenance</a></td>
@@ -633,7 +670,7 @@
 </table>
 </div>
 <h2 id="how-this-page-is-derived">How this page is derived</h2>
-<p>Verdicts: <code>pass</code> is ESTABLISHED, <code>fail</code> is CONTRADICTED, and <code>not-exercised</code> and <code>out-of-scope</code> are NOT_ESTABLISHED, with out-of-scope results labelled. A verdict holds only at the record’s evidence class.</p>
+<p>Verdicts: <code>pass</code> is ESTABLISHED, <code>fail</code> is CONTRADICTED, and <code>not-exercised</code> and <code>out-of-scope</code> are NOT_ESTABLISHED, with out-of-scope results labelled. A verdict holds only at the record’s evidence class. <code>unknown</code> stays distinct: the observation cannot settle the claim. It is neither a failed claim nor a check that was not exercised, and it is counted separately.</p>
 <p>Operation class, first match wins, from the record’s own roles: <strong>independently operated</strong> only when <code>independentOperation</code> or <code>independentOperator</code> is exactly <code>established</code>; <strong>Probity-operated</strong> when an operator role (<code>runner</code>, <code>atlasOperator</code>, <code>fixtureOperator</code>, <code>historicalRunner</code>, <code>diagnosticRunner</code> or <code>atlasReplay</code>) names Probity; otherwise <strong>author-operated</strong>, where an operator role names the author of the fixture or software under test.</p>
 <p>The page is regenerated by <code>python3 tools/gen_status.py</code>, and <code>python3 tools/build.py --check</code> fails when it is stale. Open cells come from <code>data/open-cells.toml</code>, written by <code>tools/export_open_cells.py</code>, which keeps a cell only when an excerpt of its source page was found there.</p>
 </main>

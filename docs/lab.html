@@ -498,6 +498,7 @@ Open the protocol, replay commands, and detailed evidence limits
 </table>
 </div>
 <p>Use claim-level results: <code>pass</code>, <code>fail</code>, <code>unknown</code>, <code>not-exercised</code> or <code>out-of-scope</code>. State the rule producing each result. Unsupported checks and unavailable observations remain visible. A signature verdict, service correlation, policy admission and observed effect must have separate fields even when their outcomes agree.</p>
+<p>Use <code>unknown</code> when an observation cannot settle the claim. Use <code>not-exercised</code> when the check was not exercised, and <code>out-of-scope</code> when the claim falls outside the declared scope. Preserve the source report’s words and explain the result.</p>
 <h2 id="submit-a-reproducible-evidence-packet">Submit a reproducible evidence packet</h2>
 <ol type="1">
 <li><strong>Fix the question before scoring.</strong> Name the exact specification/profile revision, claim and expected scope. Pin the producer, reader/adapter, configuration, policy and input manifests. Identify any local interpretation of an unresolved contract. Record who chose the keys and witness head, and when.</li>
