@@ -93,6 +93,7 @@ class TestComponentVersionRoles:
         data = tmp_path / "data"
         data.mkdir()
         (data / "atlas.toml").write_bytes((ROOT / "data/atlas.toml").read_bytes())
+        (data / "catalog-sources.json").write_bytes((ROOT / "data/catalog-sources.json").read_bytes())
         source = (ROOT / "data/versions.toml").read_text()
         repeated = source.split("[[component_release]]")[1]
         (data / "versions.toml").write_text(source + "\n[[component_release]]" + repeated)

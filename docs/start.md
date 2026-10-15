@@ -6,6 +6,8 @@ Vectors tests how a verifier behaves. Verify checks a supplied claim against evi
 
 A published release, a reviewed guide and a tested installation are different pins. Use the exact recipe and source named by the result you reproduce. The [version ledger](versions.md#component-versions) records release and source roles.
 
+Install links keep the reviewed recipe. Download links select the recorded package release. Live badges can move beyond those pins. PePy counts PyPI and known mirrors; crate counters read crates.io. Downloads do not count people, deployments or adoption.
+
 | Task | Project |
 |----|----|
 | Check artifact digests or evaluate admission policies | [Probity Admission](#admission) |
@@ -57,6 +59,25 @@ Checks an artifact against digests named by a TEA document, CycloneDX SBOM or VE
 
 Released. [Reviewed guide and source](https://github.com/probityai/agent-evidence-admission/blob/c8f34fe857a969a5a503e0792466b76797d66355/python/README.md)
 
+<div>
+
+<p class="distribution-title">
+
+agent-evidence-admission / recorded package release 0.1.0
+</p>
+
+<p class="distribution-actions">
+
+<a href="https://github.com/probityai/agent-evidence-admission/blob/c8f34fe857a969a5a503e0792466b76797d66355/python/README.md#install">Install</a> <a href="https://pypi.org/project/agent-evidence-admission/0.1.0/#files">Download release files</a> <a href="https://pypi.org/project/agent-evidence-admission/0.1.0/">Registry release</a> <a href="https://pepy.tech/projects/agent-evidence-admission">Download statistics</a>
+</p>
+
+<p class="distribution-badges">
+
+Live registry and named workflow reports:<br /> <a href="https://pypi.org/project/agent-evidence-admission/"><img src="https://img.shields.io/pypi/v/agent-evidence-admission?label=PyPI" alt="Current pypi version of agent-evidence-admission" height="20" /></a> <a href="https://pepy.tech/projects/agent-evidence-admission"><img src="https://img.shields.io/pepy/dt/agent-evidence-admission?label=PyPI%20%2B%20mirrors" alt="Download statistics for agent-evidence-admission" height="20" /></a>
+</p>
+
+</div>
+
 <a id="atlas"></a>
 
 ## Probity Atlas
@@ -79,6 +100,25 @@ Released. [Reviewed guide and source](https://github.com/probityai/agent-checkou
 
 Composition CLI and Action: source tag [0.2.0](https://github.com/probityai/agent-checkout-runner/tree/v0.2.0), source [`297b5b182bb4`](https://github.com/probityai/agent-checkout-runner/tree/297b5b182bb40605b62586eccbf93a9c68a4aee1), read 2026-10-15. A bounded synthetic composition reference. The source tag pins the CLI and Action, not a registry release or a merchant deployment.
 
+<div>
+
+<p class="distribution-title">
+
+Composition CLI and Action
+</p>
+
+<p class="distribution-actions">
+
+<a href="https://github.com/probityai/agent-checkout-runner/blob/297b5b182bb40605b62586eccbf93a9c68a4aee1/README.md#install">Install</a> <a href="https://github.com/probityai/agent-checkout-runner/blob/297b5b182bb40605b62586eccbf93a9c68a4aee1/README.md#run-it-in-your-own-ci">Use pinned Action</a> <a href="https://github.com/probityai/agent-checkout-runner/actions/workflows/ci.yml">Workflow runs</a>
+</p>
+
+<p class="distribution-badges">
+
+Live registry and named workflow reports:<br /> <a href="https://github.com/probityai/agent-checkout-runner/actions/workflows/ci.yml"><img src="https://github.com/probityai/agent-checkout-runner/actions/workflows/ci.yml/badge.svg" alt="Checkout runner run workflow status" height="20" /></a>
+</p>
+
+</div>
+
 <a id="dsse"></a>
 
 ## dsse
@@ -90,6 +130,25 @@ Signs and verifies DSSE envelopes with explicit threshold and key handling.
 Released. [Reviewed guide and source](https://github.com/probityai/dsse/blob/8549e5e54080b5f8c864f8b3eba8f57af8bd9c51/README.md)
 
 Rust crate: published release [0.1.2](https://github.com/probityai/dsse/releases/tag/v0.1.2), source [`ec451793f5f5`](https://github.com/probityai/dsse/tree/ec451793f5f5b670ff4033721e424b1a80e52e3e), read 2026-10-15. Signature verification checks bytes under caller-selected keys, not the truth of the payload.
+
+<div>
+
+<p class="distribution-title">
+
+dsse / recorded package release 0.1.2
+</p>
+
+<p class="distribution-actions">
+
+<a href="https://github.com/probityai/dsse/blob/8549e5e54080b5f8c864f8b3eba8f57af8bd9c51/README.md#quick-start">Install</a> <a href="https://crates.io/api/v1/crates/dsse/0.1.2/download">Download release files</a> <a href="https://crates.io/crates/dsse/0.1.2">Registry release</a> <a href="https://crates.io/crates/dsse">Download statistics</a>
+</p>
+
+<p class="distribution-badges">
+
+Live registry and named workflow reports:<br /> <a href="https://crates.io/crates/dsse"><img src="https://img.shields.io/crates/v/dsse?label=crates.io" alt="Current crates version of dsse" height="20" /></a> <a href="https://crates.io/crates/dsse"><img src="https://img.shields.io/crates/d/dsse?label=crate%20downloads" alt="Download statistics for dsse" height="20" /></a>
+</p>
+
+</div>
 
 <a id="inspect-native-reader"></a>
 
@@ -112,6 +171,25 @@ Checks raw JSON input before producing its RFC 8785 canonical form.
 Released. [Reviewed guide and source](https://github.com/probityai/jcs-admit/blob/0a058d7b676fb452929337c528b893c7f2121062/README.md)
 
 Rust crate: published release [0.1.1](https://github.com/probityai/jcs-admit/releases/tag/v0.1.1), source [`33603fc8caf6`](https://github.com/probityai/jcs-admit/tree/33603fc8caf6f8469ea790f41ab74ae64d4f1658), read 2026-10-15. Canonicalization and raw-input admission are separate from envelope verification.
+
+<div>
+
+<p class="distribution-title">
+
+jcs-admit / recorded package release 0.1.1
+</p>
+
+<p class="distribution-actions">
+
+<a href="https://github.com/probityai/jcs-admit/blob/0a058d7b676fb452929337c528b893c7f2121062/README.md#quick-start">Install</a> <a href="https://crates.io/api/v1/crates/jcs-admit/0.1.1/download">Download release files</a> <a href="https://crates.io/crates/jcs-admit/0.1.1">Registry release</a> <a href="https://crates.io/crates/jcs-admit">Download statistics</a>
+</p>
+
+<p class="distribution-badges">
+
+Live registry and named workflow reports:<br /> <a href="https://crates.io/crates/jcs-admit"><img src="https://img.shields.io/crates/v/jcs-admit?label=crates.io" alt="Current crates version of jcs-admit" height="20" /></a> <a href="https://crates.io/crates/jcs-admit"><img src="https://img.shields.io/crates/d/jcs-admit?label=crate%20downloads" alt="Download statistics for jcs-admit" height="20" /></a>
+</p>
+
+</div>
 
 <a id="mintid-trace-records-v2"></a>
 
@@ -145,6 +223,20 @@ Released. [Reviewed guide and source](https://github.com/probityai/ratchet/blob/
 
 Harness source: source tag [0.1.2](https://github.com/probityai/ratchet/tree/probity-ratchet-v0.1.2), source [`e2daf77f75e9`](https://github.com/probityai/ratchet/tree/e2daf77f75e92aa961cf184084335b67aaae7581), read 2026-10-15. Annotated harness tag, peeled to its source commit. It is separate from the public case package.
 
+<div>
+
+<p class="distribution-title">
+
+Harness source
+</p>
+
+<p class="distribution-actions">
+
+<a href="https://github.com/probityai/ratchet/blob/b2800b26ec6cf60fee8e95682660846f674f97c2/README.md#install">Install</a>
+</p>
+
+</div>
+
 Public case suite: published release [0.2.0](https://github.com/probityai/ratchet/releases/tag/probity-ratchet-cases-v0.2.0), source [`b6504260db8a`](https://github.com/probityai/ratchet/tree/b6504260db8af7d3746e9ac87740430dd988e8d9), read 2026-10-15. The case package has its own release. All shipped splits are public.
 
 <a id="ratchet-cases"></a>
@@ -157,6 +249,25 @@ Grades agent tasks in a simulated company on final state, with declared tool fau
 
 Released. [Reviewed guide and source](https://github.com/probityai/ratchet/blob/b6504260db8af7d3746e9ac87740430dd988e8d9/probity-ratchet-cases/README.md)
 
+<div>
+
+<p class="distribution-title">
+
+probity-ratchet-cases / recorded package release 0.2.0
+</p>
+
+<p class="distribution-actions">
+
+<a href="https://github.com/probityai/ratchet/blob/b6504260db8af7d3746e9ac87740430dd988e8d9/probity-ratchet-cases/README.md#install">Install</a> <a href="https://pypi.org/project/probity-ratchet-cases/0.2.0/#files">Download release files</a> <a href="https://pypi.org/project/probity-ratchet-cases/0.2.0/">Registry release</a> <a href="https://pepy.tech/projects/probity-ratchet-cases">Download statistics</a>
+</p>
+
+<p class="distribution-badges">
+
+Live registry and named workflow reports:<br /> <a href="https://pypi.org/project/probity-ratchet-cases/"><img src="https://img.shields.io/pypi/v/probity-ratchet-cases?label=PyPI" alt="Current pypi version of probity-ratchet-cases" height="20" /></a> <a href="https://pepy.tech/projects/probity-ratchet-cases"><img src="https://img.shields.io/pepy/dt/probity-ratchet-cases?label=PyPI%20%2B%20mirrors" alt="Download statistics for probity-ratchet-cases" height="20" /></a>
+</p>
+
+</div>
+
 <a id="vectors"></a>
 
 ## Probity Vectors
@@ -168,6 +279,25 @@ Provides conformance cases and reference verifiers for selected agent evidence f
 Released. [Reviewed guide and source](https://github.com/probityai/agent-evidence-vectors/blob/9e596fbff7bb29809d38319aebb56f2141923eb2/README.md)
 
 Go verifier and Python harness: published release [0.18.1](https://github.com/probityai/agent-evidence-vectors/releases/tag/v0.18.1), source [`33d545104ff2`](https://github.com/probityai/agent-evidence-vectors/tree/33d545104ff2f8c124cff465c96c013eeb809156), read 2026-10-15. The reviewed guide also carries a 0.18.0 install recipe. Select the version required by your result.
+
+<div>
+
+<p class="distribution-title">
+
+agent-evidence-vectors / recorded package release 0.18.1
+</p>
+
+<p class="distribution-actions">
+
+<a href="https://github.com/probityai/agent-evidence-vectors/blob/9e596fbff7bb29809d38319aebb56f2141923eb2/README.md#try-it">Install</a> <a href="https://pypi.org/project/agent-evidence-vectors/0.18.1/#files">Download release files</a> <a href="https://pypi.org/project/agent-evidence-vectors/0.18.1/">Registry release</a> <a href="https://pepy.tech/projects/agent-evidence-vectors">Download statistics</a> <a href="https://github.com/probityai/agent-evidence-vectors/blob/9e596fbff7bb29809d38319aebb56f2141923eb2/docs/guides/runner.md#run-the-suite-in-ci">Use pinned Action</a> <a href="https://github.com/probityai/agent-evidence-vectors/actions/workflows/ci.yml">Workflow runs</a>
+</p>
+
+<p class="distribution-badges">
+
+Live registry and named workflow reports:<br /> <a href="https://pypi.org/project/agent-evidence-vectors/"><img src="https://img.shields.io/pypi/v/agent-evidence-vectors?label=PyPI" alt="Current pypi version of agent-evidence-vectors" height="20" /></a> <a href="https://pepy.tech/projects/agent-evidence-vectors"><img src="https://img.shields.io/pepy/dt/agent-evidence-vectors?label=PyPI%20%2B%20mirrors" alt="Download statistics for agent-evidence-vectors" height="20" /></a> <a href="https://github.com/probityai/agent-evidence-vectors/actions/workflows/ci.yml"><img src="https://github.com/probityai/agent-evidence-vectors/actions/workflows/ci.yml/badge.svg" alt="Vectors ci workflow status" height="20" /></a>
+</p>
+
+</div>
 
 <a id="verify"></a>
 

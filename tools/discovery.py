@@ -6,6 +6,7 @@ adds site destinations; it does not read or modify the Lab register.
 
 from __future__ import annotations
 
+import html
 import json
 import re
 import tomllib
@@ -13,6 +14,7 @@ from collections.abc import Iterable
 from datetime import date
 from pathlib import Path
 from typing import Any, cast
+from urllib.parse import quote
 from xml.sax.saxutils import escape
 
 from discoverability import catalog
@@ -119,10 +121,13 @@ def component_versions(public: dict[str, Any], root: Path = ROOT) -> list[dict[s
     artifacts = {row["name"]: row for row in atlas["artifact"]}
     components = {row["id"]: row for row in public["components"]}
     repositories = {row["id"]: row for row in public["repositories"]}
+    sources = json.loads((root / "data/catalog-sources.json").read_text(encoding="utf-8"))
     result: dict[tuple[str, str], dict[str, str]] = {}
     for authored in data.get("component_release", []):
         row = resolve_component_version(authored, artifacts)
         version = checked_component_version(row, components, repositories)
+        check_distribution_binding(version, public)
+        check_action_source(version, repositories, sources)
         key = (row["component"], row["artifact"])
         if key in result:
             catalog.fail("Component version artifact is repeated")
@@ -163,7 +168,8 @@ def checked_component_version(
 def check_component_version_fields(row: dict[str, str]) -> None:
     """Check the ledger field set, source identity, date and authored text."""
     fields = {"component", "repository", "artifact", "kind", "version", "tag", "commit", "read", "note"}
-    if set(row) != fields or any(not isinstance(value, str) for value in row.values()):
+    optional = {"registry", "package", "version_prefix", "profile", "install_anchor", "action_guide", "workflow", "workflow_name"}
+    if not fields <= set(row) <= fields | optional or any(not isinstance(value, str) for value in row.values()):
         catalog.fail("Component version fields are invalid")
     if row["kind"] not in {"release", "source-tag"}:
         catalog.fail("Component version kind is invalid")
@@ -175,6 +181,120 @@ def check_component_version_fields(row: dict[str, str]) -> None:
         catalog.fail("Component version read date is invalid")
     for field in ("artifact", "version", "note"):
         catalog.check_public_text(row[field])
+    check_distribution_fields(row)
+
+
+def check_distribution_fields(row: dict[str, str]) -> None:
+    """Check optional distribution metadata without permitting arbitrary URLs."""
+    if {"registry", "package", "version_prefix", "profile"} & set(row):
+        if not {"registry", "package", "install_anchor"} <= set(row) or row["registry"] not in {"pypi", "crates"}:
+            catalog.fail("Distribution needs a known registry, package and install anchor")
+        if re.fullmatch(r"[a-z0-9][a-z0-9._-]*", row["package"]) is None or row["kind"] != "release":
+            catalog.fail("Distribution needs a released package identity")
+        package_version(row)
+    if "install_anchor" in row and re.fullmatch(r"[a-z0-9][a-z0-9-]*", row["install_anchor"]) is None:
+        catalog.fail("Distribution install anchor is invalid")
+    if "action_guide" in row:
+        match = re.fullmatch(r"https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/blob/[0-9a-f]{40}/([A-Za-z0-9._/-]+)#[a-z0-9][a-z0-9-]*", row["action_guide"])
+        if match is None or any(part in {".", "..", ""} for part in match[1].split("/")):
+            catalog.fail("Action guide needs a safe pinned source and heading")
+    if {"workflow", "workflow_name"} & set(row):
+        if not {"workflow", "workflow_name"} <= set(row) or re.fullmatch(r"[A-Za-z0-9_.-]+\.ya?ml", row["workflow"]) is None:
+            catalog.fail("Workflow needs a named workflow file")
+        catalog.check_public_text(row["workflow_name"])
+
+
+def package_version(row: dict[str, str]) -> str:
+    """Remove only an explicitly recorded release namespace, without a new number."""
+    prefix = row.get("version_prefix", "")
+    version = row["version"]
+    if "version_prefix" in row and (not prefix or not version.startswith(prefix)):
+        catalog.fail("Package version prefix does not match the recorded release")
+    version = version[len(prefix):]
+    if re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+(?:[A-Za-z0-9.+-]*)", version) is None:
+        catalog.fail("Distribution needs an exact package version")
+    return version
+
+
+def check_distribution_binding(row: dict[str, str], public: dict[str, Any]) -> None:
+    """Bind a registry package and install recipe to the owning public task."""
+    entries = {entry["id"]: entry for entry in project_entries(public)}
+    target = entries.get(row.get("profile", row["component"]))
+    if target is None or target.get("component", target["id"]) != row["component"]:
+        catalog.fail("Distribution profile does not belong to its component")
+    if "registry" in row and row["package"] not in target.get("packages", []):
+        catalog.fail("Distribution package does not belong to its task")
+
+
+def check_action_source(
+    row: dict[str, str], repositories: dict[str, Any], sources: list[dict[str, Any]]
+) -> None:
+    """Require an independently reviewed guide, even after a README pin changes."""
+    if "action_guide" not in row:
+        return
+    repository = repositories[row["repository"]]
+    url = row["action_guide"].partition("#")[0]
+    if not url.startswith(repository["url"] + "/blob/"):
+        catalog.fail("Action guide does not belong to its repository")
+    if not any(source["url"] == url and "https://github.com/" + source["repository"] == repository["url"] for source in sources):
+        catalog.fail("Action guide needs a retained source review")
+
+
+def registry_links(row: dict[str, str]) -> dict[str, str]:
+    """Derive registry routes from the existing release value and package identity."""
+    name = row["package"]
+    version = quote(package_version(row), safe="")
+    if row["registry"] == "pypi":
+        current = f"https://pypi.org/project/{name}/"
+        return {"registry": f"{current}{version}/", "download": f"{current}{version}/#files",
+                "statistics": f"https://pepy.tech/projects/{name}", "current": current,
+                "version_badge": f"https://img.shields.io/pypi/v/{name}?label=PyPI",
+                "download_badge": f"https://img.shields.io/pepy/dt/{name}?label=PyPI%20%2B%20mirrors"}
+    current = f"https://crates.io/crates/{name}"
+    return {"registry": f"{current}/{version}",
+            "download": f"https://crates.io/api/v1/crates/{name}/{version}/download",
+            "statistics": current, "current": current,
+            "version_badge": f"https://img.shields.io/crates/v/{name}?label=crates.io",
+            "download_badge": f"https://img.shields.io/crates/d/{name}?label=crate%20downloads"}
+
+
+def distribution_markup(row: dict[str, str], public: dict[str, Any]) -> str:
+    """Render useful actions and live metrics while keeping recipe pins separate."""
+    if not {"registry", "install_anchor", "action_guide", "workflow"} & set(row):
+        return ""
+    entries = {entry["id"]: entry for entry in project_entries(public)}
+    target = entries[row.get("profile", row["component"])]
+    repository = next(repo for repo in public["repositories"] if repo["id"] == row["repository"])
+    actions = []
+    badges = []
+    title = row["artifact"]
+    if "install_anchor" in row:
+        actions.append(("Install", target["docs_url"] + "#" + row["install_anchor"]))
+    if "registry" in row:
+        links = registry_links(row)
+        title = f"{row['package']} / recorded package release {package_version(row)}"
+        actions.extend((label, links[key]) for label, key in [
+            ("Download release files", "download"), ("Registry release", "registry"), ("Download statistics", "statistics")
+        ])
+        badges.extend((links[key], links[destination], label) for key, destination, label in [
+            ("version_badge", "current", f"Current {row['registry']} version of {row['package']}"),
+            ("download_badge", "statistics", f"Download statistics for {row['package']}")
+        ])
+    if "action_guide" in row:
+        actions.append(("Use pinned Action", row["action_guide"]))
+    if "workflow" in row:
+        workflow = f"{repository['url']}/actions/workflows/{row['workflow']}"
+        actions.append(("Workflow runs", workflow))
+        badges.append((workflow + "/badge.svg", workflow, row["workflow_name"] + " workflow status"))
+    links_html = "\n".join(f'<a href="{html.escape(url)}">{html.escape(label)}</a>' for label, url in actions)
+    badge_html = "\n".join(
+        f'<a href="{html.escape(url)}"><img src="{html.escape(source)}" alt="{html.escape(label)}" height="20" /></a>'
+        for source, url, label in badges
+    )
+    return (f'<div class="distribution">\n<p class="distribution-title">{html.escape(title)}</p>\n'
+            f'<p class="distribution-actions">\n{links_html}\n</p>\n'
+            + (f'<p class="distribution-badges">Live registry and named workflow reports:<br />\n{badge_html}\n</p>\n' if badges else "")
+            + "</div>")
 
 
 def component_version_line(version: dict[str, str]) -> str:
@@ -214,6 +334,10 @@ def start_markdown(
         "Use the exact recipe and source named by the result you reproduce. "
         "The [version ledger](versions.html#component-versions) records release and source roles.",
         "",
+        "Install links keep the reviewed recipe. Download links select the recorded package release. "
+        "Live badges can move beyond those pins. PePy counts PyPI and known mirrors; crate counters read crates.io. "
+        "Downloads do not count people, deployments or adoption.",
+        "",
         "| Task | Project |",
         "| --- | --- |",
     ]
@@ -242,6 +366,9 @@ def start_markdown(
         for version in versions or []:
             if version["component"] == record["id"]:
                 rows.extend(["", component_version_line(version)])
+            if version.get("profile", version["component"]) == record["id"]:
+                if markup := distribution_markup(version, public):
+                    rows.extend(["", markup])
     rows.extend(
         [
             "",

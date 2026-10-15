@@ -64,6 +64,29 @@ its stable schema and identities; the Markdown version ledger is linked from
 exact source, environment, command and retained output. Historical results and
 citation snapshots keep their recorded pins when current navigation changes.
 
+## Bind package actions to their artifact
+
+The same release row can record a `registry`, `package` and `install_anchor`.
+Use `profile` when the package serves a specific task, such as the digest checker
+or Ratchet cases. The build checks that the package belongs to that task and
+refuses registry controls on a source tag. Catalog JSON keeps its existing schema.
+
+The package version comes from the release value. `version_prefix` records an
+actual release namespace: Admission's GitHub tag starts with `py-v`, while its
+PyPI package version does not. The build removes only that recorded prefix and
+refuses a mismatch. It does not maintain a second version number.
+
+Install buttons open the task's reviewed guide at its named heading. File links
+select the recorded package release. Registry and download badges are live and
+can describe a newer registry state. PePy includes PyPI and known mirrors; crate
+download counters read crates.io. Neither counter measures users or adoption.
+
+An `action_guide` selects an immutable guide URL and heading from the retained
+source reviews. The build binds it to its owning repository; a README refresh
+cannot silently move that Action recipe. A `workflow` and `workflow_name` identify one
+workflow file and name its live status. That report describes the named
+workflow, not a product-wide result or the installation shown by a pinned guide.
+
 Keep project navigation in the catalog and measured runs in the Lab register.
 
 Integration profiles link the reviewed reader guide. Record upstream listing

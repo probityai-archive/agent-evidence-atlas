@@ -653,7 +653,7 @@ def versions_markdown(built: set[str], versions: list[dict[str, str]]) -> str:
     for version in versions:
         role = "Published release" if version["kind"] == "release" else "Source tag"
         components.append(
-            f"| [{version['display_name']}](start.html#{version['component']}) / {version['artifact']} | "
+            f"| [{version['display_name']}](start.html#{version.get('profile', version['component'])}) / {version['artifact']} | "
             f"{role} | [{version['version']}]({version['url']}) | "
             f"[`{version['commit'][:12]}`]({version['source_url']}) | {version['read']} | {version['note']} |"
         )
