@@ -33,7 +33,7 @@ Component ID: `admission`.
 
 Provides a Python artifact-digest checker, admission policies for OPA, Kyverno and policy-controller, and a pre-call budget reservation API.
 
-Draft. [Reviewed guide and source](https://github.com/probityai/agent-evidence-admission/blob/f00f04b888a5694de03304f0481addb2a75b98a8/README.md)
+Draft. [Reviewed guide and source](https://github.com/probityai/agent-evidence-admission/blob/c8f34fe857a969a5a503e0792466b76797d66355/README.md)
 
 Python digest checker: published release [py-v0.1.0](https://github.com/probityai/agent-evidence-admission/releases/tag/py-v0.1.0), source [`0004d2333a84`](https://github.com/probityai/agent-evidence-admission/tree/0004d2333a841c95658d4a9c75232f0913ca7141), read 2026-10-15. This release is the digest-check package. Admission policy and budget tasks retain their own source pins.
 
@@ -55,7 +55,7 @@ Profile ID: `artifact-digest-check`. Component ID: `admission`.
 
 Checks an artifact against digests named by a TEA document, CycloneDX SBOM or VEX, or in-toto statement.
 
-Released. [Reviewed guide and source](https://github.com/probityai/agent-evidence-admission/blob/f00f04b888a5694de03304f0481addb2a75b98a8/python/README.md)
+Released. [Reviewed guide and source](https://github.com/probityai/agent-evidence-admission/blob/c8f34fe857a969a5a503e0792466b76797d66355/python/README.md)
 
 <a id="atlas"></a>
 
@@ -141,7 +141,7 @@ Component ID: `ratchet`.
 
 Provides a source-tagged agent guard harness, signed admission records and public regression cases.
 
-Released. [Reviewed guide and source](https://github.com/probityai/ratchet/blob/0e5a9c1059d4f7a77694289a75c39c7b1682313a/README.md)
+Released. [Reviewed guide and source](https://github.com/probityai/ratchet/blob/b2800b26ec6cf60fee8e95682660846f674f97c2/README.md)
 
 Harness source: source tag [0.1.2](https://github.com/probityai/ratchet/tree/probity-ratchet-v0.1.2), source [`e2daf77f75e9`](https://github.com/probityai/ratchet/tree/e2daf77f75e92aa961cf184084335b67aaae7581), read 2026-10-15. Annotated harness tag, peeled to its source commit. It is separate from the public case package.
 
@@ -177,7 +177,7 @@ Component ID: `verify`.
 
 Checks supplied evidence bytes through claim-specific offline adapters. Its README links to source-pinned installation and checked task recipes.
 
-Unreleased. [Reviewed guide and source](https://github.com/probityai/probity-verify/blob/b920366397cb131232163706864a70723b867367/README.md)
+Unreleased. [Reviewed guide and source](https://github.com/probityai/probity-verify/blob/2ecdbafc0c6cc0f26461ffe913fe342e7de090a6/README.md)
 
 <a id="vocabulary"></a>
 

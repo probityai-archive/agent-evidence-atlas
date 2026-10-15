@@ -60,10 +60,10 @@ note = "Twelve planned installments"
 name = "Claim ledger"
 page = "claims.html"
 source = "CLAIMS.md"
-version = "0.8.25"
+version = "0.8.26"
 date = "2026-10-15"
 status = "draft"
-note = "Adds canonical component release identities and precise source, guide, install and historical pin roles"
+note = "Records the corrected reviewed guides without changing releases, executed pins or historical evidence"
 
 [[artifact]]
 name = "Probity Open Evidence Lab"
@@ -132,10 +132,10 @@ note = "Preserves all native attempts, abstention failures and separate scoped-e
 name = "Project catalog"
 page = "start.html"
 source = "data/catalog.json"
-version = "0.9"
+version = "0.9.1"
 date = "2026-10-15"
 status = "draft"
-note = "Refreshes reviewed source routes, adds Ratchet and public digest/case tasks, and reads release values from the existing Atlas records"
+note = "Selects the corrected public Admission, Verify and Ratchet guides; component and historical source identities stay fixed"
 
 [[artifact]]
 name = "Automation guide"
@@ -177,10 +177,10 @@ note = "Search, exact claim-result filters and complete static navigation over t
 name = "Published source routes"
 page = "start.html"
 source = "data/catalog-sources.json"
-version = "0.2"
+version = "0.2.1"
 date = "2026-10-15"
 status = "draft"
-note = "Appends reviewed public README sources without replacing earlier source reviews"
+note = "Appends immutable guide reviews for the corrected public first-use routes and retains every prior source review"
 
 [[artifact]]
 name = "Caller-declared APS and PriorSeal replay guide"

@@ -2,7 +2,7 @@
   "components": [
     {
       "display_name": "Probity Admission",
-      "docs_url": "https://github.com/probityai/agent-evidence-admission/blob/f00f04b888a5694de03304f0481addb2a75b98a8/README.md",
+      "docs_url": "https://github.com/probityai/agent-evidence-admission/blob/c8f34fe857a969a5a503e0792466b76797d66355/README.md",
       "id": "admission",
       "packages": [
         "agent-evidence-admission"
@@ -86,7 +86,7 @@
     },
     {
       "display_name": "Probity Ratchet",
-      "docs_url": "https://github.com/probityai/ratchet/blob/0e5a9c1059d4f7a77694289a75c39c7b1682313a/README.md",
+      "docs_url": "https://github.com/probityai/ratchet/blob/b2800b26ec6cf60fee8e95682660846f674f97c2/README.md",
       "id": "ratchet",
       "packages": [
         "probity-ratchet-cases"
@@ -116,7 +116,7 @@
     },
     {
       "display_name": "Probity Verify",
-      "docs_url": "https://github.com/probityai/probity-verify/blob/b920366397cb131232163706864a70723b867367/README.md",
+      "docs_url": "https://github.com/probityai/probity-verify/blob/2ecdbafc0c6cc0f26461ffe913fe342e7de090a6/README.md",
       "id": "verify",
       "packages": [],
       "relationships": [],
@@ -157,7 +157,7 @@
     {
       "component": "admission",
       "display_name": "Probity artifact digest check",
-      "docs_url": "https://github.com/probityai/agent-evidence-admission/blob/f00f04b888a5694de03304f0481addb2a75b98a8/python/README.md",
+      "docs_url": "https://github.com/probityai/agent-evidence-admission/blob/c8f34fe857a969a5a503e0792466b76797d66355/python/README.md",
       "id": "artifact-digest-check",
       "packages": [
         "agent-evidence-admission"
@@ -226,9 +226,9 @@
       "display_name": "Probity Admission",
       "id": "repo-admission",
       "source": {
-        "commit": "f00f04b888a5694de03304f0481addb2a75b98a8",
+        "commit": "c8f34fe857a969a5a503e0792466b76797d66355",
         "repository": "repo-admission",
-        "url": "https://github.com/probityai/agent-evidence-admission/blob/f00f04b888a5694de03304f0481addb2a75b98a8/README.md"
+        "url": "https://github.com/probityai/agent-evidence-admission/blob/c8f34fe857a969a5a503e0792466b76797d66355/README.md"
       },
       "status": "draft",
       "summary": "Provides a Python artifact-digest checker, admission policies for OPA, Kyverno and policy-controller, and a pre-call budget reservation API.",
@@ -304,9 +304,9 @@
       "display_name": "Probity Ratchet",
       "id": "repo-ratchet",
       "source": {
-        "commit": "0e5a9c1059d4f7a77694289a75c39c7b1682313a",
+        "commit": "b2800b26ec6cf60fee8e95682660846f674f97c2",
         "repository": "repo-ratchet",
-        "url": "https://github.com/probityai/ratchet/blob/0e5a9c1059d4f7a77694289a75c39c7b1682313a/README.md"
+        "url": "https://github.com/probityai/ratchet/blob/b2800b26ec6cf60fee8e95682660846f674f97c2/README.md"
       },
       "status": "released",
       "summary": "Provides a source-tagged agent guard harness, signed admission records and public regression cases.",
@@ -330,9 +330,9 @@
       "display_name": "Probity Verify",
       "id": "repo-verify",
       "source": {
-        "commit": "b920366397cb131232163706864a70723b867367",
+        "commit": "2ecdbafc0c6cc0f26461ffe913fe342e7de090a6",
         "repository": "repo-verify",
-        "url": "https://github.com/probityai/probity-verify/blob/b920366397cb131232163706864a70723b867367/README.md"
+        "url": "https://github.com/probityai/probity-verify/blob/2ecdbafc0c6cc0f26461ffe913fe342e7de090a6/README.md"
       },
       "status": "unreleased",
       "summary": "Checks supplied evidence bytes through claim-specific offline adapters. Its README links to source-pinned installation and checked task recipes.",
