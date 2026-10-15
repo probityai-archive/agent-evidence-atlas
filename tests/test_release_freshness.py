@@ -11,6 +11,7 @@ from pathlib import Path
 import pytest
 
 import build
+import discovery
 import gen_atlas
 import refresh_stars
 import rederive
@@ -19,6 +20,84 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = tomllib.loads((ROOT / "data/atlas.toml").read_text(encoding="utf-8"))
 CLAIMS = (ROOT / "CLAIMS.md").read_text(encoding="utf-8")
 CADENCE = tomllib.loads((ROOT / "data/claim_cadence.toml").read_text(encoding="utf-8"))["cadence"]
+
+
+class TestComponentVersionRoles:
+    @pytest.fixture
+    def public(self):
+        return discovery.load_public(ROOT)
+
+    def test_task_page_and_ledger_use_the_same_release_identities(self, public):
+        versions = discovery.component_versions(public)
+        task = discovery.start_markdown(public, versions)
+        ledger = build.versions_markdown({"start", "versions"}, versions)
+        for version in versions:
+            assert version["url"] in task and version["url"] in ledger
+            assert version["source_url"] in task and version["source_url"] in ledger
+        assert "Repeat a tested installation" in ledger
+        assert "Cite or replay a result" in ledger
+
+    def test_harness_tag_does_not_inherit_its_case_package_version(self, public):
+        versions = [v for v in discovery.component_versions(public) if v["component"] == "ratchet"]
+        assert {v["kind"] for v in versions} == {"source-tag", "release"}
+        assert len({v["version"] for v in versions}) == len(versions)
+        tag = next(v for v in versions if v["kind"] == "source-tag")
+        assert "source tag" in discovery.component_version_line(tag)
+        assert "published release" not in discovery.component_version_line(tag)
+
+    def test_a_release_change_requires_its_tag_identity_to_change(self):
+        ledger = tomllib.loads((ROOT / "data/versions.toml").read_text())
+        row = next(v for v in ledger["component_release"] if "artifact_ref" in v)
+        artifacts = {a["name"]: a.copy() for a in DATA["artifact"]}
+        artifacts[row["artifact_ref"]]["version"] = "99.0.0"
+        with pytest.raises(discovery.catalog.CatalogError, match="tag does not match"):
+            discovery.resolve_component_version(row, artifacts)
+
+    @pytest.mark.parametrize("change", [
+        {"artifact_ref": "unknown-artifact"},
+        {"version": "99.0.0"},
+    ])
+    def test_an_existing_release_cannot_get_another_version_source(self, change):
+        ledger = tomllib.loads((ROOT / "data/versions.toml").read_text())
+        row = next(v.copy() for v in ledger["component_release"] if "artifact_ref" in v)
+        row.update(change)
+        artifacts = {a["name"]: a for a in DATA["artifact"]}
+        with pytest.raises(discovery.catalog.CatalogError, match="one known artifact"):
+            discovery.resolve_component_version(row, artifacts)
+
+    @pytest.mark.parametrize("change, message", [
+        ({"repository": "repo-observer"}, "does not belong"),
+        ({"component": "not-published"}, "does not belong"),
+        ({"kind": "tested-install"}, "kind is invalid"),
+        ({"commit": "abcd"}, "full source commit"),
+        ({"tag": "v1.0/../../private"}, "safe tag"),
+        ({"read": "2026-02-30"}, "date is invalid"),
+        ({"artifact": "[injected](https://example.org)"}, "plain ASCII"),
+        ({"note": "ghp_credential"}, "forbidden identity"),
+        ({"unknown": "extra field"}, "fields are invalid"),
+        ({"version": 1}, "fields are invalid"),
+    ])
+    def test_unsafe_or_unbound_version_metadata_is_refused(self, public, change, message):
+        row = discovery.component_versions(public)[0].copy()
+        for field in ("display_name", "url", "source_url"):
+            row.pop(field)
+        row.update(change)
+        with pytest.raises(discovery.catalog.CatalogError, match=message):
+            discovery.checked_component_version(
+                row,
+                {r["id"]: r for r in public["components"]},
+                {r["id"]: r for r in public["repositories"]},
+            )
+
+    def test_duplicate_artifacts_are_refused(self, public, tmp_path):
+        data = tmp_path / "data"
+        data.mkdir()
+        (data / "atlas.toml").write_bytes((ROOT / "data/atlas.toml").read_bytes())
+        source = (ROOT / "data/versions.toml").read_text()
+        repeated = source.split("[[component_release]]")[1]
+        (data / "versions.toml").write_text(source + "\n[[component_release]]" + repeated)
+        with pytest.raises(discovery.catalog.CatalogError, match="artifact is repeated"):
+            discovery.component_versions(public, tmp_path)
 
 SAMPLE = '''[meta]
 stars_read = "2026-10-01 07:04:40 UTC"

@@ -2,7 +2,7 @@
 
 A PEER pilot, pinned decision-call, byte and consumer-admission experiments, and two registered observer designs
 
-Draft 0.3, 1 October 2026. The retained pilot and three fixture experiments have results; independent operation and custody remain unestablished.
+Draft 0.4, 15 October 2026. A bounded checkout composition reference joins the retained pilot and fixture experiments. Their independent operation and custody remain unestablished.
 
 The [atlas's open cell](atlas.md#the-open-cell) asks whether a record of an agent action comes from a vantage the agent cannot control, whether its evidence binds to the actual effect, and what was missed. A signature and an offline verifier answer questions about retained bytes. They do not answer who could alter or omit the underlying observations. These experiments keep those questions separate.
 
@@ -11,6 +11,22 @@ The [atlas's open cell](atlas.md#the-open-cell) asks whether a record of an agen
 ## Historical report meaning and diagnostic rule controls
 
 The [worked report example](evidence-test-meaning.md) retains a historical report replay and two separate diagnostic controls. [Inspect its Lab record](runs.md#record-w3c-report-replay-2026-10-06) or [check the retained accounting](experiments/w3c-report-replay-2026-10-06/README.md). These are existing author-operated measurements; no new numbered study or live customer workload is introduced.
+
+<a id="checkout-composition"></a>
+
+## Checkout composition reference
+
+[Agent checkout runner](https://github.com/probityai/agent-checkout-runner/blob/297b5b182bb40605b62586eccbf93a9c68a4aee1/README.md) is a combined CLI and GitHub Action at source tag `v0.2.0`, commit `297b5b182bb40605b62586eccbf93a9c68a4aee1`. It drives checkout and refund components, keeps admission decisions, dispatch attempts, simulator effects and report-time observations in separate streams, and seals a bundle for replay.
+
+Use the [version-pinned guide](https://github.com/probityai/agent-checkout-runner/blob/297b5b182bb40605b62586eccbf93a9c68a4aee1/README.md) to install the CLI or pin the Action. It needs Python 3.12 or later, git, Node 24 and npm. The guide declares 26 matrix cases. Its separate [claim reference](https://github.com/probityai/agent-checkout-runner/blob/297b5b182bb40605b62586eccbf93a9c68a4aee1/docs/CLAIMS.md) defines `ESTABLISHED`, `CONTRADICTED` and `NOT_ESTABLISHED` per retained claim. Bundle verification re-derives those claims; it does not turn a contradiction into permission to act.
+
+This is a **bounded composition example**. Its provider is a local simulator, every record is synthetic and its keys are public test keys. Component suites run on their own fixtures; passing them side by side does not establish a connected deployment. An author-operated fixture run does not establish an independent run, maintained adoption or a merchant deployment. The [coverage map](https://github.com/probityai/agent-checkout-runner/blob/297b5b182bb40605b62586eccbf93a9c68a4aee1/docs/COVERAGE-MAP.md) keeps the component roles and remaining connection requirements explicit. This reference adds no new native run to the Atlas Lab register.
+
+<a id="historical-gate-reference"></a>
+
+## Historical event reference
+
+The [Approval-Gate event snapshot](https://github.com/probityai/Approval-Gate/blob/9a8649b1be95cd6de6a7854ca4acfa0bd4ec6a45/README.md) retains a customer-support simulation that checks evidence and policy before a mock email action. Its source-pinned adapter calls the public Verify kernel. The offline replay checks a saved decision without sending an action. This historical example provides event context, not a merchant deployment or a production email service. Its original commands and recorded result keep their own source and scope.
 
 <a id="e1.-peer-pilot-the-snapshot-gap"></a>
 

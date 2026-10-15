@@ -275,3 +275,11 @@ P-78 = "none"
 # Claim status page: the site's own register and open-cell data.
 "P-101" = "none"
 "P-102" = "none"
+
+# Component publication records and fixed documentation/source observations.
+"C-22" = 7
+"C-23" = "none"
+"C-24" = "none"
+"C-25" = "none"
+"C-26" = "none"
+"C-27" = "none"

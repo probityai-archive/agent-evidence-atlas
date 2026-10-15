@@ -17,7 +17,7 @@
   <nav aria-label="Site">
     <a class="home" href="index.html">Probity AI</a>
     <span class="links">
-      <a href="start.html">Choose a project</a>
+      <a href="start.html">Choose a component</a>
       <a href="lab.html">Open Evidence Lab</a>
       <a href="status.html">Claim status</a>
       <a href="runs.html">Find a run</a>
@@ -61,6 +61,10 @@
 <p>Run the native build and compare <code>docs/catalog.json</code> with the reviewed public projection. They should contain the same repositories, components and profiles. Update the C rows in <code>CLAIMS.md</code> and the catalog revision in <code>data/versions.toml</code> with the source capture.</p>
 <p>Leave planning fields out of the import. Generate the pages and indexes from the catalog; the source history retains the earlier pins.</p>
 <p>For a source refresh, give each component quickstart the same reviewed README pin as its owning repository. Append source history; keep earlier reviews. Current navigation does not update historical Lab claims or experiment objects.</p>
+<h2 id="record-versions-without-duplicating-release-numbers">Record versions without duplicating release numbers</h2>
+<p><code>data/atlas.toml</code> owns the existing artifact release values and their re-derive readers. A <code>component_release</code> row in <code>data/versions.toml</code> names that artifact with <code>artifact_ref</code>, then adds the catalog component, repository, exact tag, peeled source commit, read date and scope. The build refuses a tag that no longer matches its artifact version. Update the identity when its release changes.</p>
+<p>For an artifact absent from the assurance atlas, keep its version in that ledger row. Use a separate row for each independently versioned artifact. Ratchet’s harness source tag and public case package release are separate records. <code>kind = "source-tag"</code> never becomes a published package release.</p>
+<p>The task page and version ledger render those same rows. Catalog JSON retains its stable schema and identities; the Markdown version ledger is linked from <code>llms.txt</code>. Reviewed guides describe recipes. A tested installation needs its exact source, environment, command and retained output. Historical results and citation snapshots keep their recorded pins when current navigation changes.</p>
 <p>Keep project navigation in the catalog and measured runs in the Lab register.</p>
 <p>Integration profiles link the reviewed reader guide. Record upstream listing acceptance and live documentation publication separately in <code>CLAIMS.md</code>; the profile status describes the tool.</p>
 </main>

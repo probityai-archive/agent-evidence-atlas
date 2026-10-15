@@ -96,7 +96,9 @@ class TestStartMarkdown:
             self, tmp_path: Path, caplog: pytest.LogCaptureFixture
         ) -> None:
             data = catalog.load_catalog(ROOT / "data/catalog.json")
-            data["components"].pop()
+            data["components"] = [
+                row for row in data["components"] if row["id"] != "atlas"
+            ]
             (tmp_path / "data").mkdir()
             (tmp_path / "tools/discoverability").mkdir(parents=True)
             (tmp_path / "data/catalog.json").write_text(

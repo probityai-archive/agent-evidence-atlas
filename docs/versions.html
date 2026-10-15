@@ -17,7 +17,7 @@
   <nav aria-label="Site">
     <a class="home" href="index.html">Probity AI</a>
     <span class="links">
-      <a href="start.html">Choose a project</a>
+      <a href="start.html">Choose a component</a>
       <a href="lab.html">Open Evidence Lab</a>
       <a href="status.html">Claim status</a>
       <a href="runs.html">Find a run</a>
@@ -32,9 +32,106 @@
 <main id="main" tabindex="-1">
 <header class="page">
 <h1>Version ledger</h1>
-<p class="subtitle">Every artifact on this site, its version, its status, and a digest of the source it was built from</p>
+<p class="subtitle">Component releases, source tags and the documentation built from them</p>
 <p class="status">Draft. Site version 0.6-draft, 2026-10-01. Rebuilt on every change; the digests let a reader check that a page matches the version recorded here.</p>
 </header>
+<h2 id="component-versions">Component versions</h2>
+<p>These are publication records at the read time shown. The source column names the commit behind each release or tag, after peeling annotated tags. A repository can publish a harness and a case package at different versions.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Component and artifact / Publication role / Version / Source commit / Read (UTC) / Scope">
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>Component and artifact</th>
+<th>Publication role</th>
+<th>Version</th>
+<th>Source commit</th>
+<th>Read (UTC)</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="start.html#admission">Probity Admission</a> / Python digest checker</td>
+<td>Published release</td>
+<td><a href="https://github.com/probityai/agent-evidence-admission/releases/tag/py-v0.1.0">py-v0.1.0</a></td>
+<td><a href="https://github.com/probityai/agent-evidence-admission/tree/0004d2333a841c95658d4a9c75232f0913ca7141"><code>0004d2333a84</code></a></td>
+<td>2026-10-15</td>
+<td>This release is the digest-check package. Admission policy and budget tasks retain their own source pins.</td>
+</tr>
+<tr>
+<td><a href="start.html#checkout-runner">Checkout composition reference</a> / Composition CLI and Action</td>
+<td>Source tag</td>
+<td><a href="https://github.com/probityai/agent-checkout-runner/tree/v0.2.0">0.2.0</a></td>
+<td><a href="https://github.com/probityai/agent-checkout-runner/tree/297b5b182bb40605b62586eccbf93a9c68a4aee1"><code>297b5b182bb4</code></a></td>
+<td>2026-10-15</td>
+<td>A bounded synthetic composition reference. The source tag pins the CLI and Action, not a registry release or a merchant deployment.</td>
+</tr>
+<tr>
+<td><a href="start.html#dsse">dsse</a> / Rust crate</td>
+<td>Published release</td>
+<td><a href="https://github.com/probityai/dsse/releases/tag/v0.1.2">0.1.2</a></td>
+<td><a href="https://github.com/probityai/dsse/tree/ec451793f5f5b670ff4033721e424b1a80e52e3e"><code>ec451793f5f5</code></a></td>
+<td>2026-10-15</td>
+<td>Signature verification checks bytes under caller-selected keys, not the truth of the payload.</td>
+</tr>
+<tr>
+<td><a href="start.html#jcs-admit">jcs-admit</a> / Rust crate</td>
+<td>Published release</td>
+<td><a href="https://github.com/probityai/jcs-admit/releases/tag/v0.1.1">0.1.1</a></td>
+<td><a href="https://github.com/probityai/jcs-admit/tree/33603fc8caf6f8469ea790f41ab74ae64d4f1658"><code>33603fc8caf6</code></a></td>
+<td>2026-10-15</td>
+<td>Canonicalization and raw-input admission are separate from envelope verification.</td>
+</tr>
+<tr>
+<td><a href="start.html#ratchet">Probity Ratchet</a> / Harness source</td>
+<td>Source tag</td>
+<td><a href="https://github.com/probityai/ratchet/tree/probity-ratchet-v0.1.2">0.1.2</a></td>
+<td><a href="https://github.com/probityai/ratchet/tree/e2daf77f75e92aa961cf184084335b67aaae7581"><code>e2daf77f75e9</code></a></td>
+<td>2026-10-15</td>
+<td>Annotated harness tag, peeled to its source commit. It is separate from the public case package.</td>
+</tr>
+<tr>
+<td><a href="start.html#ratchet">Probity Ratchet</a> / Public case suite</td>
+<td>Published release</td>
+<td><a href="https://github.com/probityai/ratchet/releases/tag/probity-ratchet-cases-v0.2.0">0.2.0</a></td>
+<td><a href="https://github.com/probityai/ratchet/tree/b6504260db8af7d3746e9ac87740430dd988e8d9"><code>b6504260db8a</code></a></td>
+<td>2026-10-15</td>
+<td>The case package has its own release. All shipped splits are public.</td>
+</tr>
+<tr>
+<td><a href="start.html#vectors">Probity Vectors</a> / Go verifier and Python harness</td>
+<td>Published release</td>
+<td><a href="https://github.com/probityai/agent-evidence-vectors/releases/tag/v0.18.1">0.18.1</a></td>
+<td><a href="https://github.com/probityai/agent-evidence-vectors/tree/33d545104ff2f8c124cff465c96c013eeb809156"><code>33d545104ff2</code></a></td>
+<td>2026-10-15</td>
+<td>The reviewed guide also carries a 0.18.0 install recipe. Select the version required by your result.</td>
+</tr>
+<tr>
+<td><a href="start.html#vocabulary">Probity Vocabulary</a> / Vocabulary registry</td>
+<td>Published release</td>
+<td><a href="https://github.com/probityai/agent-evidence-vocabulary/releases/tag/v0.4.0">v0.4.0</a></td>
+<td><a href="https://github.com/probityai/agent-evidence-vocabulary/tree/220a4f0a08b90a555a430bb7d4334eb2617d05ba"><code>220a4f0a08b9</code></a></td>
+<td>2026-10-15</td>
+<td>Terms and crosswalks are versioned independently of executable packages.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="choose-the-pin-for-your-task">Choose the pin for your task</h3>
+<ul>
+<li><strong>Install or integrate:</strong> use a component’s <a href="start.html">reviewed guide</a>, then keep the exact package version or source commit its recipe selects. A guide can deliberately use an older release.</li>
+<li><strong>Repeat a tested installation:</strong> use the recipe’s recorded source, environment, command and retained output. A release number alone is not an install result.</li>
+<li><strong>Cite or replay a result:</strong> retain the source and artifact digests in that result. <a href="lab.html">Lab records</a>, historical examples and citation snapshots do not move when a new release appears.</li>
+</ul>
+<h2 id="documentation-revisions">Documentation revisions</h2>
 <p>A digest here is the SHA-256 of the artifact’s source file in the site’s repository, truncated to 16 hexadecimal characters for display. A change to the source changes the digest, and a change that alters what a page claims also gets a new version and a note.</p>
 <div class="table-scroll" tabindex="0" role="region" aria-label="artifact / version / date / status / source SHA-256 (first 16) / note">
 <table style="width:100%;">
@@ -91,11 +188,11 @@
 </tr>
 <tr>
 <td><a href="experiments.html">Experiments</a></td>
-<td>0.3</td>
-<td>2026-10-01</td>
+<td>0.4</td>
+<td>2026-10-15</td>
 <td><span class="label draft">draft</span></td>
-<td><code>692c4fabcf4b2a52</code> <code>src/experiments.md</code></td>
-<td>Adds original observer CI admission bytes, immutable source pins, executable replay and refusal controls; independent operation remains unestablished</td>
+<td><code>9e216ec17d2fead0</code> <code>src/experiments.md</code></td>
+<td>Adds checkout composition and historical event references; retained experiments and Lab run bytes stay unchanged</td>
 </tr>
 <tr>
 <td>Series plan</td>
@@ -107,11 +204,11 @@
 </tr>
 <tr>
 <td><a href="claims.html">Claim ledger</a></td>
-<td>0.8.24</td>
+<td>0.8.25</td>
 <td>2026-10-15</td>
 <td><span class="label draft">draft</span></td>
-<td><code>e44a9b3efcee356e</code> <code>CLAIMS.md</code></td>
-<td>W-07 names the essay by its new title and reads its publication date, cited page and link into this site again on 2026-10-15</td>
+<td><code>21e72b77c251e0fd</code> <code>CLAIMS.md</code></td>
+<td>Adds canonical component release identities and precise source, guide, install and historical pin roles</td>
 </tr>
 <tr>
 <td><a href="lab.html">Probity Open Evidence Lab</a></td>
@@ -171,11 +268,11 @@
 </tr>
 <tr>
 <td><a href="start.html">Project catalog</a></td>
-<td>0.8</td>
-<td>2026-10-14</td>
+<td>0.9</td>
+<td>2026-10-15</td>
 <td><span class="label draft">draft</span></td>
-<td><code>d34b8a831ab2b532</code> <code>data/catalog.json</code></td>
-<td>The Inspect reader summary reads the live extensions catalog listing</td>
+<td><code>4c0508f4847ff68c</code> <code>data/catalog.json</code></td>
+<td>Refreshes reviewed source routes, adds Ratchet and public digest/case tasks, and reads release values from the existing Atlas records</td>
 </tr>
 <tr>
 <td><a href="automation.html">Automation guide</a></td>
@@ -187,11 +284,11 @@
 </tr>
 <tr>
 <td><a href="catalog.html">Catalog maintenance guide</a></td>
-<td>0.4</td>
-<td>2026-10-05</td>
+<td>0.5</td>
+<td>2026-10-15</td>
 <td><span class="label draft">draft</span></td>
-<td><code>4b8ca5cd9be3c662</code> <code>src/catalog.md</code></td>
-<td>Separates integration reader status from upstream listing acceptance and live publication</td>
+<td><code>5151dce6311de2cf</code> <code>src/catalog.md</code></td>
+<td>Documents the shared release source, peeled tag identities and distinct recipe and citation pins</td>
 </tr>
 <tr>
 <td><a href="replay-an-evidence-decision.html">Retained evidence decision walkthrough</a></td>
@@ -211,11 +308,11 @@
 </tr>
 <tr>
 <td><a href="start.html">Published source routes</a></td>
-<td>0.1</td>
-<td>2026-10-06</td>
+<td>0.2</td>
+<td>2026-10-15</td>
 <td><span class="label draft">draft</span></td>
-<td><code>099471ebba75f0b5</code> <code>data/catalog-sources.json</code></td>
-<td>Retains earlier source rows and adds verified current README pins plus published APS refund-retry and MintID reader routes; no new component or package release</td>
+<td><code>bb6f64daab1ac682</code> <code>data/catalog-sources.json</code></td>
+<td>Appends reviewed public README sources without replacing earlier source reviews</td>
 </tr>
 <tr>
 <td><a href="replay-tools.html">Caller-declared APS and PriorSeal replay guide</a></td>

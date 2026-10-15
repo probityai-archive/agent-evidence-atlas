@@ -8,7 +8,9 @@ from __future__ import annotations
 
 import json
 import re
+import tomllib
 from collections.abc import Iterable
+from datetime import date
 from pathlib import Path
 from typing import Any, cast
 from xml.sax.saxutils import escape
@@ -29,6 +31,7 @@ SITE_LINKS = (
     ("replay-tools", "Run the APS and PriorSeal replay", "Declare the caller and retain pinned sources, process logs and results."),
     ("evidence-test-meaning", "Interpret a green test suite", "Separate test outcomes, record validity and action results using retained artifacts."),
     ("claims", "Claim ledger", "Sources and re-derive commands."),
+    ("versions", "Versions and source pins", "Published releases, reviewed guides and historical result pins."),
     ("repository", "Repository guide", "Sources, checks and the site build."),
 )
 
@@ -104,7 +107,87 @@ def project_url(record: dict[str, Any], public: dict[str, Any]) -> str:
     )
 
 
-def start_markdown(public: dict[str, Any]) -> str:
+def component_versions(public: dict[str, Any], root: Path = ROOT) -> list[dict[str, str]]:
+    """Read component releases and source tags from the existing version ledger.
+
+    A component can contain separately versioned artifacts. A harness source tag
+    must not acquire the release number of a case package in the same repository.
+    The recorded commit is the peeled source commit, not an annotated tag object.
+    """
+    data = tomllib.loads((root / "data/versions.toml").read_text(encoding="utf-8"))
+    atlas = tomllib.loads((root / "data/atlas.toml").read_text(encoding="utf-8"))
+    artifacts = {row["name"]: row for row in atlas["artifact"]}
+    components = {row["id"]: row for row in public["components"]}
+    repositories = {row["id"]: row for row in public["repositories"]}
+    result: dict[tuple[str, str], dict[str, str]] = {}
+    for authored in data.get("component_release", []):
+        row = resolve_component_version(authored, artifacts)
+        version = checked_component_version(row, components, repositories)
+        key = (row["component"], row["artifact"])
+        if key in result:
+            catalog.fail("Component version artifact is repeated")
+        result[key] = version
+    return [result[key] for key in sorted(result)]
+
+
+def resolve_component_version(row: dict[str, str], artifacts: dict[str, Any]) -> dict[str, str]:
+    """Keep an existing artifact record as the sole authored release version."""
+    row = row.copy()
+    if "artifact_ref" in row:
+        artifact = artifacts.get(row.pop("artifact_ref"))
+        if artifact is None or "version" in row:
+            catalog.fail("Component version must use one known artifact version source")
+        row["version"] = artifact["version"]
+        if row["tag"] not in {row["version"], f"v{row['version']}"}:
+            catalog.fail("Component version tag does not match its artifact version")
+    return row
+
+
+def checked_component_version(
+    row: dict[str, str],
+    components: dict[str, Any],
+    repositories: dict[str, Any],
+) -> dict[str, str]:
+    """Refuse unknown identities and unsafe authored fields before rendering."""
+    check_component_version_fields(row)
+    component = components.get(row["component"])
+    repository = repositories.get(row["repository"])
+    if component is None or repository is None or row["repository"] not in component["repositories"]:
+        catalog.fail("Component version repository does not belong to its component")
+    route = "releases/tag" if row["kind"] == "release" else "tree"
+    return {**row, "display_name": component["display_name"],
+            "url": f"{repository['url']}/{route}/{row['tag']}",
+            "source_url": f"{repository['url']}/tree/{row['commit']}"}
+
+
+def check_component_version_fields(row: dict[str, str]) -> None:
+    """Check the ledger field set, source identity, date and authored text."""
+    fields = {"component", "repository", "artifact", "kind", "version", "tag", "commit", "read", "note"}
+    if set(row) != fields or any(not isinstance(value, str) for value in row.values()):
+        catalog.fail("Component version fields are invalid")
+    if row["kind"] not in {"release", "source-tag"}:
+        catalog.fail("Component version kind is invalid")
+    if re.fullmatch(r"[0-9a-f]{40}", row["commit"]) is None or re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", row["tag"]) is None:
+        catalog.fail("Component version needs a full source commit and a safe tag")
+    try:
+        date.fromisoformat(row["read"])
+    except ValueError:
+        catalog.fail("Component version read date is invalid")
+    for field in ("artifact", "version", "note"):
+        catalog.check_public_text(row[field])
+
+
+def component_version_line(version: dict[str, str]) -> str:
+    """Name publication and source identity without claiming an install result."""
+    role = "Published release" if version["kind"] == "release" else "Source tag"
+    return (f"{version['artifact']}: {role.lower()} [{version['version']}]({version['url']}), "
+            f"source [`{version['commit'][:12]}`]({version['source_url']}), read {version['read']}. "
+            f"{version['note']}")
+
+
+def start_markdown(
+    public: dict[str, Any], versions: list[dict[str, str]] | None = None
+) -> str:
     """Build a task table and short project entries from projected fields.
 
     Parameters
@@ -120,14 +203,16 @@ def start_markdown(public: dict[str, Any]) -> str:
     """
     rows = [
         "---",
-        'title: "Choose a project"',
+        'title: "Choose a component"',
         'subtitle: "Start with the task you need."',
         'description: "Find Probity tools for evidence terms, conformance tests, observation, verification and workload admission."',
         "---",
         "",
         "Vectors tests how a verifier behaves. Verify checks a supplied claim against evidence bytes.",
         "",
-        "Use the catalog ID when selecting a tool or profile in a structured record. Repository names and display labels can differ from that ID.",
+        "A published release, a reviewed guide and a tested installation are different pins. "
+        "Use the exact recipe and source named by the result you reproduce. "
+        "The [version ledger](versions.html#component-versions) records release and source roles.",
         "",
         "| Task | Project |",
         "| --- | --- |",
@@ -151,15 +236,20 @@ def start_markdown(public: dict[str, Any]) -> str:
                 "",
                 record["summary"],
                 "",
-                f"{record['status'].capitalize()}. [Quickstart and source]({project_url(record, public)})",
+                f"{record['status'].capitalize()}. [Reviewed guide and source]({project_url(record, public)})",
             ]
         )
+        for version in versions or []:
+            if version["component"] == record["id"]:
+                rows.extend(["", component_version_line(version)])
     rows.extend(
         [
             "",
             "## Run and share a check",
             "",
             "The [Open Evidence Lab](lab.html) holds replayable runs and accepts new results and corrections. For scripted lookups, use the [automation guide](automation.html).",
+            "",
+            "For a combined CLI and Action example, use the [checkout composition reference](experiments.html#checkout-composition). It keeps decisions, attempts, effects and observations separate in a replayable synthetic bundle.",
             "",
         ]
     )

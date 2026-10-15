@@ -46,6 +46,16 @@ Leave planning fields out of the import. Generate the pages and indexes from the
 
 For a source refresh, give each component quickstart the same reviewed README pin as its owning repository. Append source history; keep earlier reviews. Current navigation does not update historical Lab claims or experiment objects.
 
+<a id="record-versions-without-duplicating-release-numbers"></a>
+
+## Record versions without duplicating release numbers
+
+`data/atlas.toml` owns the existing artifact release values and their re-derive readers. A `component_release` row in `data/versions.toml` names that artifact with `artifact_ref`, then adds the catalog component, repository, exact tag, peeled source commit, read date and scope. The build refuses a tag that no longer matches its artifact version. Update the identity when its release changes.
+
+For an artifact absent from the assurance atlas, keep its version in that ledger row. Use a separate row for each independently versioned artifact. Ratchet's harness source tag and public case package release are separate records. `kind = "source-tag"` never becomes a published package release.
+
+The task page and version ledger render those same rows. Catalog JSON retains its stable schema and identities; the Markdown version ledger is linked from `llms.txt`. Reviewed guides describe recipes. A tested installation needs its exact source, environment, command and retained output. Historical results and citation snapshots keep their recorded pins when current navigation changes.
+
 Keep project navigation in the catalog and measured runs in the Lab register.
 
 Integration profiles link the reviewed reader guide. Record upstream listing acceptance and live documentation publication separately in `CLAIMS.md`; the profile status describes the tool.

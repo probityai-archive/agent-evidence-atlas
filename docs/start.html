@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="Sankalp Gilda" />
   <meta name="description" content="Find Probity tools for evidence terms, conformance tests, observation, verification and workload admission." />
-  <title>Choose a project - Probity AI</title>
+  <title>Choose a component - Probity AI</title>
   <link rel="canonical" href="https://probityai.github.io/agent-evidence-atlas/start.html" />
   <link rel="alternate" type="text/markdown" href="https://probityai.github.io/agent-evidence-atlas/start.md" />
   <link rel="describedby" href="https://probityai.github.io/agent-evidence-atlas/llms.txt" />
@@ -17,7 +17,7 @@
   <nav aria-label="Site">
     <a class="home" href="index.html">Probity AI</a>
     <span class="links">
-      <a href="start.html">Choose a project</a>
+      <a href="start.html">Choose a component</a>
       <a href="lab.html">Open Evidence Lab</a>
       <a href="status.html">Claim status</a>
       <a href="runs.html">Find a run</a>
@@ -31,11 +31,11 @@
 </header>
 <main id="main" tabindex="-1">
 <header class="page">
-<h1>Choose a project</h1>
+<h1>Choose a component</h1>
 <p class="subtitle">Start with the task you need.</p>
 </header>
 <p>Vectors tests how a verifier behaves. Verify checks a supplied claim against evidence bytes.</p>
-<p>Use the catalog ID when selecting a tool or profile in a structured record. Repository names and display labels can differ from that ID.</p>
+<p>A published release, a reviewed guide and a tested installation are different pins. Use the exact recipe and source named by the result you reproduce. The <a href="versions.html#component-versions">version ledger</a> records release and source roles.</p>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Task / Project">
 <table>
 <colgroup>
@@ -50,7 +50,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Evaluate admission policies or reserve cost before dispatch</td>
+<td>Check artifact digests or evaluate admission policies</td>
 <td><a href="#admission">Probity Admission</a></td>
 </tr>
 <tr>
@@ -58,8 +58,16 @@
 <td><a href="#aps-refund-retries">Probity APS refund example</a></td>
 </tr>
 <tr>
+<td>Check an artifact against a document’s named digest</td>
+<td><a href="#artifact-digest-check">Probity artifact digest check</a></td>
+</tr>
+<tr>
 <td>Choose a tool or inspect recorded claims and retained runs</td>
 <td><a href="#atlas">Probity Atlas</a></td>
+</tr>
+<tr>
+<td>Run a checkout composition and replay its retained claims</td>
+<td><a href="#checkout-runner">Checkout composition reference</a></td>
 </tr>
 <tr>
 <td>Sign and verify DSSE envelopes in Rust</td>
@@ -82,6 +90,14 @@
 <td><a href="#observer">Probity Observer</a></td>
 </tr>
 <tr>
+<td>Check an agent guard against replay and regression cases</td>
+<td><a href="#ratchet">Probity Ratchet</a></td>
+</tr>
+<tr>
+<td>Test an agent on public fault and benign cases</td>
+<td><a href="#ratchet-cases">Probity Ratchet public cases</a></td>
+</tr>
+<tr>
 <td>Test a verifier against conformance cases</td>
 <td><a href="#vectors">Probity Vectors</a></td>
 </tr>
@@ -102,54 +118,79 @@
 </div>
 <h2 id="admission">Probity Admission</h2>
 <p>Component ID: <code>admission</code>.</p>
-<p>Provides OPA, Kyverno and policy-controller rules, plus a pre-call budget reservation API and CLI for bounded local workloads.</p>
-<p>Draft. <a href="https://github.com/probityai/agent-evidence-admission/blob/bbff435d11a7c0ec9bc0e8e65e6d8fc40c10b671/README.md">Quickstart and source</a></p>
+<p>Provides a Python artifact-digest checker, admission policies for OPA, Kyverno and policy-controller, and a pre-call budget reservation API.</p>
+<p>Draft. <a href="https://github.com/probityai/agent-evidence-admission/blob/f00f04b888a5694de03304f0481addb2a75b98a8/README.md">Reviewed guide and source</a></p>
+<p>Python digest checker: published release <a href="https://github.com/probityai/agent-evidence-admission/releases/tag/py-v0.1.0">py-v0.1.0</a>, source <a href="https://github.com/probityai/agent-evidence-admission/tree/0004d2333a841c95658d4a9c75232f0913ca7141"><code>0004d2333a84</code></a>, read 2026-10-15. This release is the digest-check package. Admission policy and budget tasks retain their own source pins.</p>
 <h2 id="aps-refund-retries">Probity APS refund example</h2>
 <p>Profile ID: <code>aps-refund-retries</code>. Component ID: <code>observer</code>.</p>
 <p>Runs a local APS refund example that ties retries to approved actions and retains records for a separate reader.</p>
-<p>Prototype. <a href="https://github.com/probityai/agent-evidence-observer/blob/753932b42b00ab8257396112c529f840396f0ce7/docs/APS-REFUND-RETRIES.md">Quickstart and source</a></p>
+<p>Prototype. <a href="https://github.com/probityai/agent-evidence-observer/blob/753932b42b00ab8257396112c529f840396f0ce7/docs/APS-REFUND-RETRIES.md">Reviewed guide and source</a></p>
+<h2 id="artifact-digest-check">Probity artifact digest check</h2>
+<p>Profile ID: <code>artifact-digest-check</code>. Component ID: <code>admission</code>.</p>
+<p>Checks an artifact against digests named by a TEA document, CycloneDX SBOM or VEX, or in-toto statement.</p>
+<p>Released. <a href="https://github.com/probityai/agent-evidence-admission/blob/f00f04b888a5694de03304f0481addb2a75b98a8/python/README.md">Reviewed guide and source</a></p>
 <h2 id="atlas">Probity Atlas</h2>
 <p>Component ID: <code>atlas</code>.</p>
 <p>Provides task-based project navigation, agent assurance documentation and an Open Evidence Lab run register.</p>
-<p>Draft. <a href="https://github.com/probityai/agent-evidence-atlas/blob/48b9648a277bc5177f9dce290551f385c6df2ba1/README.md">Quickstart and source</a></p>
+<p>Draft. <a href="https://github.com/probityai/agent-evidence-atlas/blob/ec67f0375e008cb7befc19a31762490b5cbbe520/README.md">Reviewed guide and source</a></p>
+<h2 id="checkout-runner">Checkout composition reference</h2>
+<p>Component ID: <code>checkout-runner</code>.</p>
+<p>Runs a bounded synthetic checkout and refund composition as a CLI or Action, with separate decisions, attempts, effects and observations for offline replay.</p>
+<p>Released. <a href="https://github.com/probityai/agent-checkout-runner/blob/297b5b182bb40605b62586eccbf93a9c68a4aee1/README.md">Reviewed guide and source</a></p>
+<p>Composition CLI and Action: source tag <a href="https://github.com/probityai/agent-checkout-runner/tree/v0.2.0">0.2.0</a>, source <a href="https://github.com/probityai/agent-checkout-runner/tree/297b5b182bb40605b62586eccbf93a9c68a4aee1"><code>297b5b182bb4</code></a>, read 2026-10-15. A bounded synthetic composition reference. The source tag pins the CLI and Action, not a registry release or a merchant deployment.</p>
 <h2 id="dsse">dsse</h2>
 <p>Component ID: <code>dsse</code>.</p>
 <p>Signs and verifies DSSE envelopes with explicit threshold and key handling.</p>
-<p>Released. <a href="https://github.com/probityai/dsse/blob/35e418022b19bebedec13ebb4c31bc43b1c70caf/README.md">Quickstart and source</a></p>
+<p>Released. <a href="https://github.com/probityai/dsse/blob/8549e5e54080b5f8c864f8b3eba8f57af8bd9c51/README.md">Reviewed guide and source</a></p>
+<p>Rust crate: published release <a href="https://github.com/probityai/dsse/releases/tag/v0.1.2">0.1.2</a>, source <a href="https://github.com/probityai/dsse/tree/ec451793f5f5b670ff4033721e424b1a80e52e3e"><code>ec451793f5f5</code></a>, read 2026-10-15. Signature verification checks bytes under caller-selected keys, not the truth of the payload.</p>
 <h2 id="inspect-native-reader">Probity native Inspect reader</h2>
 <p>Profile ID: <code>inspect-native-reader</code>. Component ID: <code>observer</code>.</p>
 <p>Reads selected retained Inspect execution profiles offline, preserving errors and unstarted attempts. Inspect accepted the catalog entry, and the live Inspect extensions catalog lists it as of October 14, 2026.</p>
-<p>Prototype. <a href="https://github.com/probityai/agent-evidence-observer/blob/71ac0b2126473316655184235000647a6dd0f5cf/docs/NATIVE-CONSUMER-CI.md">Quickstart and source</a></p>
+<p>Prototype. <a href="https://github.com/probityai/agent-evidence-observer/blob/71ac0b2126473316655184235000647a6dd0f5cf/docs/NATIVE-CONSUMER-CI.md">Reviewed guide and source</a></p>
 <h2 id="jcs-admit">jcs-admit</h2>
 <p>Component ID: <code>jcs-admit</code>.</p>
 <p>Checks raw JSON input before producing its RFC 8785 canonical form.</p>
-<p>Released. <a href="https://github.com/probityai/jcs-admit/blob/fb32a68aa2772e51cee32bc14835075d88af3953/README.md">Quickstart and source</a></p>
+<p>Released. <a href="https://github.com/probityai/jcs-admit/blob/0a058d7b676fb452929337c528b893c7f2121062/README.md">Reviewed guide and source</a></p>
+<p>Rust crate: published release <a href="https://github.com/probityai/jcs-admit/releases/tag/v0.1.1">0.1.1</a>, source <a href="https://github.com/probityai/jcs-admit/tree/33603fc8caf6f8469ea790f41ab74ae64d4f1658"><code>33603fc8caf6</code></a>, read 2026-10-15. Canonicalization and raw-input admission are separate from envelope verification.</p>
 <h2 id="mintid-trace-records-v2">Probity MintID trace reader</h2>
 <p>Profile ID: <code>mintid-trace-records-v2</code>. Component ID: <code>jcs-admit</code>.</p>
 <p>Reads published MintID trace records after raw JSON admission and checks source-bound evidence and actor attribution.</p>
-<p>Prototype. <a href="https://github.com/probityai/jcs-admit/blob/fb32a68aa2772e51cee32bc14835075d88af3953/interop/mintid-trace-records-v2/README.md">Quickstart and source</a></p>
+<p>Prototype. <a href="https://github.com/probityai/jcs-admit/blob/fb32a68aa2772e51cee32bc14835075d88af3953/interop/mintid-trace-records-v2/README.md">Reviewed guide and source</a></p>
 <h2 id="observer">Probity Observer</h2>
 <p>Component ID: <code>observer</code>.</p>
 <p>Records brokered file actions with signed packets and history, and reads selected native delegation evidence offline.</p>
-<p>Prototype. <a href="https://github.com/probityai/agent-evidence-observer/blob/753932b42b00ab8257396112c529f840396f0ce7/README.md">Quickstart and source</a></p>
+<p>Prototype. <a href="https://github.com/probityai/agent-evidence-observer/blob/f9fd4a13fb31da5f990fd8da82472ed4cedb5f97/README.md">Reviewed guide and source</a></p>
+<h2 id="ratchet">Probity Ratchet</h2>
+<p>Component ID: <code>ratchet</code>.</p>
+<p>Provides a source-tagged agent guard harness, signed admission records and public regression cases.</p>
+<p>Released. <a href="https://github.com/probityai/ratchet/blob/0e5a9c1059d4f7a77694289a75c39c7b1682313a/README.md">Reviewed guide and source</a></p>
+<p>Harness source: source tag <a href="https://github.com/probityai/ratchet/tree/probity-ratchet-v0.1.2">0.1.2</a>, source <a href="https://github.com/probityai/ratchet/tree/e2daf77f75e92aa961cf184084335b67aaae7581"><code>e2daf77f75e9</code></a>, read 2026-10-15. Annotated harness tag, peeled to its source commit. It is separate from the public case package.</p>
+<p>Public case suite: published release <a href="https://github.com/probityai/ratchet/releases/tag/probity-ratchet-cases-v0.2.0">0.2.0</a>, source <a href="https://github.com/probityai/ratchet/tree/b6504260db8af7d3746e9ac87740430dd988e8d9"><code>b6504260db8a</code></a>, read 2026-10-15. The case package has its own release. All shipped splits are public.</p>
+<h2 id="ratchet-cases">Probity Ratchet public cases</h2>
+<p>Profile ID: <code>ratchet-cases</code>. Component ID: <code>ratchet</code>.</p>
+<p>Grades agent tasks in a simulated company on final state, with declared tool faults, traps and benign cases. All shipped splits are public.</p>
+<p>Released. <a href="https://github.com/probityai/ratchet/blob/b6504260db8af7d3746e9ac87740430dd988e8d9/probity-ratchet-cases/README.md">Reviewed guide and source</a></p>
 <h2 id="vectors">Probity Vectors</h2>
 <p>Component ID: <code>vectors</code>.</p>
 <p>Provides conformance cases and reference verifiers for selected agent evidence formats.</p>
-<p>Released. <a href="https://github.com/probityai/agent-evidence-vectors/blob/44042ae1a8cbde9444e8ea24e6690a7e773af65b/README.md">Quickstart and source</a></p>
+<p>Released. <a href="https://github.com/probityai/agent-evidence-vectors/blob/9e596fbff7bb29809d38319aebb56f2141923eb2/README.md">Reviewed guide and source</a></p>
+<p>Go verifier and Python harness: published release <a href="https://github.com/probityai/agent-evidence-vectors/releases/tag/v0.18.1">0.18.1</a>, source <a href="https://github.com/probityai/agent-evidence-vectors/tree/33d545104ff2f8c124cff465c96c013eeb809156"><code>33d545104ff2</code></a>, read 2026-10-15. The reviewed guide also carries a 0.18.0 install recipe. Select the version required by your result.</p>
 <h2 id="verify">Probity Verify</h2>
 <p>Component ID: <code>verify</code>.</p>
 <p>Checks supplied evidence bytes through claim-specific offline adapters. Its README links to source-pinned installation and checked task recipes.</p>
-<p>Unreleased. <a href="https://github.com/probityai/probity-verify/blob/437e484bd81e3d1eb1b9ad7230124a434a7a0ef6/README.md">Quickstart and source</a></p>
+<p>Unreleased. <a href="https://github.com/probityai/probity-verify/blob/b920366397cb131232163706864a70723b867367/README.md">Reviewed guide and source</a></p>
 <h2 id="vocabulary">Probity Vocabulary</h2>
 <p>Component ID: <code>vocabulary</code>.</p>
 <p>Defines versioned terms and crosswalks for claims about agent execution.</p>
-<p>Released. <a href="https://github.com/probityai/agent-evidence-vocabulary/blob/4029a7801e0ec61a9818fd1e6c1cbd236e2c82bc/README.md">Quickstart and source</a></p>
+<p>Released. <a href="https://github.com/probityai/agent-evidence-vocabulary/blob/220a4f0a08b90a555a430bb7d4334eb2617d05ba/README.md">Reviewed guide and source</a></p>
+<p>Vocabulary registry: published release <a href="https://github.com/probityai/agent-evidence-vocabulary/releases/tag/v0.4.0">v0.4.0</a>, source <a href="https://github.com/probityai/agent-evidence-vocabulary/tree/220a4f0a08b90a555a430bb7d4334eb2617d05ba"><code>220a4f0a08b9</code></a>, read 2026-10-15. Terms and crosswalks are versioned independently of executable packages.</p>
 <h2 id="witnessed-run-selection">Probity witnessed run selection</h2>
 <p>Profile ID: <code>witnessed-run-selection</code>. Component ID: <code>observer</code>.</p>
 <p>Checks a supplied run against consumer-retained witness anchors, plan and control pins, and execution closure.</p>
-<p>Prototype. <a href="https://github.com/probityai/agent-evidence-observer/blob/d53776c7b783abbce42a3422f56ed390dfedd2f2/docs/WITNESSED-RUN-SELECTION.md">Quickstart and source</a></p>
+<p>Prototype. <a href="https://github.com/probityai/agent-evidence-observer/blob/d53776c7b783abbce42a3422f56ed390dfedd2f2/docs/WITNESSED-RUN-SELECTION.md">Reviewed guide and source</a></p>
 <h2 id="run-and-share-a-check">Run and share a check</h2>
 <p>The <a href="lab.html">Open Evidence Lab</a> holds replayable runs and accepts new results and corrections. For scripted lookups, use the <a href="automation.html">automation guide</a>.</p>
+<p>For a combined CLI and Action example, use the <a href="experiments.html#checkout-composition">checkout composition reference</a>. It keeps decisions, attempts, effects and observations separate in a replayable synthetic bundle.</p>
 </main>
 <footer class="site">
   <p>Every number on this site has a source, a read time and a re-derive command in the <a href="claims.html">claim ledger</a>. Build 0.6-draft, 2026-10-01.</p>

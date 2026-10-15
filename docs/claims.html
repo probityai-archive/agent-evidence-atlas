@@ -17,7 +17,7 @@
   <nav aria-label="Site">
     <a class="home" href="index.html">Probity AI</a>
     <span class="links">
-      <a href="start.html">Choose a project</a>
+      <a href="start.html">Choose a component</a>
       <a href="lab.html">Open Evidence Lab</a>
       <a href="status.html">Claim status</a>
       <a href="runs.html">Find a run</a>
@@ -1757,7 +1757,7 @@
 </tr>
 <tr data-read="2026-10-05">
 <td>C-16</td>
-<td>Current JCS and DSSE quickstarts select the exact crates.io 0.1.1 dependency and installed-version API reference</td>
+<td>At the October 5 read, JCS and DSSE quickstarts selected the exact crates.io 0.1.1 dependency and installed-version API reference</td>
 <td><a href="https://github.com/probityai/jcs-admit/blob/3e189b20711a57ce91eab40509324dd1d5d54cac/README.md">JCS source</a>; <a href="https://github.com/probityai/dsse/blob/35e418022b19bebedec13ebb4c31bc43b1c70caf/README.md">DSSE source</a>; <code>data/catalog-sources.json</code></td>
 <td>2026-10-05 <span class="cadence">(does not expire)</span></td>
 <td>Read both pinned READMEs; inspect their <code>cargo add</code> version requirements and docs.rs URLs; build the catalog</td>
@@ -1781,7 +1781,7 @@
 </tr>
 <tr data-read="2026-10-05">
 <td>C-19</td>
-<td>Current Observer quickstart pins an unreleased source installation at <code>f68c8538639aea1515ea357a85a20739004e66fd</code>; its current README links installation and profile selection and witnessed run selection</td>
+<td>The October 5 Observer quickstart pins an unreleased source installation at <code>f68c8538639aea1515ea357a85a20739004e66fd</code>; its current README links installation and profile selection and witnessed run selection</td>
 <td><a href="https://github.com/probityai/agent-evidence-observer/blob/671d89c2d8c023153eb5755c5afb027bf4fa553d/README.md">Current README</a>; <code>data/catalog-sources.json</code></td>
 <td>2026-10-05 <span class="cadence">(does not expire)</span></td>
 <td>Read the pinned README and its <code>git checkout</code> command, unreleased status and consumer guide links; build the catalog</td>
@@ -1797,11 +1797,59 @@
 </tr>
 <tr data-read="2026-10-05">
 <td>C-21</td>
-<td>Current Vectors navigation selects the reviewed source at <code>10e6745b24db77a7bdd4dcc0cdd84f4b46063b7c</code>. GitHub and PyPI publish matching <code>0.17.4</code> artifacts; the release route installs the Go verifier and Python harness at that version.</td>
+<td>The October 5 Vectors navigation selects the reviewed source at <code>10e6745b24db77a7bdd4dcc0cdd84f4b46063b7c</code>. GitHub and PyPI publish matching <code>0.17.4</code> artifacts; the release route installs the Go verifier and Python harness at that version.</td>
 <td><a href="https://github.com/probityai/agent-evidence-vectors/blob/10e6745b24db77a7bdd4dcc0cdd84f4b46063b7c/README.md">Reviewed README</a>; <a href="https://github.com/probityai/agent-evidence-vectors/blob/10e6745b24db77a7bdd4dcc0cdd84f4b46063b7c/DISTRIBUTION.md">installation guide</a>; <a href="https://github.com/probityai/agent-evidence-vectors/releases/tag/v0.17.4">GitHub release</a>; <a href="https://pypi.org/pypi/agent-evidence-vectors/0.17.4/json">version-specific PyPI metadata</a>; <code>data/catalog-sources.json</code></td>
 <td>2026-10-05 <span class="cadence">(does not expire)</span></td>
 <td>Read version-specific release metadata and artifact hashes; run <code>go install github.com/probityai/agent-evidence-vectors/cmd/aee-verify@v0.17.4</code> and <code>uvx agent-evidence-vectors==0.17.4 --verifier "aee-verify --json"</code> with Go 1.24+, Python 3.13+ and uv</td>
 <td>Current installation navigation and a declared release. The default command selects one corpus, not all corpora. No new outside operator, custody, maintenance, Bitcoin finality or study result; historical release and source records retain their original bytes.</td>
+</tr>
+<tr data-read="2026-10-15" data-cadence-days="7">
+<td>C-22</td>
+<td>Current release records: Vocabulary v0.4.0, Vectors v0.18.1, Admission Python py-v0.1.0, jcs-admit v0.1.1 and dsse v0.1.2, read on 2026-10-15. The task page and version ledger use the existing Atlas artifact version values.</td>
+<td><code>data/atlas.toml</code>; <code>data/versions.toml</code>; <a href="https://github.com/probityai/agent-evidence-vocabulary/releases/tag/v0.4.0">Vocabulary release</a>; <a href="https://github.com/probityai/agent-evidence-vectors/releases/tag/v0.18.1">Vectors release</a>; <a href="https://github.com/probityai/agent-evidence-admission/releases/tag/py-v0.1.0">Admission package release</a>; <a href="https://github.com/probityai/jcs-admit/releases/tag/v0.1.1">JCS release</a>; <a href="https://github.com/probityai/dsse/releases/tag/v0.1.2">DSSE release</a></td>
+<td>2026-10-15 <span class="cadence">(7-day cadence)</span></td>
+<td>Read the version-specific release and its tag commit; run <code>python3 tools/rederive.py</code> for the existing A-38 release readers; build the task page and ledger</td>
+<td>Release publication and source identities, not a new install test, conformance run or outside operator. Reviewed guides can select older recipes.</td>
+</tr>
+<tr data-read="2026-10-15">
+<td>C-23</td>
+<td>Probity Ratchet has source tag probity-ratchet-v0.1.2, peeled to <code>e2daf77f75e92aa961cf184084335b67aaae7581</code>. Its separate public case package release is probity-ratchet-cases 0.2.0 at <code>b6504260db8af7d3746e9ac87740430dd988e8d9</code>. The catalog marks the published source and case profile released.</td>
+<td><a href="https://github.com/probityai/ratchet/tree/probity-ratchet-v0.1.2">Harness source tag</a>; <a href="https://github.com/probityai/ratchet/releases/tag/probity-ratchet-cases-v0.2.0">case release</a>; <a href="https://pypi.org/project/probity-ratchet-cases/0.2.0/">case package</a>; <code>data/versions.toml</code>; <code>data/catalog-sources.json</code></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Read the named tag object and peel it to a commit; read the case release tag commit and version-specific package metadata; validate the catalog</td>
+<td>Harness source tag is not a package release. The public case splits are not secret holdouts. No new run, maintained adoption or commercial capability is claimed.</td>
+</tr>
+<tr data-read="2026-10-15">
+<td>C-24</td>
+<td>The released agent-evidence-admission Python 0.1.0 package checks an artifact against the digest named in a TEA document, CycloneDX SBOM or VEX, or in-toto statement. Its catalog profile is released; the broader policy component retains its draft status.</td>
+<td><a href="https://github.com/probityai/agent-evidence-admission/blob/f00f04b888a5694de03304f0481addb2a75b98a8/python/README.md">Pinned package README</a>; <a href="https://pypi.org/pypi/agent-evidence-admission/0.1.0/json">version-specific PyPI metadata</a>; <code>data/catalog.json</code></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Read the package README and version-specific metadata; compare the digest-check task with the root policy README; validate the profile</td>
+<td>Digest agreement for supplied bytes, not document authority, a policy decision or signature verification. No install execution is added by this catalog update.</td>
+</tr>
+<tr data-read="2026-10-15">
+<td>C-25</td>
+<td>Project catalog 0.9, source routes 0.2, maintenance guide 0.5, experiments guide 0.4 and claim ledger 0.8.25 are documentation revisions dated 2026-10-15. Current task navigation uses reviewed public README pins; prior source reviews, stable identities and retained result bytes remain.</td>
+<td><code>data/versions.toml</code>; <code>data/catalog.json</code>; <code>data/catalog-sources.json</code>; <code>tools/discovery.py</code>; <a href="versions.html">version ledger</a></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Build and check generated pages; validate against the previous catalog; compare retained source rows and Lab records with the parent commit</td>
+<td>Documentation and task selection. Source tag, release, guide, tested installation and historical citation pins have distinct roles.</td>
+</tr>
+<tr data-read="2026-10-15">
+<td>C-26</td>
+<td>Agent checkout runner publishes CLI and Action source tag v0.2.0 at <code>297b5b182bb40605b62586eccbf93a9c68a4aee1</code>. Its reviewed guide declares 26 matrix cases and needs Python 3.12 or later, git, Node 24 and npm. The catalog marks the published composition source released.</td>
+<td><a href="https://github.com/probityai/agent-checkout-runner/blob/297b5b182bb40605b62586eccbf93a9c68a4aee1/README.md">Pinned README</a>; <a href="https://github.com/probityai/agent-checkout-runner/blob/297b5b182bb40605b62586eccbf93a9c68a4aee1/pyproject.toml">package metadata</a>; <a href="https://github.com/probityai/agent-checkout-runner/blob/297b5b182bb40605b62586eccbf93a9c68a4aee1/action.yml">Action</a>; <a href="https://github.com/probityai/agent-checkout-runner/blob/297b5b182bb40605b62586eccbf93a9c68a4aee1/docs/CLAIMS.md">claim reference</a>; <a href="https://github.com/probityai/agent-checkout-runner/blob/297b5b182bb40605b62586eccbf93a9c68a4aee1/docs/COVERAGE-MAP.md">coverage map</a></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Read and peel the named source tag; compare project version, CLI entry point, Action and declared matrix guide; build the existing experiments and task routes</td>
+<td>Bounded composition reference with a local simulator, synthetic records and public test keys. Component suites are separate fixtures; author operation establishes no independent run, maintained adoption, connected deployment or merchant result. No new Atlas Lab record or native runner result is claimed.</td>
+</tr>
+<tr data-read="2026-10-15">
+<td>C-27</td>
+<td>The historical Approval-Gate event source at <code>9a8649b1be95cd6de6a7854ca4acfa0bd4ec6a45</code> checks evidence and policy before a customer-support mock email action. Its adapter pins the public Verify kernel; offline replay sends no action.</td>
+<td><a href="https://github.com/probityai/Approval-Gate/blob/9a8649b1be95cd6de6a7854ca4acfa0bd4ec6a45/README.md">Pinned event README</a></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Read the immutable README setup, decision, adapter-pin and offline-replay sections</td>
+<td>Historical source reference, not a new native result, live email service, merchant deployment or statement about current repository archival. The original event score is not repeated or expanded here.</td>
 </tr>
 </tbody>
 </table>

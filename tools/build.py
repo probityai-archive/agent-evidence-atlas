@@ -47,7 +47,7 @@ SITE_NAME = "Probity AI"
 
 # Navigation order and labels. A page appears only when it is built.
 NAV = [
-    ("start", "Choose a project"),
+    ("start", "Choose a component"),
     ("lab", "Open Evidence Lab"),
     ("status", "Claim status"),
     ("runs", "Find a run"),
@@ -642,12 +642,21 @@ def render(source: Path, dest: Path, built: set[str]) -> None:
     dest.with_suffix(".md").write_text(mirror, encoding="utf-8")
 
 
-def versions_markdown(built: set[str]) -> str:
+def versions_markdown(built: set[str], versions: list[dict[str, str]]) -> str:
     """The version ledger page, with each source file's SHA-256 computed now.
 
     An artifact whose page is not built from this repository is listed as held,
     with no link, so the ledger never points at a page that does not exist."""
     data = tomllib.loads((ROOT / "data" / "versions.toml").read_text(encoding="utf-8"))
+    components = ["| Component and artifact | Publication role | Version | Source commit | Read (UTC) | Scope |",
+                  "| --- | --- | --- | --- | --- | --- |"]
+    for version in versions:
+        role = "Published release" if version["kind"] == "release" else "Source tag"
+        components.append(
+            f"| [{version['display_name']}](start.html#{version['component']}) / {version['artifact']} | "
+            f"{role} | [{version['version']}]({version['url']}) | "
+            f"[`{version['commit'][:12]}`]({version['source_url']}) | {version['read']} | {version['note']} |"
+        )
     rows = ["| artifact | version | date | status | source SHA-256 (first 16) | note |", "|---|---|---|---|---|---|"]
     for a in data["artifact"]:
         source = ROOT / a["source"]
@@ -662,9 +671,28 @@ def versions_markdown(built: set[str]) -> str:
     return "\n".join([
         "---",
         'title: "Version ledger"',
-        'subtitle: "Every artifact on this site, its version, its status, and a digest of the source it was built from"',
+        'subtitle: "Component releases, source tags and the documentation built from them"',
         f'status: "Draft. Site version {VERSION}. Rebuilt on every change; the digests let a reader check that a page matches the version recorded here."',
         "---",
+        "",
+        "## Component versions {#component-versions}",
+        "",
+        "These are publication records at the read time shown. The source column names the commit "
+        "behind each release or tag, after peeling annotated tags. "
+        "A repository can publish a harness and a case package at different versions.",
+        "",
+        *components,
+        "",
+        "### Choose the pin for your task",
+        "",
+        "- **Install or integrate:** use a component's [reviewed guide](start.html), then keep the exact "
+        "package version or source commit its recipe selects. A guide can deliberately use an older release.",
+        "- **Repeat a tested installation:** use the recipe's recorded source, environment, command and "
+        "retained output. A release number alone is not an install result.",
+        "- **Cite or replay a result:** retain the source and artifact digests in that result. "
+        "[Lab records](lab.html), historical examples and citation snapshots do not move when a new release appears.",
+        "",
+        "## Documentation revisions",
         "",
         "A digest here is the SHA-256 of the artifact's source file in the site's repository, "
         "truncated to 16 hexadecimal characters for display. A change to the source changes the digest, "
@@ -772,6 +800,7 @@ def build(out: Path) -> None:
             raise SystemExit(1)
     built = {p.stem for p in pages} | {"claims", "versions", "start"}
     public = discovery.load_public(ROOT)
+    versions = discovery.component_versions(public, ROOT)
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True)
@@ -787,10 +816,10 @@ def build(out: Path) -> None:
     claims.write_text(stamp_cadence(claims.read_text(encoding="utf-8")), encoding="utf-8")
     with tempfile.TemporaryDirectory() as tmp:
         start = Path(tmp) / "start.md"
-        start.write_text(discovery.start_markdown(public), encoding="ascii")
+        start.write_text(discovery.start_markdown(public, versions), encoding="ascii")
         render(start, out / "start.html", built)
         ledger = Path(tmp) / "versions.md"
-        ledger.write_text(versions_markdown(built), encoding="utf-8")
+        ledger.write_text(versions_markdown(built, versions), encoding="utf-8")
         render(ledger, out / "versions.html", built)
     for src, dst, page in COPIES:
         if page is not None and page not in built:
