@@ -1914,6 +1914,271 @@ comparisonOrder: Retrospective source-bound metadata reading; no new host execut
 
 </div>
 
+<div>
+
+<a id="record-horizon-signed-target-reader-2026-10-09"></a>
+
+## horizon-signed-target-reader-2026-10-09
+
+Claim scope: outside-hosted-signed-record-reader
+
+Review state: retained-source-bound-observation
+
+Open [Report](experiments/horizon-signed-target-reader-2026-10-09/report.json), [Provenance](experiments/horizon-signed-target-reader-2026-10-09/provenance.json) and [Contract](lab.md#choose-the-claim-you-are-submitting).
+
+[Recorded procedure](experiments/horizon-signed-target-reader-2026-10-09/README.md)
+
+<a id="per-claim-results-29"></a>
+
+### Per-claim results
+
+| Claim                                     | Recorded result |
+|-------------------------------------------|-----------------|
+| recorded-command-exits-match-expectations | pass            |
+| pair-a-signed-record-matches-exact-target | pass            |
+| pair-b-wrong-target-refused               | pass            |
+| all-eight-pair-a-assertions-reported-true | fail            |
+| fresh-network-effect-reproduction         | not-exercised   |
+| independent-witness-custody               | not-exercised   |
+
+<a id="roles-29"></a>
+
+### Roles
+
+| Role | Declaration |
+|----|----|
+| fixtureOperator | GitHub Actions in ogasurfproject-jpg/horizon-shield (actor ogasurfproject-jpg) |
+| atlasReplay | Probity retained-output reader; no original workload repeated |
+| independentOperation | not-established |
+| signedRecordProducers | pipavlo82 and kuangmi-bit; producer-declared vantages retained |
+| readerMaintainer | Probity |
+| reportOperator | Caller-declared unauthenticated Probity Codex / ordinary shared BoxPool author-run; not GitHub actor identity |
+
+<a id="limits-29"></a>
+
+### Limits
+
+- Host CI actor is separately established by GitHub metadata; the output operator string is caller-declared and unauthenticated
+- Original signed-record assertion values remain producer-declared: pair A7true/1unevaluated, not8/8
+- Both ledger fetches returned HTTP403; successful job is not successful ledger acquisition
+- No new walk, response correctness, historical key control, independent custody, production effect or paid use established
+
+answerExposure: Public original results and expected controls available before Atlas reading; no answer-blind replication
+
+comparisonOrder: Retrospective reading of retained exact-head source/output; no new native workload or effect execution
+
+</div>
+
+<div>
+
+<a id="record-ten-sdk-json-bytes-2026-10-09"></a>
+
+## ten-sdk-json-bytes-2026-10-09
+
+Claim scope: author-hosted-serializer-byte-comparison
+
+Review state: retained-source-bound-observation
+
+Open [Report](experiments/ten-sdk-json-bytes-2026-10-09/report.json), [Provenance](experiments/ten-sdk-json-bytes-2026-10-09/provenance.json) and [Contract](lab.md#choose-the-claim-you-are-submitting).
+
+[Recorded procedure](experiments/ten-sdk-json-bytes-2026-10-09/README.md)
+
+<a id="per-claim-results-30"></a>
+
+### Per-claim results
+
+| Claim                                              | Recorded result |
+|----------------------------------------------------|-----------------|
+| all-ten-sdk-original-reports-retained              | pass            |
+| complete-27-row-populations-and-raw-verdicts       | pass            |
+| historical-workflow-reports-differences-by-default | pass            |
+| sdk-jcs-conformance                                | not-exercised   |
+| independent-operation                              | not-exercised   |
+| production-or-commercial-effect                    | not-exercised   |
+
+<a id="roles-30"></a>
+
+### Roles
+
+| Role | Declaration |
+|----|----|
+| fixtureOperator | Probity public repository GitHub Actions |
+| atlasReplay | Probity retained-output reader; no original workload repeated |
+| independentOperation | not-established |
+
+<a id="limits-30"></a>
+
+### Limits
+
+- The27 recorded rows include the bounded-profile row; earlier26-row summaries are not the full artifact population
+- Rawcanonical/differs/refused values are byte-comparison outcomes, not a pass/fail grading of SDK contracts
+- The workflow reports differences by default; its green jobs do not establish canonicalization conformance
+- The same retained JCS oracle report appears in each ZIP; it is not ten independent oracle runs
+- No current SDK behavior, deployment, incident or paid use inferred
+
+answerExposure: Public original results and expected controls available before Atlas reading; no answer-blind replication
+
+comparisonOrder: Retrospective reading of retained exact-head source/output; no new native workload or effect execution
+
+</div>
+
+<div>
+
+<a id="record-nist-ai300-1-checker-2026-10-13"></a>
+
+## nist-ai300-1-checker-2026-10-13
+
+Claim scope: author-hosted-structural-rule-check
+
+Review state: retained-source-bound-observation
+
+Open [Report](experiments/nist-ai300-1-checker-2026-10-13/report.json), [Provenance](experiments/nist-ai300-1-checker-2026-10-13/provenance.json) and [Contract](lab.md#choose-the-claim-you-are-submitting).
+
+[Recorded procedure](experiments/nist-ai300-1-checker-2026-10-13/README.md)
+
+<a id="per-claim-results-31"></a>
+
+### Per-claim results
+
+| Claim                                         | Recorded result |
+|-----------------------------------------------|-----------------|
+| original-thirteen-native-tests-succeeded      | pass            |
+| complete-structural-and-mutation-check-output | pass            |
+| recorded-regeneration-kept-source-clean       | pass            |
+| nist-certification                            | not-exercised   |
+| semantic-sufficiency-of-all-requirements      | not-exercised   |
+| production-compliance                         | not-exercised   |
+
+<a id="roles-31"></a>
+
+### Roles
+
+| Role | Declaration |
+|----|----|
+| fixtureOperator | Probity public repository GitHub Actions |
+| atlasReplay | Probity retained-output reader; no original workload repeated |
+| independentOperation | not-established |
+
+<a id="limits-31"></a>
+
+### Limits
+
+- OriginalPython3.13.15host output is retained; this packet repeats no checker workload
+- Structural extraction and mutation sensitivity do not establish semantic completeness, NIST certification or compliance
+- Corpus235members/139rules is tied to the actual checker output here; another current corpus count cannot replace it
+- Reviewer ambiguities and requirements beyond structural checks stay open
+
+answerExposure: Public original results and expected controls available before Atlas reading; no answer-blind replication
+
+comparisonOrder: Retrospective reading of retained exact-head source/output; no new native workload or effect execution
+
+</div>
+
+<div>
+
+<a id="record-signed-history-boundaries-2026-10-13"></a>
+
+## signed-history-boundaries-2026-10-13
+
+Claim scope: author-hosted-signed-history-controls
+
+Review state: retained-source-bound-observation
+
+Open [Report](experiments/signed-history-boundaries-2026-10-13/report.json), [Provenance](experiments/signed-history-boundaries-2026-10-13/provenance.json) and [Contract](lab.md#choose-the-claim-you-are-submitting).
+
+[Recorded procedure](experiments/signed-history-boundaries-2026-10-13/README.md)
+
+<a id="per-claim-results-32"></a>
+
+### Per-claim results
+
+| Claim | Recorded result |
+|----|----|
+| original-fifteen-case-specific-tests-passed | pass |
+| executed-tests-force-genuine-signature-order-anchor-controls | pass |
+| default-285-report-not-substituted-as-anchored-evidence | pass |
+| independent-anchor-publication | not-exercised |
+| independent-key-custody | not-exercised |
+| production-history-completeness | not-exercised |
+
+<a id="roles-32"></a>
+
+### Roles
+
+| Role | Declaration |
+|----|----|
+| fixtureOperator | Probity public repository GitHub Actions |
+| atlasReplay | Probity retained-output reader; no original workload repeated |
+| independentOperation | not-established |
+
+<a id="limits-32"></a>
+
+### Limits
+
+- Public deterministic test keys and author-generated synthetic histories; independently controlled anchors and custody remain unestablished
+- Originalcase-specificjob output plus exact executed tests bind control claims; default285-caseartifact does not
+- Fourteen is the source-declared corpus population;15 is the actual pytest result, not15 independent reproductions
+- No continuous operation, real-world rollback prevention or commercial effect inferred
+
+answerExposure: Public original results and expected controls available before Atlas reading; no answer-blind replication
+
+comparisonOrder: Retrospective reading of retained exact-head source/output; no new native workload or effect execution
+
+</div>
+
+<div>
+
+<a id="record-ratchet-benign-heredoc-2026-10-15"></a>
+
+## ratchet-benign-heredoc-2026-10-15
+
+Claim scope: author-reported-history-with-hosted-public-regression
+
+Review state: retained-source-bound-observation
+
+Open [Report](experiments/ratchet-benign-heredoc-2026-10-15/report.json), [Provenance](experiments/ratchet-benign-heredoc-2026-10-15/provenance.json) and [Contract](lab.md#choose-the-claim-you-are-submitting).
+
+[Recorded procedure](experiments/ratchet-benign-heredoc-2026-10-15/README.md)
+
+<a id="per-claim-results-33"></a>
+
+### Per-claim results
+
+| Claim | Recorded result |
+|----|----|
+| original-public-regression-job-succeeded | pass |
+| benign-document-and-destructive-push-controls-remain-distinct | pass |
+| dated-author-replay-counts-retained-as-author-report | pass |
+| independent-replay-of-private-transcripts | not-exercised |
+| zero-false-alarms-outside-selected-history | not-exercised |
+| prevented-production-incident | not-exercised |
+
+<a id="roles-33"></a>
+
+### Roles
+
+| Role | Declaration |
+|----|----|
+| fixtureOperator | Probity public repository GitHub Actions |
+| atlasReplay | Probity retained-output reader; no original workload repeated |
+| independentOperation | not-established |
+
+<a id="limits-33"></a>
+
+### Limits
+
+- 13,739sessions/632,126calls are the pinned author report, not an independent measured Atlas run
+- The first reported run had one false alarm: a Python heredoc wrote documentation naming a force push; no push occurred
+- The corrected source treats heredoc data separately, counts--mirror, ignores dryrun; actual public test source plus defaultpytestselection binds its regression
+- 1,431passes/1skip/9deselected is the hosted suite summary, not a fresh replay of private historical transcripts
+- No private transcript, private Ratchetcore source, production prevention or revenue claim is copied or inferred
+
+answerExposure: Public original results and expected controls available before Atlas reading; no answer-blind replication
+
+comparisonOrder: Retrospective reading of retained exact-head source/output; no new native workload or effect execution
+
+</div>
+
 </div>
 
 [HTML view](runs.html) | [Agent guide](llms.txt)

@@ -8583,6 +8583,659 @@
           "sha256": "985a0fae093e325e4fa4b6180c56d67abd3c702346fc9a3f6c477b31232fde62"
         }
       ]
+    },
+    {
+      "id": "horizon-signed-target-reader-2026-10-09",
+      "evidenceClaim": "outside-hosted-signed-record-reader",
+      "reviewState": "retained-source-bound-observation",
+      "report": "../experiments/horizon-signed-target-reader-2026-10-09/report.json",
+      "provenance": "../experiments/horizon-signed-target-reader-2026-10-09/provenance.json",
+      "contract": "../lab.html#choose-the-claim-you-are-submitting",
+      "experiment": "../experiments/horizon-signed-target-reader-2026-10-09/README.md",
+      "roles": {
+        "fixtureOperator": "GitHub Actions in ogasurfproject-jpg/horizon-shield (actor ogasurfproject-jpg)",
+        "atlasReplay": "Probity retained-output reader; no original workload repeated",
+        "independentOperation": "not-established",
+        "signedRecordProducers": "pipavlo82 and kuangmi-bit; producer-declared vantages retained",
+        "readerMaintainer": "Probity",
+        "reportOperator": "Caller-declared unauthenticated Probity Codex / ordinary shared BoxPool author-run; not GitHub actor identity"
+      },
+      "claimResults": [
+        {
+          "claim": "recorded-command-exits-match-expectations",
+          "result": "pass",
+          "recordedField": "/allRecordedExitsMatch",
+          "expectedValue": true
+        },
+        {
+          "claim": "pair-a-signed-record-matches-exact-target",
+          "result": "pass",
+          "recordedField": "/pairA/outcome",
+          "expectedValue": "MATCHING_SIGNED_OBSERVATION"
+        },
+        {
+          "claim": "pair-b-wrong-target-refused",
+          "result": "pass",
+          "recordedField": "/pairB/outcome",
+          "expectedValue": "TARGET_MISMATCH"
+        },
+        {
+          "claim": "all-eight-pair-a-assertions-reported-true",
+          "result": "fail",
+          "recordedField": "/pairA/assertions/all_eight_reported_true",
+          "expectedValue": false
+        },
+        {
+          "claim": "fresh-network-effect-reproduction",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "independent-witness-custody",
+          "result": "not-exercised"
+        }
+      ],
+      "limits": [
+        "Host CI actor is separately established by GitHub metadata; the output operator string is caller-declared and unauthenticated",
+        "Original signed-record assertion values remain producer-declared: pair A7true/1unevaluated, not8/8",
+        "Both ledger fetches returned HTTP403; successful job is not successful ledger acquisition",
+        "No new walk, response correctness, historical key control, independent custody, production effect or paid use established"
+      ],
+      "answerExposure": "Public original results and expected controls available before Atlas reading; no answer-blind replication",
+      "comparisonOrder": "Retrospective reading of retained exact-head source/output; no new native workload or effect execution",
+      "artifacts": [
+        {
+          "path": "../experiments/horizon-signed-target-reader-2026-10-09/README.md",
+          "sha256": "21bcfc29f49b06e2028e0090784ff5ae6a328ed16aebfd5e7efeca3ca9e71fc6"
+        },
+        {
+          "path": "../experiments/horizon-signed-target-reader-2026-10-09/artifact.zip",
+          "sha256": "bf2720f339dcc7b2fa650835a1459cba4978709cb1e0f032c379e2167722fedf"
+        },
+        {
+          "path": "../experiments/horizon-signed-target-reader-2026-10-09/job-log.zip",
+          "sha256": "e28a10a9f888388419f90b49267768d09854595d787e97377ddb9cee602cce07"
+        },
+        {
+          "path": "../experiments/horizon-signed-target-reader-2026-10-09/jobs.json",
+          "sha256": "60d9ffa4e993becce384b01f3e5b7f14d36a3081c9851cc85727b10adf38b3c1"
+        },
+        {
+          "path": "../experiments/horizon-signed-target-reader-2026-10-09/provenance.json",
+          "sha256": "e15f932e27c0eb88b5a4e0bb8b6313dc9e1ef25ffc0762f75d15c67ca135a752"
+        },
+        {
+          "path": "../experiments/horizon-signed-target-reader-2026-10-09/report.json",
+          "sha256": "3b4036ab28caa9667532d6577fb54ddf688ffba97dd9e17fb12135e61c9171f6"
+        },
+        {
+          "path": "../experiments/horizon-signed-target-reader-2026-10-09/repository.json",
+          "sha256": "6f496f08cfe6e2bfe0fd3b1aa4c3539156d130a216bf3dc45729f4df1da9a223"
+        },
+        {
+          "path": "../experiments/horizon-signed-target-reader-2026-10-09/run.json",
+          "sha256": "1a5e5fc9a1c7c738ba4b1d34e30c3e2e0ff0670b6a27068e0ff19c60bf9b099b"
+        },
+        {
+          "path": "../experiments/horizon-signed-target-reader-2026-10-09/validate_capsule.py",
+          "sha256": "07db06eb09b5ae50bb8cda5a63310597237d717519f15e53a465009c75c36268"
+        },
+        {
+          "path": "../experiments/horizon-signed-target-reader-2026-10-09/workflow.yml",
+          "sha256": "9533db6dfef1b344c8d0df61b69a5850c5f15b8e168a62af05b227555b4ddb45"
+        }
+      ]
+    },
+    {
+      "id": "ten-sdk-json-bytes-2026-10-09",
+      "evidenceClaim": "author-hosted-serializer-byte-comparison",
+      "reviewState": "retained-source-bound-observation",
+      "report": "../experiments/ten-sdk-json-bytes-2026-10-09/report.json",
+      "provenance": "../experiments/ten-sdk-json-bytes-2026-10-09/provenance.json",
+      "contract": "../lab.html#choose-the-claim-you-are-submitting",
+      "experiment": "../experiments/ten-sdk-json-bytes-2026-10-09/README.md",
+      "roles": {
+        "fixtureOperator": "Probity public repository GitHub Actions",
+        "atlasReplay": "Probity retained-output reader; no original workload repeated",
+        "independentOperation": "not-established"
+      },
+      "claimResults": [
+        {
+          "claim": "all-ten-sdk-original-reports-retained",
+          "result": "pass",
+          "recordedField": "/sdkCount",
+          "expectedValue": 10
+        },
+        {
+          "claim": "complete-27-row-populations-and-raw-verdicts",
+          "result": "pass",
+          "recordedField": "/perSDK",
+          "expectedValue": {
+            "csharp": {
+              "rows": 27,
+              "verdicts": {
+                "canonical": 6,
+                "differs": 18,
+                "refused": 3
+              }
+            },
+            "go": {
+              "rows": 27,
+              "verdicts": {
+                "canonical": 9,
+                "differs": 18
+              }
+            },
+            "java": {
+              "rows": 27,
+              "verdicts": {
+                "canonical": 13,
+                "differs": 14
+              }
+            },
+            "kotlin": {
+              "rows": 27,
+              "verdicts": {
+                "canonical": 14,
+                "differs": 12,
+                "refused": 1
+              }
+            },
+            "php": {
+              "rows": 27,
+              "verdicts": {
+                "canonical": 11,
+                "differs": 14,
+                "refused": 2
+              }
+            },
+            "python": {
+              "rows": 27,
+              "verdicts": {
+                "canonical": 17,
+                "differs": 9,
+                "refused": 1
+              }
+            },
+            "ruby": {
+              "rows": 27,
+              "verdicts": {
+                "canonical": 15,
+                "differs": 9,
+                "refused": 3
+              }
+            },
+            "rust": {
+              "rows": 27,
+              "verdicts": {
+                "canonical": 17,
+                "differs": 7,
+                "refused": 3
+              }
+            },
+            "swift": {
+              "rows": 27,
+              "verdicts": {
+                "canonical": 19,
+                "differs": 6,
+                "refused": 2
+              }
+            },
+            "typescript": {
+              "rows": 27,
+              "verdicts": {
+                "canonical": 20,
+                "differs": 7
+              }
+            }
+          }
+        },
+        {
+          "claim": "historical-workflow-reports-differences-by-default",
+          "result": "pass",
+          "recordedField": "/workflowReportsDifferencesByDefault",
+          "expectedValue": true
+        },
+        {
+          "claim": "sdk-jcs-conformance",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "independent-operation",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "production-or-commercial-effect",
+          "result": "not-exercised"
+        }
+      ],
+      "limits": [
+        "The27 recorded rows include the bounded-profile row; earlier26-row summaries are not the full artifact population",
+        "Rawcanonical/differs/refused values are byte-comparison outcomes, not a pass/fail grading of SDK contracts",
+        "The workflow reports differences by default; its green jobs do not establish canonicalization conformance",
+        "The same retained JCS oracle report appears in each ZIP; it is not ten independent oracle runs",
+        "No current SDK behavior, deployment, incident or paid use inferred"
+      ],
+      "answerExposure": "Public original results and expected controls available before Atlas reading; no answer-blind replication",
+      "comparisonOrder": "Retrospective reading of retained exact-head source/output; no new native workload or effect execution",
+      "artifacts": [
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/README.md",
+          "sha256": "80b88051004c48bb2aee978eb28cb807373ea8326e9b87ecb3580e999a5122a5"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/jobs.json",
+          "sha256": "4a322bf0e015111e1663185c4399d23755f3e97e3867a137009eab4bc23419c4"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/mcp-sdk-jcs-csharp.zip",
+          "sha256": "c02a2eb489ae248ee4fff5730518a37f65fa1dc34379589b6e0845badf30f956"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/mcp-sdk-jcs-go.zip",
+          "sha256": "8167a56d5dcf8ba2d06dd0080798fc00648240cb4387721f35a835bfdf859d7f"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/mcp-sdk-jcs-java.zip",
+          "sha256": "3d45f451fbb101f3ca91c24597a484e7215ed9d5f626d3094b937de2311f8e34"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/mcp-sdk-jcs-kotlin.zip",
+          "sha256": "4084d50b2eb7abf3ba04f73181d02afd2af79d0818fd17fc8fbf1168ec467f8e"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/mcp-sdk-jcs-php.zip",
+          "sha256": "2d3bd1b920e7dcc67b3847f98afad34f725129fd97d138f246c48b7ca9612800"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/mcp-sdk-jcs-python.zip",
+          "sha256": "bc1e3749d26138178ba3b5dffc03ddcbc0a28bc833ef91b6bc6f17bd73d33c64"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/mcp-sdk-jcs-ruby.zip",
+          "sha256": "0228d00beb645b808b0c97bc425bdb1d7782ab43a74bc0abbc461c84988f445a"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/mcp-sdk-jcs-rust.zip",
+          "sha256": "e0a2a591749ec6520f191f863c95cd21d10adae0b4024a8befa4d6d819b03613"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/mcp-sdk-jcs-swift.zip",
+          "sha256": "260258980bbb5b7a3e6c3239064ae4f4040398f7f66a4758ee9c0150144603ae"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/mcp-sdk-jcs-typescript.zip",
+          "sha256": "ba867ef8f3eb81c3ddf572796fa2402f5bc517c110ebfc72cd49cd49535b288c"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/provenance.json",
+          "sha256": "64789ca2fd237a187e9cb94c36b970174b33695ba2d84e5d96480aeec2f4e76b"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/report.json",
+          "sha256": "82af126f7649d2dbb56880db9e5b717d02447ba8b05debcdfefea7264d73664b"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/run.json",
+          "sha256": "60505227c308f77399af8b030b8bb897dfc9a1ee7a66521d461253f84d1c8c7a"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/source/interop/mcp-sdks/driver.py",
+          "sha256": "886c4662f0bcfd78122d9787a0f71b366fd19b852efbf9656a3761bfe2b1dcb6"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/source/interop/mcp-sdks/run-all.sh",
+          "sha256": "18e1989ae847e9d22f08c61784395f4f968cded79032fe5e1a1370103d10508a"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/validate_capsule.py",
+          "sha256": "6e1dcb776786e48898a75e4840675f432c33861edeb90708873ab6356c64291b"
+        },
+        {
+          "path": "../experiments/ten-sdk-json-bytes-2026-10-09/workflow.yml",
+          "sha256": "c0502915d7c8dc3f48fc02a1a1a823e9c1ab7e17489b5367272753c87a0d7c60"
+        }
+      ]
+    },
+    {
+      "id": "nist-ai300-1-checker-2026-10-13",
+      "evidenceClaim": "author-hosted-structural-rule-check",
+      "reviewState": "retained-source-bound-observation",
+      "report": "../experiments/nist-ai300-1-checker-2026-10-13/report.json",
+      "provenance": "../experiments/nist-ai300-1-checker-2026-10-13/provenance.json",
+      "contract": "../lab.html#choose-the-claim-you-are-submitting",
+      "experiment": "../experiments/nist-ai300-1-checker-2026-10-13/README.md",
+      "roles": {
+        "fixtureOperator": "Probity public repository GitHub Actions",
+        "atlasReplay": "Probity retained-output reader; no original workload repeated",
+        "independentOperation": "not-established"
+      },
+      "claimResults": [
+        {
+          "claim": "original-thirteen-native-tests-succeeded",
+          "result": "pass",
+          "recordedField": "/nativeLog/unitTestsPassed",
+          "expectedValue": 13
+        },
+        {
+          "claim": "complete-structural-and-mutation-check-output",
+          "result": "pass",
+          "recordedField": "/checkedPopulation",
+          "expectedValue": {
+            "tables": 4,
+            "tablePages": 26,
+            "reviewerNotes": 7,
+            "ruledBoxes": 33,
+            "pdfPages": 54,
+            "rowsByBothExtractions": 157,
+            "members": 235,
+            "rules": 139,
+            "bindingsRederived": 9,
+            "deletionControls": 143,
+            "droppedConditionControls": 50
+          }
+        },
+        {
+          "claim": "recorded-regeneration-kept-source-clean",
+          "result": "pass",
+          "recordedField": "/regeneration",
+          "expectedValue": "wrote235membersover139rules;gitdiffclean"
+        },
+        {
+          "claim": "nist-certification",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "semantic-sufficiency-of-all-requirements",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "production-compliance",
+          "result": "not-exercised"
+        }
+      ],
+      "limits": [
+        "OriginalPython3.13.15host output is retained; this packet repeats no checker workload",
+        "Structural extraction and mutation sensitivity do not establish semantic completeness, NIST certification or compliance",
+        "Corpus235members/139rules is tied to the actual checker output here; another current corpus count cannot replace it",
+        "Reviewer ambiguities and requirements beyond structural checks stay open"
+      ],
+      "answerExposure": "Public original results and expected controls available before Atlas reading; no answer-blind replication",
+      "comparisonOrder": "Retrospective reading of retained exact-head source/output; no new native workload or effect execution",
+      "artifacts": [
+        {
+          "path": "../experiments/nist-ai300-1-checker-2026-10-13/README.md",
+          "sha256": "10fb88b850bb171241945335c3ae966827148ccea1909a3289838fb16569c3d8"
+        },
+        {
+          "path": "../experiments/nist-ai300-1-checker-2026-10-13/job-log.zip",
+          "sha256": "5d2ac1335d8c3e8b68a1d1b4866331b023e1502f9857e63cb668a81d0f2ba831"
+        },
+        {
+          "path": "../experiments/nist-ai300-1-checker-2026-10-13/jobs.json",
+          "sha256": "4b5e519a8eb8764b74e3bb1c218861b8bffdf30c2097721905d55cf567d99c25"
+        },
+        {
+          "path": "../experiments/nist-ai300-1-checker-2026-10-13/provenance.json",
+          "sha256": "e54bc2585effc78670d2d30dca52d712d6dd28af6e0ac2014d5e173af4b41520"
+        },
+        {
+          "path": "../experiments/nist-ai300-1-checker-2026-10-13/report.json",
+          "sha256": "489416757255bbaee5d5afbaed11f27ad0b9701ea297fa1b1b45c52b0171ea5b"
+        },
+        {
+          "path": "../experiments/nist-ai300-1-checker-2026-10-13/source/.github/workflows/nist-ai-300-1.yml",
+          "sha256": "7602f2fca48a01d4fe6e3f51777ec150520688bb1d572918de3c91935c3419d1"
+        },
+        {
+          "path": "../experiments/nist-ai300-1-checker-2026-10-13/source/interop/nist-ai-300-1/README.md",
+          "sha256": "01e06b65b10a7306b0201a02c9fb373a83867677c898baf77e221e232b37a29a"
+        },
+        {
+          "path": "../experiments/nist-ai300-1-checker-2026-10-13/source/interop/nist-ai-300-1/check_vectors.py",
+          "sha256": "19a86a0b5cb3eb3882e08777b378c03f72f766bedfcf1d529ec5641111a037c5"
+        },
+        {
+          "path": "../experiments/nist-ai300-1-checker-2026-10-13/validate_capsule.py",
+          "sha256": "96035e457495bbfac04f0e872943ea90281c667fdc26588709c82bc784d9c970"
+        }
+      ]
+    },
+    {
+      "id": "signed-history-boundaries-2026-10-13",
+      "evidenceClaim": "author-hosted-signed-history-controls",
+      "reviewState": "retained-source-bound-observation",
+      "report": "../experiments/signed-history-boundaries-2026-10-13/report.json",
+      "provenance": "../experiments/signed-history-boundaries-2026-10-13/provenance.json",
+      "contract": "../lab.html#choose-the-claim-you-are-submitting",
+      "experiment": "../experiments/signed-history-boundaries-2026-10-13/README.md",
+      "roles": {
+        "fixtureOperator": "Probity public repository GitHub Actions",
+        "atlasReplay": "Probity retained-output reader; no original workload repeated",
+        "independentOperation": "not-established"
+      },
+      "claimResults": [
+        {
+          "claim": "original-fifteen-case-specific-tests-passed",
+          "result": "pass",
+          "recordedField": "/nativeLog/testsPassed",
+          "expectedValue": 15
+        },
+        {
+          "claim": "executed-tests-force-genuine-signature-order-anchor-controls",
+          "result": "pass",
+          "recordedField": "/sourceAssertions",
+          "expectedValue": {
+            "genuineSignedRejectedStores": 8,
+            "signatureOnlyMissedRejects": 7,
+            "withoutAnchorMissedRejects": 3,
+            "allSixChecksForced": true,
+            "rejectAllFailsPositiveControls": true,
+            "missingVerifierUnanswered": true,
+            "changedFixtureRefused": true
+          }
+        },
+        {
+          "claim": "default-285-report-not-substituted-as-anchored-evidence",
+          "result": "pass",
+          "recordedField": "/unrelatedDefaultArtifactExcluded",
+          "expectedValue": true
+        },
+        {
+          "claim": "independent-anchor-publication",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "independent-key-custody",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "production-history-completeness",
+          "result": "not-exercised"
+        }
+      ],
+      "limits": [
+        "Public deterministic test keys and author-generated synthetic histories; independently controlled anchors and custody remain unestablished",
+        "Originalcase-specificjob output plus exact executed tests bind control claims; default285-caseartifact does not",
+        "Fourteen is the source-declared corpus population;15 is the actual pytest result, not15 independent reproductions",
+        "No continuous operation, real-world rollback prevention or commercial effect inferred"
+      ],
+      "answerExposure": "Public original results and expected controls available before Atlas reading; no answer-blind replication",
+      "comparisonOrder": "Retrospective reading of retained exact-head source/output; no new native workload or effect execution",
+      "artifacts": [
+        {
+          "path": "../experiments/signed-history-boundaries-2026-10-13/README.md",
+          "sha256": "ff8077e5a004ed494ea78f2a349b4eb937f2547ffcdc8cd9340462d9a0e587ba"
+        },
+        {
+          "path": "../experiments/signed-history-boundaries-2026-10-13/job-log.zip",
+          "sha256": "c7f56f08fbcdebad0d478c89e1ef912b02bc7a3139ffe95763006f9a436a4a4d"
+        },
+        {
+          "path": "../experiments/signed-history-boundaries-2026-10-13/jobs.json",
+          "sha256": "b482c084b03786b2a4c591e9a7daa3d3d3cdea832e794104409d22d3159258be"
+        },
+        {
+          "path": "../experiments/signed-history-boundaries-2026-10-13/provenance.json",
+          "sha256": "3be41bbce944d9f031a3d3e057f1b106c079031fde373489343f912d4a9e5a0e"
+        },
+        {
+          "path": "../experiments/signed-history-boundaries-2026-10-13/report.json",
+          "sha256": "63f07a06fc49fee152948943f1b68c7d375c58c16e6a887c7f998526e3a8cfbb"
+        },
+        {
+          "path": "../experiments/signed-history-boundaries-2026-10-13/source/.github/workflows/ci.yml",
+          "sha256": "a6fe1c331ebcdaab779df225d45b0b837f3c8b545f5bb086f4551eb3bc33dcd9"
+        },
+        {
+          "path": "../experiments/signed-history-boundaries-2026-10-13/source/vectors-anchored-chain/README.md",
+          "sha256": "728b909487a522c489526c997d3d68978deca9101af19540265e1b3ff46aeda1"
+        },
+        {
+          "path": "../experiments/signed-history-boundaries-2026-10-13/source/vectors-anchored-chain/check_vectors.py",
+          "sha256": "7df26677c48b6bef477f346ac52dec2c79862fdc3ccf08d4e26eecf620ab76d1"
+        },
+        {
+          "path": "../experiments/signed-history-boundaries-2026-10-13/source/vectors-anchored-chain/tests/test_corpus.py",
+          "sha256": "c0916455353a98b5b73bb4c2477d6fc449029c66fdf085e4ed48be544caa5350"
+        },
+        {
+          "path": "../experiments/signed-history-boundaries-2026-10-13/validate_capsule.py",
+          "sha256": "5a8245872b6ee761966545c0a20c19bc1d289b31eefad4796312906e835c06aa"
+        }
+      ]
+    },
+    {
+      "id": "ratchet-benign-heredoc-2026-10-15",
+      "evidenceClaim": "author-reported-history-with-hosted-public-regression",
+      "reviewState": "retained-source-bound-observation",
+      "report": "../experiments/ratchet-benign-heredoc-2026-10-15/report.json",
+      "provenance": "../experiments/ratchet-benign-heredoc-2026-10-15/provenance.json",
+      "contract": "../lab.html#choose-the-claim-you-are-submitting",
+      "experiment": "../experiments/ratchet-benign-heredoc-2026-10-15/README.md",
+      "roles": {
+        "fixtureOperator": "Probity public repository GitHub Actions",
+        "atlasReplay": "Probity retained-output reader; no original workload repeated",
+        "independentOperation": "not-established"
+      },
+      "claimResults": [
+        {
+          "claim": "original-public-regression-job-succeeded",
+          "result": "pass",
+          "recordedField": "/nativeLog/testsPassed",
+          "expectedValue": 1431
+        },
+        {
+          "claim": "benign-document-and-destructive-push-controls-remain-distinct",
+          "result": "pass",
+          "recordedField": "/publicRegression",
+          "expectedValue": {
+            "benignPythonDocumentHeredocExpectedFire": false,
+            "mirrorPushExpectedFire": true,
+            "mirrorDryRunExpectedFire": false,
+            "shellFedHeredocExpectedFire": true
+          }
+        },
+        {
+          "claim": "dated-author-replay-counts-retained-as-author-report",
+          "result": "pass",
+          "recordedField": "/authorReportedReplay",
+          "expectedValue": {
+            "first": {
+              "sessions": 13712,
+              "toolCalls": 629192,
+              "fires": 7,
+              "realForcePushes": 6,
+              "falseAlarms": 1,
+              "crashes": 0,
+              "seconds": 393,
+              "workers": 4
+            },
+            "second": {
+              "sessions": 13739,
+              "toolCalls": 632126,
+              "fires": 6,
+              "realForcePushes": 6,
+              "falseAlarms": 0,
+              "crashes": 0,
+              "seconds": 552,
+              "workers": 1,
+              "unreadableTranscriptsSkipped": 1,
+              "malformedLinesSkipped": 118
+            }
+          }
+        },
+        {
+          "claim": "independent-replay-of-private-transcripts",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "zero-false-alarms-outside-selected-history",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "prevented-production-incident",
+          "result": "not-exercised"
+        }
+      ],
+      "limits": [
+        "13,739sessions/632,126calls are the pinned author report, not an independent measured Atlas run",
+        "The first reported run had one false alarm: a Python heredoc wrote documentation naming a force push; no push occurred",
+        "The corrected source treats heredoc data separately, counts--mirror, ignores dryrun; actual public test source plus defaultpytestselection binds its regression",
+        "1,431passes/1skip/9deselected is the hosted suite summary, not a fresh replay of private historical transcripts",
+        "No private transcript, private Ratchetcore source, production prevention or revenue claim is copied or inferred"
+      ],
+      "answerExposure": "Public original results and expected controls available before Atlas reading; no answer-blind replication",
+      "comparisonOrder": "Retrospective reading of retained exact-head source/output; no new native workload or effect execution",
+      "artifacts": [
+        {
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/README.md",
+          "sha256": "6dff2c6cff752800455a82ee0cadee5a32ea322872a62698950a5d41846220dc"
+        },
+        {
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/job-log.zip",
+          "sha256": "3f71a2d1e314d2dd94fc54863126ada65c3947dced8f6ae0563ec6e060d30c99"
+        },
+        {
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/job.json",
+          "sha256": "a923f356e5559590e291029cef55bcba150c6769a3db9b54e38863eebb9f9e9d"
+        },
+        {
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/provenance.json",
+          "sha256": "7c5e624b3367a9387eab92087baac77ea071e94baa1b828b9fedf58d7ad53669"
+        },
+        {
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/report.json",
+          "sha256": "3c66dfe2cf2e72fac81b6d05e30eebfff71798e16ec21a6a61ab0303d38d7af0"
+        },
+        {
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/source/.github/workflows/ci.yml",
+          "sha256": "577b8b33e8d84584ad3bb5e613389cfacd85c3ece45dff049878ae0d06dbf5fc"
+        },
+        {
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/source/docs/results/hooks-replay.md",
+          "sha256": "0719613418dee2c94b93cf137b600e2b521819698fc0bacae268a1d7f0e58584"
+        },
+        {
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/source/examples/claude-code/hooks/ratchet_no_force_push_main.py",
+          "sha256": "b99b090d0805d3745e542dc0d3af5484dd5c6c780bef080eca4e6121bc92515e"
+        },
+        {
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/source/examples/claude-code/no_force_push_main.py",
+          "sha256": "93ff0217a5d985a7c5d6bde1a28598ecc5562e535cfc2efcb0ec7129567ee341"
+        },
+        {
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/source/pyproject.toml",
+          "sha256": "95c6f7175246cd52be84099d2973c717aaf765a3e5dbe9fa4b84932c5c217cfb"
+        },
+        {
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/source/tests/export/test_example.py",
+          "sha256": "10e8f9c57eb18618f9b8b0d95d4275753d40a384ceedd43380f00db960e2f8d1"
+        },
+        {
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/validate_capsule.py",
+          "sha256": "65754afb20946de61f464dd0d49a0d2df94d2adb0f2c1f8848c7ac8aa1d82db7"
+        }
+      ]
     }
   ]
 }

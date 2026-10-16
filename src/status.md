@@ -1,7 +1,7 @@
 ---
 title: "Claim status"
 subtitle: "What stands, on what evidence, operated by whom, and the open cells"
-status: "Generated from the Lab register (29 records, 479 claim results) and 29 open cells."
+status: "Generated from the Lab register (34 records, 509 claim results) and 29 open cells."
 description: "Every retained Lab claim result as ESTABLISHED, CONTRADICTED, NOT_ESTABLISHED or unknown, with its evidence class, operator and files, and the open mechanism-by-property cells."
 ---
 
@@ -12,13 +12,13 @@ A claim stands only at its record's evidence class; no record here was independe
 
 | verdict | Probity-operated | author-operated | independently operated | all |
 |---|---|---|---|---|
-| ESTABLISHED (`pass`) | 225 | 8 | 0 | **233** |
-| CONTRADICTED (`fail`) | 146 | 0 | 0 | **146** |
+| ESTABLISHED (`pass`) | 240 | 8 | 0 | **248** |
+| CONTRADICTED (`fail`) | 147 | 0 | 0 | **147** |
 | unknown, observation unresolved (`unknown`) | 0 | 0 | 0 | **0** |
-| NOT_ESTABLISHED, not exercised (`not-exercised`) | 88 | 7 | 0 | **95** |
+| NOT_ESTABLISHED, not exercised (`not-exercised`) | 102 | 7 | 0 | **109** |
 | NOT_ESTABLISHED, out of scope (`out-of-scope`) | 5 | 0 | 0 | **5** |
-| claim results | 464 | 15 | 0 | **479** |
-| records | 27 | 2 | 0 | **29** |
+| claim results | 494 | 15 | 0 | **509** |
+| records | 32 | 2 | 0 | **34** |
 
 ## Verification, host use and paid use
 
@@ -71,6 +71,11 @@ E, C and N count a record's ESTABLISHED, CONTRADICTED and NOT_ESTABLISHED claim 
 | `aps-corrected20-2026-10-10` | aps corrected20 | `independently-written-and-operated-reader-on-producer-authored-finite-synthetic-corpus` | 6 | 0 | 8 (2 out of scope) | 0 | Probity-operated | `author-retained-measured-record` | [report](experiments/aps-corrected20-2026-10-10/report.json), [provenance](experiments/aps-corrected20-2026-10-10/provenance.json) |
 | `trace-m1-consumer-2026-10-11` | trace m1 consumer | `signature-report-binding-and-native-claim-ceiling-on-public-synthetic-inputs` | 5 | 0 | 3 (1 out of scope) | 0 | Probity-operated | `retained-independent-consumer-result` | [report](interop/trace-m1/retained/public-report.json), [provenance](interop/trace-m1/retained/QUALIFICATION.json) |
 | `packslip-dsse-host-ci-2026-10-11` | packslip dsse host ci | `host-project-ci-dependency` | 2 | 0 | 4 | 0 | Probity-operated | `retained-source-bound-observation` | [report](experiments/packslip-dsse-host-ci-2026-10-11/report.json), [provenance](experiments/packslip-dsse-host-ci-2026-10-11/provenance.json) |
+| `horizon-signed-target-reader-2026-10-09` | horizon signed target reader | `outside-hosted-signed-record-reader` | 3 | 1 | 2 | 0 | Probity-operated | `retained-source-bound-observation` | [report](experiments/horizon-signed-target-reader-2026-10-09/report.json), [provenance](experiments/horizon-signed-target-reader-2026-10-09/provenance.json) |
+| `ten-sdk-json-bytes-2026-10-09` | ten sdk json bytes | `author-hosted-serializer-byte-comparison` | 3 | 0 | 3 | 0 | Probity-operated | `retained-source-bound-observation` | [report](experiments/ten-sdk-json-bytes-2026-10-09/report.json), [provenance](experiments/ten-sdk-json-bytes-2026-10-09/provenance.json) |
+| `nist-ai300-1-checker-2026-10-13` | nist ai300 1 checker | `author-hosted-structural-rule-check` | 3 | 0 | 3 | 0 | Probity-operated | `retained-source-bound-observation` | [report](experiments/nist-ai300-1-checker-2026-10-13/report.json), [provenance](experiments/nist-ai300-1-checker-2026-10-13/provenance.json) |
+| `signed-history-boundaries-2026-10-13` | signed history boundaries | `author-hosted-signed-history-controls` | 3 | 0 | 3 | 0 | Probity-operated | `retained-source-bound-observation` | [report](experiments/signed-history-boundaries-2026-10-13/report.json), [provenance](experiments/signed-history-boundaries-2026-10-13/provenance.json) |
+| `ratchet-benign-heredoc-2026-10-15` | ratchet benign heredoc | `author-reported-history-with-hosted-public-regression` | 3 | 0 | 3 | 0 | Probity-operated | `retained-source-bound-observation` | [report](experiments/ratchet-benign-heredoc-2026-10-15/report.json), [provenance](experiments/ratchet-benign-heredoc-2026-10-15/provenance.json) |
 
 ## Every open cell (29)
 

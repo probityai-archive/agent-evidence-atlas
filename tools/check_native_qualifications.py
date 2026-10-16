@@ -15,6 +15,11 @@ SELECTED = (
     "remora-boundary-2026-10-04",
     "aeoess-receipt-signature-2026-10-05",
     "packslip-dsse-host-ci-2026-10-11",
+    "horizon-signed-target-reader-2026-10-09",
+    "ten-sdk-json-bytes-2026-10-09",
+    "nist-ai300-1-checker-2026-10-13",
+    "signed-history-boundaries-2026-10-13",
+    "ratchet-benign-heredoc-2026-10-15",
 )
 
 

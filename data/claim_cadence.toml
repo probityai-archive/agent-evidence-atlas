@@ -304,3 +304,10 @@ P-78 = "none"
 
 # Historical host CI and published development dependency, with fixed source bodies.
 "P-104" = "none"
+
+# Five retained source/output case views; historical immutable pins.
+"P-105" = "none"
+"P-106" = "none"
+"P-107" = "none"
+"P-108" = "none"
+"P-109" = "none"

@@ -2644,7 +2644,7 @@
 <tbody>
 <tr data-read="2026-10-15">
 <td>P-101</td>
-<td>The claim status page counts 29 records and 479 claim results: 233 ESTABLISHED, 146 CONTRADICTED and 100 NOT_ESTABLISHED (95 not exercised, 5 out of scope). By operation class, 27 records and 464 results are Probity-operated, 2 records and 15 results author-operated, and none independently operated</td>
+<td>The claim status page counts 34 records and 509 claim results: 248 ESTABLISHED, 147 CONTRADICTED and 114 NOT_ESTABLISHED (109 not exercised, 5 out of scope). By operation class, 32 records and 494 results are Probity-operated, 2 records and 15 results author-operated, and none independently operated</td>
 <td><a href="lab/register.json">Lab register</a>, read by <code>tools/gen_status.py</code> with the verdict and operation-class rules printed on the <a href="status.html">claim status page</a></td>
 <td>2026-10-15 <span class="cadence">(does not expire)</span></td>
 <td><code>python3 tools/gen_status.py --check</code>; count <code>claimResults[].result</code> per record and apply the page’s operation-class rule to each record’s <code>roles</code></td>
@@ -2673,6 +2673,46 @@
 <td>2026-10-15 <span class="cadence">(does not expire)</span></td>
 <td>Run the packet’s validate_capsule.py and tools/check_lab.py; compare the source pins, selected step, published dependency kind and author/host roles</td>
 <td>Historical provider metadata and host-maintained development test only. Numeric native exit and process output are not retained. No independent authorship, recurrence, production effect or payment is established.</td>
+</tr>
+<tr data-read="2026-10-15">
+<td>P-105</td>
+<td>The retained Horizon host job matched all ten expected command exits. The A record matches its exact target and reports seven true assertions with one unevaluated. The B record refuses the selected wrong target. Both ledger fetches returned HTTP403.</td>
+<td><a href="experiments/horizon-signed-target-reader-2026-10-09/report.json">Retained report</a>, <a href="experiments/horizon-signed-target-reader-2026-10-09/provenance.json">original source and output</a>, <a href="runs.html#record-horizon-signed-target-reader-2026-10-09">case and limits</a></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Run the packet validator and tools/check_lab.py; compare exact source/output hashes, complete populations and separate claim bindings</td>
+<td>Historical retained-output reading. Numeric process exits stay null where original process output does not retain them. No fresh original workload, independent effect custody, general conformance, certification, production result or payment is inferred.</td>
+</tr>
+<tr data-read="2026-10-15">
+<td>P-106</td>
+<td>The ten retained SDK reports each contain 27 raw input rows. Their canonical, differs and refused values describe byte comparisons. The historical workflow reports differences by default.</td>
+<td><a href="experiments/ten-sdk-json-bytes-2026-10-09/report.json">Retained report</a>, <a href="experiments/ten-sdk-json-bytes-2026-10-09/provenance.json">original source and output</a>, <a href="runs.html#record-ten-sdk-json-bytes-2026-10-09">case and limits</a></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Run the packet validator and tools/check_lab.py; compare exact source/output hashes, complete populations and separate claim bindings</td>
+<td>Historical retained-output reading. Numeric process exits stay null where original process output does not retain them. No fresh original workload, independent effect custody, general conformance, certification, production result or payment is inferred.</td>
+</tr>
+<tr data-read="2026-10-15">
+<td>P-107</td>
+<td>The pinned NIST AI300-1 job passed 13 native tests and reported 235 members over 139 rules, 143 deletion controls and 50 dropped-condition controls. The original output also records byte-identical regeneration.</td>
+<td><a href="experiments/nist-ai300-1-checker-2026-10-13/report.json">Retained report</a>, <a href="experiments/nist-ai300-1-checker-2026-10-13/provenance.json">original source and output</a>, <a href="runs.html#record-nist-ai300-1-checker-2026-10-13">case and limits</a></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Run the packet validator and tools/check_lab.py; compare exact source/output hashes, complete populations and separate claim bindings</td>
+<td>Historical retained-output reading. Numeric process exits stay null where original process output does not retain them. No fresh original workload, independent effect custody, general conformance, certification, production result or payment is inferred.</td>
+</tr>
+<tr data-read="2026-10-15">
+<td>P-108</td>
+<td>The pinned signed-history job passed 15 case-specific tests. Executed source controls include eight genuinely signed rejected stores, seven signature-only missed rejections and three missed rejections without the anchor. Fourteen remains the source-declared fixture population.</td>
+<td><a href="experiments/signed-history-boundaries-2026-10-13/report.json">Retained report</a>, <a href="experiments/signed-history-boundaries-2026-10-13/provenance.json">original source and output</a>, <a href="runs.html#record-signed-history-boundaries-2026-10-13">case and limits</a></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Run the packet validator and tools/check_lab.py; compare exact source/output hashes, complete populations and separate claim bindings</td>
+<td>Historical retained-output reading. Numeric process exits stay null where original process output does not retain them. No fresh original workload, independent effect custody, general conformance, certification, production result or payment is inferred.</td>
+</tr>
+<tr data-read="2026-10-15">
+<td>P-109</td>
+<td>The public Ratchet job passed 1,431 tests with one skip and nine deselected. Its executed default regression keeps the benign document heredoc, destructive mirror push, dry run and shell-fed heredoc distinct. Separate private-history replay counts remain the author report.</td>
+<td><a href="experiments/ratchet-benign-heredoc-2026-10-15/report.json">Retained report</a>, <a href="experiments/ratchet-benign-heredoc-2026-10-15/provenance.json">original source and output</a>, <a href="runs.html#record-ratchet-benign-heredoc-2026-10-15">case and limits</a></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Run the packet validator and tools/check_lab.py; compare exact source/output hashes, complete populations and separate claim bindings</td>
+<td>Historical retained-output reading. Numeric process exits stay null where original process output does not retain them. No fresh original workload, independent effect custody, general conformance, certification, production result or payment is inferred.</td>
 </tr>
 </tbody>
 </table>
