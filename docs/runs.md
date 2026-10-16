@@ -1859,6 +1859,61 @@ comparisonOrder: Synthetic known-answer replay; retained native output compared 
 
 </div>
 
+<div>
+
+<a id="record-packslip-dsse-host-ci-2026-10-11"></a>
+
+## packslip-dsse-host-ci-2026-10-11
+
+Claim scope: host-project-ci-dependency
+
+Review state: retained-source-bound-observation
+
+Open [Report](experiments/packslip-dsse-host-ci-2026-10-11/report.json), [Provenance](experiments/packslip-dsse-host-ci-2026-10-11/provenance.json) and [Contract](lab.md#choose-the-claim-you-are-submitting).
+
+[Recorded procedure](experiments/packslip-dsse-host-ci-2026-10-11/README.md)
+
+<a id="per-claim-results-28"></a>
+
+### Per-claim results
+
+| Claim                                   | Recorded result |
+|-----------------------------------------|-----------------|
+| host-ci-cargo-test-all-features-success | pass            |
+| published-development-dependency        | pass            |
+| independently-authored-regression       | not-exercised   |
+| production-runtime-adoption             | not-exercised   |
+| independently-observed-effect           | not-exercised   |
+| paid-use                                | not-exercised   |
+
+<a id="roles-28"></a>
+
+### Roles
+
+| Role | Declaration |
+|----|----|
+| fixtureOperator | Packslip host CI at jdx/packslip |
+| regressionAuthor | astrogilda (author-contributed regression) |
+| hostMaintainer | jdx |
+| atlasReplay | Probity retained metadata reader; no test execution repeated |
+| independentOperation | not-established |
+| sourceOfObservation | GitHub host job metadata and crates.io publisher metadata |
+
+<a id="limits-28"></a>
+
+### Limits
+
+- Historical exact-head job and source; no current or recurring success claim
+- Author-contributed regression maintained by the host; not independently authored
+- Published development dependency, not a production runtime dependency
+- No numeric native exit, raw process output, independent witness custody, effect or payment established
+
+answerExposure: Published regression source and results available to the Atlas reader; no answer-blind replication
+
+comparisonOrder: Retrospective source-bound metadata reading; no new host execution or model/effect run
+
+</div>
+
 </div>
 
 [HTML view](runs.html) | [Agent guide](llms.txt)

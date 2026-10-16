@@ -8483,6 +8483,106 @@
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         }
       ]
+    },
+    {
+      "id": "packslip-dsse-host-ci-2026-10-11",
+      "evidenceClaim": "host-project-ci-dependency",
+      "reviewState": "retained-source-bound-observation",
+      "report": "../experiments/packslip-dsse-host-ci-2026-10-11/report.json",
+      "provenance": "../experiments/packslip-dsse-host-ci-2026-10-11/provenance.json",
+      "contract": "../lab.html#choose-the-claim-you-are-submitting",
+      "experiment": "../experiments/packslip-dsse-host-ci-2026-10-11/README.md",
+      "roles": {
+        "fixtureOperator": "Packslip host CI at jdx/packslip",
+        "regressionAuthor": "astrogilda (author-contributed regression)",
+        "hostMaintainer": "jdx",
+        "atlasReplay": "Probity retained metadata reader; no test execution repeated",
+        "independentOperation": "not-established",
+        "sourceOfObservation": "GitHub host job metadata and crates.io publisher metadata"
+      },
+      "claimResults": [
+        {
+          "claim": "host-ci-cargo-test-all-features-success",
+          "result": "pass",
+          "recordedField": "/hostCI/cargoTestAllFeatures/conclusion",
+          "expectedValue": "success"
+        },
+        {
+          "claim": "published-development-dependency",
+          "result": "pass",
+          "recordedField": "/publishedDependency",
+          "expectedValue": {
+            "hostPackage": "packslip",
+            "hostVersion": "1.7.0",
+            "dependency": "dsse",
+            "requirement": "^0.1.1",
+            "kind": "dev",
+            "sourceCommit": "7b32cd29a9240927882ee18b3db1dcfd8e0328b4"
+          }
+        },
+        {
+          "claim": "independently-authored-regression",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "production-runtime-adoption",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "independently-observed-effect",
+          "result": "not-exercised"
+        },
+        {
+          "claim": "paid-use",
+          "result": "not-exercised"
+        }
+      ],
+      "limits": [
+        "Historical exact-head job and source; no current or recurring success claim",
+        "Author-contributed regression maintained by the host; not independently authored",
+        "Published development dependency, not a production runtime dependency",
+        "No numeric native exit, raw process output, independent witness custody, effect or payment established"
+      ],
+      "answerExposure": "Published regression source and results available to the Atlas reader; no answer-blind replication",
+      "comparisonOrder": "Retrospective source-bound metadata reading; no new host execution or model/effect run",
+      "artifacts": [
+        {
+          "path": "../experiments/packslip-dsse-host-ci-2026-10-11/README.md",
+          "sha256": "d00a90ebcb6a4229cddf68fee2a3ba1bd5537792a84e70c40ebc9231749967ff"
+        },
+        {
+          "path": "../experiments/packslip-dsse-host-ci-2026-10-11/report.json",
+          "sha256": "471ed55a5b8140e8a1012ea290a870e11f6ead37ddbc1a3afbf306599b3fa208"
+        },
+        {
+          "path": "../experiments/packslip-dsse-host-ci-2026-10-11/provenance.json",
+          "sha256": "01bd712bb5517a7294d77f36d7adc84520f3bbd4ebf020a66d11499aa4fcaf15"
+        },
+        {
+          "path": "../experiments/packslip-dsse-host-ci-2026-10-11/validate_capsule.py",
+          "sha256": "2ad6ecceb418484729444911e57eb234d86dc72ac63bb91a0ec15ff256d53118"
+        },
+        {
+          "path": "../experiments/packslip-dsse-host-ci-2026-10-11/raw/host-job.json",
+          "sha256": "c31e6ac7a7869deb297c8bd948cd2809b0c3dc104ff4015a260d795137bc2c58"
+        },
+        {
+          "path": "../experiments/packslip-dsse-host-ci-2026-10-11/raw/host-workflow.yml",
+          "sha256": "d9db488b991f4fe3c1fddd7fb0059e23ca40f7c7755213559fc58f0c4036c27c"
+        },
+        {
+          "path": "../experiments/packslip-dsse-host-ci-2026-10-11/raw/regression.rs",
+          "sha256": "7995538720ea419544ffe75f0e8785162face6d9514a7779346717116f718135"
+        },
+        {
+          "path": "../experiments/packslip-dsse-host-ci-2026-10-11/raw/contribution-pr.json",
+          "sha256": "71589c0b88fa34508e79bc2cecc9790cfc7a04f4d670944486b6b71f054c6a28"
+        },
+        {
+          "path": "../experiments/packslip-dsse-host-ci-2026-10-11/raw/reverse-dependencies.json",
+          "sha256": "985a0fae093e325e4fa4b6180c56d67abd3c702346fc9a3f6c477b31232fde62"
+        }
+      ]
     }
   ]
 }

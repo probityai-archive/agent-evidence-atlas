@@ -543,6 +543,15 @@ COPIES = [
     ("interop/trace-m1/INPUT-MANIFEST.json", "interop/trace-m1/INPUT-MANIFEST.json", "trace-m1-consumer"),
     ("interop/trace-m1/retained/public-report.json", "interop/trace-m1/retained/public-report.json", "trace-m1-consumer"),
     ("interop/trace-m1/retained/QUALIFICATION.json", "interop/trace-m1/retained/QUALIFICATION.json", "trace-m1-consumer"),
+    ("experiments/packslip-dsse-host-ci-2026-10-11/README.md", "experiments/packslip-dsse-host-ci-2026-10-11/README.md", "lab"),
+    ("experiments/packslip-dsse-host-ci-2026-10-11/report.json", "experiments/packslip-dsse-host-ci-2026-10-11/report.json", "lab"),
+    ("experiments/packslip-dsse-host-ci-2026-10-11/provenance.json", "experiments/packslip-dsse-host-ci-2026-10-11/provenance.json", "lab"),
+    ("experiments/packslip-dsse-host-ci-2026-10-11/validate_capsule.py", "experiments/packslip-dsse-host-ci-2026-10-11/validate_capsule.py", "lab"),
+    ("experiments/packslip-dsse-host-ci-2026-10-11/raw/host-job.json", "experiments/packslip-dsse-host-ci-2026-10-11/raw/host-job.json", "lab"),
+    ("experiments/packslip-dsse-host-ci-2026-10-11/raw/host-workflow.yml", "experiments/packslip-dsse-host-ci-2026-10-11/raw/host-workflow.yml", "lab"),
+    ("experiments/packslip-dsse-host-ci-2026-10-11/raw/regression.rs", "experiments/packslip-dsse-host-ci-2026-10-11/raw/regression.rs", "lab"),
+    ("experiments/packslip-dsse-host-ci-2026-10-11/raw/contribution-pr.json", "experiments/packslip-dsse-host-ci-2026-10-11/raw/contribution-pr.json", "lab"),
+    ("experiments/packslip-dsse-host-ci-2026-10-11/raw/reverse-dependencies.json", "experiments/packslip-dsse-host-ci-2026-10-11/raw/reverse-dependencies.json", "lab"),
 ]
 
 INCLUDE = re.compile(r"^<!-- include: (\S+) -->$", re.MULTILINE)

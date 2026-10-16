@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check retained native qualification populations from their original bytes."""
+"""Check selected retained native results and host observations from original bytes."""
 
 from __future__ import annotations
 
@@ -14,6 +14,7 @@ SELECTED = (
     "ag2-push-authority-2026-10-04",
     "remora-boundary-2026-10-04",
     "aeoess-receipt-signature-2026-10-05",
+    "packslip-dsse-host-ci-2026-10-11",
 )
 
 

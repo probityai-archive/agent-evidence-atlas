@@ -46,9 +46,9 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 | Verifier demonstration | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
 | [Experiments](experiments.md) | 0.4 | 2026-10-15 | draft | `9e216ec17d2fead0` `src/experiments.md` | Adds checkout composition and historical event references; retained experiments and Lab run bytes stay unchanged |
 | Series plan | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
-| [Claim ledger](claims.md) | 0.8.32 | 2026-10-15 | draft | `863aed7744545b62` `CLAIMS.md` | Records exact Python registry publications and clarifies the unchanged site-version footer label |
-| [Probity Open Evidence Lab](lab.md) | 0.1.13 | 2026-10-15 | draft | `55dcf21905ddc644` `src/lab.md` | Explains the existing unknown observation result separately from unexercised and out-of-scope checks |
-| [Claim status](status.md) | 0.2 | 2026-10-15 | draft | `c2e2c8a24fd9fcfa` `src/status.md` | Preserves unknown observations through the existing consumer with a distinct raw-result row and count |
+| [Claim ledger](claims.md) | 0.8.33 | 2026-10-15 | draft | `a78d05a2e6061a5e` `CLAIMS.md` | Binds one historical Packslip host test and published development dependency, with separate unexercised claims |
+| [Probity Open Evidence Lab](lab.md) | 0.1.14 | 2026-10-15 | draft | `24c6fb70ebc94a1f` `src/lab.md` | Links the retained host observation without changing prior records or expanding its evidence class |
+| [Claim status](status.md) | 0.3 | 2026-10-15 | draft | `a1c8e63c279cbe92` `src/status.md` | Separates retained verification, historical host use, registry requests and commercial claims |
 | [Task-grouped rates worked example](task-grouped-rates.md) | 0.1 | 2026-10-03 | draft | `92940ce8ee827ad0` `examples/task-grouped-rates/input.json` | Authored labels, paired task resampling, explicit weighting targets and unresolved outcomes |
 | [Published robot controls companion](provael-task-controls.md) | 0.1 | 2026-10-03 | draft | `20b90c1ae59c399d` `examples/provael-task-controls/source-record.json` | Original publisher simulator labels, matched controls, corrected interpretation and exact paired task weights |
 | [APS and PriorSeal pilot status](pilot.md) | 0.1.1 | 2026-10-01 | proposed | `e3026b2b60ceca12` `src/pilot.md` | Probity-owned proposal, merged technical replay, owner slots and acceptance gates; no formal pilot agreement |

@@ -2642,11 +2642,11 @@
 </tr>
 </thead>
 <tbody>
-<tr data-read="2026-10-13">
+<tr data-read="2026-10-15">
 <td>P-101</td>
-<td>The claim status page counts 28 records and 473 claim results: 231 ESTABLISHED, 146 CONTRADICTED and 96 NOT_ESTABLISHED (91 not exercised, 5 out of scope). By operation class, 26 records and 458 results are Probity-operated, 2 records and 15 results author-operated, and none independently operated</td>
+<td>The claim status page counts 29 records and 479 claim results: 233 ESTABLISHED, 146 CONTRADICTED and 100 NOT_ESTABLISHED (95 not exercised, 5 out of scope). By operation class, 27 records and 464 results are Probity-operated, 2 records and 15 results author-operated, and none independently operated</td>
 <td><a href="lab/register.json">Lab register</a>, read by <code>tools/gen_status.py</code> with the verdict and operation-class rules printed on the <a href="status.html">claim status page</a></td>
-<td>2026-10-13 22:17 UTC <span class="cadence">(does not expire)</span></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
 <td><code>python3 tools/gen_status.py --check</code>; count <code>claimResults[].result</code> per record and apply the page’s operation-class rule to each record’s <code>roles</code></td>
 <td>Counts of retained per-claim results at each record’s own evidence class; not adoption, not independent operation, and not a grade of any project</td>
 </tr>
@@ -2665,6 +2665,14 @@
 <td>2026-10-15 <span class="cadence">(does not expire)</span></td>
 <td>Generate status, then run affected status/register/CLI/browser tests; require a locally derived real-packet candidate with raw unknown to survive every reader; compare the historical register and source artifact digests</td>
 <td>This closes a status-consumer defect in an already accepted token. The derived candidate is a contract test, not a new outside submission or run. Unknown describes unresolved observation, while not-exercised retains its separate meaning.</td>
+</tr>
+<tr data-read="2026-10-15">
+<td>P-104</td>
+<td>Packslip host job 114504640732 at source 7b32cd29a9240927882ee18b3db1dcfd8e0328b4 completed its cargo test –all-features step successfully on 2026-10-11; published Packslip 1.7.0 declares dsse ^0.1.1 as a development dependency</td>
+<td><a href="experiments/packslip-dsse-host-ci-2026-10-11/report.json">Retained report</a>, <a href="experiments/packslip-dsse-host-ci-2026-10-11/provenance.json">five original public bodies</a>, <a href="runs.html#record-packslip-dsse-host-ci-2026-10-11">host observation</a></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Run the packet’s validate_capsule.py and tools/check_lab.py; compare the source pins, selected step, published dependency kind and author/host roles</td>
+<td>Historical provider metadata and host-maintained development test only. Numeric native exit and process output are not retained. No independent authorship, recurrence, production effect or payment is established.</td>
 </tr>
 </tbody>
 </table>

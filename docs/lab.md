@@ -20,6 +20,7 @@ The Open Evidence Lab helps teams test a specific question like this. A useful r
 | Does a signed witness record cover this exact endpoint? | [Run the signed-pair reader](nenrin-witness-pair.md), keep the assertion values, or bring another pair. |
 | Does a wrapper's PASS match its command result and report? | [Run the corrected-wrapper cases](e030-corrected-wrapper.md) or keep the reader in CI. |
 | What has someone actually run? | [Browse retained runs](runs.md). Each entry links its original report and stated limits. |
+| Does a published host package keep a test dependency? | [Read Packslip's historical host observation](runs.md#record-packslip-dsse-host-ci-2026-10-11). |
 | How do I check approval, retries, and a missing acknowledgement? | [Read the refund example](https://github.com/probityai/agent-evidence-observer/blob/main/docs/APS-REFUND-RETRIES.md). |
 | Did a database write match its approval, even if the state changed later? | [Try the SQL example](approved-sql.md) and bring a native audit pair. |
 | Did the agent change the call after approval, or did the resource change later? | [Compare the request/effect cases](request-effect-join.md) and bring a reader or retained run. |

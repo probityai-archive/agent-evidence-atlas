@@ -1,7 +1,7 @@
 ---
 title: "Claim status"
 subtitle: "What stands, on what evidence, operated by whom, and the open cells"
-status: "Generated from the Lab register (28 records, 473 claim results) and 29 open cells."
+status: "Generated from the Lab register (29 records, 479 claim results) and 29 open cells."
 description: "Every retained Lab claim result as ESTABLISHED, CONTRADICTED, NOT_ESTABLISHED or unknown, with its evidence class, operator and files, and the open mechanism-by-property cells."
 ---
 
@@ -12,13 +12,20 @@ A claim stands only at its record's evidence class; no record here was independe
 
 | verdict | Probity-operated | author-operated | independently operated | all |
 |---|---|---|---|---|
-| ESTABLISHED (`pass`) | 223 | 8 | 0 | **231** |
+| ESTABLISHED (`pass`) | 225 | 8 | 0 | **233** |
 | CONTRADICTED (`fail`) | 146 | 0 | 0 | **146** |
 | unknown, observation unresolved (`unknown`) | 0 | 0 | 0 | **0** |
-| NOT_ESTABLISHED, not exercised (`not-exercised`) | 84 | 7 | 0 | **91** |
+| NOT_ESTABLISHED, not exercised (`not-exercised`) | 88 | 7 | 0 | **95** |
 | NOT_ESTABLISHED, out of scope (`out-of-scope`) | 5 | 0 | 0 | **5** |
-| claim results | 458 | 15 | 0 | **473** |
-| records | 26 | 2 | 0 | **28** |
+| claim results | 464 | 15 | 0 | **479** |
+| records | 27 | 2 | 0 | **29** |
+
+## Verification, host use and paid use
+
+A verification or reproduction checks selected inputs with a named reader. Host use needs separate evidence that the host keeps and runs the integration.
+The [Packslip observation](runs.html#record-packslip-dsse-host-ci-2026-10-11) retains one historical successful host test step and a published development dependency. Its regression was author-contributed; the Atlas metadata reading is Probity-operated.
+Neither a retained test nor a development dependency establishes a production deployment, an independently observed effect or paid use. Those claims need their own evidence.
+Registry download counts measure requests. They do not count users, maintained integrations or revenue.
 
 ## Open cells: take one
 
@@ -63,6 +70,7 @@ E, C and N count a record's ESTABLISHED, CONTRADICTED and NOT_ESTABLISHED claim 
 | `w3c-report-replay-2026-10-06` | w3c report replay | `historical-report-accounting-and-separate-diagnostic-control-dependencies` | 5 | 0 | 4 | 0 | Probity-operated | `author-retained-measured-record` | [report](experiments/w3c-report-replay-2026-10-06/report.json), [provenance](experiments/w3c-report-replay-2026-10-06/provenance.json) |
 | `aps-corrected20-2026-10-10` | aps corrected20 | `independently-written-and-operated-reader-on-producer-authored-finite-synthetic-corpus` | 6 | 0 | 8 (2 out of scope) | 0 | Probity-operated | `author-retained-measured-record` | [report](experiments/aps-corrected20-2026-10-10/report.json), [provenance](experiments/aps-corrected20-2026-10-10/provenance.json) |
 | `trace-m1-consumer-2026-10-11` | trace m1 consumer | `signature-report-binding-and-native-claim-ceiling-on-public-synthetic-inputs` | 5 | 0 | 3 (1 out of scope) | 0 | Probity-operated | `retained-independent-consumer-result` | [report](interop/trace-m1/retained/public-report.json), [provenance](interop/trace-m1/retained/QUALIFICATION.json) |
+| `packslip-dsse-host-ci-2026-10-11` | packslip dsse host ci | `host-project-ci-dependency` | 2 | 0 | 4 | 0 | Probity-operated | `retained-source-bound-observation` | [report](experiments/packslip-dsse-host-ci-2026-10-11/report.json), [provenance](experiments/packslip-dsse-host-ci-2026-10-11/provenance.json) |
 
 ## Every open cell (29)
 
