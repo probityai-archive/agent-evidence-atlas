@@ -36,7 +36,7 @@ The original job also records regeneration and a clean source comparison. These 
 |---|---|---:|
 | [jobs.json](jobs.json) | [Original source](https://api.github.com/repos/probityai/agent-evidence-vectors/actions/runs/38361073429/jobs?per_page=100) | 5,905 |
 | [job-log.zip](job-log.zip) | [Original source](https://api.github.com/repos/probityai/agent-evidence-vectors/actions/jobs/115175144532/logs) | 6,622 |
-| [source/.github/workflows/nist-ai-300-1.yml](source/.github/workflows/nist-ai-300-1.yml) | [Original source](https://raw.githubusercontent.com/probityai/agent-evidence-vectors/2212fe0fb413003b1b329e4c4b034c45746f571d/.github/workflows/nist-ai-300-1.yml) | 2,361 |
+| [source/workflows/nist-ai-300-1.yml](source/workflows/nist-ai-300-1.yml) | [Original source](https://raw.githubusercontent.com/probityai/agent-evidence-vectors/2212fe0fb413003b1b329e4c4b034c45746f571d/.github/workflows/nist-ai-300-1.yml) | 2,361 |
 | [source/interop/nist-ai-300-1/README.md](source/interop/nist-ai-300-1/README.md) | [Original source](https://raw.githubusercontent.com/probityai/agent-evidence-vectors/2212fe0fb413003b1b329e4c4b034c45746f571d/interop/nist-ai-300-1/README.md) | 5,032 |
 | [source/interop/nist-ai-300-1/check_vectors.py](source/interop/nist-ai-300-1/check_vectors.py) | [Original source](https://raw.githubusercontent.com/probityai/agent-evidence-vectors/2212fe0fb413003b1b329e4c4b034c45746f571d/interop/nist-ai-300-1/check_vectors.py) | 14,667 |
 

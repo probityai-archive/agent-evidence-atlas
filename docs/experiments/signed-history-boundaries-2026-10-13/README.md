@@ -36,7 +36,7 @@ The source declares 14 fixtures. That population stays separate from the 15 exec
 |---|---|---:|
 | [jobs.json](jobs.json) | [Original source](https://api.github.com/repos/probityai/agent-evidence-vectors/actions/runs/38353256915/jobs?per_page=100) | 39,203 |
 | [job-log.zip](job-log.zip) | [Original source](https://api.github.com/repos/probityai/agent-evidence-vectors/actions/jobs/115150232069/logs) | 57,609 |
-| [source/.github/workflows/ci.yml](source/.github/workflows/ci.yml) | [Original source](https://raw.githubusercontent.com/probityai/agent-evidence-vectors/33d545104ff2f8c124cff465c96c013eeb809156/.github/workflows/ci.yml) | 83,481 |
+| [source/workflows/ci.yml](source/workflows/ci.yml) | [Original source](https://raw.githubusercontent.com/probityai/agent-evidence-vectors/33d545104ff2f8c124cff465c96c013eeb809156/.github/workflows/ci.yml) | 83,481 |
 | [source/vectors-anchored-chain/README.md](source/vectors-anchored-chain/README.md) | [Original source](https://raw.githubusercontent.com/probityai/agent-evidence-vectors/33d545104ff2f8c124cff465c96c013eeb809156/vectors-anchored-chain/README.md) | 4,332 |
 | [source/vectors-anchored-chain/check_vectors.py](source/vectors-anchored-chain/check_vectors.py) | [Original source](https://raw.githubusercontent.com/probityai/agent-evidence-vectors/33d545104ff2f8c124cff465c96c013eeb809156/vectors-anchored-chain/check_vectors.py) | 466 |
 | [source/vectors-anchored-chain/tests/test_corpus.py](source/vectors-anchored-chain/tests/test_corpus.py) | [Original source](https://raw.githubusercontent.com/probityai/agent-evidence-vectors/33d545104ff2f8c124cff465c96c013eeb809156/vectors-anchored-chain/tests/test_corpus.py) | 5,449 |

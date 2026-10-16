@@ -8964,7 +8964,7 @@
       "artifacts": [
         {
           "path": "../experiments/nist-ai300-1-checker-2026-10-13/README.md",
-          "sha256": "33db190386a8c4e9df9b0890972383d943123490b63847f3b59fe323eeeb76ed"
+          "sha256": "7130555e6327be54bcfc593b4f2c449d84383a1c245b1f1de75e1de6b4f7cc9d"
         },
         {
           "path": "../experiments/nist-ai300-1-checker-2026-10-13/job-log.zip",
@@ -8976,14 +8976,14 @@
         },
         {
           "path": "../experiments/nist-ai300-1-checker-2026-10-13/provenance.json",
-          "sha256": "e54bc2585effc78670d2d30dca52d712d6dd28af6e0ac2014d5e173af4b41520"
+          "sha256": "b956c50fac04950c0f167fd9b67b5b04da0ac58475d41e14bd3045b2f119b672"
         },
         {
           "path": "../experiments/nist-ai300-1-checker-2026-10-13/report.json",
           "sha256": "489416757255bbaee5d5afbaed11f27ad0b9701ea297fa1b1b45c52b0171ea5b"
         },
         {
-          "path": "../experiments/nist-ai300-1-checker-2026-10-13/source/.github/workflows/nist-ai-300-1.yml",
+          "path": "../experiments/nist-ai300-1-checker-2026-10-13/source/workflows/nist-ai-300-1.yml",
           "sha256": "7602f2fca48a01d4fe6e3f51777ec150520688bb1d572918de3c91935c3419d1"
         },
         {
@@ -8996,7 +8996,7 @@
         },
         {
           "path": "../experiments/nist-ai300-1-checker-2026-10-13/validate_capsule.py",
-          "sha256": "96035e457495bbfac04f0e872943ea90281c667fdc26588709c82bc784d9c970"
+          "sha256": "212f5e48919e1a716e864f02ffc9b58569734903d9fba2c0eb8e5959d55c8a34"
         }
       ]
     },
@@ -9064,7 +9064,7 @@
       "artifacts": [
         {
           "path": "../experiments/signed-history-boundaries-2026-10-13/README.md",
-          "sha256": "7a6873c3f94faa833ba1d342d630dc78f3c923d110ebcf400ee69a0822f843f0"
+          "sha256": "97909b2ecfbfc2481f7435fd726ef0fa777f30538e4ed5aea60214d5e7359ab9"
         },
         {
           "path": "../experiments/signed-history-boundaries-2026-10-13/job-log.zip",
@@ -9076,14 +9076,14 @@
         },
         {
           "path": "../experiments/signed-history-boundaries-2026-10-13/provenance.json",
-          "sha256": "3be41bbce944d9f031a3d3e057f1b106c079031fde373489343f912d4a9e5a0e"
+          "sha256": "c464d71621f73313066c67e37e4cabc8f825311516263dd0305005eb42623601"
         },
         {
           "path": "../experiments/signed-history-boundaries-2026-10-13/report.json",
           "sha256": "63f07a06fc49fee152948943f1b68c7d375c58c16e6a887c7f998526e3a8cfbb"
         },
         {
-          "path": "../experiments/signed-history-boundaries-2026-10-13/source/.github/workflows/ci.yml",
+          "path": "../experiments/signed-history-boundaries-2026-10-13/source/workflows/ci.yml",
           "sha256": "a6fe1c331ebcdaab779df225d45b0b837f3c8b545f5bb086f4551eb3bc33dcd9"
         },
         {
@@ -9100,7 +9100,7 @@
         },
         {
           "path": "../experiments/signed-history-boundaries-2026-10-13/validate_capsule.py",
-          "sha256": "5a8245872b6ee761966545c0a20c19bc1d289b31eefad4796312906e835c06aa"
+          "sha256": "9cfd6c61a380821523b4b38835380e7b5df402e41bc5e085c97e8dcf8d2450d9"
         }
       ]
     },
@@ -9189,7 +9189,7 @@
       "artifacts": [
         {
           "path": "../experiments/ratchet-benign-heredoc-2026-10-15/README.md",
-          "sha256": "9862f35f1f2f7f2dafd12293bdc8e6af955de52a63f37098d4fd449246b7a8fe"
+          "sha256": "6b2b63d6d26a824148c484ac7a0721c62c7d44b1918c901d54c474d9694099d7"
         },
         {
           "path": "../experiments/ratchet-benign-heredoc-2026-10-15/job-log.zip",
@@ -9201,14 +9201,14 @@
         },
         {
           "path": "../experiments/ratchet-benign-heredoc-2026-10-15/provenance.json",
-          "sha256": "7c5e624b3367a9387eab92087baac77ea071e94baa1b828b9fedf58d7ad53669"
+          "sha256": "3580f967384f1bd35143438126e602409a5ff22515a7afacdac21f2d4c896d0e"
         },
         {
           "path": "../experiments/ratchet-benign-heredoc-2026-10-15/report.json",
           "sha256": "3c66dfe2cf2e72fac81b6d05e30eebfff71798e16ec21a6a61ab0303d38d7af0"
         },
         {
-          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/source/.github/workflows/ci.yml",
+          "path": "../experiments/ratchet-benign-heredoc-2026-10-15/source/workflows/ci.yml",
           "sha256": "577b8b33e8d84584ad3bb5e613389cfacd85c3ece45dff049878ae0d06dbf5fc"
         },
         {
@@ -9233,7 +9233,7 @@
         },
         {
           "path": "../experiments/ratchet-benign-heredoc-2026-10-15/validate_capsule.py",
-          "sha256": "65754afb20946de61f464dd0d49a0d2df94d2adb0f2c1f8848c7ac8aa1d82db7"
+          "sha256": "8e8b61ec5336d1a260e2444cdc7fff44ec928bf5c85602d9d48f5f41a1699b17"
         }
       ]
     }

@@ -46,8 +46,8 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 | Verifier demonstration | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
 | [Experiments](experiments.md) | 0.4 | 2026-10-15 | draft | `9e216ec17d2fead0` `src/experiments.md` | Adds checkout composition and historical event references; retained experiments and Lab run bytes stay unchanged |
 | Series plan | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
-| [Claim ledger](claims.md) | 0.8.34 | 2026-10-15 | draft | `e996ccea4365ac0a` `CLAIMS.md` | Binds five retained case outputs with raw populations, separate operator roles and original adverse results |
-| [Probity Open Evidence Lab](lab.md) | 0.1.15 | 2026-10-15 | draft | `2ea292d83239f3e1` `src/lab.md` | Adds five source-bound retained case views through the existing run register |
+| [Claim ledger](claims.md) | 0.8.35 | 2026-10-16 | draft | `58d80a418ecb4bb8` `CLAIMS.md` | Binds deployable retained workflow paths and the pinned public-copy exclusion guard |
+| [Probity Open Evidence Lab](lab.md) | 0.1.16 | 2026-10-16 | draft | `2ea292d83239f3e1` `src/lab.md` | Repairs three retained workflow download paths without changing original bytes or results |
 | [Claim status](status.md) | 0.4 | 2026-10-15 | draft | `e34308e06cbe4ccf` `src/status.md` | Counts the five retained case records at their stated evidence classes; outside hosting does not imply independent custody |
 | [Task-grouped rates worked example](task-grouped-rates.md) | 0.1 | 2026-10-03 | draft | `92940ce8ee827ad0` `examples/task-grouped-rates/input.json` | Authored labels, paired task resampling, explicit weighting targets and unresolved outcomes |
 | [Published robot controls companion](provael-task-controls.md) | 0.1 | 2026-10-03 | draft | `20b90c1ae59c399d` `examples/provael-task-controls/source-record.json` | Original publisher simulator labels, matched controls, corrected interpretation and exact paired task weights |

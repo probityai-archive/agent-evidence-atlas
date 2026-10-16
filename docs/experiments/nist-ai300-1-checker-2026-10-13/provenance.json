@@ -27,7 +27,7 @@
       "packaging": "Lossless deterministic ZIP of original public body; 1980 container timestamp is not execution time"
     },
     {
-      "path": "source/.github/workflows/nist-ai-300-1.yml",
+      "path": "source/workflows/nist-ai-300-1.yml",
       "url": "https://raw.githubusercontent.com/probityai/agent-evidence-vectors/2212fe0fb413003b1b329e4c4b034c45746f571d/.github/workflows/nist-ai-300-1.yml",
       "bytes": 2361,
       "sha256": "7602f2fca48a01d4fe6e3f51777ec150520688bb1d572918de3c91935c3419d1"

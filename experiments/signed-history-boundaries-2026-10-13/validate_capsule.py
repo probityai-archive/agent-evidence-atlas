@@ -34,7 +34,7 @@ PROVENANCE = {'sourceType': 'retained-public-source-and-original-host-output',
                            'sha256': '56a0d47454ed6f34f05736c8bf10ba09bedcbbff5e00b951a0a928477ea6914a'}],
               'packaging': 'Lossless deterministic ZIP of original public body; 1980 container timestamp is '
                            'not execution time'},
-             {'path': 'source/.github/workflows/ci.yml',
+             {'path': 'source/workflows/ci.yml',
               'url': 'https://raw.githubusercontent.com/probityai/agent-evidence-vectors/33d545104ff2f8c124cff465c96c013eeb809156/.github/workflows/ci.yml',
               'bytes': 83481,
               'sha256': 'a6fe1c331ebcdaab779df225d45b0b837f3c8b545f5bb086f4551eb3bc33dcd9'},

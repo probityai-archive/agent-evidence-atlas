@@ -567,7 +567,7 @@ COPIES = [
     ("experiments/nist-ai300-1-checker-2026-10-13/jobs.json", "experiments/nist-ai300-1-checker-2026-10-13/jobs.json", "lab"),
     ("experiments/nist-ai300-1-checker-2026-10-13/provenance.json", "experiments/nist-ai300-1-checker-2026-10-13/provenance.json", "lab"),
     ("experiments/nist-ai300-1-checker-2026-10-13/report.json", "experiments/nist-ai300-1-checker-2026-10-13/report.json", "lab"),
-    ("experiments/nist-ai300-1-checker-2026-10-13/source/.github/workflows/nist-ai-300-1.yml", "experiments/nist-ai300-1-checker-2026-10-13/source/.github/workflows/nist-ai-300-1.yml", "lab"),
+    ("experiments/nist-ai300-1-checker-2026-10-13/source/workflows/nist-ai-300-1.yml", "experiments/nist-ai300-1-checker-2026-10-13/source/workflows/nist-ai-300-1.yml", "lab"),
     ("experiments/nist-ai300-1-checker-2026-10-13/source/interop/nist-ai-300-1/README.md", "experiments/nist-ai300-1-checker-2026-10-13/source/interop/nist-ai-300-1/README.md", "lab"),
     ("experiments/nist-ai300-1-checker-2026-10-13/source/interop/nist-ai-300-1/check_vectors.py", "experiments/nist-ai300-1-checker-2026-10-13/source/interop/nist-ai-300-1/check_vectors.py", "lab"),
     ("experiments/nist-ai300-1-checker-2026-10-13/validate_capsule.py", "experiments/nist-ai300-1-checker-2026-10-13/validate_capsule.py", "lab"),
@@ -576,7 +576,7 @@ COPIES = [
     ("experiments/ratchet-benign-heredoc-2026-10-15/job.json", "experiments/ratchet-benign-heredoc-2026-10-15/job.json", "lab"),
     ("experiments/ratchet-benign-heredoc-2026-10-15/provenance.json", "experiments/ratchet-benign-heredoc-2026-10-15/provenance.json", "lab"),
     ("experiments/ratchet-benign-heredoc-2026-10-15/report.json", "experiments/ratchet-benign-heredoc-2026-10-15/report.json", "lab"),
-    ("experiments/ratchet-benign-heredoc-2026-10-15/source/.github/workflows/ci.yml", "experiments/ratchet-benign-heredoc-2026-10-15/source/.github/workflows/ci.yml", "lab"),
+    ("experiments/ratchet-benign-heredoc-2026-10-15/source/workflows/ci.yml", "experiments/ratchet-benign-heredoc-2026-10-15/source/workflows/ci.yml", "lab"),
     ("experiments/ratchet-benign-heredoc-2026-10-15/source/docs/results/hooks-replay.md", "experiments/ratchet-benign-heredoc-2026-10-15/source/docs/results/hooks-replay.md", "lab"),
     ("experiments/ratchet-benign-heredoc-2026-10-15/source/examples/claude-code/hooks/ratchet_no_force_push_main.py", "experiments/ratchet-benign-heredoc-2026-10-15/source/examples/claude-code/hooks/ratchet_no_force_push_main.py", "lab"),
     ("experiments/ratchet-benign-heredoc-2026-10-15/source/examples/claude-code/no_force_push_main.py", "experiments/ratchet-benign-heredoc-2026-10-15/source/examples/claude-code/no_force_push_main.py", "lab"),
@@ -588,7 +588,7 @@ COPIES = [
     ("experiments/signed-history-boundaries-2026-10-13/jobs.json", "experiments/signed-history-boundaries-2026-10-13/jobs.json", "lab"),
     ("experiments/signed-history-boundaries-2026-10-13/provenance.json", "experiments/signed-history-boundaries-2026-10-13/provenance.json", "lab"),
     ("experiments/signed-history-boundaries-2026-10-13/report.json", "experiments/signed-history-boundaries-2026-10-13/report.json", "lab"),
-    ("experiments/signed-history-boundaries-2026-10-13/source/.github/workflows/ci.yml", "experiments/signed-history-boundaries-2026-10-13/source/.github/workflows/ci.yml", "lab"),
+    ("experiments/signed-history-boundaries-2026-10-13/source/workflows/ci.yml", "experiments/signed-history-boundaries-2026-10-13/source/workflows/ci.yml", "lab"),
     ("experiments/signed-history-boundaries-2026-10-13/source/vectors-anchored-chain/README.md", "experiments/signed-history-boundaries-2026-10-13/source/vectors-anchored-chain/README.md", "lab"),
     ("experiments/signed-history-boundaries-2026-10-13/source/vectors-anchored-chain/check_vectors.py", "experiments/signed-history-boundaries-2026-10-13/source/vectors-anchored-chain/check_vectors.py", "lab"),
     ("experiments/signed-history-boundaries-2026-10-13/source/vectors-anchored-chain/tests/test_corpus.py", "experiments/signed-history-boundaries-2026-10-13/source/vectors-anchored-chain/tests/test_corpus.py", "lab"),
@@ -864,6 +864,20 @@ def stamp_cadence(html: str) -> str:
     return html.replace("</body>", STALE_SCRIPT + "</body>")
 
 
+def copy_public_files(out: Path, built: set[str]) -> None:
+    """Refuse destinations removed by the deployed Pages artifact uploader."""
+    # Pinned deploy contract: actions/upload-pages-artifact at
+    # 56afc609e74202658d3ffba0e8f6dda462b719fa excludes these names at any depth.
+    for src, dst, page in COPIES:
+        if page is not None and page not in built:
+            continue
+        if {".git", ".github"}.intersection(Path(dst).parts):
+            raise ValueError("Public copy destination is excluded by the Pages uploader: " + dst)
+        target = out / dst
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / src, target)
+
+
 def build(out: Path) -> None:
     pages = sorted(SRC.glob("*.md"))
     if (SRC / "lab.md").exists():
@@ -907,12 +921,7 @@ def build(out: Path) -> None:
         ledger = Path(tmp) / "versions.md"
         ledger.write_text(versions_markdown(built, versions), encoding="utf-8")
         render(ledger, out / "versions.html", built)
-    for src, dst, page in COPIES:
-        if page is not None and page not in built:
-            continue
-        target = out / dst
-        target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(ROOT / src, target)
+    copy_public_files(out, built)
     (out / ".nojekyll").write_text("", encoding="utf-8")
     assets = discovery.site_assets(public, built)
     for name, content in assets.items():
