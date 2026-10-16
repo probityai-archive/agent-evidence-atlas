@@ -13,8 +13,8 @@ The [complete report](report.json) keeps the measured fields separate from sourc
 assertions and author reports. The [Lab record](https://probityai.github.io/agent-evidence-atlas/runs.html#record-ten-sdk-json-bytes-2026-10-09)
 shows each claim result, the operator roles and the unexercised claims.
 
-- The27 recorded rows include the bounded-profile row; earlier26-row summaries are not the full artifact population
-- Rawcanonical/differs/refused values are byte-comparison outcomes, not a pass/fail grading of SDK contracts
+- The 27 recorded rows include the row for the bounded profile. Earlier summaries with 26 rows do not cover the full artifact population.
+- The raw canonical, differs and refused values are byte-comparison outcomes. They do not grade whether an SDK met its contract.
 - The workflow reports differences by default; its green jobs do not establish canonicalization conformance
 - The same retained JCS oracle report appears in each ZIP; it is not ten independent oracle runs
 - No current SDK behavior, deployment, incident or paid use inferred

@@ -13,9 +13,9 @@ The [complete report](report.json) keeps the measured fields separate from sourc
 assertions and author reports. The [Lab record](https://probityai.github.io/agent-evidence-atlas/runs.html#record-nist-ai300-1-checker-2026-10-13)
 shows each claim result, the operator roles and the unexercised claims.
 
-- OriginalPython3.13.15host output is retained; this packet repeats no checker workload
+- The original Python 3.13.15 host output is retained. This packet does not repeat the checker workload.
 - Structural extraction and mutation sensitivity do not establish semantic completeness, NIST certification or compliance
-- Corpus235members/139rules is tied to the actual checker output here; another current corpus count cannot replace it
+- The population of 235 members over 139 rules comes from the actual checker output. Another current corpus count cannot replace it.
 - Reviewer ambiguities and requirements beyond structural checks stay open
 
 ## Original result

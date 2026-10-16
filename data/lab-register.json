@@ -8636,8 +8636,8 @@
       ],
       "limits": [
         "Host CI actor is separately established by GitHub metadata; the output operator string is caller-declared and unauthenticated",
-        "Original signed-record assertion values remain producer-declared: pair A7true/1unevaluated, not8/8",
-        "Both ledger fetches returned HTTP403; successful job is not successful ledger acquisition",
+        "The original signed-record assertions remain producer-declared: pair A has seven true assertions and one unevaluated assertion.",
+        "Both ledger fetches returned HTTP 403. A successful job does not establish successful ledger acquisition.",
         "No new walk, response correctness, historical key control, independent custody, production effect or paid use established"
       ],
       "answerExposure": "Public original results and expected controls available before Atlas reading; no answer-blind replication",
@@ -8645,7 +8645,7 @@
       "artifacts": [
         {
           "path": "../experiments/horizon-signed-target-reader-2026-10-09/README.md",
-          "sha256": "21bcfc29f49b06e2028e0090784ff5ae6a328ed16aebfd5e7efeca3ca9e71fc6"
+          "sha256": "97afaeb13d3e2d928d92bff42bfc2b736022465dddaca748e7ecd795c1b794c9"
         },
         {
           "path": "../experiments/horizon-signed-target-reader-2026-10-09/artifact.zip",
@@ -8809,8 +8809,8 @@
         }
       ],
       "limits": [
-        "The27 recorded rows include the bounded-profile row; earlier26-row summaries are not the full artifact population",
-        "Rawcanonical/differs/refused values are byte-comparison outcomes, not a pass/fail grading of SDK contracts",
+        "The 27 recorded rows include the row for the bounded profile. Earlier summaries with 26 rows do not cover the full artifact population.",
+        "The raw canonical, differs and refused values are byte-comparison outcomes. They do not grade whether an SDK met its contract.",
         "The workflow reports differences by default; its green jobs do not establish canonicalization conformance",
         "The same retained JCS oracle report appears in each ZIP; it is not ten independent oracle runs",
         "No current SDK behavior, deployment, incident or paid use inferred"
@@ -8820,7 +8820,7 @@
       "artifacts": [
         {
           "path": "../experiments/ten-sdk-json-bytes-2026-10-09/README.md",
-          "sha256": "80b88051004c48bb2aee978eb28cb807373ea8326e9b87ecb3580e999a5122a5"
+          "sha256": "51e0a63618773f4ef15c59eb15d4d21d76761c88563a6d28b76a889c72e4412b"
         },
         {
           "path": "../experiments/ten-sdk-json-bytes-2026-10-09/jobs.json",
@@ -8954,9 +8954,9 @@
         }
       ],
       "limits": [
-        "OriginalPython3.13.15host output is retained; this packet repeats no checker workload",
+        "The original Python 3.13.15 host output is retained. This packet does not repeat the checker workload.",
         "Structural extraction and mutation sensitivity do not establish semantic completeness, NIST certification or compliance",
-        "Corpus235members/139rules is tied to the actual checker output here; another current corpus count cannot replace it",
+        "The population of 235 members over 139 rules comes from the actual checker output. Another current corpus count cannot replace it.",
         "Reviewer ambiguities and requirements beyond structural checks stay open"
       ],
       "answerExposure": "Public original results and expected controls available before Atlas reading; no answer-blind replication",
@@ -8964,7 +8964,7 @@
       "artifacts": [
         {
           "path": "../experiments/nist-ai300-1-checker-2026-10-13/README.md",
-          "sha256": "10fb88b850bb171241945335c3ae966827148ccea1909a3289838fb16569c3d8"
+          "sha256": "33db190386a8c4e9df9b0890972383d943123490b63847f3b59fe323eeeb76ed"
         },
         {
           "path": "../experiments/nist-ai300-1-checker-2026-10-13/job-log.zip",
@@ -9055,8 +9055,8 @@
       ],
       "limits": [
         "Public deterministic test keys and author-generated synthetic histories; independently controlled anchors and custody remain unestablished",
-        "Originalcase-specificjob output plus exact executed tests bind control claims; default285-caseartifact does not",
-        "Fourteen is the source-declared corpus population;15 is the actual pytest result, not15 independent reproductions",
+        "The original output for the case-specific job and the exact executed tests bind the control claims. The default artifact of 285 cases does not.",
+        "Fourteen is the fixture population declared by the source. Fifteen is the actual pytest result, not fifteen independent reproductions.",
         "No continuous operation, real-world rollback prevention or commercial effect inferred"
       ],
       "answerExposure": "Public original results and expected controls available before Atlas reading; no answer-blind replication",
@@ -9064,7 +9064,7 @@
       "artifacts": [
         {
           "path": "../experiments/signed-history-boundaries-2026-10-13/README.md",
-          "sha256": "ff8077e5a004ed494ea78f2a349b4eb937f2547ffcdc8cd9340462d9a0e587ba"
+          "sha256": "7a6873c3f94faa833ba1d342d630dc78f3c923d110ebcf400ee69a0822f843f0"
         },
         {
           "path": "../experiments/signed-history-boundaries-2026-10-13/job-log.zip",
@@ -9178,18 +9178,18 @@
         }
       ],
       "limits": [
-        "13,739sessions/632,126calls are the pinned author report, not an independent measured Atlas run",
+        "The 13,739 sessions and 632,126 tool calls are the author's pinned report. They are not an independent measured Atlas run.",
         "The first reported run had one false alarm: a Python heredoc wrote documentation naming a force push; no push occurred",
-        "The corrected source treats heredoc data separately, counts--mirror, ignores dryrun; actual public test source plus defaultpytestselection binds its regression",
-        "1,431passes/1skip/9deselected is the hosted suite summary, not a fresh replay of private historical transcripts",
-        "No private transcript, private Ratchetcore source, production prevention or revenue claim is copied or inferred"
+        "The corrected source treats heredoc data separately, handles --mirror and ignores a dry run. The public test source and the default pytest selection bind the regression.",
+        "The hosted suite reports 1,431 tests passed, one skipped and nine deselected. It is not a fresh replay of private historical transcripts.",
+        "This packet copies no private transcript or private Ratchet core source. It does not establish production prevention or revenue."
       ],
       "answerExposure": "Public original results and expected controls available before Atlas reading; no answer-blind replication",
       "comparisonOrder": "Retrospective reading of retained exact-head source/output; no new native workload or effect execution",
       "artifacts": [
         {
           "path": "../experiments/ratchet-benign-heredoc-2026-10-15/README.md",
-          "sha256": "6dff2c6cff752800455a82ee0cadee5a32ea322872a62698950a5d41846220dc"
+          "sha256": "9862f35f1f2f7f2dafd12293bdc8e6af955de52a63f37098d4fd449246b7a8fe"
         },
         {
           "path": "../experiments/ratchet-benign-heredoc-2026-10-15/job-log.zip",

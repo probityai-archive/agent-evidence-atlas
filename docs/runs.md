@@ -1959,8 +1959,8 @@ Open [Report](experiments/horizon-signed-target-reader-2026-10-09/report.json), 
 ### Limits
 
 - Host CI actor is separately established by GitHub metadata; the output operator string is caller-declared and unauthenticated
-- Original signed-record assertion values remain producer-declared: pair A7true/1unevaluated, not8/8
-- Both ledger fetches returned HTTP403; successful job is not successful ledger acquisition
+- The original signed-record assertions remain producer-declared: pair A has seven true assertions and one unevaluated assertion.
+- Both ledger fetches returned HTTP 403. A successful job does not establish successful ledger acquisition.
 - No new walk, response correctness, historical key control, independent custody, production effect or paid use established
 
 answerExposure: Public original results and expected controls available before Atlas reading; no answer-blind replication
@@ -2010,8 +2010,8 @@ Open [Report](experiments/ten-sdk-json-bytes-2026-10-09/report.json), [Provenanc
 
 ### Limits
 
-- The27 recorded rows include the bounded-profile row; earlier26-row summaries are not the full artifact population
-- Rawcanonical/differs/refused values are byte-comparison outcomes, not a pass/fail grading of SDK contracts
+- The 27 recorded rows include the row for the bounded profile. Earlier summaries with 26 rows do not cover the full artifact population.
+- The raw canonical, differs and refused values are byte-comparison outcomes. They do not grade whether an SDK met its contract.
 - The workflow reports differences by default; its green jobs do not establish canonicalization conformance
 - The same retained JCS oracle report appears in each ZIP; it is not ten independent oracle runs
 - No current SDK behavior, deployment, incident or paid use inferred
@@ -2063,9 +2063,9 @@ Open [Report](experiments/nist-ai300-1-checker-2026-10-13/report.json), [Provena
 
 ### Limits
 
-- OriginalPython3.13.15host output is retained; this packet repeats no checker workload
+- The original Python 3.13.15 host output is retained. This packet does not repeat the checker workload.
 - Structural extraction and mutation sensitivity do not establish semantic completeness, NIST certification or compliance
-- Corpus235members/139rules is tied to the actual checker output here; another current corpus count cannot replace it
+- The population of 235 members over 139 rules comes from the actual checker output. Another current corpus count cannot replace it.
 - Reviewer ambiguities and requirements beyond structural checks stay open
 
 answerExposure: Public original results and expected controls available before Atlas reading; no answer-blind replication
@@ -2116,8 +2116,8 @@ Open [Report](experiments/signed-history-boundaries-2026-10-13/report.json), [Pr
 ### Limits
 
 - Public deterministic test keys and author-generated synthetic histories; independently controlled anchors and custody remain unestablished
-- Originalcase-specificjob output plus exact executed tests bind control claims; default285-caseartifact does not
-- Fourteen is the source-declared corpus population;15 is the actual pytest result, not15 independent reproductions
+- The original output for the case-specific job and the exact executed tests bind the control claims. The default artifact of 285 cases does not.
+- Fourteen is the fixture population declared by the source. Fifteen is the actual pytest result, not fifteen independent reproductions.
 - No continuous operation, real-world rollback prevention or commercial effect inferred
 
 answerExposure: Public original results and expected controls available before Atlas reading; no answer-blind replication
@@ -2167,11 +2167,11 @@ Open [Report](experiments/ratchet-benign-heredoc-2026-10-15/report.json), [Prove
 
 ### Limits
 
-- 13,739sessions/632,126calls are the pinned author report, not an independent measured Atlas run
+- The 13,739 sessions and 632,126 tool calls are the author's pinned report. They are not an independent measured Atlas run.
 - The first reported run had one false alarm: a Python heredoc wrote documentation naming a force push; no push occurred
-- The corrected source treats heredoc data separately, counts--mirror, ignores dryrun; actual public test source plus defaultpytestselection binds its regression
-- 1,431passes/1skip/9deselected is the hosted suite summary, not a fresh replay of private historical transcripts
-- No private transcript, private Ratchetcore source, production prevention or revenue claim is copied or inferred
+- The corrected source treats heredoc data separately, handles --mirror and ignores a dry run. The public test source and the default pytest selection bind the regression.
+- The hosted suite reports 1,431 tests passed, one skipped and nine deselected. It is not a fresh replay of private historical transcripts.
+- This packet copies no private transcript or private Ratchet core source. It does not establish production prevention or revenue.
 
 answerExposure: Public original results and expected controls available before Atlas reading; no answer-blind replication
 

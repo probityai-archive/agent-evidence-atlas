@@ -13,11 +13,11 @@ The [complete report](report.json) keeps the measured fields separate from sourc
 assertions and author reports. The [Lab record](https://probityai.github.io/agent-evidence-atlas/runs.html#record-ratchet-benign-heredoc-2026-10-15)
 shows each claim result, the operator roles and the unexercised claims.
 
-- 13,739sessions/632,126calls are the pinned author report, not an independent measured Atlas run
+- The 13,739 sessions and 632,126 tool calls are the author's pinned report. They are not an independent measured Atlas run.
 - The first reported run had one false alarm: a Python heredoc wrote documentation naming a force push; no push occurred
-- The corrected source treats heredoc data separately, counts--mirror, ignores dryrun; actual public test source plus defaultpytestselection binds its regression
-- 1,431passes/1skip/9deselected is the hosted suite summary, not a fresh replay of private historical transcripts
-- No private transcript, private Ratchetcore source, production prevention or revenue claim is copied or inferred
+- The corrected source treats heredoc data separately, handles --mirror and ignores a dry run. The public test source and the default pytest selection bind the regression.
+- The hosted suite reports 1,431 tests passed, one skipped and nine deselected. It is not a fresh replay of private historical transcripts.
+- This packet copies no private transcript or private Ratchet core source. It does not establish production prevention or revenue.
 
 ## Original result
 

@@ -14,8 +14,8 @@ assertions and author reports. The [Lab record](https://probityai.github.io/agen
 shows each claim result, the operator roles and the unexercised claims.
 
 - Public deterministic test keys and author-generated synthetic histories; independently controlled anchors and custody remain unestablished
-- Originalcase-specificjob output plus exact executed tests bind control claims; default285-caseartifact does not
-- Fourteen is the source-declared corpus population;15 is the actual pytest result, not15 independent reproductions
+- The original output for the case-specific job and the exact executed tests bind the control claims. The default artifact of 285 cases does not.
+- Fourteen is the fixture population declared by the source. Fifteen is the actual pytest result, not fifteen independent reproductions.
 - No continuous operation, real-world rollback prevention or commercial effect inferred
 
 ## Original result

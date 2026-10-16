@@ -14,8 +14,8 @@ assertions and author reports. The [Lab record](https://probityai.github.io/agen
 shows each claim result, the operator roles and the unexercised claims.
 
 - Host CI actor is separately established by GitHub metadata; the output operator string is caller-declared and unauthenticated
-- Original signed-record assertion values remain producer-declared: pair A7true/1unevaluated, not8/8
-- Both ledger fetches returned HTTP403; successful job is not successful ledger acquisition
+- The original signed-record assertions remain producer-declared: pair A has seven true assertions and one unevaluated assertion.
+- Both ledger fetches returned HTTP 403. A successful job does not establish successful ledger acquisition.
 - No new walk, response correctness, historical key control, independent custody, production effect or paid use established
 
 ## Original result
@@ -25,7 +25,7 @@ shows each claim result, the operator roles and the unexercised claims.
 | Ten recorded command exits | Every actual exit matched its expected exit, including the refusal controls. |
 | A record, exact A2A target | Signature verifies under the pinned key; target matches. Seven assertions are true and one is unevaluated. |
 | B record, selected A2A target | Signature verifies; its signed purpose names MCP, so the reader reports `TARGET_MISMATCH`. |
-| Ledger fetches | Both returned HTTP403. The successful job does not establish successful ledger acquisition. |
+| Ledger fetches | Both returned HTTP 403. The successful job does not establish successful ledger acquisition. |
 
 ## Retained bodies
 
