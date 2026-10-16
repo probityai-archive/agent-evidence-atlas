@@ -44,9 +44,9 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 | Essay | 0.2 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
 | [Atlas](atlas.md) | 0.6-preview | 2026-10-14 | draft | `19d9ad2d6464bc5a` `data/atlas.toml` | Current releases read again (vocabulary v0.4.0, admission py-v0.1.0, dsse 0.1.2); admission and dsse limits quoted from their current READMEs; 25 star counts refreshed; the closed OWASP pull request removed from the contributions |
 | Verifier demonstration | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
-| [Experiments](experiments.md) | 0.4 | 2026-10-15 | draft | `9e216ec17d2fead0` `src/experiments.md` | Adds checkout composition and historical event references; retained experiments and Lab run bytes stay unchanged |
+| [Experiments](experiments.md) | 0.5 | 2026-10-16 | draft | `5bfc67ecde322b94` `src/experiments.md` | Returns from the original admission experiment to its worked article and exact presentation packet |
 | Series plan | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
-| [Claim ledger](claims.md) | 0.8.35 | 2026-10-16 | draft | `58d80a418ecb4bb8` `CLAIMS.md` | Binds deployable retained workflow paths and the pinned public-copy exclusion guard |
+| [Claim ledger](claims.md) | 0.8.36 | 2026-10-16 | draft | `37426a782bfb45e8` `CLAIMS.md` | Binds the existing admission article, inputs, result and unchanged presentation assets |
 | [Probity Open Evidence Lab](lab.md) | 0.1.16 | 2026-10-16 | draft | `2ea292d83239f3e1` `src/lab.md` | Repairs three retained workflow download paths without changing original bytes or results |
 | [Claim status](status.md) | 0.4 | 2026-10-15 | draft | `e34308e06cbe4ccf` `src/status.md` | Counts the five retained case records at their stated evidence classes; outside hosting does not imply independent custody |
 | [Task-grouped rates worked example](task-grouped-rates.md) | 0.1 | 2026-10-03 | draft | `92940ce8ee827ad0` `examples/task-grouped-rates/input.json` | Authored labels, paired task resampling, explicit weighting targets and unresolved outcomes |
@@ -57,7 +57,7 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 | [Project catalog](start.md) | 0.11 | 2026-10-15 | draft | `60e4911c0c525a21` `data/catalog.json` | Adds actual Python registry releases without implying GitHub tags; keeps the current guide and recorded release identities separate |
 | [Automation guide](automation.md) | 0.2 | 2026-10-15 | draft | `2c1b4dbf0e3789d5` `src/automation.md` | Explains the existing Vectors Action failure controls with exact source and hosted job |
 | [Catalog maintenance guide](catalog.md) | 0.7 | 2026-10-15 | draft | `8aad602241e86dc6` `src/catalog.md` | Explains exact registry releases without source tags and retains tagged release roles |
-| [Retained evidence decision walkthrough](replay-an-evidence-decision.md) | 0.4 | 2026-10-15 | draft | `42fe897cf7c5df85` `src/replay-an-evidence-decision.md` | The essay link carries its retitled name |
+| [Retained evidence decision walkthrough](replay-an-evidence-decision.md) | 0.5 | 2026-10-16 | draft | `aee1263c9b123a61` `src/replay-an-evidence-decision.md` | Links one reusable source-bound presentation packet without changing the replay method |
 | [Retained-run browser](runs.md) | 0.1 | 2026-10-06 | draft | `6a2ac67797c7adf9` `src/runs.md` | Search, exact claim-result filters and complete static navigation over the existing Lab register; no aggregate run grade |
 | [Published source routes](start.md) | 0.2.3 | 2026-10-15 | draft | `0c1732f458015a7b` `data/catalog-sources.json` | Appends current Python guide source reviews while retaining all earlier recipe and Action pins |
 | [Caller-declared APS and PriorSeal replay guide](replay-tools.md) | 0.1 | 2026-10-06 | draft | `8a4458c31bfb7496` `src/replay-tools.md` | Links one complete v2 procedure, explicit caller declarations, hashes of files read at invocation and actual process outputs; historical results stay unchanged |

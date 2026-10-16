@@ -314,3 +314,6 @@ P-78 = "none"
 
 # Exact immutable Pages upload contract and retained workflow bytes.
 "C-37" = "none"
+
+# Immutable retained replay and presentation bindings.
+"W-08" = "none"

@@ -457,6 +457,8 @@ COPIES = [
     ("experiments/observer-admission/source-pins.json", "experiments/observer-admission/source-pins.json", "experiments"),
     ("experiments/observer-admission/recorded.json", "experiments/observer-admission/recorded.json", "experiments"),
     ("experiments/observer-admission/provenance.json", "experiments/observer-admission/provenance.json", "experiments"),
+    ("experiments/observer-admission/README.md", "experiments/observer-admission/README.md", "replay-an-evidence-decision"),
+    ("experiments/observer-admission/presentation.json", "experiments/observer-admission/presentation.json", "replay-an-evidence-decision"),
     ("experiments/observer-admission/retained/demo-report.json", "experiments/observer-admission/retained/demo-report.json", "experiments"),
     ("experiments/observer-admission/retained/consumer/policy.json", "experiments/observer-admission/retained/consumer/policy.json", "experiments"),
     ("experiments/observer-admission/retained/consumer/decision.json", "experiments/observer-admission/retained/consumer/decision.json", "experiments"),

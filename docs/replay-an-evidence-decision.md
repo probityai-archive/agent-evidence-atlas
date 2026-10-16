@@ -4,6 +4,8 @@ A file changed. A consumer accepted its evidence. What happens when someone subm
 
 The [preview image](assets/admission-social.png) has an [editable SVG](assets/admission-social.svg) and [source and export instructions](assets/README.md).
 
+The [presentation packet](experiments/observer-admission/README.md) joins this article, the images, exact retained inputs and recorded result.
+
 The example uses [Observer](start.md#observer) and an original public CI bundle. Its checker reads the policy, signed packet, broker history, witness receipts and durable file. It recreates the consumer decision in a scratch store. It does not repeat the file action in the retained workspace.
 
 <figure>

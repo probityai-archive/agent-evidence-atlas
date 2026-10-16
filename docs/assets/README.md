@@ -2,6 +2,8 @@
 
 These original diagrams are maintained in the Probity Atlas repository. Their text comes from the reviewed public project catalog and the retained observer admission procedure.
 
+The [admission presentation packet](../experiments/observer-admission/README.md) binds the article, these images, retained inputs and recorded result. It returns to the original experiment and Lab record.
+
 | Source | Purpose |
 | --- | --- |
 | `component-tasks.svg` | Public component entry points grouped by task; no dependency chain |
