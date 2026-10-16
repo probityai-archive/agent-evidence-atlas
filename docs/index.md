@@ -1,4 +1,4 @@
-# Probity AI
+# Agent Evidence Conformance Board
 
 Check claims about agent actions.
 

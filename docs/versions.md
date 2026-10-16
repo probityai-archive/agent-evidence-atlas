@@ -40,7 +40,7 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 
 | artifact | version | date | status | source SHA-256 (first 16) | note |
 |----|----|----|----|----|----|
-| [Home page](index.md) | 1.14 | 2026-10-15 | draft | `633a9d5de491691b` `src/index.md` | Links the verifier task to exact-source Action controls and their retained hosted result |
+| [Home page](index.md) | 1.14 | 2026-10-15 | draft | `56c3a5383ab947a4` `src/index.md` | Links the verifier task to exact-source Action controls and their retained hosted result |
 | Essay | 0.2 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
 | [Atlas](atlas.md) | 0.6.1-preview | 2026-10-16 | draft | `7e8c639301074fa1` `data/atlas.toml` | Records jcs-admit 0.1.2 and dsse 0.1.3 from full registry byte readback; other source and corpus pins stay unchanged |
 | Verifier demonstration | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |

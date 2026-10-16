@@ -1,5 +1,5 @@
 ---
-title: "Probity AI"
+title: "Agent Evidence Conformance Board"
 subtitle: "Check claims about agent actions."
 description: "Open-source tools, conformance tests and retained runs for checking claims about agent actions."
 ---
