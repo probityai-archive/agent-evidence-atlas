@@ -13,7 +13,7 @@ Install links keep the reviewed recipe. Download links select the recorded packa
 | Check artifact digests or evaluate admission policies | [Probity Admission](#admission) |
 | Run an APS refund example with safe retries | [Probity APS refund example](#aps-refund-retries) |
 | Check an artifact against a document's named digest | [Probity artifact digest check](#artifact-digest-check) |
-| Choose a tool or inspect recorded claims and retained runs | [Probity Atlas](#atlas) |
+| Choose a tool or inspect recorded claims and retained runs | [Agent Evidence Conformance Board](#atlas) |
 | Run a checkout composition and replay its retained claims | [Checkout composition reference](#checkout-runner) |
 | Sign and verify DSSE envelopes in Rust | [dsse](#dsse) |
 | Read selected retained Inspect execution profiles | [Probity native Inspect reader](#inspect-native-reader) |
@@ -22,7 +22,7 @@ Install links keep the reviewed recipe. Download links select the recorded packa
 | Record file actions or check native delegation evidence | [Probity Observer](#observer) |
 | Check an agent guard against replay and regression cases | [Probity Ratchet](#ratchet) |
 | Test an agent on public fault and benign cases | [Probity Ratchet public cases](#ratchet-cases) |
-| Test a verifier against conformance cases | [Probity Vectors](#vectors) |
+| Test a verifier against conformance cases | [Agent Evidence Vectors](#vectors) |
 | Install a pinned verifier and check an evidence claim | [Probity Verify](#verify) |
 | Use shared definitions for agent evidence claims | [Probity Vocabulary](#vocabulary) |
 | Check a selected run against retained witness anchors | [Probity witnessed run selection](#witnessed-run-selection) |
@@ -80,7 +80,7 @@ Live registry and named workflow reports:<br /> <a href="https://pypi.org/projec
 
 <a id="atlas"></a>
 
-## Probity Atlas
+## Agent Evidence Conformance Board
 
 Component ID: `atlas`.
 
@@ -291,7 +291,7 @@ Live registry and named workflow reports:<br /> <a href="https://pypi.org/projec
 
 <a id="vectors"></a>
 
-## Probity Vectors
+## Agent Evidence Vectors
 
 Component ID: `vectors`.
 

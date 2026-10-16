@@ -16,7 +16,7 @@
       "task": "Check artifact digests or evaluate admission policies"
     },
     {
-      "display_name": "Probity Atlas",
+      "display_name": "Agent Evidence Conformance Board",
       "docs_url": "https://github.com/probityai/agent-evidence-atlas/blob/ec67f0375e008cb7befc19a31762490b5cbbe520/README.md",
       "id": "atlas",
       "packages": [],
@@ -102,7 +102,7 @@
       "task": "Check an agent guard against replay and regression cases"
     },
     {
-      "display_name": "Probity Vectors",
+      "display_name": "Agent Evidence Vectors",
       "docs_url": "https://github.com/probityai/agent-evidence-vectors/blob/9e596fbff7bb29809d38319aebb56f2141923eb2/README.md",
       "id": "vectors",
       "packages": [
@@ -242,7 +242,7 @@
       "url": "https://github.com/probityai/agent-evidence-admission"
     },
     {
-      "display_name": "Probity Atlas",
+      "display_name": "Agent Evidence Conformance Board",
       "id": "repo-atlas",
       "source": {
         "commit": "ec67f0375e008cb7befc19a31762490b5cbbe520",
@@ -320,7 +320,7 @@
       "url": "https://github.com/probityai/ratchet"
     },
     {
-      "display_name": "Probity Vectors",
+      "display_name": "Agent Evidence Vectors",
       "id": "repo-vectors",
       "source": {
         "commit": "9e596fbff7bb29809d38319aebb56f2141923eb2",
