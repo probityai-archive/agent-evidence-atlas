@@ -82,6 +82,30 @@ class TestComponentVersionRoles:
                 {r["id"]: r for r in public["components"]},
                 {r["id"]: r for r in public["repositories"]})
 
+    @pytest.mark.parametrize("component", ["jcs-admit", "dsse"])
+    def test_registry_source_error_does_not_request_a_forbidden_tag(self, public, component):
+        row = next(v for v in discovery.component_versions(public) if v["component"] == component).copy()
+        for field in ("display_name", "url", "source_url"):
+            row.pop(field)
+        row["commit"] = "abcd"
+        with pytest.raises(discovery.catalog.CatalogError, match="full source commit") as error:
+            discovery.checked_component_version(row,
+                {r["id"]: r for r in public["components"]},
+                {r["id"]: r for r in public["repositories"]})
+        assert "tag" not in str(error.value).lower()
+
+    @pytest.mark.parametrize("kind", ["release", "source-tag"])
+    def test_tagged_source_error_preserves_the_exact_supported_message(self, public, kind):
+        row = next(v for v in discovery.component_versions(public) if v["kind"] == kind).copy()
+        for field in ("display_name", "url", "source_url"):
+            row.pop(field)
+        row["commit"] = "abcd"
+        with pytest.raises(discovery.catalog.CatalogError) as error:
+            discovery.checked_component_version(row,
+                {r["id"]: r for r in public["components"]},
+                {r["id"]: r for r in public["repositories"]})
+        assert str(error.value) == "Component version needs a full source commit and a safe tag"
+
     @pytest.mark.parametrize("change", [
         {"artifact_ref": "unknown-artifact"},
         {"version": "99.0.0"},

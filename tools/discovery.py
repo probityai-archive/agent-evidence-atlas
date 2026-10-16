@@ -183,6 +183,8 @@ def check_component_version_fields(row: dict[str, str]) -> None:
     if registry_release and ("registry" not in row or "version_prefix" in row):
         catalog.fail("Registry release needs an exact registry package version")
     if re.fullmatch(r"[0-9a-f]{40}", row["commit"]) is None or (not registry_release and re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", row["tag"]) is None):
+        if registry_release:
+            catalog.fail("Component version needs a full source commit")
         catalog.fail("Component version needs a full source commit and a safe tag")
     try:
         date.fromisoformat(row["read"])
