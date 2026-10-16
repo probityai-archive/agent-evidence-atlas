@@ -30,6 +30,7 @@ import subprocess
 import sys
 import tempfile
 import tomllib
+from collections import Counter
 from pathlib import Path
 
 import discovery
@@ -713,6 +714,18 @@ LEDGER_ROW = re.compile(r"^\| ([A-Z]-[0-9A-Za-z]+) \| ([^|]*)\|", re.MULTILINE)
 MAX_RELEASE_CADENCE = 7
 
 
+def check_rendered_claim_rows(source: str, rendered: list[str]) -> None:
+    """Require every source claim to survive Markdown as exactly one row."""
+    expected = Counter(re.findall(r"(?m)^\|\s*([A-Z]+-[A-Za-z0-9]+)\s*\|", source))
+    observed = Counter(rendered)
+    if not expected or any(count != 1 for count in expected.values()) or observed != expected:
+        missing = sorted((expected - observed).elements())
+        extra = sorted((observed - expected).elements())
+        repeated = sorted(cid for cid, count in expected.items() if count != 1)
+        sys.stderr.write(f"claim ledger rows did not render exactly once: missing={missing}, extra={extra}, repeated_source={repeated}\n")
+        raise SystemExit(1)
+
+
 def release_cadence_violations(claims: str, cadence: dict[str, object]) -> list[str]:
     """Rows whose claim names a current or latest release but whose cadence lets it outlive one.
 
@@ -737,6 +750,7 @@ def stamp_cadence(html: str) -> str:
     cell with no date, fails the build rather than going unmarked."""
     cadence = tomllib.loads((ROOT / "data" / "claim_cadence.toml").read_text(encoding="utf-8"))["cadence"]
     missing: list[str] = []
+    rendered: list[str] = []
 
     def one_table(tm: re.Match[str]) -> str:
         table = tm.group(0)
@@ -754,6 +768,7 @@ def stamp_cadence(html: str) -> str:
             if len(cells) <= max(i_id, i_read) or "<th" in body:
                 return rm.group(0)
             cid, read = plain(cells[i_id]), plain(cells[i_read])
+            rendered.append(cid)
             dates = sorted(DATE.findall(read))
             if not dates or cid not in cadence:
                 missing.append(f"{cid} (read {read!r}, cadence {cadence.get(cid)!r})")
@@ -776,6 +791,7 @@ def stamp_cadence(html: str) -> str:
     if missing:
         sys.stderr.write("claim rows with a read time but no usable date or cadence:\n  " + "\n  ".join(missing) + "\n")
         raise SystemExit(1)
+    check_rendered_claim_rows((ROOT / "CLAIMS.md").read_text(encoding="utf-8"), rendered)
     return html.replace("</body>", STALE_SCRIPT + "</body>")
 
 

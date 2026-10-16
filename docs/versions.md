@@ -46,7 +46,7 @@ A digest here is the SHA-256 of the artifact's source file in the site's reposit
 | Verifier demonstration | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
 | [Experiments](experiments.md) | 0.4 | 2026-10-15 | draft | `9e216ec17d2fead0` `src/experiments.md` | Adds checkout composition and historical event references; retained experiments and Lab run bytes stay unchanged |
 | Series plan | 0.1 | 2026-09-27 | held | page not built in this repository yet | Held until it passes its release criteria |
-| [Claim ledger](claims.md) | 0.8.32 | 2026-10-15 | draft | `a586fd8c643ae776` `CLAIMS.md` | Records exact Python registry publications and clarifies the unchanged site-version footer label |
+| [Claim ledger](claims.md) | 0.8.32 | 2026-10-15 | draft | `863aed7744545b62` `CLAIMS.md` | Records exact Python registry publications and clarifies the unchanged site-version footer label |
 | [Probity Open Evidence Lab](lab.md) | 0.1.13 | 2026-10-15 | draft | `55dcf21905ddc644` `src/lab.md` | Explains the existing unknown observation result separately from unexercised and out-of-scope checks |
 | [Claim status](status.md) | 0.2 | 2026-10-15 | draft | `c2e2c8a24fd9fcfa` `src/status.md` | Preserves unknown observations through the existing consumer with a distinct raw-result row and count |
 | [Task-grouped rates worked example](task-grouped-rates.md) | 0.1 | 2026-10-03 | draft | `92940ce8ee827ad0` `examples/task-grouped-rates/input.json` | Authored labels, paired task resampling, explicit weighting targets and unresolved outcomes |

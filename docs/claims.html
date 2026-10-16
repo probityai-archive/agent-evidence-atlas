@@ -1907,6 +1907,22 @@
 <td>Run the affected register/append/CLI tests and <code>python3 tools/check_lab.py</code>; compare existing register and artifact hashes with parent source; remove each new guard and require its focused tests to fail</td>
 <td>Retained metadata and declared roles, not proof of the declaration, separate control, independent custody, new native evidence or adoption. The append helper still returns bytes and callers validate before persistence.</td>
 </tr>
+<tr data-read="2026-10-15">
+<td>C-35</td>
+<td>Recorded PyPI releases are probity-verify 0.1.1, agent-evidence-observer 0.0.1 and agent-evidence-vocabulary 0.4.0. Both approved files per release were downloaded and matched their SHA-256 hashes. The existing catalog now binds their registry/file/PePy links to those versions and their actual source commits; no GitHub tag is implied.</td>
+<td><a href="https://pypi.org/project/probity-verify/0.1.1/">Verify release</a>; <a href="https://pypi.org/project/agent-evidence-observer/0.0.1/">Observer release</a>; <a href="https://pypi.org/project/agent-evidence-vocabulary/0.4.0/">Vocabulary release</a>; <a href="https://pypi.org/pypi/probity-verify/0.1.1/json">Verify metadata</a>, <a href="https://pypi.org/pypi/agent-evidence-observer/0.0.1/json">Observer metadata</a> and <a href="https://pypi.org/pypi/agent-evidence-vocabulary/0.4.0/json">Vocabulary metadata</a>; <code>data/versions.toml</code>; appended source reviews in <code>data/catalog-sources.json</code></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Download each version’s two files and compare SHA-256 with PyPI JSON; validate catalog ownership and registry-release rendering; inspect each source pin and guide</td>
+<td>Publication and file equality do not establish use, outside adoption or a PyPI Publish attestation. Historical Verify 0.1.0 provenance and recipes remain separate. Guide pins can deliberately select an earlier source; unavailable PePy history is not zero, and download requests are not users.</td>
+</tr>
+<tr data-read="2026-10-15">
+<td>C-36</td>
+<td>The footer’s unchanged <code>0.6-draft, 2026-10-01</code> value is the site version from VERSION, not the time of this build. It now says Site version and links Page revisions to the existing documentation ledger.</td>
+<td><code>VERSION</code>; <code>tools/build.py</code>; <code>tools/template.html</code>; <a href="versions.html#documentation-revisions">documentation revisions</a></td>
+<td>2026-10-15 <span class="cadence">(does not expire)</span></td>
+<td>Build from the unchanged VERSION file; compare generated footer text and its ledger destination</td>
+<td>The original site version/date remains fixed. Per-page revisions and source digests describe later edits; no new site release date or runtime result is inferred.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -2653,8 +2669,6 @@
 </tbody>
 </table>
 </div>
-<div class="line-block">C-35 | Recorded PyPI releases are probity-verify 0.1.1, agent-evidence-observer 0.0.1 and agent-evidence-vocabulary 0.4.0. Both approved files per release were downloaded and matched their SHA-256 hashes. The existing catalog now binds their registry/file/PePy links to those versions and their actual source commits; no GitHub tag is implied. | <a href="https://pypi.org/project/probity-verify/0.1.1/">Verify release</a>; <a href="https://pypi.org/project/agent-evidence-observer/0.0.1/">Observer release</a>; <a href="https://pypi.org/project/agent-evidence-vocabulary/0.4.0/">Vocabulary release</a>; <a href="https://pypi.org/pypi/probity-verify/0.1.1/json">Verify metadata</a>, <a href="https://pypi.org/pypi/agent-evidence-observer/0.0.1/json">Observer metadata</a> and <a href="https://pypi.org/pypi/agent-evidence-vocabulary/0.4.0/json">Vocabulary metadata</a>; <code>data/versions.toml</code>; appended source reviews in <code>data/catalog-sources.json</code> | 2026-10-15 | Download each version’s two files and compare SHA-256 with PyPI JSON; validate catalog ownership and registry-release rendering; inspect each source pin and guide | Publication and file equality do not establish use, outside adoption or a PyPI Publish attestation. Historical Verify 0.1.0 provenance and recipes remain separate. Guide pins can deliberately select an earlier source; unavailable PePy history is not zero, and download requests are not users. |<br />
-C-36 | The footer’s unchanged <code>0.6-draft, 2026-10-01</code> value is the site version from VERSION, not the time of this build. It now says Site version and links Page revisions to the existing documentation ledger. | <code>VERSION</code>; <code>tools/build.py</code>; <code>tools/template.html</code>; <a href="versions.html#documentation-revisions">documentation revisions</a> | 2026-10-15 | Build from the unchanged VERSION file; compare generated footer text and its ledger destination | The original site version/date remains fixed. Per-page revisions and source digests describe later edits; no new site release date or runtime result is inferred. |</div>
 </main>
 <footer class="site">
   <p>Every number on this site has a source, a read time and a re-derive command in the <a href="claims.html">claim ledger</a>. Site version 0.6-draft, 2026-10-01. <a href="versions.html#documentation-revisions">Page revisions</a>.</p>
