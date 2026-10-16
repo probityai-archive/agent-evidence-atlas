@@ -651,7 +651,7 @@ def versions_markdown(built: set[str], versions: list[dict[str, str]]) -> str:
     components = ["| Component and artifact | Publication role | Version | Source commit | Read (UTC) | Scope |",
                   "| --- | --- | --- | --- | --- | --- |"]
     for version in versions:
-        role = "Published release" if version["kind"] == "release" else "Source tag"
+        role = discovery.component_publication_role(version)
         components.append(
             f"| [{version['display_name']}](start.html#{version.get('profile', version['component'])}) / {version['artifact']} | "
             f"{role} | [{version['version']}]({version['url']}) | "
@@ -678,7 +678,8 @@ def versions_markdown(built: set[str], versions: list[dict[str, str]]) -> str:
         "## Component versions {#component-versions}",
         "",
         "These are publication records at the read time shown. The source column names the commit "
-        "behind each release or tag, after peeling annotated tags. "
+        "behind each release or tag. Registry releases do not imply a GitHub tag; "
+        "source tags name the peeled commit. "
         "A repository can publish a harness and a case package at different versions.",
         "",
         *components,

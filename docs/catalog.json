@@ -73,9 +73,11 @@
     },
     {
       "display_name": "Probity Observer",
-      "docs_url": "https://github.com/probityai/agent-evidence-observer/blob/f9fd4a13fb31da5f990fd8da82472ed4cedb5f97/README.md",
+      "docs_url": "https://github.com/probityai/agent-evidence-observer/blob/6c251b9fe98946f96a721521a8ca424efd0b3550/README.md",
       "id": "observer",
-      "packages": [],
+      "packages": [
+        "agent-evidence-observer"
+      ],
       "relationships": [],
       "repositories": [
         "repo-observer"
@@ -116,7 +118,7 @@
     },
     {
       "display_name": "Probity Verify",
-      "docs_url": "https://github.com/probityai/probity-verify/blob/2ecdbafc0c6cc0f26461ffe913fe342e7de090a6/README.md",
+      "docs_url": "https://github.com/probityai/probity-verify/blob/db28cc76e5f5aa6932d5122d9c6241ef7adb7fee/README.md",
       "id": "verify",
       "packages": [
         "probity-verify"
@@ -131,9 +133,11 @@
     },
     {
       "display_name": "Probity Vocabulary",
-      "docs_url": "https://github.com/probityai/agent-evidence-vocabulary/blob/220a4f0a08b90a555a430bb7d4334eb2617d05ba/README.md",
+      "docs_url": "https://github.com/probityai/agent-evidence-vocabulary/blob/59c93ac4529c1e8fdf6e7cdfff7a950740c873f3/README.md",
       "id": "vocabulary",
-      "packages": [],
+      "packages": [
+        "agent-evidence-vocabulary"
+      ],
       "relationships": [],
       "repositories": [
         "repo-vocabulary"
@@ -293,9 +297,9 @@
       "display_name": "Probity Observer",
       "id": "repo-observer",
       "source": {
-        "commit": "f9fd4a13fb31da5f990fd8da82472ed4cedb5f97",
+        "commit": "6c251b9fe98946f96a721521a8ca424efd0b3550",
         "repository": "repo-observer",
-        "url": "https://github.com/probityai/agent-evidence-observer/blob/f9fd4a13fb31da5f990fd8da82472ed4cedb5f97/README.md"
+        "url": "https://github.com/probityai/agent-evidence-observer/blob/6c251b9fe98946f96a721521a8ca424efd0b3550/README.md"
       },
       "status": "prototype",
       "summary": "Records brokered file actions with signed packets and history, and reads selected native delegation evidence offline.",
@@ -332,9 +336,9 @@
       "display_name": "Probity Verify",
       "id": "repo-verify",
       "source": {
-        "commit": "2ecdbafc0c6cc0f26461ffe913fe342e7de090a6",
+        "commit": "db28cc76e5f5aa6932d5122d9c6241ef7adb7fee",
         "repository": "repo-verify",
-        "url": "https://github.com/probityai/probity-verify/blob/2ecdbafc0c6cc0f26461ffe913fe342e7de090a6/README.md"
+        "url": "https://github.com/probityai/probity-verify/blob/db28cc76e5f5aa6932d5122d9c6241ef7adb7fee/README.md"
       },
       "status": "released",
       "summary": "Checks supplied evidence bytes through claim-specific offline adapters. Its README links to source-pinned installation and checked task recipes.",
@@ -345,9 +349,9 @@
       "display_name": "Probity Vocabulary",
       "id": "repo-vocabulary",
       "source": {
-        "commit": "220a4f0a08b90a555a430bb7d4334eb2617d05ba",
+        "commit": "59c93ac4529c1e8fdf6e7cdfff7a950740c873f3",
         "repository": "repo-vocabulary",
-        "url": "https://github.com/probityai/agent-evidence-vocabulary/blob/220a4f0a08b90a555a430bb7d4334eb2617d05ba/README.md"
+        "url": "https://github.com/probityai/agent-evidence-vocabulary/blob/59c93ac4529c1e8fdf6e7cdfff7a950740c873f3/README.md"
       },
       "status": "released",
       "summary": "Defines versioned terms and crosswalks for claims about agent execution.",

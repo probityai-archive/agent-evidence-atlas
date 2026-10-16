@@ -24,8 +24,10 @@
       "repositories": [
         "repo-vocabulary"
       ],
-      "packages": [],
-      "docs_url": "https://github.com/probityai/agent-evidence-vocabulary/blob/220a4f0a08b90a555a430bb7d4334eb2617d05ba/README.md",
+      "packages": [
+        "agent-evidence-vocabulary"
+      ],
+      "docs_url": "https://github.com/probityai/agent-evidence-vocabulary/blob/59c93ac4529c1e8fdf6e7cdfff7a950740c873f3/README.md",
       "relationships": []
     },
     {
@@ -58,8 +60,10 @@
       "repositories": [
         "repo-observer"
       ],
-      "packages": [],
-      "docs_url": "https://github.com/probityai/agent-evidence-observer/blob/f9fd4a13fb31da5f990fd8da82472ed4cedb5f97/README.md",
+      "packages": [
+        "agent-evidence-observer"
+      ],
+      "docs_url": "https://github.com/probityai/agent-evidence-observer/blob/6c251b9fe98946f96a721521a8ca424efd0b3550/README.md",
       "relationships": []
     },
     {
@@ -77,7 +81,7 @@
       "packages": [
         "probity-verify"
       ],
-      "docs_url": "https://github.com/probityai/probity-verify/blob/2ecdbafc0c6cc0f26461ffe913fe342e7de090a6/README.md",
+      "docs_url": "https://github.com/probityai/probity-verify/blob/db28cc76e5f5aa6932d5122d9c6241ef7adb7fee/README.md",
       "relationships": []
     },
     {
@@ -297,8 +301,8 @@
       "url": "https://github.com/probityai/agent-evidence-vocabulary",
       "source": {
         "repository": "repo-vocabulary",
-        "commit": "220a4f0a08b90a555a430bb7d4334eb2617d05ba",
-        "url": "https://github.com/probityai/agent-evidence-vocabulary/blob/220a4f0a08b90a555a430bb7d4334eb2617d05ba/README.md"
+        "commit": "59c93ac4529c1e8fdf6e7cdfff7a950740c873f3",
+        "url": "https://github.com/probityai/agent-evidence-vocabulary/blob/59c93ac4529c1e8fdf6e7cdfff7a950740c873f3/README.md"
       }
     },
     {
@@ -331,8 +335,8 @@
       "url": "https://github.com/probityai/agent-evidence-observer",
       "source": {
         "repository": "repo-observer",
-        "commit": "f9fd4a13fb31da5f990fd8da82472ed4cedb5f97",
-        "url": "https://github.com/probityai/agent-evidence-observer/blob/f9fd4a13fb31da5f990fd8da82472ed4cedb5f97/README.md"
+        "commit": "6c251b9fe98946f96a721521a8ca424efd0b3550",
+        "url": "https://github.com/probityai/agent-evidence-observer/blob/6c251b9fe98946f96a721521a8ca424efd0b3550/README.md"
       }
     },
     {
@@ -348,8 +352,8 @@
       "url": "https://github.com/probityai/probity-verify",
       "source": {
         "repository": "repo-verify",
-        "commit": "2ecdbafc0c6cc0f26461ffe913fe342e7de090a6",
-        "url": "https://github.com/probityai/probity-verify/blob/2ecdbafc0c6cc0f26461ffe913fe342e7de090a6/README.md"
+        "commit": "db28cc76e5f5aa6932d5122d9c6241ef7adb7fee",
+        "url": "https://github.com/probityai/probity-verify/blob/db28cc76e5f5aa6932d5122d9c6241ef7adb7fee/README.md"
       }
     },
     {

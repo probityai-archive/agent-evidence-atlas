@@ -54,6 +54,8 @@ For a source refresh, give each component quickstart the same reviewed README pi
 
 For an artifact absent from the assurance atlas, keep its version in that ledger row. Use a separate row for each independently versioned artifact. Ratchet's harness source tag and public case package release are separate records. `kind = "source-tag"` never becomes a published package release.
 
+A package published directly to a registry can use `kind = "registry-release"` with its exact `registry`, `package`, `version` and source `commit`. It has no `tag` or `version_prefix`: the version link opens the actual registry release. This records a package publication without inventing a GitHub release or tag. Keep a separate source-tag or data release row when it has a different role.
+
 The task page and version ledger render those same rows. Catalog JSON retains its stable schema and identities; the Markdown version ledger is linked from `llms.txt`. Reviewed guides describe recipes. A tested installation needs its exact source, environment, command and retained output. Historical results and citation snapshots keep their recorded pins when current navigation changes.
 
 <a id="bind-package-actions-to-their-artifact"></a>

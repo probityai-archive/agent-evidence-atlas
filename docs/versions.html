@@ -36,7 +36,7 @@
 <p class="status">Draft. Site version 0.6-draft, 2026-10-01. Rebuilt on every change; the digests let a reader check that a page matches the version recorded here.</p>
 </header>
 <h2 id="component-versions">Component versions</h2>
-<p>These are publication records at the read time shown. The source column names the commit behind each release or tag, after peeling annotated tags. A repository can publish a harness and a case package at different versions.</p>
+<p>These are publication records at the read time shown. The source column names the commit behind each release or tag. Registry releases do not imply a GitHub tag; source tags name the peeled commit. A repository can publish a harness and a case package at different versions.</p>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Component and artifact / Publication role / Version / Source commit / Read (UTC) / Scope">
 <table style="width:100%;">
 <colgroup>
@@ -91,6 +91,14 @@
 <td>Canonicalization and raw-input admission are separate from envelope verification.</td>
 </tr>
 <tr>
+<td><a href="start.html#observer">Probity Observer</a> / Python package</td>
+<td>Registry release</td>
+<td><a href="https://pypi.org/project/agent-evidence-observer/0.0.1/">0.0.1</a></td>
+<td><a href="https://github.com/probityai/agent-evidence-observer/tree/c12869620f1834ce566cd924ba95918c4dde52ce"><code>c12869620f18</code></a></td>
+<td>2026-10-15</td>
+<td>Root package release; separate integration profile wheels and source readers keep their own installation paths. The reviewed quick start remains a pinned source recipe.</td>
+</tr>
+<tr>
 <td><a href="start.html#ratchet">Probity Ratchet</a> / Harness source</td>
 <td>Source tag</td>
 <td><a href="https://github.com/probityai/ratchet/tree/probity-ratchet-v0.1.2">0.1.2</a></td>
@@ -113,6 +121,22 @@
 <td><a href="https://github.com/probityai/agent-evidence-vectors/tree/33d545104ff2f8c124cff465c96c013eeb809156"><code>33d545104ff2</code></a></td>
 <td>2026-10-15</td>
 <td>The reviewed guide also carries a 0.18.0 install recipe. Select the version required by your result.</td>
+</tr>
+<tr>
+<td><a href="start.html#verify">Probity Verify</a> / Python package</td>
+<td>Registry release</td>
+<td><a href="https://pypi.org/project/probity-verify/0.1.1/">0.1.1</a></td>
+<td><a href="https://github.com/probityai/probity-verify/tree/db28cc76e5f5aa6932d5122d9c6241ef7adb7fee"><code>db28cc76e5f5</code></a></td>
+<td>2026-10-15</td>
+<td>The released wheel adds packaged sample inputs. The reviewed guide deliberately retains its earlier source recipe; historical 0.1.0 builder provenance remains separate.</td>
+</tr>
+<tr>
+<td><a href="start.html#vocabulary">Probity Vocabulary</a> / Python package</td>
+<td>Registry release</td>
+<td><a href="https://pypi.org/project/agent-evidence-vocabulary/0.4.0/">0.4.0</a></td>
+<td><a href="https://github.com/probityai/agent-evidence-vocabulary/tree/59c93ac4529c1e8fdf6e7cdfff7a950740c873f3"><code>59c93ac4529c</code></a></td>
+<td>2026-10-15</td>
+<td>Python package carries the released registry and crosswalk data. The reviewed quick start still reads the independently tagged v0.4.0 raw registry.</td>
 </tr>
 <tr>
 <td><a href="start.html#vocabulary">Probity Vocabulary</a> / Vocabulary registry</td>
@@ -204,11 +228,11 @@
 </tr>
 <tr>
 <td><a href="claims.html">Claim ledger</a></td>
-<td>0.8.31</td>
+<td>0.8.32</td>
 <td>2026-10-15</td>
 <td><span class="label draft">draft</span></td>
-<td><code>e4d8ab87b1e71111</code> <code>CLAIMS.md</code></td>
-<td>Binds the existing unknown token through register, run browser and status consumers</td>
+<td><code>a586fd8c643ae776</code> <code>CLAIMS.md</code></td>
+<td>Records exact Python registry publications and clarifies the unchanged site-version footer label</td>
 </tr>
 <tr>
 <td><a href="lab.html">Probity Open Evidence Lab</a></td>
@@ -268,11 +292,11 @@
 </tr>
 <tr>
 <td><a href="start.html">Project catalog</a></td>
-<td>0.10.1</td>
+<td>0.11</td>
 <td>2026-10-15</td>
 <td><span class="label draft">draft</span></td>
-<td><code>98e6b6997f2129a8</code> <code>data/catalog.json</code></td>
-<td>Corrects Verify package availability while retaining reviewed recipes and bound distribution controls</td>
+<td><code>60e4911c0c525a21</code> <code>data/catalog.json</code></td>
+<td>Adds actual Python registry releases without implying GitHub tags; keeps the current guide and recorded release identities separate</td>
 </tr>
 <tr>
 <td><a href="automation.html">Automation guide</a></td>
@@ -284,11 +308,11 @@
 </tr>
 <tr>
 <td><a href="catalog.html">Catalog maintenance guide</a></td>
-<td>0.6</td>
+<td>0.7</td>
 <td>2026-10-15</td>
 <td><span class="label draft">draft</span></td>
-<td><code>efbd76ffab748895</code> <code>src/catalog.md</code></td>
-<td>Documents package ownership, release namespaces, install anchors and live badge scope</td>
+<td><code>8aad602241e86dc6</code> <code>src/catalog.md</code></td>
+<td>Explains exact registry releases without source tags and retains tagged release roles</td>
 </tr>
 <tr>
 <td><a href="replay-an-evidence-decision.html">Retained evidence decision walkthrough</a></td>
@@ -308,11 +332,11 @@
 </tr>
 <tr>
 <td><a href="start.html">Published source routes</a></td>
-<td>0.2.2</td>
+<td>0.2.3</td>
 <td>2026-10-15</td>
 <td><span class="label draft">draft</span></td>
-<td><code>465a171839d0ff1a</code> <code>data/catalog-sources.json</code></td>
-<td>Retains reviewed Action guide and implementation source pins without changing historical recipes</td>
+<td><code>0c1732f458015a7b</code> <code>data/catalog-sources.json</code></td>
+<td>Appends current Python guide source reviews while retaining all earlier recipe and Action pins</td>
 </tr>
 <tr>
 <td><a href="replay-tools.html">Caller-declared APS and PriorSeal replay guide</a></td>
@@ -367,7 +391,7 @@
 </div>
 </main>
 <footer class="site">
-  <p>Every number on this site has a source, a read time and a re-derive command in the <a href="claims.html">claim ledger</a>. Build 0.6-draft, 2026-10-01.</p>
+  <p>Every number on this site has a source, a read time and a re-derive command in the <a href="claims.html">claim ledger</a>. Site version 0.6-draft, 2026-10-01. <a href="versions.html#documentation-revisions">Page revisions</a>.</p>
 </footer>
 </body>
 </html>

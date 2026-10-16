@@ -143,7 +143,7 @@ def resolve_component_version(row: dict[str, str], artifacts: dict[str, Any]) ->
         if artifact is None or "version" in row:
             catalog.fail("Component version must use one known artifact version source")
         row["version"] = artifact["version"]
-        if row["tag"] not in {row["version"], f"v{row['version']}"}:
+        if row.get("tag") not in {row["version"], f"v{row['version']}"}:
             catalog.fail("Component version tag does not match its artifact version")
     return row
 
@@ -159,21 +159,30 @@ def checked_component_version(
     repository = repositories.get(row["repository"])
     if component is None or repository is None or row["repository"] not in component["repositories"]:
         catalog.fail("Component version repository does not belong to its component")
-    route = "releases/tag" if row["kind"] == "release" else "tree"
+    if row["kind"] == "registry-release":
+        url = registry_links(row)["registry"]
+    else:
+        route = "releases/tag" if row["kind"] == "release" else "tree"
+        url = f"{repository['url']}/{route}/{row['tag']}"
     return {**row, "display_name": component["display_name"],
-            "url": f"{repository['url']}/{route}/{row['tag']}",
+            "url": url,
             "source_url": f"{repository['url']}/tree/{row['commit']}"}
 
 
 def check_component_version_fields(row: dict[str, str]) -> None:
     """Check the ledger field set, source identity, date and authored text."""
-    fields = {"component", "repository", "artifact", "kind", "version", "tag", "commit", "read", "note"}
+    fields = {"component", "repository", "artifact", "kind", "version", "commit", "read", "note"}
+    registry_release = row.get("kind") == "registry-release"
+    if not registry_release:
+        fields.add("tag")
     optional = {"registry", "package", "version_prefix", "profile", "install_anchor", "action_guide", "workflow", "workflow_name"}
     if not fields <= set(row) <= fields | optional or any(not isinstance(value, str) for value in row.values()):
         catalog.fail("Component version fields are invalid")
-    if row["kind"] not in {"release", "source-tag"}:
+    if row["kind"] not in {"release", "source-tag", "registry-release"}:
         catalog.fail("Component version kind is invalid")
-    if re.fullmatch(r"[0-9a-f]{40}", row["commit"]) is None or re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", row["tag"]) is None:
+    if registry_release and ("registry" not in row or "version_prefix" in row):
+        catalog.fail("Registry release needs an exact registry package version")
+    if re.fullmatch(r"[0-9a-f]{40}", row["commit"]) is None or (not registry_release and re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", row["tag"]) is None):
         catalog.fail("Component version needs a full source commit and a safe tag")
     try:
         date.fromisoformat(row["read"])
@@ -189,7 +198,7 @@ def check_distribution_fields(row: dict[str, str]) -> None:
     if {"registry", "package", "version_prefix", "profile"} & set(row):
         if not {"registry", "package", "install_anchor"} <= set(row) or row["registry"] not in {"pypi", "crates"}:
             catalog.fail("Distribution needs a known registry, package and install anchor")
-        if re.fullmatch(r"[a-z0-9][a-z0-9._-]*", row["package"]) is None or row["kind"] != "release":
+        if re.fullmatch(r"[a-z0-9][a-z0-9._-]*", row["package"]) is None or row["kind"] not in {"release", "registry-release"}:
             catalog.fail("Distribution needs a released package identity")
         package_version(row)
     if "install_anchor" in row and re.fullmatch(r"[a-z0-9][a-z0-9-]*", row["install_anchor"]) is None:
@@ -297,9 +306,15 @@ def distribution_markup(row: dict[str, str], public: dict[str, Any]) -> str:
             + "</div>")
 
 
+def component_publication_role(version: dict[str, str]) -> str:
+    """Name the recorded publication without inventing a source tag."""
+    return {"release": "Published release", "source-tag": "Source tag",
+            "registry-release": "Registry release"}[version["kind"]]
+
+
 def component_version_line(version: dict[str, str]) -> str:
     """Name publication and source identity without claiming an install result."""
-    role = "Published release" if version["kind"] == "release" else "Source tag"
+    role = component_publication_role(version)
     return (f"{version['artifact']}: {role.lower()} [{version['version']}]({version['url']}), "
             f"source [`{version['commit'][:12]}`]({version['source_url']}), read {version['read']}. "
             f"{version['note']}")

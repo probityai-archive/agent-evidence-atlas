@@ -297,3 +297,7 @@ P-78 = "none"
 
 # Existing unknown outcome retained through affected consumers.
 "P-103" = "none"
+
+# Fixed registry-publication readback and source-bound footer meaning.
+"C-35" = "none"
+"C-36" = "none"

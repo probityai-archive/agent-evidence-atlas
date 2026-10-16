@@ -25,6 +25,9 @@ def test_only_actual_registry_packages_get_distribution_controls(versions):
                 for row in versions if "registry" in row}
     assert observed == {
         ("vectors", None, "pypi", "agent-evidence-vectors"),
+        ("vocabulary", None, "pypi", "agent-evidence-vocabulary"),
+        ("observer", None, "pypi", "agent-evidence-observer"),
+        ("verify", None, "pypi", "probity-verify"),
         ("admission", "artifact-digest-check", "pypi", "agent-evidence-admission"),
         ("ratchet", "ratchet-cases", "pypi", "probity-ratchet-cases"),
         ("jcs-admit", None, "crates", "jcs-admit"),
@@ -163,7 +166,7 @@ def test_badges_have_accessible_names_and_actions_survive_image_failure(public, 
     markup = "\n".join(discovery.distribution_markup(row, public) for row in versions)
     parser = Links()
     parser.feed(markup)
-    assert len(parser.images) == 12
+    assert len(parser.images) == 18
     assert all(row["alt"].strip() and row["height"] == "20" for row in parser.images)
     without_images = re.sub(r"<img[^>]+>", "", markup)
     fallback = Links()
@@ -171,3 +174,34 @@ def test_badges_have_accessible_names_and_actions_survive_image_failure(public, 
     assert fallback.links == parser.links
     for label in ("Install", "Download release files", "Registry release", "Download statistics", "Use pinned Action"):
         assert ">" + label + "</a>" in without_images
+
+
+def test_registry_releases_do_not_invent_github_tags(public, versions):
+    selected = [row for row in versions if row["kind"] == "registry-release"]
+    assert {(row["component"], row["version"]) for row in selected} == {
+        ("verify", "0.1.1"), ("observer", "0.0.1"), ("vocabulary", "0.4.0")}
+    for row in selected:
+        assert "tag" not in row and "version_prefix" not in row
+        assert row["url"] == discovery.registry_links(row)["registry"]
+        line = discovery.component_version_line(row)
+        assert "registry release" in line and "/releases/tag/" not in line
+        assert row["commit"] in row["source_url"]
+        assert "Download release files" in discovery.distribution_markup(row, public)
+
+
+@pytest.mark.parametrize("change, remove, message", [
+    ({"tag": "v0.1.1"}, (), "fields are invalid"),
+    ({"version_prefix": "v"}, (), "exact registry package version"),
+    ({}, ("registry", "package", "install_anchor"), "exact registry package version"),
+    ({"registry": "pypi", "package": "unrelated"}, (), "package does not belong"),
+])
+def test_registry_release_requires_its_actual_identity(public, versions, change, remove, message):
+    row = next(row for row in versions if row["component"] == "verify").copy()
+    for field in ("display_name", "url", "source_url", *remove):
+        row.pop(field, None)
+    row.update(change)
+    with pytest.raises(discovery.catalog.CatalogError, match=message):
+        checked = discovery.checked_component_version(row,
+            {item["id"]: item for item in public["components"]},
+            {item["id"]: item for item in public["repositories"]})
+        discovery.check_distribution_binding(checked, public)

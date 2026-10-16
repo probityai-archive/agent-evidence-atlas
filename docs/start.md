@@ -209,7 +209,28 @@ Component ID: `observer`.
 
 Records brokered file actions with signed packets and history, and reads selected native delegation evidence offline.
 
-Prototype. [Reviewed guide and source](https://github.com/probityai/agent-evidence-observer/blob/f9fd4a13fb31da5f990fd8da82472ed4cedb5f97/README.md)
+Prototype. [Reviewed guide and source](https://github.com/probityai/agent-evidence-observer/blob/6c251b9fe98946f96a721521a8ca424efd0b3550/README.md)
+
+Python package: registry release [0.0.1](https://pypi.org/project/agent-evidence-observer/0.0.1/), source [`c12869620f18`](https://github.com/probityai/agent-evidence-observer/tree/c12869620f1834ce566cd924ba95918c4dde52ce), read 2026-10-15. Root package release; separate integration profile wheels and source readers keep their own installation paths. The reviewed quick start remains a pinned source recipe.
+
+<div>
+
+<p class="distribution-title">
+
+agent-evidence-observer / recorded package release 0.0.1
+</p>
+
+<p class="distribution-actions">
+
+<a href="https://github.com/probityai/agent-evidence-observer/blob/6c251b9fe98946f96a721521a8ca424efd0b3550/README.md#quick-start">Install</a> <a href="https://pypi.org/project/agent-evidence-observer/0.0.1/#files">Download release files</a> <a href="https://pypi.org/project/agent-evidence-observer/0.0.1/">Registry release</a> <a href="https://pepy.tech/projects/agent-evidence-observer">Download statistics</a>
+</p>
+
+<p class="distribution-badges">
+
+Live registry and named workflow reports:<br /> <a href="https://pypi.org/project/agent-evidence-observer/"><img src="https://img.shields.io/pypi/v/agent-evidence-observer?label=PyPI" alt="Current pypi version of agent-evidence-observer" height="20" /></a> <a href="https://pepy.tech/projects/agent-evidence-observer"><img src="https://img.shields.io/pepy/dt/agent-evidence-observer?label=PyPI%20%2B%20mirrors" alt="Download statistics for agent-evidence-observer" height="20" /></a>
+</p>
+
+</div>
 
 <a id="ratchet"></a>
 
@@ -307,7 +328,28 @@ Component ID: `verify`.
 
 Checks supplied evidence bytes through claim-specific offline adapters. Its README links to source-pinned installation and checked task recipes.
 
-Released. [Reviewed guide and source](https://github.com/probityai/probity-verify/blob/2ecdbafc0c6cc0f26461ffe913fe342e7de090a6/README.md)
+Released. [Reviewed guide and source](https://github.com/probityai/probity-verify/blob/db28cc76e5f5aa6932d5122d9c6241ef7adb7fee/README.md)
+
+Python package: registry release [0.1.1](https://pypi.org/project/probity-verify/0.1.1/), source [`db28cc76e5f5`](https://github.com/probityai/probity-verify/tree/db28cc76e5f5aa6932d5122d9c6241ef7adb7fee), read 2026-10-15. The released wheel adds packaged sample inputs. The reviewed guide deliberately retains its earlier source recipe; historical 0.1.0 builder provenance remains separate.
+
+<div>
+
+<p class="distribution-title">
+
+probity-verify / recorded package release 0.1.1
+</p>
+
+<p class="distribution-actions">
+
+<a href="https://github.com/probityai/probity-verify/blob/db28cc76e5f5aa6932d5122d9c6241ef7adb7fee/README.md#quick-start">Install</a> <a href="https://pypi.org/project/probity-verify/0.1.1/#files">Download release files</a> <a href="https://pypi.org/project/probity-verify/0.1.1/">Registry release</a> <a href="https://pepy.tech/projects/probity-verify">Download statistics</a>
+</p>
+
+<p class="distribution-badges">
+
+Live registry and named workflow reports:<br /> <a href="https://pypi.org/project/probity-verify/"><img src="https://img.shields.io/pypi/v/probity-verify?label=PyPI" alt="Current pypi version of probity-verify" height="20" /></a> <a href="https://pepy.tech/projects/probity-verify"><img src="https://img.shields.io/pepy/dt/probity-verify?label=PyPI%20%2B%20mirrors" alt="Download statistics for probity-verify" height="20" /></a>
+</p>
+
+</div>
 
 <a id="vocabulary"></a>
 
@@ -317,7 +359,28 @@ Component ID: `vocabulary`.
 
 Defines versioned terms and crosswalks for claims about agent execution.
 
-Released. [Reviewed guide and source](https://github.com/probityai/agent-evidence-vocabulary/blob/220a4f0a08b90a555a430bb7d4334eb2617d05ba/README.md)
+Released. [Reviewed guide and source](https://github.com/probityai/agent-evidence-vocabulary/blob/59c93ac4529c1e8fdf6e7cdfff7a950740c873f3/README.md)
+
+Python package: registry release [0.4.0](https://pypi.org/project/agent-evidence-vocabulary/0.4.0/), source [`59c93ac4529c`](https://github.com/probityai/agent-evidence-vocabulary/tree/59c93ac4529c1e8fdf6e7cdfff7a950740c873f3), read 2026-10-15. Python package carries the released registry and crosswalk data. The reviewed quick start still reads the independently tagged v0.4.0 raw registry.
+
+<div>
+
+<p class="distribution-title">
+
+agent-evidence-vocabulary / recorded package release 0.4.0
+</p>
+
+<p class="distribution-actions">
+
+<a href="https://github.com/probityai/agent-evidence-vocabulary/blob/59c93ac4529c1e8fdf6e7cdfff7a950740c873f3/README.md#quick-start">Install</a> <a href="https://pypi.org/project/agent-evidence-vocabulary/0.4.0/#files">Download release files</a> <a href="https://pypi.org/project/agent-evidence-vocabulary/0.4.0/">Registry release</a> <a href="https://pepy.tech/projects/agent-evidence-vocabulary">Download statistics</a>
+</p>
+
+<p class="distribution-badges">
+
+Live registry and named workflow reports:<br /> <a href="https://pypi.org/project/agent-evidence-vocabulary/"><img src="https://img.shields.io/pypi/v/agent-evidence-vocabulary?label=PyPI" alt="Current pypi version of agent-evidence-vocabulary" height="20" /></a> <a href="https://pepy.tech/projects/agent-evidence-vocabulary"><img src="https://img.shields.io/pepy/dt/agent-evidence-vocabulary?label=PyPI%20%2B%20mirrors" alt="Download statistics for agent-evidence-vocabulary" height="20" /></a>
+</p>
+
+</div>
 
 Vocabulary registry: published release [v0.4.0](https://github.com/probityai/agent-evidence-vocabulary/releases/tag/v0.4.0), source [`220a4f0a08b9`](https://github.com/probityai/agent-evidence-vocabulary/tree/220a4f0a08b90a555a430bb7d4334eb2617d05ba), read 2026-10-15. Terms and crosswalks are versioned independently of executable packages.
 

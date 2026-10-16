@@ -64,6 +64,7 @@
 <h2 id="record-versions-without-duplicating-release-numbers">Record versions without duplicating release numbers</h2>
 <p><code>data/atlas.toml</code> owns the existing artifact release values and their re-derive readers. A <code>component_release</code> row in <code>data/versions.toml</code> names that artifact with <code>artifact_ref</code>, then adds the catalog component, repository, exact tag, peeled source commit, read date and scope. The build refuses a tag that no longer matches its artifact version. Update the identity when its release changes.</p>
 <p>For an artifact absent from the assurance atlas, keep its version in that ledger row. Use a separate row for each independently versioned artifact. Ratchet’s harness source tag and public case package release are separate records. <code>kind = "source-tag"</code> never becomes a published package release.</p>
+<p>A package published directly to a registry can use <code>kind = "registry-release"</code> with its exact <code>registry</code>, <code>package</code>, <code>version</code> and source <code>commit</code>. It has no <code>tag</code> or <code>version_prefix</code>: the version link opens the actual registry release. This records a package publication without inventing a GitHub release or tag. Keep a separate source-tag or data release row when it has a different role.</p>
 <p>The task page and version ledger render those same rows. Catalog JSON retains its stable schema and identities; the Markdown version ledger is linked from <code>llms.txt</code>. Reviewed guides describe recipes. A tested installation needs its exact source, environment, command and retained output. Historical results and citation snapshots keep their recorded pins when current navigation changes.</p>
 <h2 id="bind-package-actions-to-their-artifact">Bind package actions to their artifact</h2>
 <p>The same release row can record a <code>registry</code>, <code>package</code> and <code>install_anchor</code>. Use <code>profile</code> when the package serves a specific task, such as the digest checker or Ratchet cases. The build checks that the package belongs to that task and refuses registry controls on a source tag. Catalog JSON keeps its existing schema.</p>
@@ -74,7 +75,7 @@
 <p>Integration profiles link the reviewed reader guide. Record upstream listing acceptance and live documentation publication separately in <code>CLAIMS.md</code>; the profile status describes the tool.</p>
 </main>
 <footer class="site">
-  <p>Every number on this site has a source, a read time and a re-derive command in the <a href="claims.html">claim ledger</a>. Build 0.6-draft, 2026-10-01.</p>
+  <p>Every number on this site has a source, a read time and a re-derive command in the <a href="claims.html">claim ledger</a>. Site version 0.6-draft, 2026-10-01. <a href="versions.html#documentation-revisions">Page revisions</a>.</p>
 </footer>
 </body>
 </html>
