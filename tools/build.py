@@ -44,7 +44,7 @@ OUT = ROOT / "docs"
 TEMPLATE = ROOT / "tools" / "template.html"
 VERSION = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
 BASE_URL = "https://probityai.github.io/agent-evidence-atlas/"
-SITE_NAME = "Probity AI"
+SITE_NAME = "Agent Evidence Conformance Board"
 
 # Navigation order and labels. A page appears only when it is built.
 NAV = [
@@ -690,6 +690,8 @@ def render(source: Path, dest: Path, built: set[str]) -> None:
         "--variable=root:",
         f"--variable=build:{VERSION}",
         f"--variable=sitename:{SITE_NAME}",
+        # The home page title is the site name alone; every other page adds it as a suffix.
+        *([] if dest.stem == "index" else [f"--variable=titlesuffix:{SITE_NAME}"]),
         f"--variable=canonical:{canonical}",
         f"--variable=markdown:{BASE_URL}{dest.stem}.md",
         f"--variable=agentguide:{BASE_URL}llms.txt",
