@@ -143,7 +143,7 @@ def resolve_component_version(row: dict[str, str], artifacts: dict[str, Any]) ->
         if artifact is None or "version" in row:
             catalog.fail("Component version must use one known artifact version source")
         row["version"] = artifact["version"]
-        if row.get("tag") not in {row["version"], f"v{row['version']}"}:
+        if row.get("kind") != "registry-release" and row.get("tag") not in {row["version"], f"v{row['version']}"}:
             catalog.fail("Component version tag does not match its artifact version")
     return row
 

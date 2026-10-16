@@ -129,18 +129,18 @@ Signs and verifies DSSE envelopes with explicit threshold and key handling.
 
 Released. [Reviewed guide and source](https://github.com/probityai/dsse/blob/8549e5e54080b5f8c864f8b3eba8f57af8bd9c51/README.md)
 
-Rust crate: published release [0.1.2](https://github.com/probityai/dsse/releases/tag/v0.1.2), source [`ec451793f5f5`](https://github.com/probityai/dsse/tree/ec451793f5f5b670ff4033721e424b1a80e52e3e), read 2026-10-15. Signature verification checks bytes under caller-selected keys, not the truth of the payload.
+Rust crate: registry release [0.1.3](https://crates.io/crates/dsse/0.1.3), source [`5f1e4b5ffd61`](https://github.com/probityai/dsse/tree/5f1e4b5ffd61b6bae0f69b43766c493370004d29), read 2026-10-15. Signature verification checks bytes under caller-selected keys, not the truth of the payload.
 
 <div>
 
 <p class="distribution-title">
 
-dsse / recorded package release 0.1.2
+dsse / recorded package release 0.1.3
 </p>
 
 <p class="distribution-actions">
 
-<a href="https://github.com/probityai/dsse/blob/8549e5e54080b5f8c864f8b3eba8f57af8bd9c51/README.md#quick-start">Install</a> <a href="https://crates.io/api/v1/crates/dsse/0.1.2/download">Download release files</a> <a href="https://crates.io/crates/dsse/0.1.2">Registry release</a> <a href="https://crates.io/crates/dsse">Download statistics</a>
+<a href="https://github.com/probityai/dsse/blob/8549e5e54080b5f8c864f8b3eba8f57af8bd9c51/README.md#quick-start">Install</a> <a href="https://crates.io/api/v1/crates/dsse/0.1.3/download">Download release files</a> <a href="https://crates.io/crates/dsse/0.1.3">Registry release</a> <a href="https://crates.io/crates/dsse">Download statistics</a>
 </p>
 
 <p class="distribution-badges">
@@ -170,18 +170,18 @@ Checks raw JSON input before producing its RFC 8785 canonical form.
 
 Released. [Reviewed guide and source](https://github.com/probityai/jcs-admit/blob/0a058d7b676fb452929337c528b893c7f2121062/README.md)
 
-Rust crate: published release [0.1.1](https://github.com/probityai/jcs-admit/releases/tag/v0.1.1), source [`33603fc8caf6`](https://github.com/probityai/jcs-admit/tree/33603fc8caf6f8469ea790f41ab74ae64d4f1658), read 2026-10-15. Canonicalization and raw-input admission are separate from envelope verification.
+Rust crate: registry release [0.1.2](https://crates.io/crates/jcs-admit/0.1.2), source [`d7e65f04bf13`](https://github.com/probityai/jcs-admit/tree/d7e65f04bf13873e6579a91aa111234866020389), read 2026-10-15. Canonicalization and raw-input admission are separate from envelope verification.
 
 <div>
 
 <p class="distribution-title">
 
-jcs-admit / recorded package release 0.1.1
+jcs-admit / recorded package release 0.1.2
 </p>
 
 <p class="distribution-actions">
 
-<a href="https://github.com/probityai/jcs-admit/blob/0a058d7b676fb452929337c528b893c7f2121062/README.md#quick-start">Install</a> <a href="https://crates.io/api/v1/crates/jcs-admit/0.1.1/download">Download release files</a> <a href="https://crates.io/crates/jcs-admit/0.1.1">Registry release</a> <a href="https://crates.io/crates/jcs-admit">Download statistics</a>
+<a href="https://github.com/probityai/jcs-admit/blob/0a058d7b676fb452929337c528b893c7f2121062/README.md#quick-start">Install</a> <a href="https://crates.io/api/v1/crates/jcs-admit/0.1.2/download">Download release files</a> <a href="https://crates.io/crates/jcs-admit/0.1.2">Registry release</a> <a href="https://crates.io/crates/jcs-admit">Download statistics</a>
 </p>
 
 <p class="distribution-badges">

@@ -317,3 +317,6 @@ P-78 = "none"
 
 # Immutable retained replay and presentation bindings.
 "W-08" = "none"
+
+# Exact recorded native registry releases and byte/source bindings.
+"C-38" = "none"

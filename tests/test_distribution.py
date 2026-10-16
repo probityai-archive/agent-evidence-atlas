@@ -179,7 +179,8 @@ def test_badges_have_accessible_names_and_actions_survive_image_failure(public, 
 def test_registry_releases_do_not_invent_github_tags(public, versions):
     selected = [row for row in versions if row["kind"] == "registry-release"]
     assert {(row["component"], row["version"]) for row in selected} == {
-        ("verify", "0.1.1"), ("observer", "0.0.1"), ("vocabulary", "0.4.0")}
+        ("verify", "0.1.1"), ("observer", "0.0.1"), ("vocabulary", "0.4.0"),
+        ("jcs-admit", "0.1.2"), ("dsse", "0.1.3")}
     for row in selected:
         assert "tag" not in row and "version_prefix" not in row
         assert row["url"] == discovery.registry_links(row)["registry"]

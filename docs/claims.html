@@ -298,9 +298,9 @@
 </tr>
 <tr data-read="2026-10-13" data-cadence-days="7">
 <td>A-38</td>
-<td>Current releases: vocabulary v0.4.0; vectors v0.18.1; admission py-v0.1.0, the Python package 0.1.0 on PyPI; jcs-admit 0.1.1; dsse 0.1.2. Release v0.18.1 of agent-evidence-vectors (commit <code>33d5451</code>): 1,197 members in 24 corpora</td>
+<td>Current releases: vocabulary v0.4.0; vectors v0.18.1; admission py-v0.1.0, the Python package 0.1.0 on PyPI; jcs-admit 0.1.2; dsse 0.1.3. Release v0.18.1 of agent-evidence-vectors (commit <code>33d5451</code>): 1,197 members in 24 corpora</td>
 <td>GitHub tags; PyPI; crates.io; each artifact’s <code>version</code> and <code>version_from</code> in <code>data/atlas.toml</code>; the 24 corpora at tag <code>v0.18.1</code> (commit <code>33d545104ff2f8c124cff465c96c013eeb809156</code>)</td>
-<td>Releases 2026-10-14 22:51; vectors member total 2026-10-13 22:15 <span class="cadence">(7-day cadence)</span></td>
+<td>Other release pins 2026-10-14 22:51; Rust registry files 2026-10-15 23:51 and 23:59; vectors member total 2026-10-13 22:15 <span class="cadence">(7-day cadence)</span></td>
 <td><code>python3 tools/rederive.py</code> reads one A-38 row per artifact from its <code>version_from</code> and compares it with <code>version</code>; A-38c reads every manifest named in <code>data/atlas.toml</code> at its pinned commit</td>
 <td>A current release changes whenever a project publishes, so the row expires weekly; a member total is a count of inputs with declared expectations, not a score of any implementation</td>
 </tr>
@@ -1930,6 +1930,14 @@
 <td>2026-10-16 <span class="cadence">(does not expire)</span></td>
 <td>Run the focused copy controls and three affected capsule readers, then build, check links/Lab and compare every changed deployed byte</td>
 <td>File placement and the current deploy contract only. Original reports, raw claim results, roles, source bodies and execution history stay fixed; no original workload is repeated.</td>
+</tr>
+<tr data-read="2026-10-16">
+<td>C-38</td>
+<td>Recorded Rust registry releases are jcs-admit 0.1.2 and dsse 0.1.3. Their complete downloaded archives matched the approved bytes and packaged source commits. The catalog uses the existing registry-release kind with one artifact version source and no invented GitHub tag.</td>
+<td><a href="https://crates.io/crates/jcs-admit/0.1.2">JCS registry release</a>; <a href="https://crates.io/crates/dsse/0.1.3">DSSE registry release</a>; <a href="https://github.com/probityai/jcs-admit/tree/d7e65f04bf13873e6579a91aa111234866020389">JCS source</a>; <a href="https://github.com/probityai/dsse/tree/5f1e4b5ffd61b6bae0f69b43766c493370004d29">DSSE source</a>; <code>data/atlas.toml</code>; <code>data/versions.toml</code>; <code>tools/discovery.py</code></td>
+<td>2026-10-16 <span class="cadence">(does not expire)</span></td>
+<td>Compare each downloaded archive checksum and packaged source identity with registry metadata; resolve the authored artifact version and inspect the generated source, registry and download links</td>
+<td>Native crate publication and exact bytes only. Historical JCS 0.1.1 and DSSE 0.1.2 guide/API pins remain separate; no npm availability, executed new guide, adoption or production result is inferred.</td>
 </tr>
 </tbody>
 </table>

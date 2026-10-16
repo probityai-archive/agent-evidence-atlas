@@ -47,11 +47,40 @@ class TestComponentVersionRoles:
 
     def test_a_release_change_requires_its_tag_identity_to_change(self):
         ledger = tomllib.loads((ROOT / "data/versions.toml").read_text())
-        row = next(v for v in ledger["component_release"] if "artifact_ref" in v)
+        row = next(v for v in ledger["component_release"] if "artifact_ref" in v and v["kind"] in {"release", "source-tag"})
         artifacts = {a["name"]: a.copy() for a in DATA["artifact"]}
         artifacts[row["artifact_ref"]]["version"] = "99.0.0"
         with pytest.raises(discovery.catalog.CatalogError, match="tag does not match"):
             discovery.resolve_component_version(row, artifacts)
+
+    @pytest.mark.parametrize("component", ["jcs-admit", "dsse"])
+    def test_registry_artifact_version_needs_no_invented_tag(self, public, component):
+        ledger = tomllib.loads((ROOT / "data/versions.toml").read_text())
+        row = next(v for v in ledger["component_release"] if v["component"] == component)
+        artifacts = {a["name"]: a for a in DATA["artifact"]}
+        resolved = discovery.resolve_component_version(row, artifacts)
+        assert resolved["kind"] == "registry-release" and "tag" not in resolved
+        assert resolved["version"] == artifacts[row["artifact_ref"]]["version"]
+        actual = next(v for v in discovery.component_versions(public) if v["component"] == component)
+        assert actual["version"] == resolved["version"] and actual["commit"] == row["commit"]
+        assert actual["url"] == f"https://crates.io/crates/{component}/{resolved['version']}"
+
+    @pytest.mark.parametrize("component", ["jcs-admit", "dsse"])
+    @pytest.mark.parametrize("change, remove, message", [
+        ({"tag": "v99.0.0"}, (), "fields are invalid"),
+        ({}, ("commit",), "fields are invalid"),
+        ({}, ("registry",), "exact registry package version"),
+        ({"repository": "repo-observer"}, (), "does not belong"),
+    ])
+    def test_registry_artifact_preserves_identity_refusals(self, public, component, change, remove, message):
+        row = next(v for v in discovery.component_versions(public) if v["component"] == component).copy()
+        for field in ("display_name", "url", "source_url", *remove):
+            row.pop(field, None)
+        row.update(change)
+        with pytest.raises(discovery.catalog.CatalogError, match=message):
+            discovery.checked_component_version(row,
+                {r["id"]: r for r in public["components"]},
+                {r["id"]: r for r in public["repositories"]})
 
     @pytest.mark.parametrize("change", [
         {"artifact_ref": "unknown-artifact"},
