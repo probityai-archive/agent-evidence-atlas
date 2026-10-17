@@ -23,6 +23,7 @@ The checker validates artifact hashes and measured fields before emitting the re
 
 | Page | Read it for |
 | --- | --- |
+| [Start a project](https://github.com/new?template_name=evidence-starter&template_owner=probityai) | A template with the packages pinned and the conformance Action in CI |
 | [Choose a project](https://probityai.github.io/agent-evidence-atlas/start.html) | A tool for your task and its pinned quickstart |
 | [Assurance atlas](https://probityai.github.io/agent-evidence-atlas/atlas.html) | Mechanisms, projects and evidence boundaries |
 | [Open Evidence Lab](https://probityai.github.io/agent-evidence-atlas/lab.html) | Retained runs, submissions and corrections |
