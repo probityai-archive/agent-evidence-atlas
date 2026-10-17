@@ -33,7 +33,7 @@
     {
       "id": "vectors",
       "aliases": [],
-      "display_name": "Probity Vectors",
+      "display_name": "Agent Evidence Vectors",
       "summary": "Provides conformance cases and reference verifiers for selected agent evidence formats.",
       "task": "Test a verifier against conformance cases",
       "status": "released",
@@ -141,7 +141,7 @@
     {
       "id": "atlas",
       "aliases": [],
-      "display_name": "Probity Atlas",
+      "display_name": "Agent Evidence Conformance Board",
       "summary": "Provides task-based project navigation, agent assurance documentation and an Open Evidence Lab run register.",
       "task": "Choose a tool or inspect recorded claims and retained runs",
       "status": "draft",
@@ -308,7 +308,7 @@
     {
       "id": "repo-vectors",
       "aliases": [],
-      "display_name": "Probity Vectors",
+      "display_name": "Agent Evidence Vectors",
       "summary": "Provides conformance cases and reference verifiers for selected agent evidence formats.",
       "task": "Test a verifier against conformance cases",
       "status": "released",
@@ -410,7 +410,7 @@
     {
       "id": "repo-atlas",
       "aliases": [],
-      "display_name": "Probity Atlas",
+      "display_name": "Agent Evidence Conformance Board",
       "summary": "Provides task-based project navigation, agent assurance documentation and an Open Evidence Lab run register.",
       "task": "Choose a tool or inspect recorded claims and retained runs",
       "status": "draft",
