@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: Agent Evidence Conformance Board
+message: >-
+  To cite a result on the board, cite its row URL and the signed record it links.
+  To cite the conformance suite the board scores against, use the preferred citation.
+type: software
+authors:
+  - family-names: Gilda
+    given-names: Sankalp
+    orcid: 'https://orcid.org/0000-0002-3645-4501'
+repository-code: https://github.com/probityai/agent-evidence-atlas
+url: https://probityai.github.io/agent-evidence-atlas/board.html
+license: Apache-2.0
+preferred-citation:
+  type: software
+  title: >-
+    agent-evidence-vectors: conformance vectors for agent execution evidence
+  authors:
+    - family-names: Gilda
+      given-names: Sankalp
+      orcid: 'https://orcid.org/0000-0002-3645-4501'
+  doi: 10.5281/zenodo.22758687
+  repository-code: https://github.com/probityai/agent-evidence-vectors
