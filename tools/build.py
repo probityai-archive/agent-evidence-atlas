@@ -33,6 +33,7 @@ import tomllib
 from collections import Counter
 from pathlib import Path
 
+import board
 import discovery
 import markdown_mirrors
 import run_browser
@@ -48,6 +49,7 @@ SITE_NAME = "Agent Evidence Conformance Board"
 
 # Navigation order and labels. A page appears only when it is built.
 NAV = [
+    ("board", "Conformance board"),
     ("start", "Choose a component"),
     ("lab", "Open Evidence Lab"),
     ("status", "Claim status"),
@@ -664,8 +666,17 @@ def nav_html(built: set[str]) -> tuple[str, str]:
     return home, links
 
 
+# Rows of the conformance board, verified once per build before any page renders.
+BOARD_ROWS: list[board.Row] = []
+
+
 def render(source: Path, dest: Path, built: set[str]) -> None:
     text = expand(source.read_text(encoding="utf-8"))
+    if dest.stem == "board":
+        marker = "<!-- conformance-board -->"
+        if text.count(marker) != 1:
+            raise ValueError("The board page needs exactly one board marker")
+        text = text.replace(marker, board.markdown(BOARD_ROWS, board.load_pins(ROOT)))
     if dest.stem == "runs":
         marker = "<!-- run-register -->"
         if text.count(marker) != 1:
@@ -903,6 +914,12 @@ def build(out: Path) -> None:
             sys.stderr.write(gen.stdout + gen.stderr)
             raise SystemExit(1)
     built = {p.stem for p in pages} | {"claims", "versions", "start"}
+    if (SRC / "board.md").exists():
+        try:
+            BOARD_ROWS[:] = board.load_board(ROOT)
+        except board.BoardError as exc:
+            sys.stderr.write(f"conformance board row does not verify: {exc}\n")
+            raise SystemExit(1)
     public = discovery.load_public(ROOT)
     versions = discovery.component_versions(public, ROOT)
     if out.exists():
@@ -926,6 +943,14 @@ def build(out: Path) -> None:
         ledger.write_text(versions_markdown(built, versions), encoding="utf-8")
         render(ledger, out / "versions.html", built)
     copy_public_files(out, built)
+    if "board" in built:
+        for name, content in board.public_files(ROOT, BOARD_ROWS).items():
+            target = out / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(content)
+        record_type = out / "board-run-record" / "v1.html"
+        record_type.parent.mkdir(parents=True, exist_ok=True)
+        record_type.write_text(board.predicate_page(), encoding="ascii")
     (out / ".nojekyll").write_text("", encoding="utf-8")
     assets = discovery.site_assets(public, built)
     for name, content in assets.items():

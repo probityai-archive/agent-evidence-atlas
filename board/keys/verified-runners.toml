@@ -1,0 +1,10 @@
+# Keys whose signature makes a board run record Verified. Each one is held only as
+# an Actions secret of this repository and used only by the sign job of
+# .github/workflows/board-run.yml, which never runs the implementation under test.
+# Rotation adds a row with a new keyid; a published row is never edited.
+
+[[key]]
+keyid = "board-runner-2026-10"
+publicKeyHex = "91e7ccb2ad83c493bac6ca06769378c39ecd1d4899f7bf783219a1a04224622d"
+secret = "BOARD_RUNNER_KEY"
+since = "2026-10-16"

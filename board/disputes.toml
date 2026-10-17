@@ -1,0 +1,10 @@
+# Vectors under dispute. A disputed vector is left out of every row's level for that
+# corpus release until the dispute closes. Each row needs corpus, release, id, reason
+# and an HTTPS link to the open issue.
+#
+# [[dispute]]
+# corpus = "vectors"
+# release = "0.19.0"
+# id = "v0000000000000000"
+# reason = "the specification allows both readings"
+# link = "https://github.com/probityai/agent-evidence-vectors/issues/N"

@@ -1,0 +1,5 @@
+{
+  "implementations": [],
+  "policy": "https://probityai.github.io/agent-evidence-atlas/board-policy.html",
+  "predicateType": "https://probityai.github.io/agent-evidence-atlas/board-run-record/v1"
+}

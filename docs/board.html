@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Sankalp Gilda" />
+  <meta name="description" content="Verified and Community rows of agent evidence verifiers, scored against pinned agent-evidence-vectors releases, with a divergence view, a JSON twin and a badge per implementation." />
+  <title>Conformance board - Agent Evidence Conformance Board</title>
+  <link rel="canonical" href="https://probityai.github.io/agent-evidence-atlas/board.html" />
+  <link rel="alternate" type="text/markdown" href="https://probityai.github.io/agent-evidence-atlas/board.md" />
+  <link rel="describedby" href="https://probityai.github.io/agent-evidence-atlas/llms.txt" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <nav aria-label="Site">
+    <a class="home" href="index.html">Agent Evidence Conformance Board</a>
+    <span class="links">
+      <a href="board.html">Conformance board</a>
+      <a href="start.html">Choose a component</a>
+      <a href="lab.html">Open Evidence Lab</a>
+      <a href="status.html">Claim status</a>
+      <a href="runs.html">Find a run</a>
+      <a href="pilot.html">Pilot status</a>
+      <a href="atlas.html">Atlas</a>
+      <a href="experiments.html">Experiments</a>
+      <a href="claims.html">Claims</a>
+      <a href="versions.html">Versions</a>
+    </span>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+<header class="page">
+<h1>Conformance board</h1>
+<p class="subtitle">Implementations scored against agent-evidence-vectors, every row a signed record the build re-verifies</p>
+</header>
+<p>Every row below is backed by a signed run record. The site build re-verifies each record’s signature, its report digest and its pinned corpus release before it renders the row, and stops on any record that does not verify. <strong>Verified</strong> rows were run by this board’s own runner; <strong>Community</strong> rows were run and signed by their submitters. The <a href="board-policy.html">listing policy</a> says how to join, what each tier and level means, and how disputes work.</p>
+<p>Put the check in your own CI with the <a href="https://github.com/probityai/agent-evidence-vectors/blob/main/action.yml">agent-evidence-vectors Action</a>, then ask for a Verified run.</p>
+<p>Pinned corpus releases: <code>v0.19.0</code>. Listed implementations: 0 (0 Verified, 0 Community).</p>
+<p>No implementation is listed yet. The <a href="board-policy.html">listing policy</a> says how to join.</p>
+<h2 id="divergence">Divergence</h2>
+<p>A vector that exactly one listed implementation fails is where the specification or that implementation needs a second look.</p>
+<p>This view needs two implementations run on the same corpus release.</p>
+<h2 id="implementations">Implementations</h2>
+<h2 id="impact">Impact</h2>
+<p>Where the suite is already required or run outside this repository:</p>
+<ul>
+<li><a href="https://github.com/in-toto/attestation/pull/588">in-toto/attestation#588</a>, the AI Agent Action predicate proposal, pins agent-evidence-vectors as its conformance suite.</li>
+<li>Five public repositories outside this organisation call the suite from their own CI workflows: agent-passport-system, AgentAvow, Rul1an/aee-checker, MoltyCel/moltrust-api and darklordVirtual/REMORA-research (GitHub code search, 2026-10-16).</li>
+</ul>
+<h2 id="machine-readable">Machine-readable</h2>
+<ul>
+<li><a href="board/index.json">board/index.json</a>: every row, its level, digests and links to its signed records.</li>
+<li><code>board/&lt;name&gt;.json</code> and <code>board/&lt;name&gt;.badge.json</code> for each implementation, listed with its row.</li>
+</ul>
+</main>
+<footer class="site">
+  <p>Every number on this site has a source, a read time and a re-derive command in the <a href="claims.html">claim ledger</a>. Site version 0.6-draft, 2026-10-01. <a href="versions.html#documentation-revisions">Page revisions</a>.</p>
+</footer>
+</body>
+</html>
