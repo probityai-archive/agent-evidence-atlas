@@ -1,3 +1,6 @@
+<!-- moved-to-monorepo -->
+> **Moved to [github.com/probityai/agent-evidence/site](https://github.com/probityai/agent-evidence/tree/main/site).** This repository is archived. Its tags, releases, Actions and Pages keep working.
+
 # Probity Atlas
 
 <a name="independent-evidence-for-ai-agent-actions"></a>
